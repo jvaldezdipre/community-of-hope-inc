@@ -63,6 +63,17 @@ export const testimonials = [
 export const programs = [
   {
     number: "01",
+    title: "The Kindness Connection",
+    subtitle: "Community Outreach",
+    description:
+      "A community-facing program providing basic necessities — food, clothing, hygiene products, and household items — to individuals and families in need throughout southeastern Connecticut.",
+    goodFor:
+      "Community members facing food insecurity or basic needs gaps. Families, individuals, and organizations seeking local support resources.",
+    image:
+      "https://images.unsplash.com/photo-1707409066859-a90674383d19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwd29tZW4lMjBmcmllbmRzaGlwJTIwc3VwcG9ydCUyMGVtYnJhY2V8ZW58MXx8fHwxNzcyMzc3MjAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  },
+  {
+    number: "02",
     title: "Hope House",
     subtitle: "Women's Recovery Home",
     description:
@@ -73,7 +84,7 @@ export const programs = [
       "https://images.unsplash.com/photo-1628077571013-88b0a74d4e7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3p5JTIwaG9tZSUyMGludGVyaW9yJTIwd2FybSUyMHN1bmxpZ2h0JTIwc2FmZXxlbnwxfHx8fDE3NzIzNzcxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
   },
   {
-    number: "02",
+    number: "03",
     title: "CCAR Recovery Coach Training",
     subtitle: "Vocational Certification",
     description:
@@ -82,17 +93,6 @@ export const programs = [
       "Women in recovery who want to turn their story into a career helping others. Also open to community members seeking certification.",
     image:
       "https://images.unsplash.com/photo-1758273240403-052b3c99f636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMG1lbnRvcmluZyUyMGNvdW5zZWxpbmclMjBlbXBvd2VybWVudHxlbnwxfHx8fDE3NzIzNzcxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    number: "03",
-    title: "The Kindness Connection",
-    subtitle: "Community Outreach",
-    description:
-      "A community-facing program providing basic necessities — food, clothing, hygiene products, and household items — to individuals and families in need throughout southeastern Connecticut.",
-    goodFor:
-      "Community members facing food insecurity or basic needs gaps. Families, individuals, and organizations seeking local support resources.",
-    image:
-      "https://images.unsplash.com/photo-1719597410807-8b693b16a37c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2b2x1bnRlZXIlMjBjb21tdW5pdHklMjBkb25hdGlvbiUyMGtpbmRuZXNzfGVufDF8fHx8MTc3MjM3NzE5OHww&ixlib=rb-4.1.0&q=80&w=1080",
   },
 ];
 

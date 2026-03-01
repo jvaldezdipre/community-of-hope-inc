@@ -1,6 +1,5 @@
 "use client";
 
-import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { motion } from "motion/react";
 import { aboutDetails } from "@/lib/constants";
 
@@ -114,14 +113,18 @@ export function AboutSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1707409066859-a90674383d19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwd29tZW4lMjBmcmllbmRzaGlwJTIwc3VwcG9ydCUyMGVtYnJhY2V8ZW58MXx8fHwxNzcyMzc3MjAzfDA&ixlib=rb-4.1.0&q=80&w=1080"
-              alt="Community of Hope women supporting each other"
-              className="w-full h-[400px] md:h-[520px] object-cover rounded-[8px]"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-8 rounded-b-[8px]">
+            <div className="relative w-full rounded-[8px] overflow-hidden bg-black" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/Xs3JhtwBFSE?start=267"
+                title="Community of Hope video"
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="mt-6 p-6 bg-[#FAF8F5] rounded-[8px] border border-[#EBEBEB]">
               <p
-                className="text-white/90 italic"
+                className="text-[#1A1A1A] italic"
                 style={{
                   fontFamily: "'Libre Baskerville', serif",
                   fontSize: "0.95rem",
@@ -132,7 +135,7 @@ export function AboutSection() {
                 always meant to be.&quot;
               </p>
               <span
-                className="text-white/50 mt-2 block"
+                className="text-[#5A5A5A] mt-2 block"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: "0.78rem",
