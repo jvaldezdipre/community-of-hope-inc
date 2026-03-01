@@ -1,0 +1,9 @@
+# Netlify config for Next.js
+# Push this repo → Netlify → Add site → Import from Git. Netlify will detect Next.js and use its Next.js runtime.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS    = "--legacy-peer-deps"
