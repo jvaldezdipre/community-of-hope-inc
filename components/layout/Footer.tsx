@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { footerQuickLinks, footerServiceAreas } from "@/lib/constants";
 
@@ -112,9 +113,9 @@ export function Footer() {
             </span>
             <div className="flex flex-col gap-2">
               {footerQuickLinks.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(/ \/ /g, "-")}`}
+                <Link
+                  key={link.href}
+                  href={link.href}
                   className="text-white/70 hover:text-white transition-colors"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
@@ -122,8 +123,8 @@ export function Footer() {
                     fontWeight: 300,
                   }}
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>

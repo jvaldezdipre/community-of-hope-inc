@@ -171,20 +171,39 @@ export const faqs = [
 ];
 
 // ─── Navigation Links ───────────────────────────────────────
-export const navLinks = [
-  { label: "Programs", href: "#programs" },
-  { label: "About", href: "#about" },
-  { label: "Stories", href: "#testimonials" },
-  { label: "Refer / Apply", href: "#contact" },
+export type NavItem =
+  | { label: string; href: string }
+  | {
+      label: string;
+      children: { label: string; href: string }[];
+    };
+
+export const navLinks: NavItem[] = [
+  { label: "Home", href: "/" },
+  { label: "Programs", href: "/programs" },
+  { label: "About", href: "/about" },
+  { label: "Stories", href: "/stories" },
+  {
+    label: "Get Involved",
+    children: [
+      { label: "Events", href: "/events" },
+      { label: "Supporters", href: "/supporters" },
+      { label: "Donate", href: "/donate" },
+    ],
+  },
+  { label: "Contact", href: "/contact" },
 ];
 
-// ─── Footer Data ────────────────────────────────────────────
-export const footerQuickLinks = [
-  "Programs",
-  "About",
-  "Stories",
-  "Refer / Apply",
-  "Donate",
+// All 8 indexable URLs for footer and sitemap
+export const footerQuickLinks: { label: string; href: string }[] = [
+  { label: "Home", href: "/" },
+  { label: "Programs", href: "/programs" },
+  { label: "About", href: "/about" },
+  { label: "Stories", href: "/stories" },
+  { label: "Events", href: "/events" },
+  { label: "Supporters", href: "/supporters" },
+  { label: "Donate", href: "/donate" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const footerServiceAreas = [
