@@ -1,7 +1,7 @@
 // ─── Trust Bar Stats ────────────────────────────────────────
 export const trustBarStats = [
   { number: "15+", label: "Years Serving\nSoutheastern CT" },
-  { number: "8", label: "Beds at\nHope House" },
+  { number: "12", label: "Beds at\nHope House" },
   { number: "300+", label: "Women's Lives\nTransformed" },
   { number: "3", label: "Recovery & Community\nPrograms" },
 ];
@@ -77,7 +77,7 @@ export const programs = [
     title: "Hope House",
     subtitle: "Women's Recovery Home",
     description:
-      "An 8-bed, faith-based recovery residence in Groton, CT. Women receive structured support, mentoring, life skills training, and a safe family-style environment to rebuild their lives.",
+      "A 12-bed, faith-based recovery residence in Groton, CT. Women receive structured support, mentoring, life skills training, and a safe family-style environment to rebuild their lives.",
     goodFor:
       "Women 18+ recovering from addiction, homelessness, or domestic violence who need stable housing and a supportive community.",
     image:
@@ -98,7 +98,6 @@ export const programs = [
 
 // ─── About Details ──────────────────────────────────────────
 export const aboutDetails = [
-  { label: "Location", value: "20 Grove Avenue, Groton, CT 06340" },
   { label: "Executive Director", value: "Annette Eldridge" },
   { label: "Status", value: "501(c)(3) Public Charity" },
 ];
@@ -206,14 +205,7 @@ export const footerQuickLinks: { label: string; href: string }[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const footerServiceAreas = [
-  "Groton",
-  "New London",
-  "Norwich",
-  "Gales Ferry",
-  "Mystic",
-  "Stonington",
-];
+export const footerServiceAreas = ["All of Connecticut and beyond"];
 
 // ─── Contact Form Options ───────────────────────────────────
 export const contactTypeOptions = [

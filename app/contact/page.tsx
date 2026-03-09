@@ -98,25 +98,6 @@ export default function ContactPage() {
                   860-856-5655
                 </a>
               </div>
-              <div>
-                <span
-                  className="block text-[#1A1A1A] mb-1"
-                  style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.82rem",
-                    fontWeight: 500,
-                  }}
-                >
-                  Address
-                </span>
-                <p
-                  className="text-[#5A5A5A]"
-                  style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300, lineHeight: 1.6 }}
-                >
-                  20 Grove Avenue<br />
-                  Groton, CT 06340
-                </p>
-              </div>
             </div>
           </aside>
         </div>

@@ -41,7 +41,7 @@ export function Hero() {
   const headingEnd = line2Start + line2Duration;
 
   return (
-    <section className="relative bg-[#0D0D0D] overflow-hidden min-h-screen flex items-center justify-center">
+    <section className="relative bg-[#151A23] overflow-hidden min-h-screen flex items-center justify-center">
       {/* Background video */}
       <div className="absolute inset-0">
         <video
@@ -49,7 +49,7 @@ export function Hero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-45"
+          className="absolute inset-0 w-full h-full object-cover opacity-58"
           aria-hidden
         >
           <source src="/herovideo.mp4" type="video/mp4" />

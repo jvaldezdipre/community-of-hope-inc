@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Community of Hope Inc.",
   },
   description:
-    "Faith-based recovery and community outreach in Groton, CT. Hope House offers an 8-bed recovery home for women. The Kindness Connection serves basic needs. 15+ years of transformed lives.",
+    "Faith-based recovery and community outreach in Groton, CT. Hope House offers a 12-bed recovery home for women. The Kindness Connection serves basic needs. 15+ years of transformed lives.",
   keywords: [
     "Community of Hope",
     "Hope House",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Community of Hope Inc.",
     title: "Community of Hope Inc. | Hope House & Recovery | Groton, CT",
     description:
-      "Faith-based recovery and community outreach in Groton, CT. Hope House offers an 8-bed recovery home for women. The Kindness Connection serves basic needs. 15+ years of transformed lives.",
+      "Faith-based recovery and community outreach in Groton, CT. Hope House offers a 12-bed recovery home for women. The Kindness Connection serves basic needs. 15+ years of transformed lives.",
     images: [
       {
         url: "/coh-logo.png",

@@ -8,13 +8,6 @@ const organizationSchema = {
   logo: `${siteUrl}/coh-logo.png`,
   description:
     "Faith-based recovery and community outreach in Groton, CT. Hope House, The Kindness Connection, and CCAR Recovery Coach training.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "20 Grove Avenue",
-    addressLocality: "Groton",
-    addressRegion: "CT",
-    postalCode: "06340",
-  },
   telephone: "860-912-8983",
   sameAs: [],
 };

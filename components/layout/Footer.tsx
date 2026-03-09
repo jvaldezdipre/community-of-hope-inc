@@ -37,7 +37,7 @@ export function Footer() {
               </span>
             </div>
             <p
-              className="text-white/40 max-w-[280px]"
+              className="text-white/58 max-w-[280px]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
                 fontSize: "0.85rem",
@@ -53,7 +53,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <span
-              className="block text-white/40 uppercase mb-4"
+              className="block text-white/58 uppercase mb-4"
               style={{
                 fontFamily: "'Outfit', sans-serif",
                 fontSize: "0.68rem",
@@ -66,7 +66,7 @@ export function Footer() {
             <div className="flex flex-col gap-2">
               <a
                 href="tel:8609128983"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-white/82 hover:text-white transition-colors"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: "0.85rem",
@@ -76,7 +76,7 @@ export function Footer() {
                 860-912-8983
               </a>
               <span
-                className="text-white/70"
+                className="text-white/82"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: "0.85rem",
@@ -85,23 +85,13 @@ export function Footer() {
               >
                 Kindness Connection: 860-856-5655
               </span>
-              <span
-                className="text-white/70"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.85rem",
-                  fontWeight: 300,
-                }}
-              >
-                20 Grove Ave, Groton, CT 06340
-              </span>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
             <span
-              className="block text-white/40 uppercase mb-4"
+              className="block text-white/58 uppercase mb-4"
               style={{
                 fontFamily: "'Outfit', sans-serif",
                 fontSize: "0.68rem",
@@ -116,7 +106,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-white/82 hover:text-white transition-colors"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
                     fontSize: "0.85rem",
@@ -132,7 +122,7 @@ export function Footer() {
           {/* Service Area */}
           <div>
             <span
-              className="block text-white/40 uppercase mb-4"
+              className="block text-white/58 uppercase mb-4"
               style={{
                 fontFamily: "'Outfit', sans-serif",
                 fontSize: "0.68rem",
@@ -146,7 +136,7 @@ export function Footer() {
               {footerServiceAreas.map((area) => (
                 <span
                   key={area}
-                  className="text-white/70"
+                  className="text-white/82"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
                     fontSize: "0.85rem",
@@ -163,7 +153,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row justify-between items-center gap-4">
           <span
-            className="text-white/30"
+            className="text-white/45"
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontSize: "0.78rem",
@@ -174,7 +164,7 @@ export function Footer() {
             26-0109933
           </span>
           <span
-            className="text-white/20"
+            className="text-white/35"
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontSize: "0.75rem",
