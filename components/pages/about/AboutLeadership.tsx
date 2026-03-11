@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import { aboutLeadership } from "@/lib/constants";
 
 function InitialsPlaceholder({ name, size = "lg" }: { name: string; size?: "lg" | "sm" }) {
@@ -49,8 +52,12 @@ export function AboutLeadership() {
       className="pt-16 pb-16 border-t border-[#EBEBEB]"
       style={{ paddingTop: "clamp(48px, 8vw, 80px)", paddingBottom: "clamp(48px, 8vw, 80px)" }}
     >
-      <h2
+      <motion.h2
         className="text-[#1A1A1A] mb-14"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         style={{
           fontFamily: "'Libre Baskerville', serif",
           fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
@@ -59,10 +66,16 @@ export function AboutLeadership() {
         }}
       >
         Leadership & Staff
-      </h2>
+      </motion.h2>
 
       {/* Executive Director — featured, large photo */}
-      <div className="text-center mb-16">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <PersonPhoto name={executiveDirector.name} photo={executiveDirector.photo} size="lg" />
         <p
           className="text-[#1A1A1A] mt-5 mb-1"
@@ -84,10 +97,16 @@ export function AboutLeadership() {
         >
           {executiveDirector.title}
         </span>
-      </div>
+      </motion.div>
 
       {/* Staff */}
-      <div className="mb-14">
+      <motion.div
+        className="mb-14"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+      >
         <span
           className="block text-[#458CFE] uppercase mb-8"
           style={{
@@ -100,8 +119,15 @@ export function AboutLeadership() {
           Staff
         </span>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
-          {staff.map((person) => (
-            <div key={person.name} className="text-center">
+          {staff.map((person, i) => (
+            <motion.div
+              key={person.name}
+              className="text-center"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+            >
               <PersonPhoto name={person.name} photo={person.photo} size="lg" />
               <p
                 className="text-[#1A1A1A] mt-5 mb-1"
@@ -123,13 +149,18 @@ export function AboutLeadership() {
               >
                 {person.role}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       {/* Board of Directors */}
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-30px" }}
+        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+      >
         <span
           className="block text-[#458CFE] uppercase mb-8"
           style={{
@@ -142,8 +173,15 @@ export function AboutLeadership() {
           Board of Directors
         </span>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {board.map((person) => (
-            <div key={person.name} className="text-center">
+          {board.map((person, i) => (
+            <motion.div
+              key={person.name}
+              className="text-center"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+            >
               <InitialsPlaceholder name={person.name} size="sm" />
               <p
                 className="text-[#1A1A1A] mt-4 mb-1"
@@ -165,10 +203,10 @@ export function AboutLeadership() {
               >
                 {person.role}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

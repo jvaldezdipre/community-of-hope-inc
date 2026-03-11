@@ -212,6 +212,94 @@ export const communityPartners = [
   },
 ];
 
+// ─── Events ─────────────────────────────────────────────────
+export type EventItem = {
+  title: string;
+  tagline: string;
+  date: string; // ISO date for sorting: "2026-05-01"
+  time: string;
+  location: string;
+  description: string;
+  image: string; // path in /public/events/
+  tickets: { label: string; price: string }[];
+  ticketUrl: string | null; // Eventbrite link when available
+  contactEmail: string;
+  contactPhone: string;
+  sponsorships?: { tier: string; price: string; perks: string[] }[];
+};
+
+export const events: EventItem[] = [
+  {
+    title: "Saddle Up for Hope",
+    tagline: "Dance to Make Dreams Come True",
+    date: "2026-05-01",
+    time: "6 PM — 10 PM",
+    location: "Ocean Beach, Port and Starboard, New London",
+    description:
+      "An unforgettable \"Denim and Diamond\" evening with dinner, dancing, community, and purpose — all to benefit Hope House, Kindness Connection, and women and families in our community. Line dancing and freestyle led by Dance Country. Dinner includes pulled pork, herb roasted chicken, mac and cheese, garlic mashed potatoes, salad, coleslaw, cornbread, and more.",
+    image: "/events/saddle-up-for-hope.png",
+    tickets: [
+      { label: "Individual Ticket (Open Seating)", price: "$75" },
+      { label: "Table of 10 (Reserved Seating)", price: "$600" },
+    ],
+    ticketUrl: null,
+    contactEmail: "Annette@4coh.com",
+    contactPhone: "860-912-4356",
+    sponsorships: [
+      {
+        tier: "Ledgelight Legacy Partner",
+        price: "$5,000",
+        perks: [
+          "2 premium tables (seats 20)",
+          "2-page premium color program ad",
+          "Pre-party gathering",
+          "3 social media spotlights",
+          "Stage recognition",
+          "Your signage on stage",
+          "WCTY advertising with Dance Country",
+          "Charcuterie & dessert upgrade",
+          "Sponsors 10 individuals in recovery to attend",
+        ],
+      },
+      {
+        tier: "Trailblazer",
+        price: "$2,500",
+        perks: [
+          "Table of 10",
+          "Full-page program ad",
+          "2 social media spotlights",
+          "Mention from stage",
+          "Sponsor board",
+          "Charcuterie & dessert upgrade",
+          "Sponsors 8 individuals in recovery to attend",
+        ],
+      },
+      {
+        tier: "Hope Diamond",
+        price: "$1,250",
+        perks: [
+          "Table of 10",
+          "Full-page program ad",
+          "2 social media spotlights",
+          "Sponsor board",
+          "Dessert upgrade",
+          "Sponsors 5 individuals in recovery to attend",
+        ],
+      },
+    ],
+  },
+];
+
+export function getUpcomingEvents() {
+  const today = new Date().toISOString().split("T")[0];
+  return events.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
+}
+
+export function getPastEvents() {
+  const today = new Date().toISOString().split("T")[0];
+  return events.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date));
+}
+
 // ─── Process Steps (Dark Section) ───────────────────────────
 export const processSteps = [
   {

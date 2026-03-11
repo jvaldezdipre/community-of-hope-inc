@@ -1,4 +1,7 @@
+"use client";
+
 import { Heart } from "lucide-react";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 
 const impactItems = [
@@ -13,7 +16,13 @@ export function DonatePage() {
       {/* Two giving option cards */}
       <div className="grid md:grid-cols-2 gap-8 md:gap-10 mb-16 md:mb-24">
         {/* Zeffy — primary */}
-        <div className="bg-white border-2 border-[#458CFE]/30 rounded-[8px] p-8 shadow-[0_4px_24px_rgba(69,140,254,0.08)] flex flex-col">
+        <motion.div
+          className="bg-white border-2 border-[#458CFE]/30 rounded-[8px] p-8 shadow-[0_4px_24px_rgba(69,140,254,0.08)] flex flex-col"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           <span
             className="inline-block text-[#458CFE] uppercase mb-4"
             style={{
@@ -51,10 +60,16 @@ export function DonatePage() {
           <Button variant="primary" href="#" className="inline-flex mt-auto">
             Donate via Zeffy
           </Button>
-        </div>
+        </motion.div>
 
         {/* PayPal */}
-        <div className="bg-white border border-[#EBEBEB] rounded-[8px] p-8 flex flex-col">
+        <motion.div
+          className="bg-white border border-[#EBEBEB] rounded-[8px] p-8 flex flex-col"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           <h2
             className="text-[#1A1A1A] mb-4"
             style={{
@@ -86,13 +101,23 @@ export function DonatePage() {
           >
             Donate via PayPal
           </Button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Impact section */}
-      <section className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-12 md:py-16 mb-16 md:mb-24">
-        <h2
+      <motion.section
+        className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-12 md:py-16 mb-16 md:mb-24"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <motion.h2
           className="text-[#1A1A1A] text-center mb-12"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
           style={{
             fontFamily: "'Libre Baskerville', serif",
             fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
@@ -101,10 +126,17 @@ export function DonatePage() {
           }}
         >
           Your generosity in action.
-        </h2>
+        </motion.h2>
         <div className="grid md:grid-cols-3 gap-10 md:gap-12">
-          {impactItems.map((item) => (
-            <div key={item.amount} className="text-center">
+          {impactItems.map((item, i) => (
+            <motion.div
+              key={item.amount}
+              className="text-center"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 + i * 0.1, ease: "easeOut" }}
+            >
               <span
                 className="block text-[#458CFE] mb-3"
                 style={{
@@ -126,13 +158,19 @@ export function DonatePage() {
               >
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Trust footer */}
-      <div className="text-center pb-8">
+      <motion.div
+        className="text-center pb-8"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <Heart
           size={28}
           className="text-[#458CFE]/70 mx-auto mb-6"
@@ -151,7 +189,7 @@ export function DonatePage() {
           Community of Hope Inc. is a registered 501(c)(3) public charity. All
           donations are tax-deductible to the fullest extent of the law.
         </p>
-      </div>
+      </motion.div>
     </>
   );
 }
