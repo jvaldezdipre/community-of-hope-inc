@@ -1,0 +1,85 @@
+import { footerServiceAreas } from "@/lib/constants";
+
+export function AboutTrustFooter() {
+  return (
+    <section
+      className="mt-16 rounded-[8px] overflow-hidden"
+      style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
+    >
+      <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 text-center md:text-left">
+          <div>
+            <span
+              className="block text-[#458CFE] uppercase mb-2"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                fontWeight: 500,
+              }}
+            >
+              Status
+            </span>
+            <span
+              className="text-[#1A1A1A]"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 300,
+              }}
+            >
+              501(c)(3) Public Charity · EIN 26-0109933
+            </span>
+          </div>
+          <div>
+            <span
+              className="block text-[#458CFE] uppercase mb-2"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                fontWeight: 500,
+              }}
+            >
+              Service Area
+            </span>
+            <span
+              className="text-[#1A1A1A]"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 300,
+              }}
+            >
+              {footerServiceAreas[0]}
+            </span>
+          </div>
+          <div>
+            <span
+              className="block text-[#458CFE] uppercase mb-2"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                fontWeight: 500,
+              }}
+            >
+              Phone
+            </span>
+            <a
+              href="tel:8609128983"
+              className="text-[#458CFE] hover:underline"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 300,
+              }}
+            >
+              860-912-8983
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

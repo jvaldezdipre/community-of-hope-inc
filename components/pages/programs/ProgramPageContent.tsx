@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getProgramBySlug } from "@/lib/constants";
 
 export function ProgramPageContent({ slug }: { slug: string }) {
@@ -9,6 +10,13 @@ export function ProgramPageContent({ slug }: { slug: string }) {
 
   return (
     <PageLayout>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", href: "/" },
+          { name: "Programs", href: "/programs" },
+          { name: program.title, href: `/programs/${slug}` },
+        ]}
+      />
       <h1
         className="text-[#1A1A1A] mb-2"
         style={{

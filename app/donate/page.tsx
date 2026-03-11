@@ -26,6 +26,28 @@ export default function Page() {
         ]}
       />
       <PageLayout>
+        <h1
+          className="text-[#1A1A1A] mb-4"
+          style={{
+            fontFamily: "'Libre Baskerville', serif",
+            fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+            fontWeight: 400,
+            lineHeight: 1.2,
+          }}
+        >
+          Donate
+        </h1>
+        <p
+          className="text-[#5A5A5A] mb-16 max-w-[640px]"
+          style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontSize: "0.95rem",
+            lineHeight: 1.8,
+            fontWeight: 300,
+          }}
+        >
+          Every gift helps a woman rebuild her life. Your donation goes directly to Hope House, Kindness Connection, and our recovery programs.
+        </p>
         <DonatePage />
       </PageLayout>
     </>

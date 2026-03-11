@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { aboutDetails } from "@/lib/constants";
 
@@ -104,6 +105,19 @@ export function AboutSection() {
                 </motion.div>
               ))}
             </div>
+
+            <p
+              className="mt-8"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 500,
+              }}
+            >
+              <Link href="/about" className="text-[#458CFE] hover:underline">
+                Learn our story, watch our video, and meet our team →
+              </Link>
+            </p>
           </motion.div>
 
           <motion.div
