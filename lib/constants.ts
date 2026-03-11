@@ -118,16 +118,16 @@ export const programs: Program[] = [
   {
     number: "04",
     title: "LeadHERship",
-    subtitle: "Nonprofits Supporting Each Other",
+    subtitle: "Women's Empowerment",
     slug: "leadhership",
     description:
-      "A program where nonprofits support each other — strengthening leadership and capacity across the sector.",
+      "A personal development and empowerment program helping women build confidence, leadership skills, and practical tools to step into stronger roles in their careers, families, and communities.",
     goodFor:
-      "Nonprofit leaders and organizations looking for peer support, collaboration, and shared growth.",
+      "Women in recovery, Hope House residents and graduates, and any woman in the community looking to build confidence, leadership skills, and a vision for her future.",
     image:
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     body:
-      "LeadHERship brings nonprofits together to support one another. More details about this program will be added as we receive them from the team.",
+      "LeadHERship is where women go from surviving to thriving. Through mentoring, workshops, and community, women build the confidence, skills, and vision to lead their own lives — at work, at home, and beyond. Open to Hope House residents, graduates, and any woman in the community.",
   },
 ];
 

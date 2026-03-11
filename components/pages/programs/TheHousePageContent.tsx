@@ -388,35 +388,32 @@ export function TheHousePageContent() {
         <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
+              className="max-w-[700px] mx-auto text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             >
-        <div className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:px-10 md:py-12 shadow-sm">
-          <blockquote>
-            <p
-              className="text-[#1A1A1A] italic mb-6 max-w-[720px]"
-              style={{
-                fontFamily: "'Libre Baskerville', serif",
-                fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
-                lineHeight: 1.8,
-              }}
-            >
-              &ldquo;{houseTestimonial.quote}&rdquo;
-            </p>
-            <footer
-              className="text-[#5A5A5A]"
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.88rem",
-                fontWeight: 300,
-              }}
-            >
-              — {houseTestimonial.name}, {houseTestimonial.context}
-            </footer>
-          </blockquote>
-        </div>
+              <p
+                className="text-[#1A1A1A] italic"
+                style={{
+                  fontFamily: "'Libre Baskerville', serif",
+                  fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
+                  lineHeight: 1.7,
+                }}
+              >
+                &ldquo;{houseTestimonial.quote}&rdquo;
+              </p>
+              <span
+                className="block mt-6 text-[#5A5A5A]"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.88rem",
+                  fontWeight: 300,
+                }}
+              >
+                — {houseTestimonial.name}, {houseTestimonial.context}
+              </span>
             </motion.div>
           </div>
         </section>

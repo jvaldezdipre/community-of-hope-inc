@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
-import { ProgramPageContent } from "@/components/pages/programs/ProgramPageContent";
-import { getProgramBySlug } from "@/lib/constants";
+import { LeadHERshipPageContent } from "@/components/pages/programs/LeadHERshipPageContent";
 
-const slug = "leadhership";
-const program = getProgramBySlug(slug)!;
+const description =
+  "LeadHERship is a free women's empowerment program by Community of Hope Inc. Build confidence, leadership skills, financial literacy, and a vision for your future — open to women in recovery, graduates, and the community.";
 
 export const metadata: Metadata = {
-  title: `${program.title} | Programs`,
-  description: program.description,
+  title: "LeadHERship | Programs",
+  description,
 };
 
 export default function LeadHERshipPage() {
   return (
     <>
       <WebPageJsonLd
-        name={`${program.title} | Programs | Community of Hope Inc.`}
-        description={program.description}
-        path={`/programs/${slug}`}
+        name="LeadHERship | Programs | Community of Hope Inc."
+        description={description}
+        path="/programs/leadhership"
       />
-      <ProgramPageContent slug={slug} />
+      <LeadHERshipPageContent />
     </>
   );
 }
