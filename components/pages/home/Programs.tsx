@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { motion } from "motion/react";
 import { programs } from "@/lib/constants";
@@ -41,7 +42,7 @@ export function Programs() {
               fontWeight: 400,
             }}
           >
-            Three ways we serve.
+            Four ways we serve.
             <br />
             One mission of restoration.
           </motion.h2>
@@ -50,7 +51,7 @@ export function Programs() {
         <div className="flex flex-col gap-20">
           {programs.map((program, index) => (
             <div
-              key={program.number}
+              key={program.slug}
               className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
                 index % 2 !== 0 ? "md:[direction:rtl]" : ""
               }`}
@@ -133,6 +134,17 @@ export function Programs() {
                     {program.goodFor}
                   </p>
                 </div>
+                <Link
+                  href={`/programs/${program.slug}`}
+                  className="text-[#458CFE] hover:underline mt-2 inline-block"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.9rem",
+                    fontWeight: 500,
+                  }}
+                >
+                  Learn more →
+                </Link>
               </motion.div>
               <motion.div
                 className={index % 2 !== 0 ? "md:[direction:ltr]" : ""}

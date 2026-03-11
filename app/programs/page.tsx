@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
 import { programs } from "@/lib/constants";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 
 const description =
-  "Hope House recovery home, The Kindness Connection community outreach, and CCAR Recovery Coach certification. Three ways we serve women and families in southeastern Connecticut.";
+  "The House recovery home, Kindness Connection, Recovery Coaching, and LeadHERship. Four ways we serve women and families across Connecticut and beyond.";
 
 export const metadata: Metadata = {
   title: "Programs",
@@ -41,12 +42,12 @@ export default function ProgramsPage() {
             fontWeight: 300,
           }}
         >
-          Three ways we serve. One mission of restoration. Explore Hope House, The Kindness Connection, and our CCAR Recovery Coach training.
+          Four ways we serve. One mission of restoration. Explore The House, Kindness Connection, Recovery Coaching, and LeadHERship.
         </p>
         <div className="flex flex-col gap-20">
           {programs.map((program, index) => (
             <div
-              key={program.number}
+              key={program.slug}
               className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
                 index % 2 !== 0 ? "md:[direction:rtl]" : ""
               }`}
@@ -93,7 +94,7 @@ export default function ProgramsPage() {
                 >
                   {program.description}
                 </p>
-                <div className="bg-[#458CFE]/5 rounded-[6px] p-5">
+                <div className="bg-[#458CFE]/5 rounded-[6px] p-5 mb-6">
                   <span
                     className="block text-[#458CFE] uppercase mb-2"
                     style={{
@@ -117,6 +118,17 @@ export default function ProgramsPage() {
                     {program.goodFor}
                   </p>
                 </div>
+                <Link
+                  href={`/programs/${program.slug}`}
+                  className="text-[#458CFE] hover:underline"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.9rem",
+                    fontWeight: 500,
+                  }}
+                >
+                  Learn more →
+                </Link>
               </div>
               <div className={index % 2 !== 0 ? "md:[direction:ltr]" : ""}>
                 <ImageWithFallback

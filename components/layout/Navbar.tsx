@@ -16,14 +16,14 @@ export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileGetInvolvedOpen, setMobileGetInvolvedOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState<string | null>(null);
+  const desktopNavRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      setDropdownOpen(false);
+      setOpenDropdown(null);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -31,8 +31,8 @@ export function Navbar() {
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
+      if (desktopNavRef.current && !desktopNavRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -51,11 +51,10 @@ export function Navbar() {
         ? "text-[#5A5A5A] hover:text-[#1A1A1A]"
         : "text-white/70 hover:text-white";
 
-  const dropdownActive = navLinks.some(
-    (item) => isDropdown(item) && item.children.some((c) => pathname === c.href)
-  );
-  const dropdownTriggerClass =
-    dropdownActive
+  const getDropdownActive = (item: NavItem & { children: { label: string; href: string }[] }) =>
+    item.children.some((c) => pathname === c.href);
+  const dropdownTriggerClass = (isActive: boolean) =>
+    isActive
       ? useSolidNav ? "text-[#458CFE]" : "text-white"
       : useSolidNav
         ? "text-[#5A5A5A] hover:text-[#1A1A1A]"
@@ -92,30 +91,32 @@ export function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div ref={desktopNavRef} className="hidden md:flex items-center gap-8">
           {navLinks.map((item) => {
             if (isDropdown(item)) {
+              const isOpen = openDropdown === item.label;
+              const isActive = getDropdownActive(item);
               return (
-                <div key={item.label} className="relative" ref={dropdownRef}>
+                <div key={item.label} className="relative">
                   <button
                     type="button"
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className={`flex items-center gap-1 transition-colors duration-400 ${dropdownTriggerClass}`}
+                    onClick={() => setOpenDropdown(isOpen ? null : item.label)}
+                    className={`flex items-center gap-1 transition-colors duration-400 ${dropdownTriggerClass(isActive)}`}
                     style={{
                       fontFamily: "'Outfit', sans-serif",
                       fontSize: "0.88rem",
                       letterSpacing: "0.04em",
                     }}
-                    aria-expanded={dropdownOpen}
+                    aria-expanded={isOpen}
                     aria-haspopup="true"
                   >
                     {item.label}
                     <ChevronDown
                       size={16}
-                      className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                      className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                     />
                   </button>
-                  {dropdownOpen && (
+                  {isOpen && (
                     <div
                       className="absolute top-full left-0 mt-1 py-2 min-w-[180px] rounded-[6px] bg-white shadow-lg border border-[#EBEBEB]"
                       role="menu"
@@ -124,7 +125,7 @@ export function Navbar() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          onClick={() => setDropdownOpen(false)}
+                          onClick={() => setOpenDropdown(null)}
                           className={`block px-4 py-2 text-[0.88rem] transition-colors ${
                             pathname === child.href ? "text-[#458CFE] bg-[#458CFE]/5" : "text-[#5A5A5A] hover:bg-[#F5F5F5]"
                           }`}
@@ -191,11 +192,12 @@ export function Navbar() {
           <div className="flex flex-col gap-1 pt-2">
             {navLinks.map((item) => {
               if (isDropdown(item)) {
+                const isOpen = mobileOpenDropdown === item.label;
                 return (
                   <div key={item.label}>
                     <button
                       type="button"
-                      onClick={() => setMobileGetInvolvedOpen(!mobileGetInvolvedOpen)}
+                      onClick={() => setMobileOpenDropdown(isOpen ? null : item.label)}
                       className={`w-full text-left py-2 flex items-center justify-between ${useSolidNav ? "text-[#5A5A5A]" : "text-white/70"}`}
                       style={{
                         fontFamily: "'Outfit', sans-serif",
@@ -206,10 +208,10 @@ export function Navbar() {
                       {item.label}
                       <ChevronDown
                         size={18}
-                        className={`transition-transform duration-200 ${mobileGetInvolvedOpen ? "rotate-180" : ""}`}
+                        className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                       />
                     </button>
-                    {mobileGetInvolvedOpen && (
+                    {isOpen && (
                       <div className="pl-4 flex flex-col gap-1 pb-2">
                         {item.children.map((child) => (
                           <Link
@@ -217,7 +219,7 @@ export function Navbar() {
                             href={child.href}
                             onClick={() => {
                               setMobileOpen(false);
-                              setMobileGetInvolvedOpen(false);
+                              setMobileOpenDropdown(null);
                             }}
                             className={`py-2 ${useSolidNav ? "text-[#5A5A5A]" : "text-white/60"}`}
                             style={{

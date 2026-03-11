@@ -3,7 +3,7 @@ export const trustBarStats = [
   { number: "15+", label: "Years Serving\nSoutheastern CT" },
   { number: "12", label: "Beds at\nHope House" },
   { number: "300+", label: "Women's Lives\nTransformed" },
-  { number: "3", label: "Recovery & Community\nPrograms" },
+  { number: "4", label: "Recovery & Community\nPrograms" },
 ];
 
 // ─── Why Us Differentiators ─────────────────────────────────
@@ -60,41 +60,80 @@ export const testimonials = [
 ];
 
 // ─── Programs ───────────────────────────────────────────────
-export const programs = [
+export type Program = {
+  number: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  goodFor: string;
+  image: string;
+  slug: string;
+  /** Placeholder body for individual program page (CMS later) */
+  body: string;
+};
+
+export const programs: Program[] = [
   {
     number: "01",
-    title: "The Kindness Connection",
-    subtitle: "Community Outreach",
-    description:
-      "A community-facing program providing basic necessities — food, clothing, hygiene products, and household items — to individuals and families in need throughout southeastern Connecticut.",
-    goodFor:
-      "Community members facing food insecurity or basic needs gaps. Families, individuals, and organizations seeking local support resources.",
-    image:
-      "https://images.unsplash.com/photo-1707409066859-a90674383d19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwd29tZW4lMjBmcmllbmRzaGlwJTIwc3VwcG9ydCUyMGVtYnJhY2V8ZW58MXx8fHwxNzcyMzc3MjAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-  },
-  {
-    number: "02",
-    title: "Hope House",
+    title: "The House",
     subtitle: "Women's Recovery Home",
+    slug: "the-house",
     description:
-      "A 12-bed, faith-based recovery residence in Groton, CT. Women receive structured support, mentoring, life skills training, and a safe family-style environment to rebuild their lives.",
+      "A 12-bed, faith-based recovery residence. Women receive structured support, mentoring, life skills training, and a safe family-style environment to rebuild their lives.",
     goodFor:
       "Women 18+ recovering from addiction, homelessness, or domestic violence who need stable housing and a supportive community.",
     image:
       "https://images.unsplash.com/photo-1628077571013-88b0a74d4e7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3p5JTIwaG9tZSUyMGludGVyaW9yJTIwd2FybSUyMHN1bmxpZ2h0JTIwc2FmZXxlbnwxfHx8fDE3NzIzNzcxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    body:
+      "The House is our 12-bed, faith-based recovery home. Women live together as a family — sharing meals, responsibilities, and genuine connection. We believe recovery happens in relationship, not isolation. Residents receive mentoring, life skills training, job readiness support, and vocational certifications. Program length varies based on individual needs, typically 6 to 18 months. Contact us to learn more or refer someone.",
+  },
+  {
+    number: "02",
+    title: "Kindness Connection",
+    subtitle: "Community Outreach",
+    slug: "kindness-connection",
+    description:
+      "A community-facing program providing basic necessities — food, clothing, hygiene products, household items — plus support with car repairs, certifications, and housing help for individuals and families across Connecticut and beyond.",
+    goodFor:
+      "Community members facing food insecurity or basic needs gaps. Families and individuals seeking local support, including help with transportation, housing, or vocational steps.",
+    image:
+      "https://images.unsplash.com/photo-1707409066859-a90674383d19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwd29tZW4lMjBmcmllbmRzaGlwJTIwc3VwcG9ydCUyMGVtYnJhY2V8ZW58MXx8fHwxNzcyMzc3MjAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    body:
+      "Kindness Connection meets practical needs across our community: food, clothing, hygiene products, and household items. We also help with car repairs, certifications, and housing when we can. If you or someone you know needs a hand, reach out. Our team serves all of Connecticut and beyond.",
   },
   {
     number: "03",
-    title: "CCAR Recovery Coach Training",
-    subtitle: "Vocational Certification",
+    title: "Recovery Coaching",
+    subtitle: "CCAR Certification",
+    slug: "recovery-coaching",
     description:
-      "Our residents and graduates can earn their CCAR Recovery Coach certification — transforming their personal experience into a professional credential that helps them serve others.",
+      "Our residents and graduates can earn their CCAR Recovery Coach certification — transforming personal experience into a professional credential that helps them serve others. Contact info for this program coming soon.",
     goodFor:
       "Women in recovery who want to turn their story into a career helping others. Also open to community members seeking certification.",
     image:
       "https://images.unsplash.com/photo-1758273240403-052b3c99f636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMG1lbnRvcmluZyUyMGNvdW5zZWxpbmclMjBlbXBvd2VybWVudHxlbnwxfHx8fDE3NzIzNzcxOTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    body:
+      "Recovery Coaching at Community of Hope includes CCAR Recovery Coach training and certification. Our women turn their experience into a credential that lets them support others in recovery. Details and contact information for this program will be updated soon.",
+  },
+  {
+    number: "04",
+    title: "LeadHERship",
+    subtitle: "Nonprofits Supporting Each Other",
+    slug: "leadhership",
+    description:
+      "A program where nonprofits support each other — strengthening leadership and capacity across the sector.",
+    goodFor:
+      "Nonprofit leaders and organizations looking for peer support, collaboration, and shared growth.",
+    image:
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    body:
+      "LeadHERship brings nonprofits together to support one another. More details about this program will be added as we receive them from the team.",
   },
 ];
+
+export function getProgramBySlug(slug: string): Program | undefined {
+  return programs.find((p) => p.slug === slug);
+}
 
 // ─── About Details ──────────────────────────────────────────
 export const aboutDetails = [
@@ -179,7 +218,13 @@ export type NavItem =
 
 export const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Programs", href: "/programs" },
+  {
+    label: "Programs",
+    children: [
+      { label: "Overview", href: "/programs" },
+      ...programs.map((p) => ({ label: p.title, href: `/programs/${p.slug}` })),
+    ],
+  },
   { label: "About", href: "/about" },
   { label: "Stories", href: "/stories" },
   {
@@ -193,10 +238,11 @@ export const navLinks: NavItem[] = [
   { label: "Contact", href: "/contact" },
 ];
 
-// All 8 indexable URLs for footer and sitemap
+// All indexable URLs for footer and sitemap
 export const footerQuickLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Programs", href: "/programs" },
+  ...programs.map((p) => ({ label: p.title, href: `/programs/${p.slug}` })),
   { label: "About", href: "/about" },
   { label: "Stories", href: "/stories" },
   { label: "Events", href: "/events" },
