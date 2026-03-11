@@ -10,13 +10,20 @@
 
 ## Done So Far (Implementation Status)
 
-- **Nav:** Programs dropdown implemented (Overview + The House, Kindness Connection, Recovery Coaching, LeadHERship). Get Involved dropdown unchanged.
-- **Programs hub:** `/programs` lists all 4 programs with “Learn more” links to individual pages. Copy updated to “Four ways we serve.”
-- **Four program pages:** `/programs/the-house`, `/programs/kindness-connection`, `/programs/recovery-coaching`, `/programs/leadhership` — each has placeholder content, back link to Programs, and meta/JSON-LD. Ready for client copy; CMS later.
-- **Home:** Bed count 12, no address, brighter hero/footer, testimonials, service area “all of Connecticut and beyond,” counseling → conversations/life skills, map removed. Still pending: correct phone number, mission statement, and services redirect links (GBC, Malta, GASP, SCADD).
-- **Footer:** Quick links include all program pages. Trust bar shows “4” programs.
+- **Nav:** Programs dropdown (Overview + The House, Kindness Connection, Recovery Coaching, LeadHERship). Get Involved dropdown (Events, Supporters, Donate).
+- **Home:** Hero, about section, programs grid, testimonial marquee, dark “how it works” section, FAQ accordion, contact form, mid/final CTAs, trust bar. Pending: correct phone number, mission statement.
+- **Programs hub:** `/programs` lists all 4 programs with “Learn more” links. Copy: “Four ways we serve.”
+- **Four program pages:** `/programs/the-house`, `/programs/kindness-connection`, `/programs/recovery-coaching`, `/programs/leadhership` — each has placeholder content, back link, meta/JSON-LD. Ready for client copy; CMS later.
+- **About:** Full page with hero (story + milestones + YouTube embed), leadership section (Executive Director, staff grid, board grid with initials placeholders), community partners (GBC, Malta, GASP, SCADD links), trust footer (501c3, service area, phone). Animations throughout. Pending: real staff photos, finalized board names, Eversource renovation story.
+- **Events:** “Saddle Up for Hope” event card (May 1, 2026), ticket pricing, 3 sponsorship tiers, mailto CTA fallback, past events grid, empty-state fallback. Meta/JSON-LD done. Pending: Eventbrite link, CMS editable.
+- **Donate:** Two giving cards (Zeffy zero-fee recommended + PayPal with real link), impact section ($25/$100/$500 tiers), 501(c)(3) trust footer. Pending: real Zeffy donation link.
+- **Stories:** Displays all testimonials from constants as styled blockquotes. Pending: real stories, real photos, richer layout.
+- **Contact:** Full form with name, email, phone, “I am...” program dropdown, message. Standalone version on `/contact` with sidebar (main + Kindness Connection phone numbers). Also embedded on homepage. Pending: form submission backend, submission email from client.
+- **Supporters:** Placeholder page with intro text and links to Donate/Contact. Pending: logo grid, donor names from client.
+- **Footer:** Quick links to all pages. Trust bar shows “4” programs.
+- **SEO:** Meta titles and descriptions on all pages. WebPage JSON-LD on all pages. Breadcrumb JSON-LD on Events and Donate.
 
-**Ready to implement next (no client dependency):** Services page redirect links (URLs in doc). After that: CMS, forms, and remaining pages as content arrives.
+**Ready to implement next (no client dependency):** CMS setup, form submission backend, Zeffy donation link. After that: remaining client content as it arrives.
 
 ---
 
@@ -49,18 +56,18 @@
 
 | Page | Status | Notes |
 |------|--------|-------|
-| Home | 🔨 | Structure done. Pending: phone number, mission statement, services redirect links (see Home Page Updates) |
+| Home | 🔨 | Full structure done. Pending: correct phone number, mission statement |
 | Programs (main) | ✅ | Overview of all 4 programs with links to individual pages. Placeholder copy; ready for client content. |
 | — The House | ✅ | Page built with placeholder content. CMS editable later. |
 | — Kindness Connection | ✅ | Page built with placeholder (car repairs, certifications, housing help). CMS editable later. |
 | — Recovery Coaching | ✅ | Page built with placeholder. Contact info for this section when client provides. CMS editable later. |
 | — LeadHERship | ✅ | Page built with placeholder. CMS editable later. |
-| About | ❌ | Staff + board members, mission, Eversource renovation story. Wording coming from client |
-| Stories | ❌ | Real stories, real photos, animated testimonials |
-| Events | ❌ | Eventbrite integration, unique link per event, CMS editable |
-| Supporters | ❌ | Logo grid, donor recognition. Details TBD |
-| Donate | ❌ | Zeffy integration (0 fees). Details TBD |
-| Contact | ❌ | Form with program dropdown selector. Details TBD |
+| About | 🔨 | Hero, leadership, community partners (with GBC/Malta/GASP/SCADD links), trust footer built. Pending: real staff photos, finalized board, Eversource story |
+| Stories | 🔨 | Testimonial blockquotes from constants. Pending: real stories, photos, richer layout |
+| Events | 🔨 | "Saddle Up for Hope" event card, sponsorship tiers, fallback CTA. Pending: Eventbrite link, CMS editable |
+| Supporters | 🔨 | Placeholder page with intro text. Pending: logo grid, donor names from client |
+| Donate | 🔨 | Zeffy + PayPal cards, impact tiers, trust footer built. Pending: real Zeffy link |
+| Contact | 🔨 | Form with program dropdown, sidebar with phone numbers. Pending: form submission backend, submission email |
 
 ---
 
@@ -79,7 +86,7 @@
 | Update phone number (correct number TBD from client) | ⏳ |
 | Clear mission statement on front page | ⏳ |
 | Remove location/map | ✅ |
-| Keep services page links (GBC, Malta, GASP, SCADD redirects) | ❌ | See links below |
+| Keep services page links (GBC, Malta, GASP, SCADD redirects) | ✅ | Added on About page |
 
 **Services Page Redirect Links:**
 - GBC: https://grotonbiblechapel.churchcenter.com/registrations/events/2458371
@@ -120,9 +127,10 @@
 | Item | Status | Notes |
 |------|--------|-------|
 | Application form (digital) | ❌ | Zeffy account already exists, 0 fees. Form includes program dropdown selector |
-| Referral/contact form | ❌ | Submission email TBD from client |
-| Eventbrite integration | ❌ | Different link for every event |
-| Zeffy donate integration | ❌ | |
+| Referral/contact form | 🔨 | UI built on /contact and homepage. Pending: backend submission, email TBD from client |
+| Eventbrite integration | ❌ | `ticketUrl` field ready in event data; needs Eventbrite link per event |
+| Zeffy donate integration | 🔨 | Card/button built on /donate. Pending: real Zeffy donation URL |
+| PayPal donate integration | ✅ | Live link on /donate page |
 | CCAR Training contact form | ❌ | Specific contact for this section |
 
 ---
@@ -132,8 +140,8 @@
 | Task | Status |
 |------|--------|
 | Set up GA4 on new site | ❌ |
-| Add schema markup (nonprofit, local business) | ❌ |
-| Meta titles and descriptions for all pages | 🔨 | Programs hub + 4 program pages done; rest at launch |
+| Add schema markup (nonprofit, local business) | 🔨 | WebPage JSON-LD on all pages. Breadcrumb JSON-LD on Events + Donate. Event schema and LocalBusiness schema still needed |
+| Meta titles and descriptions for all pages | ✅ | All 12 pages have unique meta title + description |
 | 301 redirects from old WordPress URLs | ❌ |
 | Google Search Console — submit sitemap | ❌ |
 | Google Business Profile — set up as service area business | ❌ |
@@ -147,20 +155,23 @@
 
 - [ ] Correct phone number
 - [ ] Form submission email addresses
-- [ ] About page wording and mission statement
-- [ ] Staff names, roles, and photos
-- [ ] Board member names and roles
+- [ ] Mission statement (for homepage)
+- [ ] Real staff photos (placeholder initials currently used)
+- [ ] Finalize board member names and roles
 - [ ] Detailed program descriptions from team members
 - [ ] LeadHERship program details
 - [ ] Updated FAQ questions
 - [ ] Graduate photos (with permission)
 - [ ] Event photos from past galas
-- [ ] Supporter/donor list confirmation
-- [ ] Donate page details (tiers, campaigns)
-- [ ] Contact page details (social links, etc.)
+- [ ] Supporter/donor list + logos
+- [ ] Eversource renovation story (for About page)
+- [ ] Real Zeffy donation link
+- [ ] Eventbrite link for Saddle Up for Hope
 - [ ] New logo direction/preferences
-- [ ] GBC, Malta, GASP redirect links
 - [ ] Meeting date with the 2 additional team members
+- [x] ~~GBC, Malta, GASP, SCADD redirect links~~ — added on About page as community partners
+- [x] ~~Donate page details (tiers, campaigns)~~ — built with Zeffy + PayPal + impact tiers
+- [x] ~~Contact page details~~ — form + phone sidebar built
 
 ---
 

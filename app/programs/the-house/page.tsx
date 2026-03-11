@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
-import { ProgramPageContent } from "@/components/pages/programs/ProgramPageContent";
-import { getProgramBySlug } from "@/lib/constants";
+import { TheHousePageContent } from "@/components/pages/programs/TheHousePageContent";
 
-const slug = "the-house";
-const program = getProgramBySlug(slug)!;
+const description =
+  "Hope House is a 12-bed, faith-based recovery home for women 18+ in Groton, CT. Mentoring, life skills, vocational certifications, and a family-style community. Beds available — call 860-912-8983.";
 
 export const metadata: Metadata = {
-  title: `${program.title} | Programs`,
-  description: program.description,
+  title: "The House | Programs",
+  description,
 };
 
 export default function TheHousePage() {
   return (
     <>
       <WebPageJsonLd
-        name={`${program.title} | Programs | Community of Hope Inc.`}
-        description={program.description}
-        path={`/programs/${slug}`}
+        name="The House | Programs | Community of Hope Inc."
+        description={description}
+        path="/programs/the-house"
       />
-      <ProgramPageContent slug={slug} />
+      <TheHousePageContent />
     </>
   );
 }

@@ -29,7 +29,7 @@ export function ProgramsPageTitle() {
           fontWeight: 300,
         }}
       >
-        Four ways we serve. One mission of restoration. Explore The House, Kindness Connection, Recovery Coaching, and LeadHERship.
+        Recovery housing, community outreach, professional certification, and nonprofit collaboration — find the program that fits your situation or the person you&apos;re referring.
       </p>
     </motion.div>
   );

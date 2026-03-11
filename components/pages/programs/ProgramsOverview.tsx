@@ -2,120 +2,214 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { programs, type Program } from "@/lib/constants";
+import { programs } from "@/lib/constants";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
+import { Button } from "@/components/ui/Button";
 
-function ProgramBlock({ program, index }: { program: Program; index: number }) {
+const programHighlights: Record<string, string[]> = {
+  "the-house": [
+    "12-bed faith-based residence",
+    "6–18 month program",
+    "Mentoring & life skills",
+    "Vocational certifications",
+  ],
+  "kindness-connection": [
+    "Food, clothing & essentials",
+    "Car repairs & housing help",
+    "Open to all — no referral needed",
+    "Serving all of Connecticut",
+  ],
+  "recovery-coaching": [
+    "CCAR certified training",
+    "Turn experience into a career",
+    "Open to residents & community",
+    "Professional credential",
+  ],
+  leadhership: [
+    "Nonprofit peer support",
+    "Shared leadership growth",
+    "Cross-sector collaboration",
+    "Strengthening capacity",
+  ],
+};
+
+export function ProgramsOverview() {
   return (
-    <motion.div
-      key={program.slug}
-      className={`grid md:grid-cols-2 gap-10 md:gap-16 items-center ${
-        index % 2 !== 0 ? "md:[direction:rtl]" : ""
-      }`}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.12,
-        ease: [0.25, 0.1, 0.25, 1],
-      }}
-    >
-      <div className={index % 2 !== 0 ? "md:[direction:ltr]" : ""}>
-        <div className="flex items-center gap-3 mb-4">
-          <span
-            className="text-[#458CFE]/30"
-            style={{ fontFamily: "'Libre Baskerville', serif", fontSize: "0.85rem" }}
-          >
-            {program.number}
-          </span>
-          <span
-            className="text-[#458CFE] uppercase"
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.7rem",
-              letterSpacing: "0.14em",
-              fontWeight: 500,
+    <>
+      <motion.p
+        className="text-[#5A5A5A] -mt-8 mb-12 max-w-[640px]"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{
+          fontFamily: "'Outfit', sans-serif",
+          fontSize: "0.92rem",
+          lineHeight: 1.85,
+          fontWeight: 300,
+        }}
+      >
+        Each of our programs serves a different need, but they share the same foundation — faith, dignity, and the belief that no one is beyond hope. Many of the women we serve move through more than one program on their path forward.
+      </motion.p>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {programs.map((program, i) => (
+          <motion.div
+            key={program.slug}
+            className="rounded-[8px] border border-[#EBEBEB] overflow-hidden flex flex-col"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{
+              duration: 0.6,
+              delay: i * 0.1,
+              ease: [0.25, 0.1, 0.25, 1],
             }}
           >
-            {program.subtitle}
-          </span>
-        </div>
-        <h2
-          className="text-[#1A1A1A] mb-4"
-          style={{
-            fontFamily: "'Libre Baskerville', serif",
-            fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
-            fontWeight: 400,
-            lineHeight: 1.3,
-          }}
-        >
-          {program.title}
-        </h2>
-        <p
-          className="text-[#5A5A5A] mb-6"
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.92rem",
-            lineHeight: 1.85,
-            fontWeight: 300,
-          }}
-        >
-          {program.description}
-        </p>
-        <div className="bg-[#458CFE]/5 rounded-[6px] p-5 mb-6">
-          <span
-            className="block text-[#458CFE] uppercase mb-2"
+            {/* Image banner */}
+            <div className="relative h-[200px] bg-[#FAF8F5]">
+              <ImageWithFallback
+                src={program.image}
+                alt={program.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-6 md:p-8 flex flex-col flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <span
+                  className="text-[#458CFE]/30"
+                  style={{
+                    fontFamily: "'Libre Baskerville', serif",
+                    fontSize: "0.85rem",
+                  }}
+                >
+                  {program.number}
+                </span>
+                <span
+                  className="text-[#458CFE] uppercase"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.68rem",
+                    letterSpacing: "0.14em",
+                    fontWeight: 500,
+                  }}
+                >
+                  {program.subtitle}
+                </span>
+              </div>
+
+              <h2
+                className="text-[#1A1A1A] mb-3"
+                style={{
+                  fontFamily: "'Libre Baskerville', serif",
+                  fontSize: "clamp(1.2rem, 2vw, 1.45rem)",
+                  fontWeight: 400,
+                  lineHeight: 1.3,
+                }}
+              >
+                {program.title}
+              </h2>
+
+              <p
+                className="text-[#5A5A5A] mb-5"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.88rem",
+                  lineHeight: 1.75,
+                  fontWeight: 300,
+                }}
+              >
+                {program.goodFor}
+              </p>
+
+              {/* Key facts */}
+              <ul className="flex-1 grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                {(programHighlights[program.slug] ?? []).map((fact) => (
+                  <li
+                    key={fact}
+                    className="text-[#5A5A5A] pl-4 relative"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.82rem",
+                      lineHeight: 1.5,
+                      fontWeight: 300,
+                    }}
+                  >
+                    <span className="absolute left-0 text-[#458CFE]">
+                      &bull;
+                    </span>
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href={`/programs/${program.slug}`}
+                className="text-[#458CFE] hover:underline mt-auto"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.9rem",
+                  fontWeight: 500,
+                }}
+              >
+                Learn more &rarr;
+              </Link>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Not sure section */}
+      <motion.section
+        className="mt-16 pt-16 border-t border-[#EBEBEB]"
+        style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12 md:px-10 text-center">
+          <h2
+            className="text-[#1A1A1A] mb-3"
             style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.68rem",
-              letterSpacing: "0.14em",
-              fontWeight: 500,
+              fontFamily: "'Libre Baskerville', serif",
+              fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+              fontWeight: 400,
+              lineHeight: 1.3,
             }}
           >
-            This is for you if
-          </span>
+            Not sure which program fits?
+          </h2>
           <p
-            className="text-[#4A4A4A]"
+            className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.88rem",
+              fontSize: "0.92rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
           >
-            {program.goodFor}
+            Call us or fill out a quick form — we&apos;ll help you figure out the right next step for yourself or the person you&apos;re referring.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button variant="primary" href="/contact">
+              Contact Us
+            </Button>
+            <a
+              href="tel:8609128983"
+              className="text-[#458CFE] hover:underline"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.9rem",
+                fontWeight: 400,
+              }}
+            >
+              or call 860-912-8983
+            </a>
+          </div>
         </div>
-        <Link
-          href={`/programs/${program.slug}`}
-          className="text-[#458CFE] hover:underline"
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.9rem",
-            fontWeight: 500,
-          }}
-        >
-          Learn more →
-        </Link>
-      </div>
-      <div className={index % 2 !== 0 ? "md:[direction:ltr]" : ""}>
-        <ImageWithFallback
-          src={program.image}
-          alt={program.title}
-          className="w-full h-[320px] md:h-[400px] object-cover rounded-[8px]"
-        />
-      </div>
-    </motion.div>
-  );
-}
-
-export function ProgramsOverview() {
-  return (
-    <div className="flex flex-col gap-20">
-      {programs.map((program, index) => (
-        <ProgramBlock key={program.slug} program={program} index={index} />
-      ))}
-    </div>
+      </motion.section>
+    </>
   );
 }
