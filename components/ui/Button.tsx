@@ -1,4 +1,5 @@
 import { forwardRef } from "react";
+import Link from "next/link";
 
 const fontStyle = {
   fontFamily: "'Outfit', sans-serif",
@@ -129,6 +130,22 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     if (isAnchorRest(rest)) {
       const { as, ...anchorRest } = rest;
+      const isInternal =
+        anchorRest.href.startsWith("/") && !anchorRest.href.startsWith("//");
+
+      if (isInternal) {
+        return (
+          <Link
+            ref={ref as React.Ref<HTMLAnchorElement>}
+            className={mergedClassName}
+            style={mergedStyle}
+            {...anchorRest}
+          >
+            {children}
+          </Link>
+        );
+      }
+
       return (
         <a
           ref={ref as React.Ref<HTMLAnchorElement>}

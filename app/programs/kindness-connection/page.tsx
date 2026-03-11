@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
-import { ProgramPageContent } from "@/components/pages/programs/ProgramPageContent";
-import { getProgramBySlug } from "@/lib/constants";
+import { KindnessConnectionPageContent } from "@/components/pages/programs/KindnessConnectionPageContent";
 
-const slug = "kindness-connection";
-const program = getProgramBySlug(slug)!;
+const description =
+  "Kindness Connection provides free food, clothing, hygiene products, household items, car repairs, and housing help to individuals and families across Connecticut. No program enrollment required — request help today.";
 
 export const metadata: Metadata = {
-  title: `${program.title} | Programs`,
-  description: program.description,
+  title: "Kindness Connection | Programs",
+  description,
 };
 
 export default function KindnessConnectionPage() {
   return (
     <>
       <WebPageJsonLd
-        name={`${program.title} | Programs | Community of Hope Inc.`}
-        description={program.description}
-        path={`/programs/${slug}`}
+        name="Kindness Connection | Programs | Community of Hope Inc."
+        description={description}
+        path="/programs/kindness-connection"
       />
-      <ProgramPageContent slug={slug} />
+      <KindnessConnectionPageContent />
     </>
   );
 }

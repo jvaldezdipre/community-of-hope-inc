@@ -242,7 +242,7 @@ export const events: EventItem[] = [
       { label: "Individual Ticket (Open Seating)", price: "$75" },
       { label: "Table of 10 (Reserved Seating)", price: "$600" },
     ],
-    ticketUrl: null,
+    ticketUrl: "https://www.eventbrite.com/e/saddle-up-for-hope-2026-tickets-1983089289448?aff=oddtdtcreator",
     contactEmail: "Annette@4coh.com",
     contactPhone: "860-912-4356",
     sponsorships: [
