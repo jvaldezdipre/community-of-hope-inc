@@ -53,6 +53,12 @@ const variantStyles: Record<
       "inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full hover:border-white/60 transition-colors",
     style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 400 },
   },
+  // Outline on light background (e.g. Donate page PayPal card)
+  outlineLight: {
+    className:
+      "inline-flex items-center justify-center border-2 border-[#458CFE] text-[#458CFE] bg-transparent px-8 py-4 rounded-full hover:bg-[#458CFE]/5 transition-colors",
+    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 500 },
+  },
   // Sticky mobile bar
   stickyOutline: {
     className:
