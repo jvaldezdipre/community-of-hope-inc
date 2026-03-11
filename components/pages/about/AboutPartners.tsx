@@ -5,7 +5,7 @@ import { communityPartners } from "@/lib/constants";
 
 export function AboutPartners() {
   return (
-    <section className="pt-16 border-t border-[#EBEBEB]" style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}>
+    <section>
       <motion.h2
         className="text-[#1A1A1A] mb-2"
         initial={{ opacity: 0, y: 24 }}

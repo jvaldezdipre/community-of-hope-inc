@@ -10,7 +10,7 @@ export function AboutTrustFooter() {
       style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
     >
       <motion.div
-        className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12"
+        className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}

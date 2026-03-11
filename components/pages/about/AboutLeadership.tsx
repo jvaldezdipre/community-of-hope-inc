@@ -49,7 +49,7 @@ export function AboutLeadership() {
 
   return (
     <section
-      className="pt-16 pb-16 border-t border-[#EBEBEB]"
+      className="pt-16 pb-16"
       style={{ paddingTop: "clamp(48px, 8vw, 80px)", paddingBottom: "clamp(48px, 8vw, 80px)" }}
     >
       <motion.h2

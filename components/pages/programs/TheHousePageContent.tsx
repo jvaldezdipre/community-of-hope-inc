@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { PageLayout } from "@/components/layout/PageLayout";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
@@ -42,11 +41,14 @@ const relevantFaqQuestions = [
 ];
 const relevantFaqs = faqs.filter((f) => relevantFaqQuestions.includes(f.question));
 
+const sectionPadding = "clamp(48px, 8vw, 80px)";
+const sectionPaddingLg = "clamp(80px, 10vw, 160px)";
+
 export function TheHousePageContent() {
   const program = getProgramBySlug("the-house")!;
 
   return (
-    <PageLayout>
+    <>
       <BreadcrumbJsonLd
         items={[
           { name: "Home", href: "/" },
@@ -54,9 +56,11 @@ export function TheHousePageContent() {
           { name: "The House", href: "/programs/the-house" },
         ]}
       />
-
-      {/* ─── Hero ─────────────────────────────────────────── */}
-      <div className="grid md:grid-cols-[1fr_440px] gap-10 md:gap-16 items-center mb-16 md:mb-24">
+      <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
+        {/* ─── Hero (white) ───────────────────────────────── */}
+        <section className="bg-white">
+          <div className="max-w-[1200px] mx-auto px-6" style={{ paddingTop: "clamp(32px, 4vw, 48px)", paddingBottom: sectionPaddingLg }}>
+            <div className="grid md:grid-cols-[1fr_440px] gap-10 md:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -140,18 +144,20 @@ export function TheHousePageContent() {
             className="w-full h-[320px] md:h-[400px] object-cover rounded-[8px]"
           />
         </motion.div>
-      </div>
+            </div>
+          </div>
+        </section>
 
-      {/* ─── What Residents Receive ───────────────────────── */}
-      <motion.section
-        className="pt-16 border-t border-[#EBEBEB]"
-        style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16">
+        {/* ─── What Residents Receive (beige) ─────────────── */}
+        <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <motion.div
+              className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
           {/* Left — heading + short pitch */}
           <div>
             <span
@@ -233,19 +239,20 @@ export function TheHousePageContent() {
                 </div>
               </motion.div>
             ))}
+            </div>
+            </motion.div>
           </div>
-        </div>
-      </motion.section>
+        </section>
 
-      {/* ─── Program Details ──────────────────────────────── */}
-      <motion.section
-        className="pt-16 border-t border-[#EBEBEB] mt-16"
-        style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+        {/* ─── Program Details / At a glance (white) ───────── */}
+        <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
         <h2
           className="text-[#1A1A1A] mb-8"
           style={{
@@ -290,98 +297,103 @@ export function TheHousePageContent() {
             </motion.div>
           ))}
         </div>
-      </motion.section>
-
-      {/* ─── Process Steps ────────────────────────────────── */}
-      <motion.section
-        className="pt-16 border-t border-[#EBEBEB] mt-16"
-        style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <span
-          className="block text-[#458CFE] uppercase mb-4"
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.68rem",
-            letterSpacing: "0.14em",
-            fontWeight: 500,
-          }}
-        >
-          The Path Forward
-        </span>
-        <h2
-          className="text-[#1A1A1A] mb-10"
-          style={{
-            fontFamily: "'Libre Baskerville', serif",
-            fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
-            fontWeight: 400,
-            lineHeight: 1.3,
-          }}
-        >
-          From your first call to a brand new life.
-        </h2>
-        <div className="grid md:grid-cols-4 gap-8 md:gap-6">
-          {processSteps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              className="relative"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
-            >
-              <div className="flex items-center justify-center w-12 h-12 rounded-full border border-[#458CFE]/25 text-[#458CFE] mb-4 mx-auto md:mx-0">
-                <span
-                  style={{
-                    fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  {step.number}
-                </span>
-              </div>
-              <div className="text-center md:text-left">
-                <h3
-                  className="text-[#1A1A1A] mb-2"
-                  style={{
-                    fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "1.05rem",
-                    fontWeight: 400,
-                    lineHeight: 1.3,
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  className="text-[#5A5A5A]"
-                  style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
-                    lineHeight: 1.75,
-                    fontWeight: 300,
-                  }}
-                >
-                  {step.description}
-                </p>
-              </div>
             </motion.div>
-          ))}
-        </div>
-      </motion.section>
+          </div>
+        </section>
 
-      {/* ─── Testimonial ──────────────────────────────────── */}
-      <motion.section
-        className="pt-16 border-t border-[#EBEBEB] mt-16"
-        style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:px-10 md:py-12">
+        {/* ─── Process Steps (dark) ────────────────────────── */}
+        <section className="bg-[#0F1D33]" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <div className="text-center mb-12 md:mb-16">
+              <motion.span
+                className="block text-[#8FB8FF] uppercase mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.7rem",
+                  letterSpacing: "0.18em",
+                  fontWeight: 500,
+                }}
+              >
+                The Path Forward
+              </motion.span>
+              <motion.h2
+                className="text-white max-w-[550px] mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+                style={{
+                  fontFamily: "'Libre Baskerville', serif",
+                  fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+                  fontWeight: 400,
+                  lineHeight: 1.3,
+                }}
+              >
+                From your first call to a brand new life.
+              </motion.h2>
+            </div>
+            <div className="grid md:grid-cols-4 gap-8 md:gap-6">
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={step.number}
+                  className="relative text-center"
+                  initial={{ opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                >
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full border border-[#8FB8FF]/30 text-[#8FB8FF] mb-4 mx-auto">
+                    <span
+                      style={{
+                        fontFamily: "'Libre Baskerville', serif",
+                        fontSize: "1.1rem",
+                      }}
+                    >
+                      {step.number}
+                    </span>
+                  </div>
+                  <h3
+                    className="text-white mb-2"
+                    style={{
+                      fontFamily: "'Libre Baskerville', serif",
+                      fontSize: "1.05rem",
+                      fontWeight: 400,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="text-white/70 max-w-[260px] mx-auto"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.85rem",
+                      lineHeight: 1.75,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── Testimonial (white) ─────────────────────────── */}
+        <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+        <div className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:px-10 md:py-12 shadow-sm">
           <blockquote>
             <p
               className="text-[#1A1A1A] italic mb-6 max-w-[720px]"
@@ -405,17 +417,19 @@ export function TheHousePageContent() {
             </footer>
           </blockquote>
         </div>
-      </motion.section>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* ─── FAQ ──────────────────────────────────────────── */}
-      <motion.section
-        className="pt-16 border-t border-[#EBEBEB] mt-16"
-        style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+        {/* ─── FAQ (beige) ────────────────────────────────── */}
+        <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
         <h2
           className="text-[#1A1A1A] mb-8"
           style={{
@@ -465,18 +479,20 @@ export function TheHousePageContent() {
           ))}
           <div className="border-t border-[#EBEBEB]" />
         </div>
-      </motion.section>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* ─── Bottom CTA ───────────────────────────────────── */}
-      <motion.section
-        className="mt-16"
-        style={{ paddingTop: "clamp(16px, 4vw, 32px)" }}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12 md:px-10 text-center">
+        {/* ─── Bottom CTA (white) ─────────────────────────── */}
+        <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+        <div className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12 md:px-10 text-center shadow-sm">
           <h2
             className="text-[#1A1A1A] mb-3"
             style={{
@@ -517,22 +533,29 @@ export function TheHousePageContent() {
             </a>
           </div>
         </div>
-      </motion.section>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* ─── Back link ────────────────────────────────────── */}
-      <p
-        className="mt-10"
-        style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.9rem",
-          lineHeight: 1.8,
-          fontWeight: 300,
-        }}
-      >
-        <Link href="/programs" className="text-[#458CFE] hover:underline">
-          &larr; Back to Programs
-        </Link>
-      </p>
-    </PageLayout>
+        {/* ─── Back link ──────────────────────────────────── */}
+        <section className="bg-white pb-24">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <p
+              className="pt-6"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.9rem",
+                lineHeight: 1.8,
+                fontWeight: 300,
+              }}
+            >
+              <Link href="/programs" className="text-[#458CFE] hover:underline">
+                &larr; Back to Programs
+              </Link>
+            </p>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
