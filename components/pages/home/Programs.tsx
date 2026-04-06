@@ -71,7 +71,7 @@ export function Programs() {
                     className="text-[#458CFE]/30"
                     style={{
                       fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                     }}
                   >
                     {program.number}
@@ -100,10 +100,10 @@ export function Programs() {
                   {program.title}
                 </h3>
                 <p
-                  className="text-[#5A5A5A] mb-6"
+                  className="text-[#3D3D3D] mb-6"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.92rem",
+                    fontSize: "0.96rem",
                     lineHeight: 1.85,
                     fontWeight: 300,
                   }}
@@ -126,7 +126,7 @@ export function Programs() {
                     className="text-[#4A4A4A]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.88rem",
+                      fontSize: "0.93rem",
                       lineHeight: 1.75,
                       fontWeight: 300,
                     }}
@@ -139,7 +139,7 @@ export function Programs() {
                   className="text-[#458CFE] hover:underline mt-2 inline-block"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     fontWeight: 500,
                   }}
                 >

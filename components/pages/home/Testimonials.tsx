@@ -26,7 +26,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
         className="text-[#4A4A4A] flex-1 mb-8"
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.92rem",
+          fontSize: "0.96rem",
           lineHeight: 1.9,
           fontWeight: 300,
         }}
@@ -51,17 +51,17 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
             className="block text-[#1A1A1A]"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.88rem",
+              fontSize: "0.93rem",
               fontWeight: 500,
             }}
           >
             {t.name}
           </span>
           <span
-            className="block text-[#5A5A5A]"
+            className="block text-[#3D3D3D]"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.84rem",
               fontWeight: 300,
             }}
           >

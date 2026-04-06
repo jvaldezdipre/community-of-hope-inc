@@ -84,10 +84,10 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                   Message received.
                 </h3>
                 <p
-                  className="text-[#5A5A5A]"
+                  className="text-[#3D3D3D]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.92rem",
+                    fontSize: "0.96rem",
                     lineHeight: 1.75,
                     fontWeight: 300,
                   }}
@@ -108,7 +108,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                     className="block text-[#1A1A1A] mb-2"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       fontWeight: 400,
                     }}
                   >
@@ -122,7 +122,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     className="w-full bg-white border border-[#EBEBEB] rounded-[6px] px-4 py-3 text-[#1A1A1A] placeholder:text-[#ADADAD] focus:outline-none focus:border-[#458CFE]/40 transition-colors"
-                    style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                    style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
                     placeholder="Full name"
                   />
                 </div>
@@ -133,7 +133,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       className="block text-[#1A1A1A] mb-2"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.85rem",
+                        fontSize: "0.9rem",
                         fontWeight: 400,
                       }}
                     >
@@ -147,7 +147,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       className="w-full bg-white border border-[#EBEBEB] rounded-[6px] px-4 py-3 text-[#1A1A1A] placeholder:text-[#ADADAD] focus:outline-none focus:border-[#458CFE]/40 transition-colors"
-                      style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                      style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
                       placeholder="Email address"
                     />
                   </div>
@@ -156,7 +156,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       className="block text-[#1A1A1A] mb-2"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.85rem",
+                        fontSize: "0.9rem",
                         fontWeight: 400,
                       }}
                     >
@@ -169,7 +169,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                         setFormData({ ...formData, phone: e.target.value })
                       }
                       className="w-full bg-white border border-[#EBEBEB] rounded-[6px] px-4 py-3 text-[#1A1A1A] placeholder:text-[#ADADAD] focus:outline-none focus:border-[#458CFE]/40 transition-colors"
-                      style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                      style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
                       placeholder="Phone number"
                     />
                   </div>
@@ -180,7 +180,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                     className="block text-[#1A1A1A] mb-2"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       fontWeight: 400,
                     }}
                   >
@@ -193,7 +193,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       setFormData({ ...formData, type: e.target.value })
                     }
                     className="w-full bg-white border border-[#EBEBEB] rounded-[6px] px-4 py-3 text-[#1A1A1A] focus:outline-none focus:border-[#458CFE]/40 transition-colors appearance-none"
-                    style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                    style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
                   >
                     <option value="" disabled>
                       Select one...
@@ -211,7 +211,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                     className="block text-[#1A1A1A] mb-2"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       fontWeight: 400,
                     }}
                   >
@@ -227,7 +227,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     className="w-full bg-white border border-[#EBEBEB] rounded-[6px] px-4 py-3 text-[#1A1A1A] placeholder:text-[#ADADAD] focus:outline-none focus:border-[#458CFE]/40 transition-colors resize-none"
-                    style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                    style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
                     placeholder="Tell us a little about your situation or how you'd like to help..."
                   />
                 </div>
@@ -240,7 +240,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                   className="text-center text-[#ADADAD] mt-4"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.78rem",
+                    fontSize: "0.84rem",
                     fontWeight: 300,
                   }}
                 >
@@ -294,16 +294,16 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
               We&apos;re here for you.
             </h2>
             <p
-              className="text-[#5A5A5A] mb-10 max-w-[420px]"
+              className="text-[#3D3D3D] mb-10 max-w-[420px]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.95rem",
+                fontSize: "1rem",
                 lineHeight: 1.85,
                 fontWeight: 300,
               }}
             >
               Whether you&apos;re seeking help for yourself, referring a client, or want
-              to support our mission — fill out this form or call us directly. There&apos;s
+              to support our mission, fill out this form or call us directly. There&apos;s
               no wrong way to start.
             </p>
 
@@ -325,17 +325,17 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       className="block text-[#1A1A1A]"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.88rem",
+                        fontSize: "0.93rem",
                         fontWeight: 500,
                       }}
                     >
                       {badge.title}
                     </span>
                     <span
-                      className="text-[#5A5A5A]"
+                      className="text-[#3D3D3D]"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.82rem",
+                        fontSize: "0.88rem",
                         fontWeight: 300,
                       }}
                     >

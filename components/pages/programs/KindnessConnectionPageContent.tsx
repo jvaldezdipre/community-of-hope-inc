@@ -42,7 +42,7 @@ const howItWorks = [
     number: 3,
     title: "Receive support",
     description:
-      "Get the items or assistance you need — no hoops, no judgment. Just practical help from people who care.",
+      "Get the items or assistance you need. No hoops, no judgment. Just practical help from people who care.",
   },
 ];
 
@@ -50,7 +50,7 @@ const kindnessFaqs = [
   {
     question: "Do I have to be in a program to get help?",
     answer:
-      "No. Kindness Connection is open to anyone in the community — you don't need to be a Hope House resident or part of any program. If you need help, reach out.",
+      "No. Kindness Connection is open to anyone in the community. You don't need to be a Hope House resident or part of any program. If you need help, reach out.",
   },
   {
     question: "Is there a cost?",
@@ -65,7 +65,7 @@ const kindnessFaqs = [
   {
     question: "Can I request help for someone else?",
     answer:
-      "Absolutely. Family members, social workers, case managers, pastors — anyone can submit a request on behalf of someone in need.",
+      "Absolutely. Family members, social workers, case managers, pastors, anyone can submit a request on behalf of someone in need.",
   },
   {
     question: "How can I donate items to Kindness Connection?",
@@ -121,23 +121,23 @@ export function KindnessConnectionPageContent() {
                   {program.title}
                 </h1>
                 <p
-                  className="text-[#5A5A5A] mb-4 max-w-[520px]"
+                  className="text-[#3D3D3D] mb-4 max-w-[520px]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.95rem",
+                    fontSize: "1rem",
                     lineHeight: 1.85,
                     fontWeight: 300,
                   }}
                 >
-                  Food, clothing, household essentials, and more — free,
+                  Food, clothing, household essentials, and more. Free,
                   practical support for individuals and families across Connecticut who
                   need a hand right now.
                 </p>
                 <p
-                  className="text-[#5A5A5A] mb-8"
+                  className="text-[#3D3D3D] mb-8"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.88rem",
+                    fontSize: "0.93rem",
                     lineHeight: 1.75,
                     fontWeight: 300,
                   }}
@@ -153,7 +153,7 @@ export function KindnessConnectionPageContent() {
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       fontWeight: 400,
                     }}
                   >
@@ -212,15 +212,15 @@ export function KindnessConnectionPageContent() {
                   Practical help, no strings attached.
                 </h2>
                 <p
-                  className="text-[#5A5A5A] max-w-[380px]"
+                  className="text-[#3D3D3D] max-w-[380px]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     lineHeight: 1.8,
                     fontWeight: 300,
                   }}
                 >
-                  Kindness Connection meets people where they are — with exactly what
+                  Kindness Connection meets people where they are, with exactly what
                   they need to get through the day and move forward.
                 </p>
               </div>
@@ -245,17 +245,17 @@ export function KindnessConnectionPageContent() {
                         className="text-[#1A1A1A] mb-0.5"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.9rem",
+                          fontSize: "0.95rem",
                           fontWeight: 500,
                         }}
                       >
                         {item.title}
                       </p>
                       <p
-                        className="text-[#5A5A5A]"
+                        className="text-[#3D3D3D]"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.82rem",
+                          fontSize: "0.88rem",
                           lineHeight: 1.6,
                           fontWeight: 300,
                         }}
@@ -301,10 +301,10 @@ export function KindnessConnectionPageContent() {
                     transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
                   >
                     <span
-                      className="block text-[#5A5A5A] mb-1"
+                      className="block text-[#3D3D3D] mb-1"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.78rem",
+                        fontSize: "0.84rem",
                         fontWeight: 300,
                       }}
                     >
@@ -397,7 +397,7 @@ export function KindnessConnectionPageContent() {
                     className="text-white/70 max-w-[280px] mx-auto"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       lineHeight: 1.75,
                       fontWeight: 300,
                     }}
@@ -459,10 +459,10 @@ export function KindnessConnectionPageContent() {
                     >
                       <span className="shrink-0 mt-[5px] w-1.5 h-1.5 rounded-full bg-[#458CFE]" />
                       <p
-                        className="text-[#5A5A5A]"
+                        className="text-[#3D3D3D]"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.9rem",
+                          fontSize: "0.95rem",
                           lineHeight: 1.7,
                           fontWeight: 300,
                         }}
@@ -511,7 +511,7 @@ export function KindnessConnectionPageContent() {
                       className="flex items-center justify-between cursor-pointer py-5 text-[#1A1A1A] select-none list-none [&::-webkit-details-marker]:hidden"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.95rem",
+                        fontSize: "1rem",
                         fontWeight: 400,
                       }}
                     >
@@ -521,10 +521,10 @@ export function KindnessConnectionPageContent() {
                       </span>
                     </summary>
                     <p
-                      className="text-[#5A5A5A] pb-6 pr-8"
+                      className="text-[#3D3D3D] pb-6 pr-8"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.9rem",
+                        fontSize: "0.95rem",
                         lineHeight: 1.8,
                         fontWeight: 300,
                       }}
@@ -561,10 +561,10 @@ export function KindnessConnectionPageContent() {
                   Need help? Let us know.
                 </h2>
                 <p
-                  className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
+                  className="text-[#3D3D3D] mb-8 max-w-[520px] mx-auto"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.92rem",
+                    fontSize: "0.96rem",
                     lineHeight: 1.75,
                     fontWeight: 300,
                   }}
@@ -581,7 +581,7 @@ export function KindnessConnectionPageContent() {
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       fontWeight: 400,
                     }}
                   >
@@ -601,7 +601,7 @@ export function KindnessConnectionPageContent() {
               className="pt-6"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 lineHeight: 1.8,
                 fontWeight: 300,
               }}

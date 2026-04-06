@@ -33,13 +33,13 @@ export function FinalCTA() {
           transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           style={{
             fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.95rem",
+            fontSize: "1rem",
             lineHeight: 1.75,
             fontWeight: 300,
           }}
         >
           Whether you&apos;re reaching out for help, referring a client, or supporting
-          our mission — your next step matters.
+          our mission. Your next step matters.
         </motion.p>
         <motion.div
           className="flex flex-col sm:flex-row justify-center gap-4"

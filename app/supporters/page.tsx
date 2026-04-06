@@ -32,10 +32,10 @@ export default function SupportersPage() {
           Our Supporters
         </h1>
         <p
-          className="text-[#5A5A5A] mb-12 max-w-[640px]"
+          className="text-[#3D3D3D] mb-12 max-w-[640px]"
           style={{
             fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.95rem",
+            fontSize: "1rem",
             lineHeight: 1.8,
             fontWeight: 300,
           }}
@@ -44,7 +44,7 @@ export default function SupportersPage() {
         </p>
         <div
           className="rounded-[8px] bg-[#FAF8F5] border border-[#EBEBEB] p-8"
-          style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", lineHeight: 1.8, fontWeight: 300, color: "#5A5A5A" }}
+          style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1rem", lineHeight: 1.8, fontWeight: 300, color: "#3D3D3D" }}
         >
           <p>
             Supporters and partner recognition will be featured here. If you&apos;d like to give or partner with us, visit our{" "}

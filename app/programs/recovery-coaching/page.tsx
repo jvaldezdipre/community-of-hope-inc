@@ -3,7 +3,7 @@ import { WebPageJsonLd } from "@/components/seo/JsonLd";
 import { RecoveryCoachingPageContent } from "@/components/pages/programs/RecoveryCoachingPageContent";
 
 const description =
-  "Earn your CCAR Recovery Coach certification through Community of Hope Inc. Free for Hope House residents — turn your lived experience into a professional credential that helps others in recovery.";
+  "Earn your CCAR Recovery Coach certification through Community of Hope Inc. Free for Hope House residents. Turn your lived experience into a professional credential that helps others in recovery.";
 
 export const metadata: Metadata = {
   title: "Recovery Coaching | Programs",

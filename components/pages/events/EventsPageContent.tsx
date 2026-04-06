@@ -58,7 +58,7 @@ function EventCard({ event }: { event: EventItem }) {
               <Calendar size={16} className="text-[#458CFE] shrink-0" strokeWidth={1.5} />
               <span
                 className="text-[#1A1A1A]"
-                style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 400 }}
+                style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 400 }}
               >
                 {formatDate(event.date)}
               </span>
@@ -66,8 +66,8 @@ function EventCard({ event }: { event: EventItem }) {
             <div className="flex items-center gap-3">
               <Clock size={16} className="text-[#458CFE] shrink-0" strokeWidth={1.5} />
               <span
-                className="text-[#5A5A5A]"
-                style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                className="text-[#3D3D3D]"
+                style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
               >
                 {event.time}
               </span>
@@ -75,8 +75,8 @@ function EventCard({ event }: { event: EventItem }) {
             <div className="flex items-center gap-3">
               <MapPin size={16} className="text-[#458CFE] shrink-0" strokeWidth={1.5} />
               <span
-                className="text-[#5A5A5A]"
-                style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+                className="text-[#3D3D3D]"
+                style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
               >
                 {event.location}
               </span>
@@ -84,10 +84,10 @@ function EventCard({ event }: { event: EventItem }) {
           </div>
 
           <p
-            className="text-[#5A5A5A] mb-6"
+            className="text-[#3D3D3D] mb-6"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.92rem",
+              fontSize: "0.96rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
@@ -113,10 +113,10 @@ function EventCard({ event }: { event: EventItem }) {
                   {t.price}
                 </span>
                 <span
-                  className="text-[#5A5A5A]"
+                  className="text-[#3D3D3D]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.78rem",
+                    fontSize: "0.84rem",
                     fontWeight: 300,
                   }}
                 >
@@ -147,7 +147,7 @@ function EventCard({ event }: { event: EventItem }) {
               className="flex items-center gap-2 text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 400,
               }}
             >
@@ -181,10 +181,10 @@ function SponsorshipSection({ event }: { event: EventItem }) {
         Become a Sponsor
       </h2>
       <p
-        className="text-[#5A5A5A] mb-10 max-w-[640px]"
+        className="text-[#3D3D3D] mb-10 max-w-[640px]"
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.9rem",
+          fontSize: "0.95rem",
           lineHeight: 1.75,
           fontWeight: 300,
         }}
@@ -223,10 +223,10 @@ function SponsorshipSection({ event }: { event: EventItem }) {
               {s.perks.map((perk) => (
                 <li
                   key={perk}
-                  className="text-[#5A5A5A] pl-4 relative"
+                  className="text-[#3D3D3D] pl-4 relative"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                     lineHeight: 1.6,
                     fontWeight: 300,
                   }}
@@ -245,10 +245,10 @@ function SponsorshipSection({ event }: { event: EventItem }) {
           Inquire About Sponsorship
         </Button>
         <span
-          className="text-[#5A5A5A]"
-          style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.85rem", fontWeight: 300 }}
+          className="text-[#3D3D3D]"
+          style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
         >
-          Program ads also available: $50 — $300
+          Program ads also available: $50 to $300
         </span>
       </div>
     </section>
@@ -276,8 +276,8 @@ export function EventsPageContent() {
           className="rounded-[8px] bg-[#FAF8F5] border border-[#EBEBEB] p-8 text-center"
           style={{ fontFamily: "'Outfit', sans-serif" }}
         >
-          <p className="text-[#5A5A5A]" style={{ fontSize: "0.95rem", fontWeight: 300 }}>
-            No upcoming events right now — check back soon or call us at{" "}
+          <p className="text-[#3D3D3D]" style={{ fontSize: "1rem", fontWeight: 300 }}>
+            No upcoming events right now. Check back soon or call us at{" "}
             <a href="tel:8609128983" className="text-[#458CFE] hover:underline">
               860-912-8983
             </a>{" "}
@@ -328,10 +328,10 @@ export function EventsPageContent() {
                     {event.title}
                   </p>
                   <span
-                    className="text-[#5A5A5A]"
+                    className="text-[#3D3D3D]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       fontWeight: 300,
                     }}
                   >

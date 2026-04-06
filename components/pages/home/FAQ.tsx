@@ -41,10 +41,10 @@ export function FAQ() {
               Everything you need to know.
             </h2>
             <p
-              className="text-[#5A5A5A]"
+              className="text-[#3D3D3D]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.92rem",
+                fontSize: "0.96rem",
                 lineHeight: 1.85,
                 fontWeight: 300,
               }}
@@ -112,10 +112,10 @@ export function FAQ() {
                     >
                       <div className="pb-6">
                         <p
-                          className="text-[#5A5A5A] max-w-[560px]"
+                          className="text-[#3D3D3D] max-w-[560px]"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.9rem",
+                            fontSize: "0.95rem",
                             lineHeight: 1.85,
                             fontWeight: 300,
                           }}

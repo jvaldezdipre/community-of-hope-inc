@@ -38,7 +38,7 @@ export function AboutTrustFooter() {
               className="text-[#1A1A1A]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 300,
               }}
             >
@@ -66,7 +66,7 @@ export function AboutTrustFooter() {
               className="text-[#1A1A1A]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 300,
               }}
             >
@@ -95,7 +95,7 @@ export function AboutTrustFooter() {
               className="text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 300,
               }}
             >

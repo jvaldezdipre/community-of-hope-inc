@@ -90,7 +90,7 @@ export function DarkSection() {
                   className="text-white/50 max-w-[260px] mx-auto"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.88rem",
+                    fontSize: "0.93rem",
                     lineHeight: 1.75,
                     fontWeight: 300,
                   }}

@@ -9,20 +9,20 @@ export function AboutHero() {
   return (
     <section>
       <motion.p
-        className="text-[#5A5A5A] mb-10 max-w-[640px]"
+        className="text-[#3D3D3D] mb-10 max-w-[640px]"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.95rem",
+          fontSize: "1rem",
           lineHeight: 1.9,
           fontWeight: 300,
         }}
       >
         Community of Hope Inc. was founded over 15 years ago with one belief:
-        every woman — no matter how broken, how lost, how far gone — deserves a
+        every woman, no matter how broken, how lost, how far gone, deserves a
         real chance at a new life. Under the leadership of Executive Director
         Annette Eldridge, we&apos;ve grown from a single home into a
         comprehensive recovery and community outreach organization.
@@ -36,10 +36,10 @@ export function AboutHero() {
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
           <p
-            className="text-[#5A5A5A] mb-8"
+            className="text-[#3D3D3D] mb-8"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.95rem",
+              fontSize: "1rem",
               lineHeight: 1.9,
               fontWeight: 300,
             }}
@@ -66,10 +66,10 @@ export function AboutHero() {
                   {m.value}
                 </span>
                 <span
-                  className="text-[#5A5A5A]"
+                  className="text-[#3D3D3D]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                     fontWeight: 300,
                     lineHeight: 1.5,
                   }}

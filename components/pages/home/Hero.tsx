@@ -152,31 +152,31 @@ export function Hero() {
           <span
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.84rem",
               letterSpacing: "0.06em",
             }}
           >
             501(c)(3) Public Charity
           </span>
-          <span className="hidden sm:inline" style={{ fontSize: "0.78rem" }}>
+          <span className="hidden sm:inline" style={{ fontSize: "0.84rem" }}>
             /
           </span>
           <span
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.84rem",
               letterSpacing: "0.06em",
             }}
           >
             15+ Years Serving CT
           </span>
-          <span className="hidden sm:inline" style={{ fontSize: "0.78rem" }}>
+          <span className="hidden sm:inline" style={{ fontSize: "0.84rem" }}>
             /
           </span>
           <span
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.84rem",
               letterSpacing: "0.06em",
             }}
           >

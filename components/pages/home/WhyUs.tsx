@@ -93,10 +93,10 @@ export function WhyUs() {
                   {item.title}
                 </h3>
                 <p
-                  className="text-[#5A5A5A] max-w-[420px]"
+                  className="text-[#3D3D3D] max-w-[420px]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.92rem",
+                    fontSize: "0.96rem",
                     lineHeight: 1.85,
                     fontWeight: 300,
                   }}

@@ -42,10 +42,10 @@ export default function AboutPage() {
           <AboutPartners />
           <AboutTrustFooter />
           <p
-            className="mt-12 pb-24 text-[#5A5A5A]"
+            className="mt-12 pb-24 text-[#3D3D3D]"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.9rem",
+              fontSize: "0.95rem",
               lineHeight: 1.8,
               fontWeight: 300,
             }}

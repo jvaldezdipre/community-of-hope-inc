@@ -32,7 +32,7 @@ export function DonatePage() {
               fontWeight: 500,
             }}
           >
-            Recommended — Zero Fees
+            Recommended, Zero Fees
           </span>
           <h2
             className="text-[#1A1A1A] mb-4"
@@ -46,10 +46,10 @@ export function DonatePage() {
             Donate Online
           </h2>
           <p
-            className="text-[#5A5A5A] mb-8 flex-1"
+            className="text-[#3D3D3D] mb-8 flex-1"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.92rem",
+              fontSize: "0.96rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
@@ -88,10 +88,10 @@ export function DonatePage() {
             Donate via PayPal
           </h2>
           <p
-            className="text-[#5A5A5A] mb-8 flex-1"
+            className="text-[#3D3D3D] mb-8 flex-1"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.92rem",
+              fontSize: "0.96rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
@@ -154,10 +154,10 @@ export function DonatePage() {
                 {item.amount}
               </span>
               <p
-                className="text-[#5A5A5A] max-w-[260px] mx-auto"
+                className="text-[#3D3D3D] max-w-[260px] mx-auto"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.92rem",
+                  fontSize: "0.96rem",
                   lineHeight: 1.6,
                   fontWeight: 300,
                 }}
@@ -184,10 +184,10 @@ export function DonatePage() {
           aria-hidden
         />
         <p
-          className="text-[#5A5A5A] max-w-[640px] mx-auto"
+          className="text-[#3D3D3D] max-w-[640px] mx-auto"
           style={{
             fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.95rem",
+            fontSize: "1rem",
             lineHeight: 1.8,
             fontWeight: 300,
           }}

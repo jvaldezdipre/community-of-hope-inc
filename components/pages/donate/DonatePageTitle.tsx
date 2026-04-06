@@ -21,10 +21,10 @@ export function DonatePageTitle() {
         Donate
       </h1>
       <p
-        className="text-[#5A5A5A] mb-16 max-w-[640px]"
+        className="text-[#3D3D3D] mb-16 max-w-[640px]"
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.95rem",
+          fontSize: "1rem",
           lineHeight: 1.8,
           fontWeight: 300,
         }}

@@ -13,75 +13,75 @@ const variantStyles: Record<
   primary: {
     className:
       "inline-flex items-center justify-center bg-[#458CFE] text-white px-9 py-4 rounded-full hover:bg-[#3170DE] transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 500 },
   },
   primaryFull: {
     className:
       "w-full bg-[#458CFE] text-white py-4 rounded-full hover:bg-[#3170DE] transition-colors cursor-pointer",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 500 },
   },
   primaryCompact: {
     className:
       "inline-flex items-center justify-center bg-[#458CFE] text-white py-3 rounded-full",
-    style: { ...fontStyle, fontSize: "0.88rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "0.93rem", fontWeight: 500 },
   },
   // White bg on blue section (FinalCTA "Get Help Now")
   primaryOnWhite: {
     className:
       "inline-flex items-center justify-center bg-white text-[#458CFE] px-8 py-4 rounded-full hover:bg-white/90 transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 500 },
   },
   // White bg with icon (MidCTA "Call Now")
   primaryOnWhiteWithGap: {
     className:
       "inline-flex items-center justify-center gap-2 bg-white text-[#458CFE] px-7 py-4 rounded-full hover:bg-white/90 transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 500 },
   },
   // Outline on dark hero
   outlineOnDark: {
     className:
       "inline-flex items-center justify-center border border-white/25 text-white/80 px-9 py-4 rounded-full hover:border-white/50 hover:text-white transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 400 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 400 },
   },
   // Outline white on blue section (MidCTA, FinalCTA secondary)
   outlineOnBlue: {
     className:
       "inline-flex items-center justify-center border border-white/30 text-white px-8 py-4 rounded-full hover:border-white/60 transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 400 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 400 },
   },
   outlineOnBlueWithGap: {
     className:
       "inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-4 rounded-full hover:border-white/60 transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 400 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 400 },
   },
   // Outline on light background (e.g. Donate page PayPal card)
   outlineLight: {
     className:
       "inline-flex items-center justify-center border-2 border-[#458CFE] text-[#458CFE] bg-transparent px-8 py-4 rounded-full hover:bg-[#458CFE]/5 transition-colors",
-    style: { ...fontStyle, fontSize: "0.95rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "1rem", fontWeight: 500 },
   },
   // Sticky mobile bar
   stickyOutline: {
     className:
       "flex-1 inline-flex items-center justify-center gap-2 bg-white border border-[#458CFE] text-[#458CFE] py-3 rounded-full",
-    style: { ...fontStyle, fontSize: "0.88rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "0.93rem", fontWeight: 500 },
   },
   stickyPrimary: {
     className:
       "flex-1 inline-flex items-center justify-center bg-[#458CFE] text-white py-3 rounded-full",
-    style: { ...fontStyle, fontSize: "0.88rem", fontWeight: 500 },
+    style: { ...fontStyle, fontSize: "0.93rem", fontWeight: 500 },
   },
   // Navbar desktop phone (base; add className for scrolled vs transparent)
   navPhone: {
     className:
       "flex items-center gap-2 px-5 py-2.5 rounded-full transition-all duration-400",
-    style: { ...fontStyle, fontSize: "0.88rem" },
+    style: { ...fontStyle, fontSize: "0.93rem" },
   },
   // Navbar mobile menu phone
   navPhoneMobile: {
     className:
       "flex items-center justify-center gap-2 bg-[#458CFE] text-white px-5 py-3 rounded-full mt-2",
-    style: { ...fontStyle, fontSize: "0.9rem" },
+    style: { ...fontStyle, fontSize: "0.95rem" },
   },
 };
 

@@ -22,14 +22,14 @@ export function AboutPartners() {
         Community Partners
       </motion.h2>
       <motion.p
-        className="text-[#5A5A5A] mb-10 max-w-[640px]"
+        className="text-[#3D3D3D] mb-10 max-w-[640px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.9rem",
+          fontSize: "0.95rem",
           lineHeight: 1.75,
           fontWeight: 300,
         }}
@@ -57,17 +57,17 @@ export function AboutPartners() {
               className="text-[#458CFE] hover:underline block mb-3"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.95rem",
+                fontSize: "1rem",
                 fontWeight: 600,
               }}
             >
               {partner.name}
             </a>
             <p
-              className="text-[#5A5A5A] m-0"
+              className="text-[#3D3D3D] m-0"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.88rem",
+                fontSize: "0.93rem",
                 lineHeight: 1.75,
                 fontWeight: 300,
               }}

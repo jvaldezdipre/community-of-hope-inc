@@ -18,7 +18,7 @@ export const differentiators = [
     number: "02",
     title: "Faith-Centered Recovery",
     description:
-      "Our program is rooted in faith — not as a requirement, but as a foundation. Women are invited into a community that believes in second chances, unconditional love, and the possibility of total transformation.",
+      "Our program is rooted in faith, not as a requirement, but as a foundation. Women are invited into a community that believes in second chances, unconditional love, and the possibility of total transformation.",
   },
   {
     number: "03",
@@ -30,7 +30,7 @@ export const differentiators = [
     number: "04",
     title: "Mentors Who've Been There",
     description:
-      "Our mentors and staff include women who have walked the same road. They understand the struggle because they've lived it — and they know what it takes to build a new life.",
+      "Our mentors and staff include women who have walked the same road. They understand the struggle because they've lived it, and they know what it takes to build a new life.",
   },
 ];
 
@@ -45,14 +45,14 @@ export const testimonials = [
   },
   {
     quote:
-      "I've referred several clients to Community of Hope over the years. What sets them apart is the family model — it's not just a bed and rules. The women genuinely support each other, and the staff walks alongside them every step. It's the kind of program I wish existed in every county.",
+      "I've referred several clients to Community of Hope over the years. What sets them apart is the family model. It's not just a bed and rules. The women genuinely support each other, and the staff walks alongside them every step. It's the kind of program I wish existed in every county.",
     name: "Licensed Social Worker",
     context: "Referral Partner, New London County",
     initials: "SW",
   },
   {
     quote:
-      "I didn't think I deserved help. I didn't think anyone would want me. But from day one, they treated me like I mattered. They helped me get clean, get certified, and get my life back. I'm now a Recovery Coach helping other women — because of what Hope House gave me.",
+      "I didn't think I deserved help. I didn't think anyone would want me. But from day one, they treated me like I mattered. They helped me get clean, get certified, and get my life back. I'm now a Recovery Coach helping other women because of what Hope House gave me.",
     name: "Program Graduate",
     context: "Now a CCAR Certified Recovery Coach",
     initials: "PG",
@@ -85,7 +85,7 @@ export const programs: Program[] = [
     image:
       "https://images.unsplash.com/photo-1628077571013-88b0a74d4e7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3p5JTIwaG9tZSUyMGludGVyaW9yJTIwd2FybSUyMHN1bmxpZ2h0JTIwc2FmZXxlbnwxfHx8fDE3NzIzNzcxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     body:
-      "Hope House is our 12-bed, faith-based recovery home. Women live together as a family — sharing responsibilities and genuine connection. We believe recovery happens in relationship, not isolation. Residents receive mentoring, job readiness support, clothing with dignity, and opportunities to grow, lead, and give back. Program length varies based on individual needs, typically 6 to 18 months. There is no cost for residents. Contact us to learn more or refer someone.",
+      "Hope House is our 12-bed, faith-based recovery home. Women live together as a family, sharing responsibilities and genuine connection. We believe recovery happens in relationship, not isolation. Residents receive mentoring, job readiness support, clothing with dignity, and opportunities to grow, lead, and give back. Program length varies based on individual needs, typically 6 to 18 months. There is no cost for residents. Contact us to learn more or refer someone.",
   },
   {
     number: "02",
@@ -93,7 +93,7 @@ export const programs: Program[] = [
     subtitle: "Community Outreach",
     slug: "kindness-connection",
     description:
-      "A community-facing program providing basic necessities — food, clothing, hygiene products, household items — plus support with car repairs, certifications, and housing help for individuals and families across Connecticut and beyond.",
+      "A community-facing program providing basic necessities including food, clothing, hygiene products, and household items, plus support with car repairs, certifications, and housing help for individuals and families across Connecticut and beyond.",
     goodFor:
       "Community members facing food insecurity or basic needs gaps. Families and individuals seeking local support, including help with transportation, housing, or vocational steps.",
     image:
@@ -107,7 +107,7 @@ export const programs: Program[] = [
     subtitle: "CCAR Certification",
     slug: "recovery-coaching",
     description:
-      "Our residents and graduates can earn their CCAR Recovery Coach certification — transforming personal experience into a professional credential that helps them serve others. Contact info for this program coming soon.",
+      "Our residents and graduates can earn their CCAR Recovery Coach certification, transforming personal experience into a professional credential that helps them serve others. Contact info for this program coming soon.",
     goodFor:
       "Women in recovery who want to turn their story into a career helping others. Also open to community members seeking certification.",
     image:
@@ -233,10 +233,10 @@ export const events: EventItem[] = [
     title: "Saddle Up for Hope",
     tagline: "Dance to Make Dreams Come True",
     date: "2026-05-01",
-    time: "6 PM — 10 PM",
+    time: "6 PM to 10 PM",
     location: "Ocean Beach, Port and Starboard, New London",
     description:
-      "An unforgettable \"Denim and Diamond\" evening with dinner, dancing, community, and purpose — all to benefit Hope House, Kindness Connection, and women and families in our community. Line dancing and freestyle led by Dance Country. Dinner includes pulled pork, herb roasted chicken, mac and cheese, garlic mashed potatoes, salad, coleslaw, cornbread, and more.",
+      "An unforgettable \"Denim and Diamond\" evening with dinner, dancing, community, and purpose, all to benefit Hope House, Kindness Connection, and women and families in our community. Line dancing and freestyle led by Dance Country. Dinner includes pulled pork, herb roasted chicken, mac and cheese, garlic mashed potatoes, salad, coleslaw, cornbread, and more.",
     image: "/events/saddle-up-for-hope.png",
     tickets: [
       { label: "Individual Ticket (Open Seating)", price: "$75" },
@@ -312,7 +312,7 @@ export const processSteps = [
     number: "2",
     title: "Assessment & Intake",
     description:
-      "We'll have a conversation about your situation, needs, and goals. No judgment — just understanding.",
+      "We'll have a conversation about your situation, needs, and goals. No judgment, just understanding.",
   },
   {
     number: "3",
@@ -343,7 +343,7 @@ export const faqs = [
   {
     question: "Is this a religious program? Do residents have to be Christian?",
     answer:
-      "Hope House is faith-based and rooted in Christian values. However, we welcome women of all backgrounds and beliefs. Our faith approach is about love, community, and second chances — not requirements or judgment.",
+      "Hope House is faith-based and rooted in Christian values. However, we welcome women of all backgrounds and beliefs. Our faith approach is about love, community, and second chances, not requirements or judgment.",
   },
   {
     question: "What does the program include?",
@@ -353,7 +353,7 @@ export const faqs = [
   {
     question: "How long does someone stay at Hope House?",
     answer:
-      "Program length varies based on individual needs, typically ranging from 6 to 18 months. We don't rush anyone out — the goal is lasting transformation, not a quick fix.",
+      "Program length varies based on individual needs, typically ranging from 6 to 18 months. We don't rush anyone out. The goal is lasting transformation, not a quick fix.",
   },
   {
     question: "Is there a cost for residents?",
@@ -363,7 +363,7 @@ export const faqs = [
   {
     question: "How can I donate or support Community of Hope?",
     answer:
-      "You can donate through our website, mail a check, organize a supply drive, or volunteer your time. Every gift — no matter the size — directly supports women in recovery. We're a registered 501(c)(3), so all donations are tax-deductible.",
+      "You can donate through our website, mail a check, organize a supply drive, or volunteer your time. Every gift, no matter the size, directly supports women in recovery. We're a registered 501(c)(3), so all donations are tax-deductible.",
   },
 ];
 
@@ -421,5 +421,5 @@ export const contactTypeOptions = [
   { value: "kindness", label: "Requesting Kindness Connection assistance" },
   { value: "leadership", label: "LeadHerships event inquiry" },
   { value: "event", label: "Event information" },
-  { value: "other", label: "Not sure yet — help me decide" },
+  { value: "other", label: "Not sure yet, help me decide" },
 ];

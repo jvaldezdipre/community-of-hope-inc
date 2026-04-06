@@ -29,7 +29,7 @@ export function MidCTA() {
             className="text-white/60"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.95rem",
+              fontSize: "1rem",
               fontWeight: 300,
             }}
           >

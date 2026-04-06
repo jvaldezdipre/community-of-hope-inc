@@ -41,10 +41,10 @@ export function ProgramPageContent({ slug }: { slug: string }) {
       </p>
       <div className="prose prose-neutral max-w-none">
         <p
-          className="text-[#5A5A5A] mb-6 whitespace-pre-line"
+          className="text-[#3D3D3D] mb-6 whitespace-pre-line"
           style={{
             fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.95rem",
+            fontSize: "1rem",
             lineHeight: 1.9,
             fontWeight: 300,
           }}
@@ -56,7 +56,7 @@ export function ProgramPageContent({ slug }: { slug: string }) {
         className="mt-10"
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.9rem",
+          fontSize: "0.95rem",
           lineHeight: 1.8,
           fontWeight: 300,
         }}

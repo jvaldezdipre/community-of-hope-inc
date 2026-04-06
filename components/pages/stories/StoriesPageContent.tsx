@@ -54,17 +54,17 @@ export function StoriesPageContent() {
               Stories of Hope
             </h1>
             <p
-              className="text-[#5A5A5A]"
+              className="text-[#3D3D3D]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.95rem",
+                fontSize: "1rem",
                 lineHeight: 1.85,
                 fontWeight: 300,
               }}
             >
               Behind every number is a name. Behind every name is a story of
               courage, transformation, and second chances. These are the voices
-              of women who found hope — and the people who walked alongside them.
+              of women who found hope, and the people who walked alongside them.
             </p>
           </motion.div>
         </div>
@@ -127,7 +127,7 @@ export function StoriesPageContent() {
                   className="text-[#458CFE]"
                   style={{
                     fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     fontWeight: 400,
                   }}
                 >
@@ -139,17 +139,17 @@ export function StoriesPageContent() {
                   className="block text-[#1A1A1A]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.92rem",
+                    fontSize: "0.96rem",
                     fontWeight: 500,
                   }}
                 >
                   {featured.name}
                 </span>
                 <span
-                  className="block text-[#5A5A5A]"
+                  className="block text-[#3D3D3D]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.82rem",
+                    fontSize: "0.88rem",
                     fontWeight: 300,
                   }}
                 >
@@ -216,7 +216,7 @@ export function StoriesPageContent() {
                   className="text-[#1A1A1A] italic mb-6"
                   style={{
                     fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "0.95rem",
+                    fontSize: "1rem",
                     lineHeight: 1.8,
                   }}
                 >
@@ -240,17 +240,17 @@ export function StoriesPageContent() {
                       className="block text-[#1A1A1A]"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.88rem",
+                        fontSize: "0.93rem",
                         fontWeight: 500,
                       }}
                     >
                       {t.name}
                     </span>
                     <span
-                      className="block text-[#5A5A5A]"
+                      className="block text-[#3D3D3D]"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.78rem",
+                        fontSize: "0.84rem",
                         fontWeight: 300,
                       }}
                     >
@@ -330,7 +330,7 @@ export function StoriesPageContent() {
                   className="text-white/60 whitespace-pre-line"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.82rem",
+                    fontSize: "0.88rem",
                     lineHeight: 1.5,
                     fontWeight: 300,
                   }}
@@ -368,10 +368,10 @@ export function StoriesPageContent() {
               a reason to believe they can build a life worth staying for.&rdquo;
             </p>
             <span
-              className="block mt-6 text-[#5A5A5A]"
+              className="block mt-6 text-[#3D3D3D]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.88rem",
+                fontSize: "0.93rem",
                 fontWeight: 300,
               }}
             >
@@ -417,16 +417,16 @@ export function StoriesPageContent() {
                 Have a story to share?
               </h2>
               <p
-                className="text-[#5A5A5A] mb-8"
+                className="text-[#3D3D3D] mb-8"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   lineHeight: 1.85,
                   fontWeight: 300,
                 }}
               >
                 If you&apos;re a graduate, referral partner, donor, or someone
-                whose life has been touched by Community of Hope — we&apos;d
+                whose life has been touched by Community of Hope, we&apos;d
                 love to hear from you. Your story could be the one that gives
                 someone else the courage to reach out.
               </p>
@@ -463,16 +463,16 @@ export function StoriesPageContent() {
                 Your story could be next.
               </h2>
               <p
-                className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
+                className="text-[#3D3D3D] mb-8 max-w-[520px] mx-auto"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.92rem",
+                  fontSize: "0.96rem",
                   lineHeight: 1.75,
                   fontWeight: 300,
                 }}
               >
                 Whether you need help, want to give back, or know someone who
-                could use a second chance — Community of Hope is here.
+                could use a second chance, Community of Hope is here.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Button variant="primary" as="a" href="/programs">
@@ -494,7 +494,7 @@ export function StoriesPageContent() {
             className="pt-6"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.9rem",
+              fontSize: "0.95rem",
               lineHeight: 1.8,
               fontWeight: 300,
             }}

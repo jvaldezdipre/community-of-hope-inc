@@ -32,10 +32,10 @@ export function TrustBar() {
                 {stat.number}
               </span>
               <span
-                className="text-[#5A5A5A] whitespace-pre-line"
+                className="text-[#3D3D3D] whitespace-pre-line"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.82rem",
+                  fontSize: "0.88rem",
                   lineHeight: 1.5,
                   fontWeight: 300,
                   letterSpacing: "0.02em",

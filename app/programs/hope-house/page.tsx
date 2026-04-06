@@ -3,7 +3,7 @@ import { WebPageJsonLd } from "@/components/seo/JsonLd";
 import { TheHousePageContent } from "@/components/pages/programs/TheHousePageContent";
 
 const description =
-  "Hope House is a 12-bed, faith-based recovery home for women 18+ in Groton, CT. Mentoring, job readiness, clothing with dignity, and a family-style community. No cost for residents — call 860-912-8983.";
+  "Hope House is a 12-bed, faith-based recovery home for women 18+ in Groton, CT. Mentoring, job readiness, clothing with dignity, and a family-style community. No cost for residents. Call 860-912-8983.";
 
 export const metadata: Metadata = {
   title: "Hope House | Programs",

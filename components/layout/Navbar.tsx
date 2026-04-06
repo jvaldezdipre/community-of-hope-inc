@@ -48,7 +48,7 @@ export function Navbar() {
         ? "text-[#458CFE]"
         : "text-white"
       : useSolidNav
-        ? "text-[#5A5A5A] hover:text-[#1A1A1A]"
+        ? "text-[#3D3D3D] hover:text-[#1A1A1A]"
         : "text-white/70 hover:text-white";
 
   const getDropdownActive = (item: NavItem & { children: { label: string; href: string }[] }) =>
@@ -57,7 +57,7 @@ export function Navbar() {
     isActive
       ? useSolidNav ? "text-[#458CFE]" : "text-white"
       : useSolidNav
-        ? "text-[#5A5A5A] hover:text-[#1A1A1A]"
+        ? "text-[#3D3D3D] hover:text-[#1A1A1A]"
         : "text-white/70 hover:text-white";
 
   return (
@@ -104,7 +104,7 @@ export function Navbar() {
                     className={`flex items-center gap-1 transition-colors duration-400 ${dropdownTriggerClass(isActive)}`}
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.88rem",
+                      fontSize: "0.93rem",
                       letterSpacing: "0.04em",
                     }}
                     aria-expanded={isOpen}
@@ -127,7 +127,7 @@ export function Navbar() {
                           href={child.href}
                           onClick={() => setOpenDropdown(null)}
                           className={`block px-4 py-2 text-[0.88rem] transition-colors ${
-                            pathname === child.href ? "text-[#458CFE] bg-[#458CFE]/5" : "text-[#5A5A5A] hover:bg-[#F5F5F5]"
+                            pathname === child.href ? "text-[#458CFE] bg-[#458CFE]/5" : "text-[#3D3D3D] hover:bg-[#F5F5F5]"
                           }`}
                           style={{ fontFamily: "'Outfit', sans-serif" }}
                           role="menuitem"
@@ -147,7 +147,7 @@ export function Navbar() {
                 className={`transition-colors duration-400 ${linkClass(item.href)}`}
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
+                  fontSize: "0.93rem",
                   letterSpacing: "0.04em",
                 }}
               >
@@ -198,10 +198,10 @@ export function Navbar() {
                     <button
                       type="button"
                       onClick={() => setMobileOpenDropdown(isOpen ? null : item.label)}
-                      className={`w-full text-left py-2 flex items-center justify-between ${useSolidNav ? "text-[#5A5A5A]" : "text-white/70"}`}
+                      className={`w-full text-left py-2 flex items-center justify-between ${useSolidNav ? "text-[#3D3D3D]" : "text-white/70"}`}
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.95rem",
+                        fontSize: "1rem",
                         letterSpacing: "0.04em",
                       }}
                     >
@@ -221,10 +221,10 @@ export function Navbar() {
                               setMobileOpen(false);
                               setMobileOpenDropdown(null);
                             }}
-                            className={`py-2 ${useSolidNav ? "text-[#5A5A5A]" : "text-white/60"}`}
+                            className={`py-2 ${useSolidNav ? "text-[#3D3D3D]" : "text-white/60"}`}
                             style={{
                               fontFamily: "'Outfit', sans-serif",
-                              fontSize: "0.9rem",
+                              fontSize: "0.95rem",
                             }}
                           >
                             {child.label}
@@ -243,7 +243,7 @@ export function Navbar() {
                   className={`py-2 ${linkClass(item.href)}`}
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.95rem",
+                    fontSize: "1rem",
                     letterSpacing: "0.04em",
                   }}
                 >

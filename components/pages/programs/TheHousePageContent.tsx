@@ -9,13 +9,13 @@ import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { getProgramBySlug, processSteps, testimonials, faqs } from "@/lib/constants";
 
 const whatResidentsReceive = [
-  { title: "Safe Housing", detail: "A 12-bed, family-style home — not a facility" },
+  { title: "Safe Housing", detail: "A 12-bed, family-style home, not a facility" },
   { title: "Clothing with Dignity", detail: "A boutique experience providing clothing, shoes, and accessories" },
   { title: "Mentoring", detail: "From staff and women who have walked the same road" },
   { title: "Job Readiness", detail: "Resume help, interview prep, and workplace skills" },
   { title: "Leadership Opportunities", detail: "Opportunities to grow, lead, and give back" },
   { title: "Faith-Based Support", detail: "Rooted in love, not requirements or judgment" },
-  { title: "Community", detail: "Women supporting women — accountability and friendship" },
+  { title: "Community", detail: "Women supporting women through accountability and friendship" },
 ];
 
 const programDetails = [
@@ -88,24 +88,24 @@ export function TheHousePageContent() {
             {program.title}
           </h1>
           <p
-            className="text-[#5A5A5A] mb-4 max-w-[520px]"
+            className="text-[#3D3D3D] mb-4 max-w-[520px]"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.95rem",
+              fontSize: "1rem",
               lineHeight: 1.85,
               fontWeight: 300,
             }}
           >
             A 12-bed, faith-based recovery residence where women rebuild their
             lives in a safe, family-style community. Mentoring, job readiness,
-            and genuine connection — not a program, a home. No judgment, just a
+            and genuine connection. Not a program, a home. No judgment, just a
             conversation.
           </p>
           <p
-            className="text-[#5A5A5A] mb-8"
+            className="text-[#3D3D3D] mb-8"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.88rem",
+              fontSize: "0.93rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
@@ -122,7 +122,7 @@ export function TheHousePageContent() {
               className="flex items-center gap-2 text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 400,
               }}
             >
@@ -182,15 +182,15 @@ export function TheHousePageContent() {
               Everything you need to start over.
             </h2>
             <p
-              className="text-[#5A5A5A] max-w-[380px]"
+              className="text-[#3D3D3D] max-w-[380px]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 lineHeight: 1.8,
                 fontWeight: 300,
               }}
             >
-              Hope House isn&apos;t just a bed — it&apos;s a full foundation.
+              Hope House isn&apos;t just a bed. It&apos;s a full foundation.
               Here&apos;s what every resident receives from day one.
             </p>
           </div>
@@ -218,17 +218,17 @@ export function TheHousePageContent() {
                     className="text-[#1A1A1A] mb-0.5"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       fontWeight: 500,
                     }}
                   >
                     {item.title}
                   </p>
                   <p
-                    className="text-[#5A5A5A]"
+                    className="text-[#3D3D3D]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.82rem",
+                      fontSize: "0.88rem",
                       lineHeight: 1.6,
                       fontWeight: 300,
                     }}
@@ -274,10 +274,10 @@ export function TheHousePageContent() {
               transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
             >
               <span
-                className="block text-[#5A5A5A] mb-1"
+                className="block text-[#3D3D3D] mb-1"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.78rem",
+                  fontSize: "0.84rem",
                   fontWeight: 300,
                 }}
               >
@@ -370,7 +370,7 @@ export function TheHousePageContent() {
                     className="text-white/70 max-w-[260px] mx-auto"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       lineHeight: 1.75,
                       fontWeight: 300,
                     }}
@@ -404,10 +404,10 @@ export function TheHousePageContent() {
                 &ldquo;{houseTestimonial.quote}&rdquo;
               </p>
               <span
-                className="block mt-6 text-[#5A5A5A]"
+                className="block mt-6 text-[#3D3D3D]"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
+                  fontSize: "0.93rem",
                   fontWeight: 300,
                 }}
               >
@@ -450,26 +450,26 @@ export function TheHousePageContent() {
                 Recovery is the beginning, not the end.
               </h2>
               <p
-                className="text-[#5A5A5A] max-w-[640px] mx-auto mt-4"
+                className="text-[#3D3D3D] max-w-[640px] mx-auto mt-4"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.92rem",
+                  fontSize: "0.96rem",
                   lineHeight: 1.8,
                   fontWeight: 300,
                 }}
               >
-                Hope House isn&apos;t just about getting back on your feet — it&apos;s about discovering who you really are. Through mentoring, workshops, and community, residents build the confidence, skills, and vision to lead their own lives.
+                Hope House isn&apos;t just about getting back on your feet. It&apos;s about discovering who you really are. Through mentoring, workshops, and community, residents build the confidence, skills, and vision to lead their own lives.
               </p>
             </motion.div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: "01", title: "Confidence & Self-Worth", description: "Rebuild the belief that you are capable, valuable, and worthy of leading your own life — no matter where you've been." },
+                { icon: "01", title: "Confidence & Self-Worth", description: "Rebuild the belief that you are capable, valuable, and worthy of leading your own life, no matter where you've been." },
                 { icon: "02", title: "Communication Skills", description: "Learn to advocate for yourself, set boundaries, and speak with confidence in interviews, meetings, and relationships." },
-                { icon: "03", title: "Goal Setting & Planning", description: "Create a personal roadmap for your future — whether that's education, career, housing, or rebuilding your family." },
+                { icon: "03", title: "Goal Setting & Planning", description: "Create a personal roadmap for your future, whether that's education, career, housing, or rebuilding your family." },
                 { icon: "04", title: "Financial Literacy", description: "Gain practical skills around budgeting, saving, and building financial independence one step at a time." },
                 { icon: "05", title: "Mentoring & Community", description: "Connect with women who have walked this road before you. Real mentorship from people who understand your journey." },
-                { icon: "06", title: "Leadership Development", description: "Discover the leader inside you. Whether it's leading a team, a household, or a community initiative — you're ready." },
+                { icon: "06", title: "Leadership Development", description: "Discover the leader inside you. Whether it's leading a team, a household, or a community initiative, you're ready." },
               ].map((item, i) => (
                 <motion.div
                   key={item.icon}
@@ -501,10 +501,10 @@ export function TheHousePageContent() {
                     {item.title}
                   </h3>
                   <p
-                    className="text-[#5A5A5A]"
+                    className="text-[#3D3D3D]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       lineHeight: 1.7,
                       fontWeight: 300,
                     }}
@@ -551,7 +551,7 @@ export function TheHousePageContent() {
                 className="flex items-center justify-between cursor-pointer py-5 text-[#1A1A1A] select-none list-none [&::-webkit-details-marker]:hidden"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   fontWeight: 400,
                 }}
               >
@@ -561,10 +561,10 @@ export function TheHousePageContent() {
                 </span>
               </summary>
               <p
-                className="text-[#5A5A5A] pb-6 pr-8"
+                className="text-[#3D3D3D] pb-6 pr-8"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.9rem",
+                  fontSize: "0.95rem",
                   lineHeight: 1.8,
                   fontWeight: 300,
                 }}
@@ -601,15 +601,15 @@ export function TheHousePageContent() {
             Ready to take the next step?
           </h2>
           <p
-            className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
+            className="text-[#3D3D3D] mb-8 max-w-[520px] mx-auto"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.92rem",
+              fontSize: "0.96rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
           >
-            Whether you&apos;re seeking help for yourself, referring a client, or reaching out for a loved one — we&apos;re here. No judgment, just a conversation.
+            Whether you&apos;re seeking help for yourself, referring a client, or reaching out for a loved one, we&apos;re here. No judgment, just a conversation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button variant="primary" href="/contact">
@@ -620,7 +620,7 @@ export function TheHousePageContent() {
               className="flex items-center gap-2 text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 400,
               }}
             >
@@ -640,7 +640,7 @@ export function TheHousePageContent() {
               className="pt-6"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 lineHeight: 1.8,
                 fontWeight: 300,
               }}

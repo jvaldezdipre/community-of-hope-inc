@@ -13,21 +13,21 @@
 - **Nav:** Programs dropdown (Overview + Hope House, Kindness Connection, Recovery Coaching, LeadHerships). Get Involved dropdown (Events, Supporters, Donate). Client-side navigation via Next.js Link on all internal routes (including Button component).
 - **Home:** Hero, about section, programs grid, testimonial marquee, dark "how it works" section, FAQ accordion, contact form, mid/final CTAs, trust bar. Pending: correct phone number, mission statement.
 - **Programs hub:** `/programs` lists all 4 programs with "Learn more" links. Copy: "Four ways we serve."
-- **Hope House:** Full dedicated page with 8 alternating sections — hero with image, "What Residents Receive" split checklist (beige), "At a Glance" stats, dark "Path Forward" 4-step process, centered testimonial quote, FAQ accordion, bottom CTA card, back link. Breadcrumb JSON-LD. Framer Motion animations throughout.
-- **Kindness Connection:** Full dedicated page with 7 alternating sections — hero with "Request Help" Google Form CTA + phone, "What We Provide" 8-item split checklist (beige), "At a Glance" 6 stats, dark "How It Works" 3-step process, "Who This Is For" bordered card with bullet points, FAQ accordion, bottom CTA card. Google Form integration for help requests. Breadcrumb JSON-LD.
-- **Recovery Coaching:** Full dedicated page with 8 alternating sections — hero with CCAR certification focus, "What You'll Learn" 8-item split checklist (beige), "At a Glance" 6 stats, dark "Path to Certification" 4-step process, centered testimonial quote, "Who This Is For" bullet points (beige), FAQ accordion, bottom CTA card. Breadcrumb JSON-LD.
-- **LeadHerships:** Full dedicated page with unique centered layout variation — centered hero with full-width image below, "What You'll Build" 3-column card grid (beige), centered "Why It Matters" narrative, dark "Who It's For" 4 audience segment cards, "How It Works" 3-step process, centered vision quote (beige), FAQ accordion, bottom CTA card. Women's empowerment focus (subtitle updated from "Nonprofits Supporting Each Other" to "Women's Empowerment"). Breadcrumb JSON-LD.
+- **Hope House:** Full dedicated page (renamed from "The House"). Hero, "What You'll Receive" 7-item checklist (removed meals/life skills/vocational certs, added Clothing with Dignity + Leadership Opportunities), "At a Glance" stats (cost: Free, intake: based on availability), dark "Path Forward" 4-step process, testimonial, "Grow, Lead, Give Back" 6-card personal development grid (absorbed from LeadHerships), FAQ (updated: no-cost, bed availability, crisis prioritized), bottom CTA ("no judgment, just a conversation"). URL: `/programs/hope-house`. Breadcrumb JSON-LD.
+- **Kindness Connection:** Full dedicated page. Hero with "Call Us" CTA + 860-856-5655 (Google Form removed). "Central Resources" 5-item checklist (removed car repairs, certification help, housing moved to referrals). "Essential Support" as lead item. "At a Glance" 6 stats. Dark "How It Works" 3-step process (updated to reference calling). "Who This Is For" 4 bullet points. FAQ accordion. Bottom CTA (call only). Breadcrumb JSON-LD.
+- **Recovery Coaching:** Simplified placeholder page. Hero with CCAR approved partner blurb + "Learn More at CCAR" button linking to addictionrecoverytraining.org. Full content hidden behind `SHOW_FULL_CONTENT` flag for future launch. Back link. Breadcrumb JSON-LD.
+- **LeadHerships:** Restructured as event page (not a program page). Hero with LeadHerships logo as background image, "Nominate an Honoree" Google Form CTA. "How It Works" (host invites partners, nominate, celebrate, complimentary tickets). "Upcoming Event" section (date TBD). 5-tier sponsorship packages (Gold $5K to Champion $200). "Get Involved" (Volunteer + Donate/Contribute). Event FAQ. Bottom CTA. URL: `/programs/leadherships`. Breadcrumb JSON-LD.
 - **About:** Full page with hero (story + milestones + YouTube embed), leadership section (Executive Director, staff grid, board grid with initials placeholders), community partners (GBC, Malta, GASP, SCADD, CSO, Work & Learn, Urban Alliance links), trust footer (501c3, service area, phone). Section-based layout with alternating backgrounds. Animations throughout. Pending: real staff photos, finalized board names, Eversource renovation story.
 - **Events:** "Saddle Up for Hope" event card (May 1, 2026), ticket pricing, 3 sponsorship tiers, Eventbrite ticket link live, past events grid, empty-state fallback. Meta/JSON-LD done.
-- **Donate:** Two giving cards (Zeffy zero-fee recommended with live link + PayPal with real link), impact section ($40 bus pass, $175 one week housing, $500 utility support), 501(c)(3) trust footer. Pending: add Venmo option, Zelle link, update impact tiers.
+- **Donate:** Two giving cards (Zeffy zero-fee with live link + PayPal with live link), impact section ($40 bus pass, $175 one week housing, $500 utility support), 501(c)(3) trust footer. Pending: add Venmo + Zelle options.
 - **Stories:** Displays all testimonials from constants as styled blockquotes. Pending: real stories, real photos, richer layout.
-- **Contact:** Full form with name, email, phone, "I am..." program dropdown, message. Standalone version on `/contact` with sidebar (main + Kindness Connection phone numbers). Also embedded on homepage. Pending: form submission backend, submission email from client.
+- **Contact:** Full form with name, email, phone, "I am..." program dropdown (includes LeadHerships event inquiry + event info options), message. Standalone version on `/contact` with sidebar (main + Kindness Connection phone numbers). Also embedded on homepage. Pending: form submission backend, 3rd phone number (housing), submission email from client.
 - **Supporters:** Placeholder page with intro text and links to Donate/Contact. Pending: logo grid, donor names from client.
 - **Footer:** Quick links to all pages. Trust bar shows "4" programs.
 - **SEO:** Meta titles and descriptions on all pages. WebPage JSON-LD on all pages. Breadcrumb JSON-LD on Events, Donate, and all 4 program pages.
 - **UX:** Button component uses Next.js Link for all internal routes (smooth client-side navigation). All program pages use full-width alternating background sections (white, beige #FAF8F5, dark #0F1D33) with Framer Motion scroll-triggered animations.
 
-**Ready to implement next (no client dependency):** CMS/dashboard setup, form submission backend, program page content revisions (Hope House, Kindness Connection, Recovery Coaching, LeadHerships restructure), donate page tier updates + Venmo, accessibility improvements (bigger/darker text, mobile responsiveness), remove dashes throughout site. After that: remaining client content as it arrives.
+**Ready to implement next (no client dependency):** Accessibility pass (bigger/darker text, mobile responsiveness), form submission backend, verify partner links, testimonial submission form, CMS/dashboard setup. After that: remaining client content as it arrives.
 
 ---
 
@@ -67,16 +67,16 @@
 | --------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Home                  | 🔨     | Full structure done. Pending: correct phone number, mission statement                                                                         |
 | Programs (main)       | ✅      | Overview of all 4 programs with links to individual pages.                                                                                    |
-| — Hope House          | 🔨     | Needs content revisions: remove meals/life skills/vocational certs, add "Clothing Women with Dignity", absorb leadership content from LeadHerships, update intake language, rename tab to "Hope House". |
-| — Kindness Connection | 🔨     | Needs content revisions: remove car repairs, "Basic Needs" → "Central Resources", "Food and Groceries" → "Essential Support", remove survey form, direct to call 856-5655, housing → referrals. |
-| — Recovery Coaching   | 🔨     | Hide most content. Keep CCAR link + approved partner status only as placeholder for BRS funding. Pending: correct CCAR link and wording from client. |
-| — LeadHerships         | 🔨     | Restructured as event page with sponsorship tiers, nominations Google Form, volunteer/donate sections, FAQ. Pending: event date, photo gallery, photos from client. |
+| — Hope House          | ✅      | Content revisions complete. Renamed, meals/life skills/vocational certs removed, Clothing with Dignity + leadership content added, intake/cost/FAQ updated. Pending: application form link, bed availability + 2-1-1 links, photo carousel. |
+| — Kindness Connection | ✅      | Content revisions complete. Car repairs removed, Central Resources/Essential Support, call-only CTA (856-5655), housing moved to referrals. |
+| — Recovery Coaching   | ✅      | Simplified to CCAR approved partner placeholder. Full content hidden behind flag. CCAR link live. |
+| — LeadHerships         | 🔨     | Restructured as event page with logo hero, sponsorship tiers, nominations Google Form, volunteer/donate, FAQ. Pending: event date, photo gallery. |
 | About                 | 🔨     | Hero, leadership, community partners, trust footer built. Section-based layout. Pending: real staff photos, finalized board, Eversource story |
 | Stories               | 🔨     | Testimonial blockquotes from constants. Pending: real stories, photos, richer layout                                                          |
 | Events                | ✅      | "Saddle Up for Hope" event card, sponsorship tiers, Eventbrite link live.                                                                     |
 | Supporters            | 🔨     | Placeholder page with intro text. Pending: logo grid, donor names from client                                                                 |
-| Donate                | 🔨     | Zeffy link live + PayPal. Pending: update impact tiers ($40/$175/$500), add Venmo, Zelle link from client                                     |
-| Contact               | 🔨     | Form with program dropdown, sidebar. Pending: 3 distinct phone numbers (main, housing, KC), add Leadership/event contact reasons, form backend |
+| Donate                | 🔨     | Zeffy + PayPal live, impact tiers updated ($40/$175/$500). Pending: add Venmo + Zelle from client                                             |
+| Contact               | 🔨     | Form with program dropdown (LeadHerships + event reasons added), sidebar. Pending: 3rd phone number (housing), form backend                    |
 
 
 ---
@@ -98,9 +98,9 @@
 | Clear mission statement on front page                                | ⏳      |
 | Remove location/map                                                  | ✅      |
 | Keep services page links (GBC, Malta, GASP, SCADD redirects)         | ✅      |
-| Increase font sizes and color contrast (bigger, darker text)         | ❌      |
+| Increase font sizes and color contrast (bigger, darker text)         | ✅      |
 | Full mobile responsiveness pass                                       | ❌      |
-| Remove dashes from text throughout website                            | ❌      |
+| Remove dashes from text throughout website                            | ✅      |
 
 
 **Services Page Redirect Links:**
@@ -200,10 +200,10 @@
 
 | Change                                                                 | Status |
 | ---------------------------------------------------------------------- | ------ |
-| Increase font sizes across all pages                                   | ❌      |
-| Darken text colors for better contrast (especially for older users)    | ❌      |
+| Increase font sizes across all pages                                   | ✅      |
+| Darken text colors for better contrast (especially for older users)    | ✅      |
 | Full mobile responsiveness audit and fixes                             | ❌      |
-| Remove dashes from text throughout website                             | ❌      |
+| Remove dashes from text throughout website                             | ✅      |
 | Add social media widgets (Facebook, Instagram, LinkedIn) — all pages   | ⏳      |
 
 ---

@@ -30,7 +30,7 @@ export function Footer() {
                 className="text-white"
                 style={{
                   fontFamily: "'Libre Baskerville', serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                 }}
               >
                 Community of Hope
@@ -40,7 +40,7 @@ export function Footer() {
               className="text-white/58 max-w-[280px]"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.85rem",
+                fontSize: "0.9rem",
                 lineHeight: 1.75,
                 fontWeight: 300,
               }}
@@ -69,7 +69,7 @@ export function Footer() {
                 className="text-white/82 hover:text-white transition-colors"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.85rem",
+                  fontSize: "0.9rem",
                   fontWeight: 300,
                 }}
               >
@@ -79,7 +79,7 @@ export function Footer() {
                 className="text-white/82"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.85rem",
+                  fontSize: "0.9rem",
                   fontWeight: 300,
                 }}
               >
@@ -109,7 +109,7 @@ export function Footer() {
                   className="text-white/82 hover:text-white transition-colors"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                     fontWeight: 300,
                   }}
                 >
@@ -139,7 +139,7 @@ export function Footer() {
                   className="text-white/82"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                     fontWeight: 300,
                   }}
                 >
@@ -156,7 +156,7 @@ export function Footer() {
             className="text-white/45"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.78rem",
+              fontSize: "0.84rem",
               fontWeight: 300,
             }}
           >

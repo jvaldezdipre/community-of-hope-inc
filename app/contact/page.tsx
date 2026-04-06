@@ -32,15 +32,15 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p
-          className="text-[#5A5A5A] mb-12 max-w-[640px]"
+          className="text-[#3D3D3D] mb-12 max-w-[640px]"
           style={{
             fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.95rem",
+            fontSize: "1rem",
             lineHeight: 1.8,
             fontWeight: 300,
           }}
         >
-          Whether you&apos;re seeking help, making a referral, or want to get involved — we&apos;re here. Fill out the form below or call us.
+          Whether you&apos;re seeking help, making a referral, or want to get involved, we&apos;re here. Fill out the form below or call us.
         </p>
 
         <div className="grid md:grid-cols-[1fr_320px] gap-10 md:gap-16 items-start">
@@ -65,7 +65,7 @@ export default function ContactPage() {
                   className="block text-[#1A1A1A] mb-1"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.82rem",
+                    fontSize: "0.88rem",
                     fontWeight: 500,
                   }}
                 >
@@ -74,7 +74,7 @@ export default function ContactPage() {
                 <a
                   href="tel:8609128983"
                   className="text-[#458CFE] hover:underline transition-colors"
-                  style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
+                  style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1rem", fontWeight: 300 }}
                 >
                   860-912-8983
                 </a>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   className="block text-[#1A1A1A] mb-1"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.82rem",
+                    fontSize: "0.88rem",
                     fontWeight: 500,
                   }}
                 >
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 <a
                   href="tel:8608565655"
                   className="text-[#458CFE] hover:underline transition-colors"
-                  style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.95rem", fontWeight: 300 }}
+                  style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1rem", fontWeight: 300 }}
                 >
                   860-856-5655
                 </a>

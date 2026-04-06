@@ -88,10 +88,10 @@ export function AboutLeadership() {
           {executiveDirector.name}
         </p>
         <span
-          className="text-[#5A5A5A]"
+          className="text-[#3D3D3D]"
           style={{
             fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.85rem",
+            fontSize: "0.9rem",
             fontWeight: 300,
           }}
         >
@@ -133,17 +133,17 @@ export function AboutLeadership() {
                 className="text-[#1A1A1A] mt-5 mb-1"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   fontWeight: 500,
                 }}
               >
                 {person.name}
               </p>
               <span
-                className="text-[#5A5A5A]"
+                className="text-[#3D3D3D]"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.82rem",
+                  fontSize: "0.88rem",
                   fontWeight: 300,
                 }}
               >
@@ -187,17 +187,17 @@ export function AboutLeadership() {
                 className="text-[#1A1A1A] mt-4 mb-1"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   fontWeight: 500,
                 }}
               >
                 {person.name}
               </p>
               <span
-                className="text-[#5A5A5A]"
+                className="text-[#3D3D3D]"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.82rem",
+                  fontSize: "0.88rem",
                   fontWeight: 300,
                 }}
               >

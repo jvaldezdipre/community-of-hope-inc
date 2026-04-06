@@ -19,10 +19,10 @@ export function AboutOurStory() {
       <div className="grid md:grid-cols-[1fr_400px] gap-12 md:gap-16 items-start">
         <div>
           <p
-            className="text-[#5A5A5A] mb-8"
+            className="text-[#3D3D3D] mb-8"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.95rem",
+              fontSize: "1rem",
               lineHeight: 1.9,
               fontWeight: 300,
             }}
@@ -43,10 +43,10 @@ export function AboutOurStory() {
                   {m.value}
                 </span>
                 <span
-                  className="text-[#5A5A5A]"
+                  className="text-[#3D3D3D]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                     fontWeight: 300,
                     lineHeight: 1.5,
                   }}

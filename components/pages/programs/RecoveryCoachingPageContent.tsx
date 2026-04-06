@@ -44,7 +44,7 @@ const certificationSteps = [
     number: "2",
     title: "Complete Training",
     description:
-      "Attend the CCAR Recovery Coach Academy — an intensive, multi-day training covering everything you need to know.",
+      "Attend the CCAR Recovery Coach Academy, an intensive, multi-day training covering everything you need to know.",
   },
   {
     number: "3",
@@ -56,7 +56,7 @@ const certificationSteps = [
     number: "4",
     title: "Earn Your Credential",
     description:
-      "Receive your CCAR Recovery Coach certification — a recognized professional credential that opens doors.",
+      "Receive your CCAR Recovery Coach certification, a recognized professional credential that opens doors.",
   },
 ];
 
@@ -64,7 +64,7 @@ const coachingFaqs = [
   {
     question: "What is CCAR Recovery Coaching?",
     answer:
-      "CCAR (Connecticut Community for Addiction Recovery) Recovery Coaching is a peer-based support model. Certified Recovery Coaches use their own lived experience to help others navigate recovery — not as counselors or therapists, but as guides who've walked the same road.",
+      "CCAR (Connecticut Community for Addiction Recovery) Recovery Coaching is a peer-based support model. Certified Recovery Coaches use their own lived experience to help others navigate recovery, not as counselors or therapists, but as guides who've walked the same road.",
   },
   {
     question: "Do I have to be a Hope House resident to get certified?",
@@ -135,10 +135,10 @@ export function RecoveryCoachingPageContent() {
                   {program.title}
                 </h1>
                 <p
-                  className="text-[#5A5A5A] mb-4 max-w-[520px]"
+                  className="text-[#3D3D3D] mb-4 max-w-[520px]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.95rem",
+                    fontSize: "1rem",
                     lineHeight: 1.85,
                     fontWeight: 300,
                   }}
@@ -149,10 +149,10 @@ export function RecoveryCoachingPageContent() {
                   vocational track for residents.
                 </p>
                 <p
-                  className="text-[#5A5A5A] mb-8"
+                  className="text-[#3D3D3D] mb-8"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.88rem",
+                    fontSize: "0.93rem",
                     lineHeight: 1.75,
                     fontWeight: 300,
                   }}
@@ -175,7 +175,7 @@ export function RecoveryCoachingPageContent() {
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       fontWeight: 400,
                     }}
                   >
@@ -236,16 +236,16 @@ export function RecoveryCoachingPageContent() {
                       Real skills to help real people.
                     </h2>
                     <p
-                      className="text-[#5A5A5A] max-w-[380px]"
+                      className="text-[#3D3D3D] max-w-[380px]"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.9rem",
+                        fontSize: "0.95rem",
                         lineHeight: 1.8,
                         fontWeight: 300,
                       }}
                     >
                       The CCAR Recovery Coach Academy covers everything you need to
-                      support others through recovery — with confidence, compassion,
+                      support others through recovery, with confidence, compassion,
                       and professional training behind you.
                     </p>
                   </div>
@@ -270,17 +270,17 @@ export function RecoveryCoachingPageContent() {
                             className="text-[#1A1A1A] mb-0.5"
                             style={{
                               fontFamily: "'Outfit', sans-serif",
-                              fontSize: "0.9rem",
+                              fontSize: "0.95rem",
                               fontWeight: 500,
                             }}
                           >
                             {item.title}
                           </p>
                           <p
-                            className="text-[#5A5A5A]"
+                            className="text-[#3D3D3D]"
                             style={{
                               fontFamily: "'Outfit', sans-serif",
-                              fontSize: "0.82rem",
+                              fontSize: "0.88rem",
                               lineHeight: 1.6,
                               fontWeight: 300,
                             }}
@@ -326,10 +326,10 @@ export function RecoveryCoachingPageContent() {
                         transition={{ duration: 0.4, delay: i * 0.08, ease: "easeOut" }}
                       >
                         <span
-                          className="block text-[#5A5A5A] mb-1"
+                          className="block text-[#3D3D3D] mb-1"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.78rem",
+                            fontSize: "0.84rem",
                             fontWeight: 300,
                           }}
                         >
@@ -422,7 +422,7 @@ export function RecoveryCoachingPageContent() {
                         className="text-white/70 max-w-[260px] mx-auto"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.85rem",
+                          fontSize: "0.9rem",
                           lineHeight: 1.75,
                           fontWeight: 300,
                         }}
@@ -456,10 +456,10 @@ export function RecoveryCoachingPageContent() {
                     &ldquo;{coachingTestimonial.quote}&rdquo;
                   </p>
                   <span
-                    className="block mt-6 text-[#5A5A5A]"
+                    className="block mt-6 text-[#3D3D3D]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.88rem",
+                      fontSize: "0.93rem",
                       fontWeight: 300,
                     }}
                   >
@@ -519,10 +519,10 @@ export function RecoveryCoachingPageContent() {
                       >
                         <span className="shrink-0 mt-[5px] w-1.5 h-1.5 rounded-full bg-[#458CFE]" />
                         <p
-                          className="text-[#5A5A5A]"
+                          className="text-[#3D3D3D]"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.9rem",
+                            fontSize: "0.95rem",
                             lineHeight: 1.7,
                             fontWeight: 300,
                           }}
@@ -570,7 +570,7 @@ export function RecoveryCoachingPageContent() {
                           className="flex items-center justify-between cursor-pointer py-5 text-[#1A1A1A] select-none list-none [&::-webkit-details-marker]:hidden"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.95rem",
+                            fontSize: "1rem",
                             fontWeight: 400,
                           }}
                         >
@@ -580,10 +580,10 @@ export function RecoveryCoachingPageContent() {
                           </span>
                         </summary>
                         <p
-                          className="text-[#5A5A5A] pb-6 pr-8"
+                          className="text-[#3D3D3D] pb-6 pr-8"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.9rem",
+                            fontSize: "0.95rem",
                             lineHeight: 1.8,
                             fontWeight: 300,
                           }}
@@ -620,10 +620,10 @@ export function RecoveryCoachingPageContent() {
                       Ready to turn your story into a career?
                     </h2>
                     <p
-                      className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
+                      className="text-[#3D3D3D] mb-8 max-w-[520px] mx-auto"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.92rem",
+                        fontSize: "0.96rem",
                         lineHeight: 1.75,
                         fontWeight: 300,
                       }}
@@ -641,7 +641,7 @@ export function RecoveryCoachingPageContent() {
                         className="flex items-center gap-2 text-[#458CFE] hover:underline"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.9rem",
+                          fontSize: "0.95rem",
                           fontWeight: 400,
                         }}
                       >
@@ -663,7 +663,7 @@ export function RecoveryCoachingPageContent() {
               className="pt-6"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 lineHeight: 1.8,
                 fontWeight: 300,
               }}

@@ -16,7 +16,7 @@ const programHighlights: Record<string, string[]> = {
   "kindness-connection": [
     "Food, clothing & essentials",
     "Car repairs & housing help",
-    "Open to all — no referral needed",
+    "Open to all, no referral needed",
     "Serving all of Connecticut",
   ],
   "recovery-coaching": [
@@ -37,18 +37,18 @@ export function ProgramsOverview() {
   return (
     <>
       <motion.p
-        className="text-[#5A5A5A] -mt-8 mb-12 max-w-[640px]"
+        className="text-[#3D3D3D] -mt-8 mb-12 max-w-[640px]"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
         style={{
           fontFamily: "'Outfit', sans-serif",
-          fontSize: "0.92rem",
+          fontSize: "0.96rem",
           lineHeight: 1.85,
           fontWeight: 300,
         }}
       >
-        Each of our programs serves a different need, but they share the same foundation — faith, dignity, and the belief that no one is beyond hope. Many of the women we serve move through more than one program on their path forward.
+        Each of our programs serves a different need, but they share the same foundation: faith, dignity, and the belief that no one is beyond hope. Many of the women we serve move through more than one program on their path forward.
       </motion.p>
 
       <div className="grid md:grid-cols-2 gap-8">
@@ -81,7 +81,7 @@ export function ProgramsOverview() {
                   className="text-[#458CFE]/30"
                   style={{
                     fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "0.85rem",
+                    fontSize: "0.9rem",
                   }}
                 >
                   {program.number}
@@ -112,10 +112,10 @@ export function ProgramsOverview() {
               </h2>
 
               <p
-                className="text-[#5A5A5A] mb-5"
+                className="text-[#3D3D3D] mb-5"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
+                  fontSize: "0.93rem",
                   lineHeight: 1.75,
                   fontWeight: 300,
                 }}
@@ -128,10 +128,10 @@ export function ProgramsOverview() {
                 {(programHighlights[program.slug] ?? []).map((fact) => (
                   <li
                     key={fact}
-                    className="text-[#5A5A5A] pl-4 relative"
+                    className="text-[#3D3D3D] pl-4 relative"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.82rem",
+                      fontSize: "0.88rem",
                       lineHeight: 1.5,
                       fontWeight: 300,
                     }}
@@ -149,7 +149,7 @@ export function ProgramsOverview() {
                 className="text-[#458CFE] hover:underline mt-auto"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.9rem",
+                  fontSize: "0.95rem",
                   fontWeight: 500,
                 }}
               >
@@ -182,15 +182,15 @@ export function ProgramsOverview() {
             Not sure which program fits?
           </h2>
           <p
-            className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
+            className="text-[#3D3D3D] mb-8 max-w-[520px] mx-auto"
             style={{
               fontFamily: "'Outfit', sans-serif",
-              fontSize: "0.92rem",
+              fontSize: "0.96rem",
               lineHeight: 1.75,
               fontWeight: 300,
             }}
           >
-            Call us or fill out a quick form — we&apos;ll help you figure out the right next step for yourself or the person you&apos;re referring.
+            Call us or fill out a quick form and we&apos;ll help you figure out the right next step for yourself or the person you&apos;re referring.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button variant="primary" href="/contact">
@@ -201,7 +201,7 @@ export function ProgramsOverview() {
               className="text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 400,
               }}
             >

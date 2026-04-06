@@ -83,7 +83,7 @@ const eventFaqs = [
   {
     question: "How can my organization get involved?",
     answer:
-      "There are many ways to participate — become a sponsor, nominate an honoree, volunteer at the event, or contribute items for swag bags and raffle baskets. Contact us to discuss how your organization can be part of LeadHerships.",
+      "There are many ways to participate: become a sponsor, nominate an honoree, volunteer at the event, or contribute items for swag bags and raffle baskets. Contact us to discuss how your organization can be part of LeadHerships.",
   },
   {
     question: "Is there a cost to attend?",
@@ -170,10 +170,10 @@ export function LeadHERshipPageContent() {
                 &ldquo;Inspiring, Elevating, and Empowering all women to have a seat at the table&rdquo;
               </p>
               <p
-                className="text-[#5A5A5A] mb-8"
+                className="text-[#3D3D3D] mb-8"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   lineHeight: 1.85,
                   fontWeight: 300,
                 }}
@@ -198,7 +198,7 @@ export function LeadHERshipPageContent() {
                   className="flex items-center gap-2 text-[#458CFE] hover:underline"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     fontWeight: 400,
                   }}
                 >
@@ -244,17 +244,17 @@ export function LeadHERshipPageContent() {
                   Honoring women who lead by serving.
                 </h2>
                 <p
-                  className="text-[#5A5A5A] max-w-[380px]"
+                  className="text-[#3D3D3D] max-w-[380px]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     lineHeight: 1.8,
                     fontWeight: 300,
                   }}
                 >
                   Nonprofits rarely get to attend their own events without
                   incurring costs. LeadHerships changes that story. We convene,
-                  honor, and equip — with recognition, connection, and
+                  honor, and equip, with recognition, connection, and
                   collaboration at the center.
                 </p>
               </div>
@@ -284,17 +284,17 @@ export function LeadHERshipPageContent() {
                         className="text-[#1A1A1A] mb-0.5"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.9rem",
+                          fontSize: "0.95rem",
                           fontWeight: 500,
                         }}
                       >
                         {item.title}
                       </p>
                       <p
-                        className="text-[#5A5A5A]"
+                        className="text-[#3D3D3D]"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
-                          fontSize: "0.82rem",
+                          fontSize: "0.88rem",
                           lineHeight: 1.6,
                           fontWeight: 300,
                         }}
@@ -342,10 +342,10 @@ export function LeadHERshipPageContent() {
                 I am Woman, Hear Me Roar!
               </h2>
               <p
-                className="text-[#5A5A5A] mb-2"
+                className="text-[#3D3D3D] mb-2"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   lineHeight: 1.8,
                   fontWeight: 400,
                 }}
@@ -353,10 +353,10 @@ export function LeadHERshipPageContent() {
                 Date TBD &nbsp;·&nbsp; Location TBD
               </p>
               <p
-                className="text-[#5A5A5A] mb-8"
+                className="text-[#3D3D3D] mb-8"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.92rem",
+                  fontSize: "0.96rem",
                   lineHeight: 1.8,
                   fontWeight: 300,
                 }}
@@ -453,7 +453,7 @@ export function LeadHERshipPageContent() {
                     className="block text-white/40 mb-4"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.78rem",
+                      fontSize: "0.84rem",
                       fontWeight: 300,
                     }}
                   >
@@ -467,7 +467,7 @@ export function LeadHERshipPageContent() {
                           className="text-white/70"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.82rem",
+                            fontSize: "0.88rem",
                             lineHeight: 1.6,
                             fontWeight: 300,
                           }}
@@ -488,7 +488,7 @@ export function LeadHERshipPageContent() {
               transition={{ duration: 0.5, delay: 0.3 }}
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.85rem",
+                fontSize: "0.9rem",
                 fontWeight: 300,
               }}
             >
@@ -520,10 +520,10 @@ export function LeadHERshipPageContent() {
                     Volunteer
                   </h3>
                   <p
-                    className="text-[#5A5A5A]"
+                    className="text-[#3D3D3D]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       lineHeight: 1.75,
                       fontWeight: 300,
                     }}
@@ -545,10 +545,10 @@ export function LeadHERshipPageContent() {
                     Donate or Contribute
                   </h3>
                   <p
-                    className="text-[#5A5A5A] mb-4"
+                    className="text-[#3D3D3D] mb-4"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       lineHeight: 1.75,
                       fontWeight: 300,
                     }}
@@ -565,10 +565,10 @@ export function LeadHERshipPageContent() {
                       <li key={item} className="flex gap-2 items-start">
                         <span className="shrink-0 mt-[6px] w-1.5 h-1.5 rounded-full bg-[#458CFE]" />
                         <span
-                          className="text-[#5A5A5A]"
+                          className="text-[#3D3D3D]"
                           style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: "0.85rem",
+                            fontSize: "0.9rem",
                             lineHeight: 1.6,
                             fontWeight: 300,
                           }}
@@ -618,7 +618,7 @@ export function LeadHERshipPageContent() {
                       className="flex items-center justify-between cursor-pointer py-5 text-[#1A1A1A] select-none list-none [&::-webkit-details-marker]:hidden"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.95rem",
+                        fontSize: "1rem",
                         fontWeight: 400,
                       }}
                     >
@@ -628,10 +628,10 @@ export function LeadHERshipPageContent() {
                       </span>
                     </summary>
                     <p
-                      className="text-[#5A5A5A] pb-6 pr-8"
+                      className="text-[#3D3D3D] pb-6 pr-8"
                       style={{
                         fontFamily: "'Outfit', sans-serif",
-                        fontSize: "0.9rem",
+                        fontSize: "0.95rem",
                         lineHeight: 1.8,
                         fontWeight: 300,
                       }}
@@ -668,16 +668,16 @@ export function LeadHERshipPageContent() {
                   Be part of LeadHerships.
                 </h2>
                 <p
-                  className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
+                  className="text-[#3D3D3D] mb-8 max-w-[520px] mx-auto"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.92rem",
+                    fontSize: "0.96rem",
                     lineHeight: 1.75,
                     fontWeight: 300,
                   }}
                 >
                   Whether you want to nominate an honoree, sponsor the event,
-                  volunteer, or contribute — we&apos;d love to have you at the
+                  volunteer, or contribute, we&apos;d love to have you at the
                   table.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
@@ -695,7 +695,7 @@ export function LeadHERshipPageContent() {
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
+                      fontSize: "0.95rem",
                       fontWeight: 400,
                     }}
                   >
@@ -715,7 +715,7 @@ export function LeadHERshipPageContent() {
               className="pt-6"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 lineHeight: 1.8,
                 fontWeight: 300,
               }}

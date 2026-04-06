@@ -44,30 +44,30 @@ export function AboutSection() {
               Driven by love.
             </h2>
             <p
-              className="text-[#5A5A5A] mb-5"
+              className="text-[#3D3D3D] mb-5"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.95rem",
+                fontSize: "1rem",
                 lineHeight: 1.9,
                 fontWeight: 300,
               }}
             >
               Community of Hope Inc. was founded over 15 years ago with one belief:
-              every woman — no matter how broken, how lost, how far gone — deserves a
+              every woman, no matter how broken, how lost, how far gone, deserves a
               real chance at a new life. Under the leadership of Executive Director
               Annette Eldridge, we&apos;ve grown from a single home into a comprehensive
               recovery and community outreach organization.
             </p>
             <p
-              className="text-[#5A5A5A] mb-8"
+              className="text-[#3D3D3D] mb-8"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.95rem",
+                fontSize: "1rem",
                 lineHeight: 1.9,
                 fontWeight: 300,
               }}
             >
-              Hope House is more than a program — it&apos;s a family. Women share meals,
+              Hope House is more than a program. It&apos;s a family. Women share meals,
               hold each other accountable, and walk together through the hardest season
               of their lives. Our approach combines faith-based mentoring, life skills
               development, vocational training, and genuine community.
@@ -86,17 +86,17 @@ export function AboutSection() {
                     className="block text-[#1A1A1A]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.82rem",
+                      fontSize: "0.88rem",
                       fontWeight: 500,
                     }}
                   >
                     {item.label}
                   </span>
                   <span
-                    className="text-[#5A5A5A]"
+                    className="text-[#3D3D3D]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       fontWeight: 300,
                     }}
                   >
@@ -110,7 +110,7 @@ export function AboutSection() {
               className="mt-8"
               style={{
                 fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.9rem",
+                fontSize: "0.95rem",
                 fontWeight: 500,
               }}
             >
@@ -141,7 +141,7 @@ export function AboutSection() {
                 className="text-[#1A1A1A] italic"
                 style={{
                   fontFamily: "'Libre Baskerville', serif",
-                  fontSize: "0.95rem",
+                  fontSize: "1rem",
                   lineHeight: 1.6,
                 }}
               >
@@ -149,10 +149,10 @@ export function AboutSection() {
                 always meant to be.&quot;
               </p>
               <span
-                className="text-[#5A5A5A] mt-2 block"
+                className="text-[#3D3D3D] mt-2 block"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.78rem",
+                  fontSize: "0.84rem",
                   fontWeight: 300,
                 }}
               >
