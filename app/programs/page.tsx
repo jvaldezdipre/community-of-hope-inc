@@ -5,7 +5,7 @@ import { ProgramsPageTitle } from "@/components/pages/programs/ProgramsPageTitle
 import { ProgramsOverview } from "@/components/pages/programs/ProgramsOverview";
 
 const description =
-  "The House recovery home, Kindness Connection, Recovery Coaching, and LeadHERship. Four ways we serve women and families across Connecticut and beyond.";
+  "Hope House recovery home, Kindness Connection, Recovery Coaching, and LeadHerships. Four ways we serve women and families across Connecticut and beyond.";
 
 export const metadata: Metadata = {
   title: "Programs",

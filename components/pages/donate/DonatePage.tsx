@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 
 const impactItems = [
-  { amount: "$25", description: "Provides a week of meals for a resident" },
-  { amount: "$100", description: "Covers certification and job training supplies" },
-  { amount: "$500", description: "Sponsors one month of housing at Hope House" },
+  { amount: "$40", description: "Provides a bus pass for a resident" },
+  { amount: "$175", description: "Covers one week of housing at Hope House" },
+  { amount: "$500", description: "Supports a resident's utility costs" },
 ];
 
 export function DonatePage() {
@@ -57,7 +57,13 @@ export function DonatePage() {
             100% of your donation goes directly to our mission. No platform
             fees, no processing fees.
           </p>
-          <Button variant="primary" href="#" className="inline-flex mt-auto">
+          <Button
+            variant="primary"
+            href="https://www.zeffy.com/en-US/donation-form/hopes-heros"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex mt-auto"
+          >
             Donate via Zeffy
           </Button>
         </motion.div>

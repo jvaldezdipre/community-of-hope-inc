@@ -5,117 +5,102 @@ import { Phone } from "lucide-react";
 import { motion } from "motion/react";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
-import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { getProgramBySlug } from "@/lib/constants";
 
-const offerings = [
+const NOMINATIONS_FORM_URL =
+  "https://docs.google.com/forms/d/1Zgi7z06LejTq1k5eHz4iYgyhcWW9Tnb0ahidj2urrlU/viewform";
+
+const sponsorshipTiers = [
   {
-    icon: "01",
-    title: "Confidence & Self-Worth",
-    description:
-      "Rebuild the belief that you are capable, valuable, and worthy of leading your own life — no matter where you've been.",
+    name: "Gold Sponsor",
+    price: "$5,000",
+    available: "1 available",
+    benefits: [
+      "Premier vendor table in the Hunt Room",
+      "Logo on all event marketing materials, program, and signage",
+      "Option to speak at event (2–3 minutes)",
+      "Full double-page color ad in event program",
+      "Banner on display",
+      "Add swag to gift bags",
+      "10 seats at full table",
+    ],
   },
   {
-    icon: "02",
-    title: "Communication Skills",
-    description:
-      "Learn to advocate for yourself, set boundaries, and speak with confidence in interviews, meetings, and relationships.",
+    name: "Silver Sponsor",
+    price: "$2,500",
+    available: "3 available",
+    benefits: [
+      "Full-page ad in event program",
+      "5 event tickets",
+      "Recognition from stage during event",
+      "Option to add to swag bag",
+      "Vendor table available",
+    ],
   },
   {
-    icon: "03",
-    title: "Goal Setting & Planning",
-    description:
-      "Create a personal roadmap for your future — whether that's education, career, housing, or rebuilding your family.",
+    name: "Bronze Table Sponsor",
+    price: "$1,000",
+    available: "15 available",
+    benefits: [
+      "Shared table with nonprofit chosen by team",
+      "Logo and quarter-page ad in program",
+      "5 sponsor tickets + 5 nonprofit tickets",
+    ],
   },
   {
-    icon: "04",
-    title: "Financial Literacy",
-    description:
-      "Gain practical skills around budgeting, saving, and building financial independence one step at a time.",
+    name: "Copper Sponsor",
+    price: "$500",
+    available: "20 available",
+    benefits: [
+      "Business card-size ad in program",
+      "Listed on sponsor board",
+      "Option to add to swag bag",
+      "5 tickets donated to nonprofit",
+    ],
   },
   {
-    icon: "05",
-    title: "Mentoring & Community",
-    description:
-      "Connect with women who have walked this road before you. Real mentorship from people who understand your journey.",
-  },
-  {
-    icon: "06",
-    title: "Leadership Development",
-    description:
-      "Discover the leader inside you. Whether it's leading a team, a household, or a community initiative — you're ready.",
+    name: "Champion of Change",
+    price: "$200",
+    available: "40 available",
+    benefits: [
+      "Sponsor two individuals for event seats",
+      "Name listed in program and on sponsor board",
+    ],
   },
 ];
 
-const audienceSegments = [
+const eventFaqs = [
   {
-    title: "Women in Recovery",
-    description: "Building a new life and ready to discover who they really are.",
-  },
-  {
-    title: "Hope House Residents",
-    description: "Taking the next step beyond housing into personal growth.",
-  },
-  {
-    title: "Program Graduates",
-    description: "Continuing to grow and stepping into leadership roles.",
-  },
-  {
-    title: "Community Women",
-    description: "Any woman who wants to build confidence, skills, and purpose.",
-  },
-];
-
-const growthSteps = [
-  {
-    number: "1",
-    title: "Join the Program",
-    description: "Reach out or talk to staff. There's no application fee and no prerequisites — just a willingness to grow.",
-  },
-  {
-    number: "2",
-    title: "Learn & Practice",
-    description: "Attend workshops, mentoring sessions, and group activities designed to build real-world skills and confidence.",
-  },
-  {
-    number: "3",
-    title: "Step Into Your Role",
-    description: "Apply what you've learned — in your career, your family, your community. You were made to lead.",
-  },
-];
-
-const leadhershipFaqs = [
-  {
-    question: "What is LeadHERship?",
+    question: "What is LeadHerships?",
     answer:
-      "LeadHERship is a personal development and empowerment program for women. It focuses on building confidence, leadership skills, financial literacy, and practical tools that help women step into stronger roles in their lives — at work, at home, and in the community.",
+      "LeadHerships is an initiative of Community of Hope designed to honor and empower women who are actively serving others. Each year, nonprofit partners are invited to nominate an honoree who reflects leadership, resilience, and impact in their community.",
   },
   {
-    question: "Do I have to be a Hope House resident?",
+    question: "How does the nomination process work?",
     answer:
-      "No. LeadHERship is open to Hope House residents, graduates, and any woman in the community who wants to grow. If you're looking for a supportive environment to build yourself up, this program is for you.",
+      "Each invited nonprofit partner selects one honoree who reflects leadership, resilience, and impact. Nominations are submitted through our Google Form. At the celebration, honorees and their organizations receive recognition.",
   },
   {
-    question: "Is there a cost?",
+    question: "How can my organization get involved?",
     answer:
-      "LeadHERship is completely free. We believe every woman deserves access to the tools and support she needs to lead her own life — regardless of her financial situation.",
+      "There are many ways to participate — become a sponsor, nominate an honoree, volunteer at the event, or contribute items for swag bags and raffle baskets. Contact us to discuss how your organization can be part of LeadHerships.",
   },
   {
-    question: "What kind of time commitment is involved?",
+    question: "Is there a cost to attend?",
     answer:
-      "The program is flexible and designed to meet women where they are. Contact us to learn about the current schedule and how you can participate at your own pace.",
+      "Nonprofits rarely get to attend their own events without incurring costs. LeadHerships changes that. Each nonprofit partner receives 2 complimentary luncheon tickets. Additional tickets are available through sponsorship packages.",
   },
   {
-    question: "I don't see myself as a leader. Is this still for me?",
+    question: "How can I become a sponsor?",
     answer:
-      "Absolutely — that's exactly who this is for. Leadership isn't about a title. It's about believing in yourself, making decisions with confidence, and showing up for your life. LeadHERship helps you see what's already inside you.",
+      "We offer sponsorship packages from $200 to $5,000 with various benefits. Custom packages are also available. Contact us by phone to discuss sponsorship opportunities.",
   },
 ];
 
 const sectionPaddingLg = "clamp(80px, 10vw, 160px)";
 
 export function LeadHERshipPageContent() {
-  const program = getProgramBySlug("leadhership")!;
+  const program = getProgramBySlug("leadherships")!;
 
   return (
     <>
@@ -123,15 +108,35 @@ export function LeadHERshipPageContent() {
         items={[
           { name: "Home", href: "/" },
           { name: "Programs", href: "/programs" },
-          { name: "LeadHERship", href: "/programs/leadhership" },
+          { name: "LeadHerships", href: "/programs/leadherships" },
         ]}
       />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
-        {/* ─── Hero (white) — centered layout ────────────── */}
-        <section className="bg-white">
-          <div className="max-w-[1200px] mx-auto px-6" style={{ paddingTop: "clamp(32px, 4vw, 48px)", paddingBottom: sectionPaddingLg }}>
+        {/* ─── Hero with background image ────────────────── */}
+        <section
+          className="relative bg-white overflow-hidden"
+          style={{
+            minHeight: "clamp(420px, 50vw, 580px)",
+          }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage:
+                "url('/LeadHERships-Facebook Banner Design - Edited.jpg')",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent" />
+          <div
+            className="relative max-w-[1200px] mx-auto px-6 flex items-center"
+            style={{
+              paddingTop: "clamp(48px, 6vw, 80px)",
+              paddingBottom: "clamp(48px, 6vw, 80px)",
+              minHeight: "clamp(420px, 50vw, 580px)",
+            }}
+          >
             <motion.div
-              className="text-center max-w-[680px] mx-auto mb-12"
+              className="max-w-[560px]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
@@ -145,21 +150,27 @@ export function LeadHERshipPageContent() {
                   fontWeight: 500,
                 }}
               >
-                Women&apos;s Empowerment
+                A Community of Hope Initiative
               </span>
-              <h1
-                className="text-[#1A1A1A] mb-5"
-                style={{
-                  fontFamily: "'Libre Baskerville', serif",
-                  fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
-                  fontWeight: 400,
-                  lineHeight: 1.2,
-                }}
-              >
-                {program.title}
+              <h1 className="mb-5">
+                <img
+                  src="/leadhership-logo .png"
+                  alt="LeadHerships"
+                  className="h-[150px] md:h-[200px] w-auto object-contain mix-blend-multiply"
+                />
               </h1>
               <p
-                className="text-[#5A5A5A] mb-4"
+                className="text-[#3A3A3A] mb-4 italic"
+                style={{
+                  fontFamily: "'Libre Baskerville', serif",
+                  fontSize: "clamp(1rem, 1.8vw, 1.15rem)",
+                  lineHeight: 1.7,
+                }}
+              >
+                &ldquo;Inspiring, Elevating, and Empowering all women to have a seat at the table&rdquo;
+              </p>
+              <p
+                className="text-[#5A5A5A] mb-8"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: "0.95rem",
@@ -167,25 +178,20 @@ export function LeadHERshipPageContent() {
                   fontWeight: 300,
                 }}
               >
-                You&apos;ve survived the hardest parts. Now it&apos;s time to lead.
-                LeadHERship helps women build the confidence, skills, and vision to
-                step into stronger roles — in their careers, their families, and
-                their communities.
+                LeadHerships is an initiative of Community of Hope designed to
+                honor and empower women who are actively serving others. While we
+                spotlight women, we also uplift the organizations that stand
+                beside them to build stronger, more compassionate communities.
               </p>
-              <p
-                className="text-[#5A5A5A] mb-8"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
-                  lineHeight: 1.75,
-                  fontWeight: 300,
-                }}
-              >
-                Free and open to all women — residents, graduates, and community members.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button variant="primary" as="a" href="/contact">
-                  Get Started
+              <div className="flex flex-wrap items-center gap-4">
+                <Button
+                  variant="primary"
+                  as="a"
+                  href={NOMINATIONS_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Nominate an Honoree
                 </Button>
                 <a
                   href="tel:8609128983"
@@ -201,104 +207,109 @@ export function LeadHERshipPageContent() {
                 </a>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <ImageWithFallback
-                src={program.image}
-                alt="Women supporting and empowering each other"
-                className="w-full h-[300px] md:h-[420px] object-cover rounded-[8px]"
-              />
-            </motion.div>
           </div>
         </section>
 
-        {/* ─── What You'll Build (beige) — 3-col cards ─────── */}
+        {/* ─── How It Works (beige) ──────────────────────── */}
         <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 25 }}
+              className="grid md:grid-cols-[1fr_1.4fr] gap-10 md:gap-16"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <span
-                className="block text-[#458CFE] uppercase mb-4"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.68rem",
-                  letterSpacing: "0.14em",
-                  fontWeight: 500,
-                }}
-              >
-                What You&apos;ll Build
-              </span>
-              <h2
-                className="text-[#1A1A1A] max-w-[500px] mx-auto"
-                style={{
-                  fontFamily: "'Libre Baskerville', serif",
-                  fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
-                  fontWeight: 400,
-                  lineHeight: 1.3,
-                }}
-              >
-                The skills to lead your own life.
-              </h2>
-            </motion.div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {offerings.map((item, i) => (
-                <motion.div
-                  key={item.icon}
-                  className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-8 shadow-sm"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+              <div>
+                <span
+                  className="block text-[#458CFE] uppercase mb-4"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.68rem",
+                    letterSpacing: "0.14em",
+                    fontWeight: 500,
+                  }}
                 >
-                  <span
-                    className="block text-[#458CFE]/30 mb-4"
-                    style={{
-                      fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "1.6rem",
-                      fontWeight: 400,
-                    }}
+                  How It Works
+                </span>
+                <h2
+                  className="text-[#1A1A1A] mb-4"
+                  style={{
+                    fontFamily: "'Libre Baskerville', serif",
+                    fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+                    fontWeight: 400,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  Honoring women who lead by serving.
+                </h2>
+                <p
+                  className="text-[#5A5A5A] max-w-[380px]"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.9rem",
+                    lineHeight: 1.8,
+                    fontWeight: 300,
+                  }}
+                >
+                  Nonprofits rarely get to attend their own events without
+                  incurring costs. LeadHerships changes that story. We convene,
+                  honor, and equip — with recognition, connection, and
+                  collaboration at the center.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
+                {[
+                  { title: "Host Invites Partners", detail: "Each year's host invites nonprofit partners to participate. 2026 host: Community of Hope." },
+                  { title: "Partners Nominate Honorees", detail: "Each nonprofit partner selects one honoree reflecting leadership, resilience, and impact." },
+                  { title: "Celebration & Recognition", detail: "At the luncheon, honorees and their organizations receive recognition and celebration." },
+                  { title: "Complimentary Tickets", detail: "Each nonprofit partner receives 2 complimentary luncheon tickets. No cost to attend." },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.title}
+                    className="flex gap-3"
+                    initial={{ opacity: 0, x: 12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.06, ease: "easeOut" }}
                   >
-                    {item.icon}
-                  </span>
-                  <h3
-                    className="text-[#1A1A1A] mb-2"
-                    style={{
-                      fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "1.05rem",
-                      fontWeight: 400,
-                      lineHeight: 1.3,
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-[#5A5A5A]"
-                    style={{
-                      fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
-                      lineHeight: 1.7,
-                      fontWeight: 300,
-                    }}
-                  >
-                    {item.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+                    <span className="shrink-0 mt-[3px] w-5 h-5 rounded-full bg-[#458CFE]/10 flex items-center justify-center">
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#458CFE" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p
+                        className="text-[#1A1A1A] mb-0.5"
+                        style={{
+                          fontFamily: "'Outfit', sans-serif",
+                          fontSize: "0.9rem",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {item.title}
+                      </p>
+                      <p
+                        className="text-[#5A5A5A]"
+                        style={{
+                          fontFamily: "'Outfit', sans-serif",
+                          fontSize: "0.82rem",
+                          lineHeight: 1.6,
+                          fontWeight: 300,
+                        }}
+                      >
+                        {item.detail}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* ─── Why It Matters (white) — centered narrative ─── */}
+        {/* ─── Upcoming Event (white) ────────────────────── */}
         <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
@@ -317,10 +328,10 @@ export function LeadHERshipPageContent() {
                   fontWeight: 500,
                 }}
               >
-                Why It Matters
+                Upcoming Event
               </span>
               <h2
-                className="text-[#1A1A1A] mb-6"
+                className="text-[#1A1A1A] mb-3"
                 style={{
                   fontFamily: "'Libre Baskerville', serif",
                   fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
@@ -328,31 +339,52 @@ export function LeadHERshipPageContent() {
                   lineHeight: 1.3,
                 }}
               >
-                Recovery is the beginning, not the end.
+                I am Woman, Hear Me Roar!
               </h2>
               <p
-                className="text-[#5A5A5A]"
+                className="text-[#5A5A5A] mb-2"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: "0.95rem",
-                  lineHeight: 1.9,
+                  lineHeight: 1.8,
+                  fontWeight: 400,
+                }}
+              >
+                Date TBD &nbsp;·&nbsp; Location TBD
+              </p>
+              <p
+                className="text-[#5A5A5A] mb-8"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.92rem",
+                  lineHeight: 1.8,
                   fontWeight: 300,
                 }}
               >
-                Getting clean and finding stability is a huge accomplishment — but
-                what comes next? Many women leave programs unsure of who they are
-                outside of their past. LeadHERship bridges that gap. It&apos;s
-                where women go from surviving to thriving — discovering their
-                strengths, building practical skills, and stepping into roles they
-                never imagined for themselves. A mother who leads her household
-                with confidence. An employee who speaks up in meetings. A woman who
-                mentors others because she knows what it took to get here.
+                An inspiring luncheon with keynote address, presentation of the
+                colors, vibrant basket raffle, and a &ldquo;passport
+                experience&rdquo; sparking new partnerships. Stay tuned for
+                details.
               </p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                <Button
+                  variant="primary"
+                  as="a"
+                  href={NOMINATIONS_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Nominate an Honoree
+                </Button>
+                <Button variant="outlineLight" as="a" href="tel:8609128983">
+                  Become a Sponsor
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* ─── Who It's For (dark) — audience cards ──────── */}
+        {/* ─── Sponsorship Tiers (dark) ──────────────────── */}
         <section className="bg-[#0F1D33]" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="text-center mb-12 md:mb-16">
@@ -369,10 +401,10 @@ export function LeadHERshipPageContent() {
                   fontWeight: 500,
                 }}
               >
-                Who It&apos;s For
+                Sponsorship Packages
               </motion.span>
               <motion.h2
-                className="text-white max-w-[500px] mx-auto"
+                className="text-white max-w-[550px] mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -384,155 +416,176 @@ export function LeadHERshipPageContent() {
                   lineHeight: 1.3,
                 }}
               >
-                Every woman has a leader inside her.
+                Your sponsorship celebrates women leaders and fuels collaboration.
               </motion.h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {audienceSegments.map((segment, i) => (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {sponsorshipTiers.map((tier, i) => (
                 <motion.div
-                  key={segment.title}
-                  className="text-center px-4 py-8 rounded-[8px] border border-[#8FB8FF]/15"
+                  key={tier.name}
+                  className="rounded-[8px] border border-[#8FB8FF]/15 px-6 py-8"
                   initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
                 >
-                  <h3
-                    className="text-white mb-3"
+                  <span
+                    className="block text-[#8FB8FF] mb-1"
                     style={{
                       fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "1.05rem",
+                      fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
                       fontWeight: 400,
-                      lineHeight: 1.3,
                     }}
                   >
-                    {segment.title}
-                  </h3>
-                  <p
-                    className="text-white/60"
+                    {tier.price}
+                  </span>
+                  <h3
+                    className="text-white mb-1"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
-                      lineHeight: 1.7,
+                      fontSize: "1rem",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {tier.name}
+                  </h3>
+                  <span
+                    className="block text-white/40 mb-4"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.78rem",
                       fontWeight: 300,
                     }}
                   >
-                    {segment.description}
-                  </p>
+                    {tier.available}
+                  </span>
+                  <ul className="flex flex-col gap-2">
+                    {tier.benefits.map((benefit) => (
+                      <li key={benefit} className="flex gap-2 items-start">
+                        <span className="shrink-0 mt-[6px] w-1.5 h-1.5 rounded-full bg-[#8FB8FF]/50" />
+                        <span
+                          className="text-white/70"
+                          style={{
+                            fontFamily: "'Outfit', sans-serif",
+                            fontSize: "0.82rem",
+                            lineHeight: 1.6,
+                            fontWeight: 300,
+                          }}
+                        >
+                          {benefit}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </motion.div>
               ))}
             </div>
+            <motion.p
+              className="text-center text-white/50 mt-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.85rem",
+                fontWeight: 300,
+              }}
+            >
+              Custom packages available. Call us to discuss.
+            </motion.p>
           </div>
         </section>
 
-        {/* ─── How It Works (white) — 3 steps ─────────────── */}
+        {/* ─── Get Involved (white) ──────────────────────── */}
         <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <h2
-                className="text-[#1A1A1A]"
-                style={{
-                  fontFamily: "'Libre Baskerville', serif",
-                  fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
-                  fontWeight: 400,
-                  lineHeight: 1.3,
-                }}
-              >
-                How it works
-              </h2>
-            </motion.div>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-              {growthSteps.map((step, i) => (
-                <motion.div
-                  key={step.number}
-                  className="relative text-center"
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
-                >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[#458CFE]/10 text-[#458CFE] mb-5 mx-auto">
-                    <span
-                      style={{
-                        fontFamily: "'Libre Baskerville', serif",
-                        fontSize: "1.1rem",
-                      }}
-                    >
-                      {step.number}
-                    </span>
-                  </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-8">
                   <h3
-                    className="text-[#1A1A1A] mb-2"
+                    className="text-[#1A1A1A] mb-3"
                     style={{
                       fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "1.05rem",
+                      fontSize: "1.15rem",
                       fontWeight: 400,
                       lineHeight: 1.3,
                     }}
                   >
-                    {step.title}
+                    Volunteer
                   </h3>
                   <p
-                    className="text-[#5A5A5A] max-w-[280px] mx-auto"
+                    className="text-[#5A5A5A]"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.85rem",
+                      fontSize: "0.9rem",
                       lineHeight: 1.75,
                       fontWeight: 300,
                     }}
                   >
-                    {step.description}
+                    Join us for a day of fun and hospitality, working with
+                    like-minded women. Training provided. Contact us to sign up.
                   </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Vision (beige) — large centered quote ──────── */}
-        <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
-          <div className="max-w-[1200px] mx-auto px-6">
-            <motion.div
-              className="max-w-[700px] mx-auto text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <p
-                className="text-[#1A1A1A] italic"
-                style={{
-                  fontFamily: "'Libre Baskerville', serif",
-                  fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
-                  lineHeight: 1.7,
-                }}
-              >
-                &ldquo;She didn&apos;t need someone to save her. She needed
-                someone to believe she could save herself — and then give her
-                the tools to do it.&rdquo;
-              </p>
-              <span
-                className="block mt-6 text-[#5A5A5A]"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
-                  fontWeight: 300,
-                }}
-              >
-                — The LeadHERship Vision
-              </span>
+                </div>
+                <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-8">
+                  <h3
+                    className="text-[#1A1A1A] mb-3"
+                    style={{
+                      fontFamily: "'Libre Baskerville', serif",
+                      fontSize: "1.15rem",
+                      fontWeight: 400,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    Donate or Contribute
+                  </h3>
+                  <p
+                    className="text-[#5A5A5A] mb-4"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.9rem",
+                      lineHeight: 1.75,
+                      fontWeight: 300,
+                    }}
+                  >
+                    Help make LeadHerships special with:
+                  </p>
+                  <ul className="flex flex-col gap-2">
+                    {[
+                      "Swag bag items for honorees (20–25 qty)",
+                      "Gift certificates and door prizes",
+                      "Raffle baskets and in-kind services",
+                      "General operating support",
+                    ].map((item) => (
+                      <li key={item} className="flex gap-2 items-start">
+                        <span className="shrink-0 mt-[6px] w-1.5 h-1.5 rounded-full bg-[#458CFE]" />
+                        <span
+                          className="text-[#5A5A5A]"
+                          style={{
+                            fontFamily: "'Outfit', sans-serif",
+                            fontSize: "0.85rem",
+                            lineHeight: 1.6,
+                            fontWeight: 300,
+                          }}
+                        >
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* ─── FAQ (white) ──────────────────────────────── */}
-        <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
+        {/* ─── FAQ (beige) ──────────────────────────────── */}
+        <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -541,7 +594,7 @@ export function LeadHERshipPageContent() {
               transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <h2
-                className="text-[#1A1A1A] mb-8"
+                className="text-[#1A1A1A] mb-8 text-center"
                 style={{
                   fontFamily: "'Libre Baskerville', serif",
                   fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
@@ -551,8 +604,8 @@ export function LeadHERshipPageContent() {
               >
                 Common Questions
               </h2>
-              <div className="flex flex-col gap-0">
-                {leadhershipFaqs.map((faq, i) => (
+              <div className="flex flex-col gap-0 max-w-[800px] mx-auto">
+                {eventFaqs.map((faq, i) => (
                   <motion.details
                     key={faq.question}
                     className="border-t border-[#EBEBEB] group"
@@ -593,8 +646,8 @@ export function LeadHERshipPageContent() {
           </div>
         </section>
 
-        {/* ─── Bottom CTA (beige) ─────────────────────────── */}
-        <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
+        {/* ─── Bottom CTA (white) ─────────────────────────── */}
+        <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -612,7 +665,7 @@ export function LeadHERshipPageContent() {
                     lineHeight: 1.3,
                   }}
                 >
-                  Ready to discover the leader in you?
+                  Be part of LeadHerships.
                 </h2>
                 <p
                   className="text-[#5A5A5A] mb-8 max-w-[520px] mx-auto"
@@ -623,13 +676,19 @@ export function LeadHERshipPageContent() {
                     fontWeight: 300,
                   }}
                 >
-                  Reach out to learn more about LeadHERship and how you can start
-                  building the confidence, skills, and community to lead your life
-                  on your terms.
+                  Whether you want to nominate an honoree, sponsor the event,
+                  volunteer, or contribute — we&apos;d love to have you at the
+                  table.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Button variant="primary" as="a" href="/contact">
-                    Get Started
+                  <Button
+                    variant="primary"
+                    as="a"
+                    href={NOMINATIONS_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Nominate an Honoree
                   </Button>
                   <a
                     href="tel:8609128983"
@@ -650,7 +709,7 @@ export function LeadHERshipPageContent() {
         </section>
 
         {/* ─── Back link ──────────────────────────────────── */}
-        <section className="bg-[#FAF8F5] pb-24">
+        <section className="bg-white pb-24">
           <div className="max-w-[1200px] mx-auto px-6">
             <p
               className="pt-6"

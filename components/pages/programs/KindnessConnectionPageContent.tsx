@@ -8,18 +8,12 @@ import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { getProgramBySlug } from "@/lib/constants";
 
-const FORM_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfdEoCnAugAqUBADWEwNDM1zhCGu7Qma8QCPtQkSNJqeznzSw/viewform";
-
 const whatWeProvide = [
-  { title: "Food & Groceries", detail: "Fresh and non-perishable food for individuals and families" },
+  { title: "Essential Support", detail: "Food, clothing, and other essentials as able" },
   { title: "Clothing", detail: "Clean, quality clothing for adults and children" },
   { title: "Hygiene Products", detail: "Toiletries and personal care essentials" },
   { title: "Household Items", detail: "Bedding, kitchenware, cleaning supplies, and more" },
-  { title: "Car Repairs", detail: "Help getting you back on the road when transportation is a barrier" },
-  { title: "Housing Assistance", detail: "Support navigating housing options and applications" },
-  { title: "Certification Help", detail: "Assistance pursuing vocational certifications and job training" },
-  { title: "Referrals & Support", detail: "Connections to partner organizations and local resources" },
+  { title: "Referrals & Support", detail: "Connections to partner organizations, housing resources, and local services" },
 ];
 
 const programDetails = [
@@ -28,7 +22,7 @@ const programDetails = [
   { label: "Service Area", value: "All of CT & beyond" },
   { label: "Director", value: "Veronica Sullivan" },
   { label: "Response Time", value: "As fast as we can" },
-  { label: "How to Request", value: "Form, call, or email" },
+  { label: "How to Request", value: "Call 860-856-5655" },
 ];
 
 const howItWorks = [
@@ -36,7 +30,7 @@ const howItWorks = [
     number: 1,
     title: "Tell us what you need",
     description:
-      "Fill out the request form or call us. Let us know your situation and what would help most.",
+      "Give us a call at 860-856-5655. Let us know your situation and what would help most.",
   },
   {
     number: 2,
@@ -76,7 +70,7 @@ const kindnessFaqs = [
   {
     question: "How can I donate items to Kindness Connection?",
     answer:
-      "We accept donations of food, clothing, hygiene products, and household items. Contact us to coordinate a drop-off or pickup. Every contribution goes directly to a family in need.",
+      "We accept donations of food, clothing, hygiene products, and household items. Contact us to coordinate a drop-off or pickup. Every item donated goes directly to an individual or family in need.",
   },
 ];
 
@@ -135,7 +129,7 @@ export function KindnessConnectionPageContent() {
                     fontWeight: 300,
                   }}
                 >
-                  Food, clothing, household essentials, car repairs, and more — free,
+                  Food, clothing, household essentials, and more — free,
                   practical support for individuals and families across Connecticut who
                   need a hand right now.
                 </p>
@@ -151,11 +145,11 @@ export function KindnessConnectionPageContent() {
                   Open to anyone in the community. No program enrollment required.
                 </p>
                 <div className="flex flex-wrap items-center gap-4">
-                  <Button variant="primary" as="a" href={FORM_URL} target="_blank" rel="noopener noreferrer">
-                    Request Help
+                  <Button variant="primary" as="a" href="tel:8608565655">
+                    Call Us
                   </Button>
                   <a
-                    href="tel:8609128983"
+                    href="tel:8608565655"
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
@@ -164,7 +158,7 @@ export function KindnessConnectionPageContent() {
                     }}
                   >
                     <Phone size={15} strokeWidth={1.5} />
-                    860-912-8983
+                    860-856-5655
                   </a>
                 </div>
               </motion.div>
@@ -204,7 +198,7 @@ export function KindnessConnectionPageContent() {
                     fontWeight: 500,
                   }}
                 >
-                  What We Provide
+                  Central Resources
                 </span>
                 <h2
                   className="text-[#1A1A1A] mb-4"
@@ -450,11 +444,9 @@ export function KindnessConnectionPageContent() {
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
                   {[
-                    "Families facing food insecurity or basic needs gaps",
+                    "Families facing food insecurity or essential needs gaps",
                     "Individuals who need clothing, hygiene products, or household items",
-                    "Anyone dealing with a transportation barrier (car repairs)",
-                    "People seeking help with housing applications or resources",
-                    "Community members looking for vocational certification support",
+                    "People seeking referrals for housing or other resources",
                     "Social workers, pastors, or case managers referring someone in need",
                   ].map((item, i) => (
                     <motion.div
@@ -577,15 +569,15 @@ export function KindnessConnectionPageContent() {
                     fontWeight: 300,
                   }}
                 >
-                  Fill out the request form and our team will follow up. You can also
-                  call us directly — we&apos;re happy to talk through what you need.
+                  Give us a call and our team will talk through what you need.
+                  We&apos;re here to help.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Button variant="primary" as="a" href={FORM_URL} target="_blank" rel="noopener noreferrer">
-                    Fill Out the Request Form
+                  <Button variant="primary" as="a" href="tel:8608565655">
+                    Call Us
                   </Button>
                   <a
-                    href="tel:8609128983"
+                    href="tel:8608565655"
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
@@ -594,7 +586,7 @@ export function KindnessConnectionPageContent() {
                     }}
                   >
                     <Phone size={15} strokeWidth={1.5} />
-                    860-912-8983
+                    860-856-5655
                   </a>
                 </div>
               </div>

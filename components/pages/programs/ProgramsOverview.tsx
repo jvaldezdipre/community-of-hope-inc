@@ -7,11 +7,11 @@ import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { Button } from "@/components/ui/Button";
 
 const programHighlights: Record<string, string[]> = {
-  "the-house": [
+  "hope-house": [
     "12-bed faith-based residence",
     "6–18 month program",
-    "Mentoring & life skills",
-    "Vocational certifications",
+    "Mentoring & job readiness",
+    "Clothing with Dignity",
   ],
   "kindness-connection": [
     "Food, clothing & essentials",
@@ -25,11 +25,11 @@ const programHighlights: Record<string, string[]> = {
     "Open to residents & community",
     "Professional credential",
   ],
-  leadhership: [
-    "Nonprofit peer support",
-    "Shared leadership growth",
-    "Cross-sector collaboration",
-    "Strengthening capacity",
+  leadherships: [
+    "Annual celebration event",
+    "Honoring women leaders",
+    "Nonprofit partnerships",
+    "Sponsorship opportunities",
   ],
 };
 

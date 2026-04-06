@@ -10,11 +10,10 @@ import { getProgramBySlug, processSteps, testimonials, faqs } from "@/lib/consta
 
 const whatResidentsReceive = [
   { title: "Safe Housing", detail: "A 12-bed, family-style home — not a facility" },
-  { title: "Meals & Essentials", detail: "Three meals a day and everything you need" },
+  { title: "Clothing with Dignity", detail: "A boutique experience providing clothing, shoes, and accessories" },
   { title: "Mentoring", detail: "From staff and women who have walked the same road" },
-  { title: "Life Skills Training", detail: "Budgeting, cooking, communication, self-care" },
   { title: "Job Readiness", detail: "Resume help, interview prep, and workplace skills" },
-  { title: "Vocational Certifications", detail: "CNA license, CCAR Recovery Coach, and more" },
+  { title: "Leadership Opportunities", detail: "Opportunities to grow, lead, and give back" },
   { title: "Faith-Based Support", detail: "Rooted in love, not requirements or judgment" },
   { title: "Community", detail: "Women supporting women — accountability and friendship" },
 ];
@@ -22,16 +21,16 @@ const whatResidentsReceive = [
 const programDetails = [
   { label: "Beds", value: "12" },
   { label: "Program Length", value: "6–18 months" },
-  { label: "Cost", value: "Contact us" },
+  { label: "Cost", value: "Free" },
   { label: "Age Requirement", value: "18+" },
-  { label: "Intake", value: "Often within 24–48 hrs" },
+  { label: "Intake", value: "Based on availability" },
   { label: "Service Area", value: "All of Connecticut" },
 ];
 
 // Pull the Hope House graduate testimonial
 const houseTestimonial = testimonials[0];
 
-// Pull FAQs most relevant to The House
+// Pull FAQs most relevant to Hope House
 const relevantFaqQuestions = [
   "How quickly can someone move in?",
   "Is this a religious program? Do residents have to be Christian?",
@@ -45,7 +44,7 @@ const sectionPadding = "clamp(48px, 8vw, 80px)";
 const sectionPaddingLg = "clamp(80px, 10vw, 160px)";
 
 export function TheHousePageContent() {
-  const program = getProgramBySlug("the-house")!;
+  const program = getProgramBySlug("hope-house")!;
 
   return (
     <>
@@ -53,7 +52,7 @@ export function TheHousePageContent() {
         items={[
           { name: "Home", href: "/" },
           { name: "Programs", href: "/programs" },
-          { name: "The House", href: "/programs/the-house" },
+          { name: "Hope House", href: "/programs/hope-house" },
         ]}
       />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
@@ -98,9 +97,9 @@ export function TheHousePageContent() {
             }}
           >
             A 12-bed, faith-based recovery residence where women rebuild their
-            lives in a safe, family-style community. Mentoring, life skills,
-            vocational certifications, and genuine connection — not a program, a
-            home.
+            lives in a safe, family-style community. Mentoring, job readiness,
+            and genuine connection — not a program, a home. No judgment, just a
+            conversation.
           </p>
           <p
             className="text-[#5A5A5A] mb-8"
@@ -418,8 +417,108 @@ export function TheHousePageContent() {
           </div>
         </section>
 
-        {/* ─── FAQ (beige) ────────────────────────────────── */}
+        {/* ─── Personal Growth & Leadership (beige) ────────── */}
         <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <span
+                className="block text-[#458CFE] uppercase mb-4"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.68rem",
+                  letterSpacing: "0.14em",
+                  fontWeight: 500,
+                }}
+              >
+                Grow, Lead, Give Back
+              </span>
+              <h2
+                className="text-[#1A1A1A] max-w-[500px] mx-auto"
+                style={{
+                  fontFamily: "'Libre Baskerville', serif",
+                  fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+                  fontWeight: 400,
+                  lineHeight: 1.3,
+                }}
+              >
+                Recovery is the beginning, not the end.
+              </h2>
+              <p
+                className="text-[#5A5A5A] max-w-[640px] mx-auto mt-4"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.92rem",
+                  lineHeight: 1.8,
+                  fontWeight: 300,
+                }}
+              >
+                Hope House isn&apos;t just about getting back on your feet — it&apos;s about discovering who you really are. Through mentoring, workshops, and community, residents build the confidence, skills, and vision to lead their own lives.
+              </p>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { icon: "01", title: "Confidence & Self-Worth", description: "Rebuild the belief that you are capable, valuable, and worthy of leading your own life — no matter where you've been." },
+                { icon: "02", title: "Communication Skills", description: "Learn to advocate for yourself, set boundaries, and speak with confidence in interviews, meetings, and relationships." },
+                { icon: "03", title: "Goal Setting & Planning", description: "Create a personal roadmap for your future — whether that's education, career, housing, or rebuilding your family." },
+                { icon: "04", title: "Financial Literacy", description: "Gain practical skills around budgeting, saving, and building financial independence one step at a time." },
+                { icon: "05", title: "Mentoring & Community", description: "Connect with women who have walked this road before you. Real mentorship from people who understand your journey." },
+                { icon: "06", title: "Leadership Development", description: "Discover the leader inside you. Whether it's leading a team, a household, or a community initiative — you're ready." },
+              ].map((item, i) => (
+                <motion.div
+                  key={item.icon}
+                  className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-8 shadow-sm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+                >
+                  <span
+                    className="block text-[#458CFE]/30 mb-4"
+                    style={{
+                      fontFamily: "'Libre Baskerville', serif",
+                      fontSize: "1.6rem",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item.icon}
+                  </span>
+                  <h3
+                    className="text-[#1A1A1A] mb-2"
+                    style={{
+                      fontFamily: "'Libre Baskerville', serif",
+                      fontSize: "1.05rem",
+                      fontWeight: 400,
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className="text-[#5A5A5A]"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.85rem",
+                      lineHeight: 1.7,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── FAQ (white) ────────────────────────────────── */}
+        <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
           <div className="max-w-[1200px] mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -510,7 +609,7 @@ export function TheHousePageContent() {
               fontWeight: 300,
             }}
           >
-            Whether you&apos;re seeking help for yourself, referring a client, or reaching out for a loved one — we&apos;re here. No judgment, no waitlist games. Just a conversation.
+            Whether you&apos;re seeking help for yourself, referring a client, or reaching out for a loved one — we&apos;re here. No judgment, just a conversation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button variant="primary" href="/contact">

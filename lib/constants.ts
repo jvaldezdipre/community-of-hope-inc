@@ -75,17 +75,17 @@ export type Program = {
 export const programs: Program[] = [
   {
     number: "01",
-    title: "The House",
+    title: "Hope House",
     subtitle: "Women's Recovery Home",
-    slug: "the-house",
+    slug: "hope-house",
     description:
-      "A 12-bed, faith-based recovery residence. Women receive structured support, mentoring, life skills training, and a safe family-style environment to rebuild their lives.",
+      "A 12-bed, faith-based recovery residence. Women receive structured support, mentoring, and a safe family-style environment to rebuild their lives. No cost for residents.",
     goodFor:
       "Women 18+ recovering from addiction, homelessness, or domestic violence who need stable housing and a supportive community.",
     image:
       "https://images.unsplash.com/photo-1628077571013-88b0a74d4e7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3p5JTIwaG9tZSUyMGludGVyaW9yJTIwd2FybSUyMHN1bmxpZ2h0JTIwc2FmZXxlbnwxfHx8fDE3NzIzNzcxOTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
     body:
-      "The House is our 12-bed, faith-based recovery home. Women live together as a family — sharing meals, responsibilities, and genuine connection. We believe recovery happens in relationship, not isolation. Residents receive mentoring, life skills training, job readiness support, and vocational certifications. Program length varies based on individual needs, typically 6 to 18 months. Contact us to learn more or refer someone.",
+      "Hope House is our 12-bed, faith-based recovery home. Women live together as a family — sharing responsibilities and genuine connection. We believe recovery happens in relationship, not isolation. Residents receive mentoring, job readiness support, clothing with dignity, and opportunities to grow, lead, and give back. Program length varies based on individual needs, typically 6 to 18 months. There is no cost for residents. Contact us to learn more or refer someone.",
   },
   {
     number: "02",
@@ -117,17 +117,17 @@ export const programs: Program[] = [
   },
   {
     number: "04",
-    title: "LeadHERship",
-    subtitle: "Women's Empowerment",
-    slug: "leadhership",
+    title: "LeadHerships",
+    subtitle: "Celebrating Women Leaders",
+    slug: "leadherships",
     description:
-      "A personal development and empowerment program helping women build confidence, leadership skills, and practical tools to step into stronger roles in their careers, families, and communities.",
+      "An annual initiative honoring and empowering women who are actively serving others. Nonprofit partners nominate honorees for a celebration of leadership, resilience, and impact.",
     goodFor:
-      "Women in recovery, Hope House residents and graduates, and any woman in the community looking to build confidence, leadership skills, and a vision for her future.",
+      "Nonprofit organizations, community leaders, and anyone passionate about celebrating women who lead by serving others.",
     image:
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
     body:
-      "LeadHERship is where women go from surviving to thriving. Through mentoring, workshops, and community, women build the confidence, skills, and vision to lead their own lives — at work, at home, and beyond. Open to Hope House residents, graduates, and any woman in the community.",
+      "LeadHerships is an initiative of Community of Hope designed to honor and empower women who are actively serving others. While we spotlight women, we also uplift the organizations that stand beside them to build stronger, more compassionate communities. Each year, nonprofit partners nominate honorees for an inspiring celebration.",
   },
 ];
 
@@ -170,10 +170,10 @@ export const aboutLeadership = {
 // ─── About Page: Community Partners (groups we work closely with and recommend) ───
 export const communityPartners = [
   {
-    name: "Celebrate Recovery (Groton Bible Chapel)",
+    name: "Regeneration (Groton Bible Chapel)",
     url: "https://grotonbiblechapel.churchcenter.com/registrations/events/2458371",
     description:
-      "Groton Bible Chapel offers a weekly Celebrate Recovery meeting. Celebrate Recovery is a life recovery program that offers a supportive, Christian group environment.",
+      "Groton Bible Chapel offers a weekly Regeneration meeting. Regeneration is a life recovery program that offers a supportive, Christian group environment.",
   },
   {
     name: "Community Speaks Out",
@@ -333,7 +333,7 @@ export const faqs = [
   {
     question: "How quickly can someone move in?",
     answer:
-      "We can often accommodate intake within 24-48 hours depending on bed availability. If you're in crisis or need to refer a client urgently, call us directly at 860-912-8983 and we'll work to get someone in as quickly as possible.",
+      "Accommodation is based on bed availability, with crisis cases prioritized. You'll hear back from us regarding your application. Call us directly at 860-912-8983 to discuss your situation.",
   },
   {
     question: "What is the application or referral process?",
@@ -348,7 +348,7 @@ export const faqs = [
   {
     question: "What does the program include?",
     answer:
-      "Residents receive safe housing, meals, mentoring, life skills training, job readiness support, vocational certifications (including CNA and CCAR Recovery Coach), community activities, and ongoing personal support. Everything is designed to help women transition from crisis to independence.",
+      "Residents receive safe housing, mentoring, job readiness support, clothing with dignity, leadership opportunities, community activities, and ongoing personal support. Everything is designed to help women transition from crisis to independence.",
   },
   {
     question: "How long does someone stay at Hope House?",
@@ -358,7 +358,7 @@ export const faqs = [
   {
     question: "Is there a cost for residents?",
     answer:
-      "As a nonprofit, we work to make the program accessible to every woman who needs it, regardless of financial situation. Contact us directly to discuss specifics for your situation.",
+      "There is no cost for residents. As a nonprofit, we believe every woman who needs help should have access to it, regardless of financial situation.",
   },
   {
     question: "How can I donate or support Community of Hope?",
@@ -419,5 +419,7 @@ export const contactTypeOptions = [
   { value: "family", label: "A family member seeking help for someone" },
   { value: "donor", label: "Interested in donating or volunteering" },
   { value: "kindness", label: "Requesting Kindness Connection assistance" },
+  { value: "leadership", label: "LeadHerships event inquiry" },
+  { value: "event", label: "Event information" },
   { value: "other", label: "Not sure yet — help me decide" },
 ];
