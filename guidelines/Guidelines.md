@@ -268,6 +268,9 @@
 | Set up GA4 on new site                                    | ❌      |
 | Add schema markup (nonprofit, local business)             | ✅     |
 | Meta titles and descriptions for all pages                | ✅      |
+| Canonical URLs (metadataBase + per-page alternates)       | ✅      |
+| Block staging indexing (noindex via netlify.toml)         | ✅      |
+| Harden security headers (Referrer-Policy, Permissions-Policy, X-Frame-Options) | ✅ |
 | 301 redirects from old WordPress URLs                     | ❌      |
 | Google Search Console — submit sitemap                    | ❌      |
 | Google Business Profile — set up as service area business | ❌      |
@@ -335,7 +338,7 @@
 | Feature                                      | Status | Notes                                                                 |
 | -------------------------------------------- | ------ | --------------------------------------------------------------------- |
 | Photo carousel/gallery (programs, events)    | ✅      | Reusable `PhotoCarousel` component built (stacked-peek style, white/beige/dark variants). Live on Hope House + LeadHerships with placeholder photos. Ready for real photos from Annette. Could also drop into Events, About (barn renovation), Stories |
-| Multi-event management on Events page        | ❌      | Team can add multiple events, upload flyers (PDFs)                    |
+| Multi-event management on Events page        | ✅      | Array-based data model, auto-sorts by date, renders unlimited upcoming + past events. Optional `flyerPdf` field supports PDF flyer downloads. `slug`-based keys for clean CMS mapping later. To add an event: copy the Saddle Up object in `lib/constants.ts`, edit fields, save. |
 | Testimonial submission form                  | ❌      | With approval/consent checkbox for website use                        |
 | Social media widgets                         | 🔨      | `SocialIcons` component built (light/dark variants). Live in Footer + Contact sidebar. Icons visible, linking to `#` until client sends real URLs — then update 3 lines in `lib/constants.ts` |
 | Fillable online application form             | ❌      | Replace PDF. Covers Hope House + Leadership/Ambassador. Routing + notification |

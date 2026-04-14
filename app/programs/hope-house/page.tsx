@@ -8,6 +8,7 @@ const description =
 export const metadata: Metadata = {
   title: "Hope House | Programs",
   description,
+  alternates: { canonical: "/programs/hope-house" },
 };
 
 export default function TheHousePage() {

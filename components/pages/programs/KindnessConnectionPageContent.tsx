@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { getProgramBySlug } from "@/lib/constants";
@@ -88,7 +88,6 @@ export function KindnessConnectionPageContent() {
           { name: "Kindness Connection", href: "/programs/kindness-connection" },
         ]}
       />
-      <FAQPageJsonLd faqs={kindnessFaqs} />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
         {/* ─── Hero (white) ───────────────────────────────── */}
         <section className="bg-white">

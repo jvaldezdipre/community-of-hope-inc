@@ -10,6 +10,7 @@ const description =
 export const metadata: Metadata = {
   title: "Events",
   description,
+  alternates: { canonical: "/events" },
 };
 
 export default function EventsPage() {
@@ -29,7 +30,7 @@ export default function EventsPage() {
       />
       {upcomingEvents.map((event) => (
         <EventJsonLd
-          key={event.title}
+          key={event.slug}
           name={event.title}
           description={event.description}
           startDate={`${event.date}T18:00:00-04:00`}

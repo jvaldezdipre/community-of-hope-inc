@@ -10,6 +10,7 @@ const description =
 export const metadata: Metadata = {
   title: "Programs",
   description,
+  alternates: { canonical: "/programs" },
 };
 
 export default function ProgramsPage() {

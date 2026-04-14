@@ -13,6 +13,7 @@ const description =
 export const metadata: Metadata = {
   title: "About Us",
   description,
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

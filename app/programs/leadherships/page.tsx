@@ -8,6 +8,7 @@ const description =
 export const metadata: Metadata = {
   title: "LeadHerships | Programs",
   description,
+  alternates: { canonical: "/programs/leadherships" },
 };
 
 export default function LeadHershipsPage() {

@@ -8,6 +8,7 @@ const description =
 export const metadata: Metadata = {
   title: "Stories",
   description,
+  alternates: { canonical: "/stories" },
 };
 
 export default function StoriesPage() {

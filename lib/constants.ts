@@ -229,13 +229,15 @@ export const socialLinks: { facebook: string | null; instagram: string | null; l
 
 // ─── Events ─────────────────────────────────────────────────
 export type EventItem = {
+  slug: string; // URL-safe identifier, e.g. "saddle-up-for-hope-2026"
   title: string;
   tagline: string;
   date: string; // ISO date for sorting: "2026-05-01"
   time: string;
   location: string;
   description: string;
-  image: string; // path in /public/events/
+  image: string; // path in /public/events/ OR absolute URL (CMS-ready)
+  flyerPdf?: string; // optional path or URL to downloadable flyer PDF
   tickets: { label: string; price: string }[];
   ticketUrl: string | null; // Eventbrite link when available
   contactEmail: string;
@@ -245,6 +247,7 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
+    slug: "saddle-up-for-hope-2026",
     title: "Saddle Up for Hope",
     tagline: "Dance to Make Dreams Come True",
     date: "2026-05-01",

@@ -8,6 +8,7 @@ const description =
 export const metadata: Metadata = {
   title: "Recovery Coaching | Programs",
   description,
+  alternates: { canonical: "/programs/recovery-coaching" },
 };
 
 export default function RecoveryCoachingPage() {

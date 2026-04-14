@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   },
   description:
     "Faith-based recovery and community outreach in Groton, CT. Hope House offers a 12-bed recovery home for women. The Kindness Connection serves basic needs. 15+ years of transformed lives.",
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Community of Hope",
     "Hope House",

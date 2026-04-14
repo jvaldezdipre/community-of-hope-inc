@@ -8,6 +8,7 @@ const description =
 export const metadata: Metadata = {
   title: "Kindness Connection | Programs",
   description,
+  alternates: { canonical: "/programs/kindness-connection" },
 };
 
 export default function KindnessConnectionPage() {

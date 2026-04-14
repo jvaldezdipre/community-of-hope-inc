@@ -3,12 +3,40 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://4coh.com";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["Organization", "NonprofitOrganization"],
+  "@id": `${siteUrl}/#organization`,
   name: "Community of Hope Inc.",
+  alternateName: "Community of Hope",
   url: siteUrl,
   logo: `${siteUrl}/coh-logo.png`,
+  image: `${siteUrl}/coh-logo.png`,
   description:
     "Faith-based recovery and community outreach in Groton, CT. Hope House, The Kindness Connection, and CCAR Recovery Coach training.",
-  telephone: "860-912-8983",
+  email: "Annette@4coh.com",
+  telephone: "+1-860-912-8983",
+  taxID: "26-0109933",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Groton",
+    addressRegion: "CT",
+    addressCountry: "US",
+  },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+1-860-912-8983",
+      contactType: "customer service",
+      areaServed: "US-CT",
+      availableLanguage: "English",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+1-860-856-5655",
+      contactType: "customer support",
+      areaServed: "US-CT",
+      availableLanguage: "English",
+      name: "Kindness Connection",
+    },
+  ],
   areaServed: {
     "@type": "State",
     name: "Connecticut",
@@ -19,6 +47,7 @@ const organizationSchema = {
     name: "Annette Eldridge",
     jobTitle: "Executive Director",
   },
+  // sameAs populated when client provides social profile URLs.
   sameAs: [],
 };
 

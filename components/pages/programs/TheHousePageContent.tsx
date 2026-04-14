@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { PhotoCarousel, hopeHousePlaceholderPhotos } from "@/components/ui/PhotoCarousel";
@@ -56,7 +56,6 @@ export function TheHousePageContent() {
           { name: "Hope House", href: "/programs/hope-house" },
         ]}
       />
-      <FAQPageJsonLd faqs={relevantFaqs} />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
         {/* ─── Hero (white) ───────────────────────────────── */}
         <section className="bg-white">

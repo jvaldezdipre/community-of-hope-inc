@@ -1,5 +1,3 @@
-import { FAQPageJsonLd } from "@/components/seo/JsonLd";
-import { faqs } from "@/lib/constants";
 import { Hero } from "./Hero";
 import { TrustBar } from "./TrustBar";
 import { WhyUs } from "./WhyUs";
@@ -15,7 +13,6 @@ import { FinalCTA } from "./FinalCTA";
 export function HomePage() {
   return (
     <>
-      <FAQPageJsonLd faqs={faqs} />
       <Hero />
       <TrustBar />
       <WhyUs />

@@ -9,6 +9,7 @@ const description =
 export const metadata: Metadata = {
   title: "Supporters",
   description,
+  alternates: { canonical: "/supporters" },
 };
 
 export default function SupportersPage() {

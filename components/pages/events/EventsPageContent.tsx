@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, MapPin, Clock, Mail, Phone } from "lucide-react";
+import { Calendar, MapPin, Clock, Mail, Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { getUpcomingEvents, getPastEvents } from "@/lib/constants";
 import type { EventItem } from "@/lib/constants";
@@ -154,6 +154,22 @@ function EventCard({ event }: { event: EventItem }) {
               <Phone size={14} strokeWidth={1.5} />
               {event.contactPhone}
             </a>
+            {event.flyerPdf && (
+              <a
+                href={event.flyerPdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-[#458CFE] hover:underline"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.95rem",
+                  fontWeight: 400,
+                }}
+              >
+                <FileText size={14} strokeWidth={1.5} />
+                Download Flyer
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -265,7 +281,7 @@ export function EventsPageContent() {
       {upcoming.length > 0 ? (
         <div className="flex flex-col gap-12">
           {upcoming.map((event) => (
-            <div key={event.title}>
+            <div key={event.slug}>
               <EventCard event={event} />
               <SponsorshipSection event={event} />
             </div>
@@ -306,7 +322,7 @@ export function EventsPageContent() {
           <div className="grid sm:grid-cols-2 gap-6">
             {past.map((event) => (
               <div
-                key={event.title}
+                key={event.slug}
                 className="rounded-[8px] border border-[#EBEBEB] overflow-hidden"
               >
                 <div className="relative h-48 bg-[#FAF8F5]">

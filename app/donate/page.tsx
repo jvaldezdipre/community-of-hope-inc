@@ -10,6 +10,7 @@ const description =
 export const metadata: Metadata = {
   title: "Donate",
   description,
+  alternates: { canonical: "/donate" },
 };
 
 export default function Page() {
