@@ -111,3 +111,76 @@ export function FAQPageJsonLd({ faqs }: { faqs: FaqItem[] }) {
     />
   );
 }
+
+type EventJsonLdProps = {
+  name: string;
+  description: string;
+  startDate: string; // ISO 8601 (e.g. "2026-05-01T18:00")
+  endDate: string;
+  locationName: string;
+  locationAddress: string;
+  image: string; // absolute or root-relative
+  offers?: {
+    price: string;
+    name: string;
+    url?: string | null;
+  }[];
+};
+
+export function EventJsonLd({
+  name,
+  description,
+  startDate,
+  endDate,
+  locationName,
+  locationAddress,
+  image,
+  offers,
+}: EventJsonLdProps) {
+  const imageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name,
+    description,
+    startDate,
+    endDate,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    location: {
+      "@type": "Place",
+      name: locationName,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: locationAddress,
+        addressLocality: "New London",
+        addressRegion: "CT",
+        addressCountry: "US",
+      },
+    },
+    image: [imageUrl],
+    organizer: {
+      "@type": "Organization",
+      name: "Community of Hope Inc.",
+      url: siteUrl,
+    },
+    ...(offers && offers.length > 0
+      ? {
+          offers: offers.map((o) => ({
+            "@type": "Offer",
+            name: o.name,
+            price: o.price.replace(/[^0-9.]/g, ""),
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            ...(o.url ? { url: o.url } : {}),
+          })),
+        }
+      : {}),
+  };
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

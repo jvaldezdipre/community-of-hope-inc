@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Netlify form definitions</title>
+  </head>
+  <body>
+    <!--
+      This file exists so Netlify's build-time form parser can detect
+      the forms used by the React app. The real forms are rendered in
+      React and POST their data back to these same form names.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="type" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

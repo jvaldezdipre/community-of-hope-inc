@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { motion } from "motion/react";
-import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
+import { BreadcrumbJsonLd, FAQPageJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { PhotoCarousel, hopeHousePlaceholderPhotos } from "@/components/ui/PhotoCarousel";
@@ -56,6 +56,7 @@ export function TheHousePageContent() {
           { name: "Hope House", href: "/programs/hope-house" },
         ]}
       />
+      <FAQPageJsonLd faqs={relevantFaqs} />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
         {/* ─── Hero (white) ───────────────────────────────── */}
         <section className="bg-white">
@@ -571,7 +572,7 @@ export function TheHousePageContent() {
                 </span>
               </summary>
               <p
-                className="text-[#3D3D3D] pb-6 pr-8"
+                className="text-[#3D3D3D] pb-4 pr-8"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontSize: "0.95rem",
@@ -581,6 +582,26 @@ export function TheHousePageContent() {
               >
                 {faq.answer}
               </p>
+              {faq.helpfulLinks && faq.helpfulLinks.length > 0 && (
+                <div className="flex flex-wrap gap-x-5 gap-y-2 pb-6 pr-8">
+                  {faq.helpfulLinks.map((link) => (
+                    <a
+                      key={link.url}
+                      href={link.url}
+                      target={link.url.startsWith("http") ? "_blank" : undefined}
+                      rel={link.url.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-[#458CFE] hover:underline"
+                      style={{
+                        fontFamily: "'Outfit', sans-serif",
+                        fontSize: "0.9rem",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {link.label} &rarr;
+                    </a>
+                  ))}
+                </div>
+              )}
             </motion.details>
           ))}
           <div className="border-t border-[#EBEBEB]" />

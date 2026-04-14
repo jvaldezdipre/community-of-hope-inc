@@ -11,8 +11,16 @@ type ContactFormProps = {
   variant?: "default" | "standalone";
 };
 
+function encodeForNetlify(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join("&");
+}
+
 export function ContactForm({ variant = "default" }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,9 +29,30 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(null);
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodeForNetlify({
+          "form-name": "contact",
+          "bot-field": "",
+          ...formData,
+        }),
+      });
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        "Something went wrong sending your message. Please try again or call us directly at 860-912-8983."
+      );
+      console.error("Contact form submission error:", err);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const badges = [
@@ -102,7 +131,19 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit}>
+              <form
+                onSubmit={handleSubmit}
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="mb-6">
                   <label
                     className="block text-[#1A1A1A] mb-2"
@@ -232,9 +273,23 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                   />
                 </div>
 
-                <Button type="submit" variant="primaryFull">
-                  Send Message
+                <Button type="submit" variant="primaryFull" disabled={submitting}>
+                  {submitting ? "Sending..." : "Send Message"}
                 </Button>
+
+                {error && (
+                  <p
+                    className="text-center mt-4"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.88rem",
+                      fontWeight: 400,
+                      color: "#C53030",
+                    }}
+                  >
+                    {error}
+                  </p>
+                )}
 
                 <p
                   className="text-center text-[#ADADAD] mt-4"

@@ -131,7 +131,7 @@
 | Update stay duration to 6–18 months                                    | ✅      |
 | Emphasize no cost for residents                                        | ✅      |
 | Update FAQ: bed availability based on availability, crisis prioritized | ✅      |
-| Add links to bed availability and 2-1-1 resources in FAQ               | ⏳      |
+| Add links to bed availability and 2-1-1 resources in FAQ               | 🔨      |
 | Add photo carousel for programs (honorees, barn progress)              | ✅      |
 | Keep current plant photo at top of page                                | ✅      |
 
@@ -244,9 +244,9 @@
 | Item                             | Status | Notes                                                                                 |
 | -------------------------------- | ------ | ------------------------------------------------------------------------------------- |
 | Application form (digital)       | ❌      | Replace PDF with fillable online form (Google Form or similar). Routing + notification needed. Covers Hope House + Leadership/Ambassador |
-| Referral/contact form            | 🔨     | UI built on /contact and homepage. Pending: backend submission, email TBD from client |
+| Referral/contact form            | ✅     | UI + Netlify Forms backend wired. Submissions route to Jeff's email (jefesnipez@gmail.com) until Annette provides org email. Honeypot spam protection enabled. |
 | Eventbrite integration           | ✅      | Saddle Up for Hope Eventbrite link live in event data and rendered on Events page     |
-| Kindness Connection request form | 🔨     | Google Form was on page — removing per meeting. Direct to call 856-5655 instead        |
+| Kindness Connection request form | ✅     | Google Form removed per Meeting 2. Page directs users to call 860-856-5655             |
 | Zeffy donate integration         | ✅      | Live link on /donate page (hopes-heros form)                                          |
 | PayPal donate integration        | ✅      | Live link on /donate page                                                             |
 | Venmo donate integration         | ⏳      | Add as third donation option. Pending: Venmo details from client                      |
@@ -266,7 +266,7 @@
 | Task                                                      | Status |
 | --------------------------------------------------------- | ------ |
 | Set up GA4 on new site                                    | ❌      |
-| Add schema markup (nonprofit, local business)             | 🔨     |
+| Add schema markup (nonprofit, local business)             | ✅     |
 | Meta titles and descriptions for all pages                | ✅      |
 | 301 redirects from old WordPress URLs                     | ❌      |
 | Google Search Console — submit sitemap                    | ❌      |
@@ -300,7 +300,7 @@
 - LeadHerships event page content: correct spelling, new event date, nominations details
 - CCAR link and approved partner wording for Recovery Coaching placeholder
 - Bed availability link
-- 2-1-1 resource link
+- ~~2-1-1 resource link~~ — added (tel:211 + 211ct.org) to Hope House FAQ
 
 ### Donation & Payment
 - Zelle donation link

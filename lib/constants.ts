@@ -344,11 +344,22 @@ export const processSteps = [
 ];
 
 // ─── FAQ Items ──────────────────────────────────────────────
-export const faqs = [
+export type FaqLink = { label: string; url: string };
+export type FaqItem = {
+  question: string;
+  answer: string;
+  helpfulLinks?: FaqLink[];
+};
+
+export const faqs: FaqItem[] = [
   {
     question: "How quickly can someone move in?",
     answer:
-      "Accommodation is based on bed availability, with crisis cases prioritized. You'll hear back from us regarding your application. Call us directly at 860-912-8983 to discuss your situation.",
+      "Accommodation is based on bed availability, with crisis cases prioritized. You'll hear back from us regarding your application. Call us directly at 860-912-8983 to discuss your situation. For immediate resources anywhere in Connecticut, you can also dial 2-1-1 or visit 211ct.org anytime.",
+    helpfulLinks: [
+      { label: "Dial 2-1-1", url: "tel:211" },
+      { label: "Visit 211ct.org", url: "https://www.211ct.org" },
+    ],
   },
   {
     question: "What is the application or referral process?",
