@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { footerQuickLinks, footerServiceAreas } from "@/lib/constants";
+import { SocialIcons } from "@/components/ui/SocialIcons";
 
 export function Footer() {
   return (
@@ -150,8 +151,24 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Social */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 mb-8 border-b border-white/8">
+          <span
+            className="text-white/58 uppercase"
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: "0.68rem",
+              letterSpacing: "0.14em",
+              fontWeight: 500,
+            }}
+          >
+            Follow Us
+          </span>
+          <SocialIcons variant="dark" />
+        </div>
+
         {/* Bottom */}
-        <div className="pt-8 border-t border-white/8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <span
             className="text-white/45"
             style={{

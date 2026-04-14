@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
+import { PhotoCarousel, hopeHousePlaceholderPhotos } from "@/components/ui/PhotoCarousel";
 import { getProgramBySlug, processSteps, testimonials, faqs } from "@/lib/constants";
 
 const whatResidentsReceive = [
@@ -382,6 +383,15 @@ export function TheHousePageContent() {
             </div>
           </div>
         </section>
+
+        {/* ─── Photo Carousel (beige) ─────────────────────── */}
+        <PhotoCarousel
+          photos={hopeHousePlaceholderPhotos}
+          eyebrow="Inside Hope House"
+          heading="A home, not a facility."
+          description="Take a look inside Hope House — the rooms, the grounds, and the community that makes this place feel like home from day one."
+          background="beige"
+        />
 
         {/* ─── Testimonial (white) ─────────────────────────── */}
         <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>

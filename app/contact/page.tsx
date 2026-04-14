@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
 import { ContactForm } from "@/components/pages/home/ContactForm";
+import { SocialIcons } from "@/components/ui/SocialIcons";
 
 const description =
   "Contact Community of Hope Inc. in Groton, CT. Reach us by phone, form, or visit. Main line 860-912-8983, Kindness Connection 860-856-5655. We're here to help.";
@@ -97,6 +98,19 @@ export default function ContactPage() {
                 >
                   860-856-5655
                 </a>
+              </div>
+              <div className="pt-6 mt-2 border-t border-[#EBEBEB]">
+                <span
+                  className="block text-[#1A1A1A] mb-3"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.88rem",
+                    fontWeight: 500,
+                  }}
+                >
+                  Follow us
+                </span>
+                <SocialIcons variant="light" />
               </div>
             </div>
           </aside>

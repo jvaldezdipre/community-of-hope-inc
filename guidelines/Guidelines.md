@@ -47,7 +47,7 @@
 | ---------------------------------- | ------ | ----------------------------------------------------------------------------------------------- |
 | Zoom account (1 year license)      | ✅      | Via Annette, tied to [admin@developedmotive.com](mailto:admin@developedmotive.com)              |
 | Google Gmail for org               | ✅      | Signed in, new Gmail created for COH                                                            |
-| Domain registrar access (4coh.com) | ⏳      | Homestead — emailed Andy (previous developer) requesting login credentials. Waiting on response |
+| Domain registrar access (4coh.com) | ✅      | Access obtained — ready to point 4coh.com at Netlify at launch |
 | Google Analytics (GA4)             | ❌      | Set up at launch using org Gmail                                                                |
 | Google Search Console              | ❌      | Set up at launch using org Gmail                                                                |
 | Google Business Profile            | ❌      | Set up as service area business (no address shown)                                              |
@@ -99,7 +99,7 @@
 | Remove location/map                                                  | ✅      |
 | Keep services page links (GBC, Malta, GASP, SCADD redirects)         | ✅      |
 | Increase font sizes and color contrast (bigger, darker text)         | ✅      |
-| Full mobile responsiveness pass                                       | ❌      |
+| Full mobile responsiveness pass                                       | ✅      |
 | Remove dashes from text throughout website                            | ✅      |
 
 
@@ -132,7 +132,7 @@
 | Emphasize no cost for residents                                        | ✅      |
 | Update FAQ: bed availability based on availability, crisis prioritized | ✅      |
 | Add links to bed availability and 2-1-1 resources in FAQ               | ⏳      |
-| Add photo carousel for programs (honorees, barn progress)              | ⏳      |
+| Add photo carousel for programs (honorees, barn progress)              | ✅      |
 | Keep current plant photo at top of page                                | ✅      |
 
 ### Kindness Connection
@@ -165,7 +165,7 @@
 | Move program/leadership development content to Hope House page         | ✅      |
 | Restructure as LeadHerships *event* page                                | ✅      |
 | Add Google Form link for nominations                                   | ✅      |
-| Add photo carousel/gallery                                             | ⏳      |
+| Add photo carousel/gallery                                             | ✅      |
 | Update event date (TBD from client)                                    | ⏳      |
 | Correct spelling throughout (LeadHerships)                             | ✅      |
 
@@ -193,8 +193,8 @@
 | Change                                                                 | Status |
 | ---------------------------------------------------------------------- | ------ |
 | "Celebrate Recovery" → "Regeneration"                                  | ✅      |
-| Add Hava Living as community partner                                   | ⏳      |
-| Verify all partner links are working                                   | ❌      |
+| Add Hava Living as community partner                                   | ✅      |
+| Verify all partner links are working                                   | ✅      |
 
 ### Design & Accessibility (Site-Wide)
 
@@ -202,9 +202,9 @@
 | ---------------------------------------------------------------------- | ------ |
 | Increase font sizes across all pages                                   | ✅      |
 | Darken text colors for better contrast (especially for older users)    | ✅      |
-| Full mobile responsiveness audit and fixes                             | ❌      |
+| Full mobile responsiveness audit and fixes                             | ✅      |
 | Remove dashes from text throughout website                             | ✅      |
-| Add social media widgets (Facebook, Instagram, LinkedIn) — all pages   | ⏳      |
+| Add social media widgets (Facebook, Instagram, LinkedIn) — all pages   | 🔨      |
 
 ---
 
@@ -310,7 +310,7 @@
 ### Forms & Links
 - ~~Google Form link for LeadHerships nominations~~ — live on LeadHerships page
 - Google Form link for Leadership/Ambassador program application
-- Hava Living website link for community partners
+- ~~Hava Living website link for community partners~~ — added (ahavaliving.com)
 - Social media links (Facebook, Instagram, LinkedIn) for widgets
 
 ### Other
@@ -334,10 +334,10 @@
 
 | Feature                                      | Status | Notes                                                                 |
 | -------------------------------------------- | ------ | --------------------------------------------------------------------- |
-| Photo carousel/gallery (programs, events)    | ❌      | For Hope House (honorees, barn progress) and LeadHerships event page   |
+| Photo carousel/gallery (programs, events)    | ✅      | Reusable `PhotoCarousel` component built (stacked-peek style, white/beige/dark variants). Live on Hope House + LeadHerships with placeholder photos. Ready for real photos from Annette. Could also drop into Events, About (barn renovation), Stories |
 | Multi-event management on Events page        | ❌      | Team can add multiple events, upload flyers (PDFs)                    |
 | Testimonial submission form                  | ❌      | With approval/consent checkbox for website use                        |
-| Social media widgets                         | ⏳      | Facebook, Instagram, LinkedIn — pending links from client             |
+| Social media widgets                         | 🔨      | `SocialIcons` component built (light/dark variants). Live in Footer + Contact sidebar. Icons visible, linking to `#` until client sends real URLs — then update 3 lines in `lib/constants.ts` |
 | Fillable online application form             | ❌      | Replace PDF. Covers Hope House + Leadership/Ambassador. Routing + notification |
 | Dashboard/CMS for team self-service          | ❌      | Team updates events, stories, program pages. Design changes → Jeff only |
 | Blog section                                 | ❌      | For Google ranking. Annette interested. Low priority for launch       |

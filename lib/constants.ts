@@ -210,7 +210,22 @@ export const communityPartners = [
     description:
       "Urban Alliance's goal is to create opportunities for people to achieve lasting change in their lives through the collaborative work of churches and organizations in their community.",
   },
+  {
+    name: "Ahava Living",
+    url: "https://www.ahavaliving.com/",
+    description:
+      "Ahava Living is a community partner supporting women on their journey toward healing, stability, and purposeful living.",
+  },
 ];
+
+// ─── Social Media Links ─────────────────────────────────────
+// Set URLs when client provides them. Icons render regardless; null URLs
+// fall back to "#" so icons stay visible as placeholders pre-launch.
+export const socialLinks: { facebook: string | null; instagram: string | null; linkedin: string | null } = {
+  facebook: null,
+  instagram: null,
+  linkedin: null,
+};
 
 // ─── Events ─────────────────────────────────────────────────
 export type EventItem = {

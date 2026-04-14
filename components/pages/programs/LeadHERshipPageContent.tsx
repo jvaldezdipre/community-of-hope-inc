@@ -5,6 +5,7 @@ import { Phone } from "lucide-react";
 import { motion } from "motion/react";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
+import { PhotoCarousel, leadHershipPlaceholderPhotos } from "@/components/ui/PhotoCarousel";
 import { getProgramBySlug } from "@/lib/constants";
 
 const NOMINATIONS_FORM_URL =
@@ -496,6 +497,15 @@ export function LeadHERshipPageContent() {
             </motion.p>
           </div>
         </section>
+
+        {/* ─── Past Events Gallery (beige) ────────────────── */}
+        <PhotoCarousel
+          photos={leadHershipPlaceholderPhotos}
+          eyebrow="Past Events"
+          heading="A night of honor, community, and celebration."
+          description="A glimpse into past LeadHerships evenings — the honorees, the guests, and the community standing together for Community of Hope."
+          background="beige"
+        />
 
         {/* ─── Get Involved (white) ──────────────────────── */}
         <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
