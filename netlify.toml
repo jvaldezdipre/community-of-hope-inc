@@ -8,31 +8,6 @@
   NODE_VERSION = "20"
   NPM_FLAGS    = "--legacy-peer-deps"
 
-# ─── Security headers (site-wide) ─────────────────────────────
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Referrer-Policy      = "strict-origin-when-cross-origin"
-    X-Frame-Options      = "SAMEORIGIN"
-    X-Content-Type-Options = "nosniff"
-    Permissions-Policy   = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-    # ⚠️ REMOVE THIS LINE when 4coh.com is connected as the primary custom domain.
-    # Until then the site is served from community-of-hope.netlify.app and
-    # must NOT be indexed — otherwise it will compete with the future 4coh.com.
-    X-Robots-Tag = "noindex, nofollow"
-
-# ─── Block staging/preview indexing ───────────────────────────
-# Also blocks indexing on deploy previews and branch deploys. Safe to keep
-# permanently — these are never the canonical production URL.
-[context.deploy-preview.environment]
-  NEXT_PUBLIC_SITE_URL = "https://community-of-hope.netlify.app"
-
-[[context.deploy-preview.headers]]
-  for = "/*"
-  [context.deploy-preview.headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-
-[[context.branch-deploy.headers]]
-  for = "/*"
-  [context.branch-deploy.headers.values]
-    X-Robots-Tag = "noindex, nofollow"
+# Note: Security headers and X-Robots-Tag live in next.config.ts `headers()`,
+# not here. Netlify [[headers]] rules don't apply to Next.js SSR/ISR routes
+# served by the Next.js runtime, so they must be set in Next.js config instead.
