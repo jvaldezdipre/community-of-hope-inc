@@ -115,8 +115,8 @@ export function TheHousePageContent() {
             violence who need stable housing and a supportive community.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <Button variant="primary" href="/contact">
-              Get Help Now
+            <Button variant="primary" href="/apply-hope-house">
+              Apply Now
             </Button>
             <a
               href="tel:8609124356"
@@ -642,8 +642,8 @@ export function TheHousePageContent() {
             Whether you&apos;re seeking help for yourself, referring a client, or reaching out for a loved one, we&apos;re here. No judgment, just a conversation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Button variant="primary" href="/contact">
-              Contact Us
+            <Button variant="primary" href="/apply-hope-house">
+              Apply Now
             </Button>
             <a
               href="tel:8609124356"

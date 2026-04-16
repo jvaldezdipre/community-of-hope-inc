@@ -65,7 +65,7 @@
 
 | Page                  | Status | Notes                                                                                                                                         |
 | --------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Home                  | 🔨     | Full structure done. Pending: correct phone number, mission statement                                                                         |
+| Home                  | ✅     | Full structure done. Phone number updated to 860-912-4356. Mission statement will be edited via CMS when Annette provides it — no code work remaining. |
 | Programs (main)       | ✅      | Overview of all 4 programs with links to individual pages.                                                                                    |
 | — Hope House          | ✅      | Content revisions complete. Renamed, meals/life skills/vocational certs removed, Clothing with Dignity + leadership content added, intake/cost/FAQ updated. Pending: application form link, bed availability + 2-1-1 links, photo carousel. |
 | — Kindness Connection | ✅      | Content revisions complete. Car repairs removed, Central Resources/Essential Support, call-only CTA (856-5655), housing moved to referrals. |
@@ -186,7 +186,7 @@
 | ---------------------------------------------------------------------- | ------ |
 | Add 3 distinct phone numbers: main, housing, Kindness Connection       | ⏳      |
 | Add new contact reasons: Leadership program, event info                | ✅      |
-| Remove dashes from phone number formatting                             | ❌      |
+| Remove dashes from phone number formatting                             | ✅      |
 
 ### Community Partners
 
@@ -283,44 +283,56 @@
 
 ## Waiting on Client
 
-### Phone Numbers & Contact
-- 3 correct phone numbers: main line, housing/Hope House, Kindness Connection (856-5655 confirmed, others TBD)
-- Which numbers to display where on site
-- Form submission email addresses
+### 📱 Text Annette Tomorrow (April 16, 2026)
 
-### Photos & Media
-_Note: Photo carousel infrastructure built. All photos will be uploaded via CMS once wired up. No code work needed — just content._
-- ~~Interior Hope House photos~~ — CMS upload
-- ~~Updated staff and leadership photos~~ — CMS upload
-- ~~Program-related images (honorees, barn progress)~~ — CMS upload
-- ~~Graduate photos (with permission)~~ — CMS upload + testimonial submission consent
-- ~~Event photos from past galas~~ — CMS upload
+Here's everything still needed from Annette before launch. Send as one consolidated message:
 
-### Content & Copy
+> Hey Annette! The website is looking great — almost ready to go live. Quick list of things I still need from you when you get a chance:
+>
+> 1. **Mission statement** — a sentence or two for the homepage hero. What's the core of Community of Hope in your words?
+> 2. **Housing phone number** — we have Main (860-912-4356) and Kindness Connection (860-856-5655). Is there a third number specifically for housing/Hope House intake?
+> 3. **Form submission email** — when someone fills out the contact form on the website, where should those emails go? Your personal email, the org Gmail, or both?
+> 4. **Social media links** — Facebook, Instagram, and/or LinkedIn pages for Community of Hope. I have the icons on the site ready to link.
+> 5. **Venmo + Zelle details** — to add as donation options on the Donate page.
+> 6. **LeadHerships event date** — I have a placeholder (October 15). What's the real date?
+> 7. **Board member names** — are Julie Brousseau, Leslie Carpenter, Megan Quinn, and Stephene Bordelon still current? Any additions or changes?
+> 8. **Bed availability link** — do you have a specific page or tool you want linked in the Hope House FAQ for checking bed availability?
+> 9. **Logo ideas** — any direction or preferences for the modernized logo? I can send you some concepts.
+>
+> No rush on all of these at once — whatever you can send first I'll get in right away!
+
+---
+
+### Still Needed (itemized)
+
+**Phone Numbers & Contact**
+- ~~Main line~~ — confirmed: 860-912-4356 ✅
+- ~~Kindness Connection~~ — confirmed: 860-856-5655 ✅
+- Housing/Hope House intake number (3rd number TBD)
+- Form submission email address(es)
+
+**Content & Copy (CMS-editable — no code needed, just Annette's words)**
 - Mission statement (for homepage)
 - Finalize board member names and roles
-- Updated FAQ questions
-- ~~Eversource renovation story (for About page)~~ — shipped on Supporters page as featured partnership section
-- LeadHerships event page content: correct spelling, new event date, nominations details
+- LeadHerships real event date (placeholder: October 15, 2026)
 - CCAR link and approved partner wording for Recovery Coaching placeholder
 - Bed availability link
-- ~~2-1-1 resource link~~ — added (tel:211 + 211ct.org) to Hope House FAQ
+- Updated FAQ questions (if any)
 
-### Donation & Payment
+**Donation & Payment**
 - Zelle donation link
 - Venmo details
 - Sponsorship form payment details/account info
 
-### Forms & Links
-- ~~Google Form link for LeadHerships nominations~~ — live on LeadHerships page
+**Social & Links**
+- Social media links (Facebook, Instagram, LinkedIn) — icons are live, just need URLs
 - Google Form link for Leadership/Ambassador program application
-- ~~Hava Living website link for community partners~~ — added (ahavaliving.com)
-- Social media links (Facebook, Instagram, LinkedIn) for widgets
 
-### Other
+**Other**
 - New logo direction/preferences — Jeff to send ideas, collaborate before launch
-- Bloomerang access/username (reference for easy-editing interface)
-- Supporter/donor list + logos
+- Bloomerang access/username (if still relevant for CMS reference)
+
+**Photos & Media** — _All handled via CMS upload. Photo carousel + staff photo slots built and ready. No code work. Annette uploads when ready._
 
 ### Resolved
 - ~~Real Zeffy donation link~~ — live on /donate
@@ -331,6 +343,12 @@ _Note: Photo carousel infrastructure built. All photos will be uploaded via CMS 
 - ~~Eventbrite link for Saddle Up for Hope~~ — live on Events page
 - ~~Detailed program descriptions from team members~~ — full pages built (now being revised per Meeting 2)
 - ~~LeadHerships program details~~ — restructuring to event page per Meeting 2
+- ~~Hava Living website link~~ — added (ahavaliving.com)
+- ~~2-1-1 resource link~~ — added (tel:211 + 211ct.org) to Hope House FAQ
+- ~~Eversource renovation story~~ — shipped on Supporters page as featured partnership
+- ~~Main phone number~~ — confirmed 860-912-4356, updated site-wide
+- ~~Interior/staff/event photos~~ — CMS upload slots ready
+- ~~Supporter/donor list~~ — all ~60 supporters added from current 4coh.com
 
 ---
 
