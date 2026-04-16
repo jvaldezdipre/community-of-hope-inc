@@ -66,7 +66,7 @@ export function Footer() {
             </span>
             <div className="flex flex-col gap-2">
               <a
-                href="tel:8609128983"
+                href="tel:8609124356"
                 className="text-white/82 hover:text-white transition-colors"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
@@ -74,7 +74,7 @@ export function Footer() {
                   fontWeight: 300,
                 }}
               >
-                860-912-8983
+                860-912-4356
               </a>
               <span
                 className="text-white/82"

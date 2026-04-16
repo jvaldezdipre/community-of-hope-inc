@@ -43,7 +43,7 @@ export function MidCTA() {
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
         >
-          <Button href="tel:8609128983" variant="primaryOnWhiteWithGap">
+          <Button href="tel:8609124356" variant="primaryOnWhiteWithGap">
             <Phone size={16} />
             Call Now
           </Button>

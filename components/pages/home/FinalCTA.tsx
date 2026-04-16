@@ -51,9 +51,9 @@ export function FinalCTA() {
           <Button href="#contact" variant="primaryOnWhite">
             Get Help Now
           </Button>
-          <Button href="tel:8609128983" variant="outlineOnBlueWithGap">
+          <Button href="tel:8609124356" variant="outlineOnBlueWithGap">
             <Phone size={16} />
-            860-912-8983
+            860-912-4356
           </Button>
         </motion.div>
       </div>

@@ -40,7 +40,7 @@ export function AboutPartners() {
         {communityPartners.map((partner, i) => (
           <motion.div
             key={partner.name}
-            className="p-6 rounded-[8px] border border-[#EBEBEB] bg-[#FAFAFA]/50"
+            className="p-6 rounded-[8px] border border-[#EBEBEB] bg-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}

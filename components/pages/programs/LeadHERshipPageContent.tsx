@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { PhotoCarousel, leadHershipPlaceholderPhotos } from "@/components/ui/PhotoCarousel";
-import { getProgramBySlug } from "@/lib/constants";
+import { getProgramBySlug, leadHershipEvent } from "@/lib/constants";
 
 const NOMINATIONS_FORM_URL =
   "https://docs.google.com/forms/d/1Zgi7z06LejTq1k5eHz4iYgyhcWW9Tnb0ahidj2urrlU/viewform";
@@ -195,7 +195,7 @@ export function LeadHERshipPageContent() {
                   Nominate an Honoree
                 </Button>
                 <a
-                  href="tel:8609128983"
+                  href="tel:8609124356"
                   className="flex items-center gap-2 text-[#458CFE] hover:underline"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
@@ -204,7 +204,7 @@ export function LeadHERshipPageContent() {
                   }}
                 >
                   <Phone size={15} strokeWidth={1.5} />
-                  860-912-8983
+                  860-912-4356
                 </a>
               </div>
             </motion.div>
@@ -340,7 +340,7 @@ export function LeadHERshipPageContent() {
                   lineHeight: 1.3,
                 }}
               >
-                I am Woman, Hear Me Roar!
+                {leadHershipEvent.title}
               </h2>
               <p
                 className="text-[#3D3D3D] mb-2"
@@ -351,7 +351,9 @@ export function LeadHERshipPageContent() {
                   fontWeight: 400,
                 }}
               >
-                Date TBD &nbsp;·&nbsp; Location TBD
+                <time dateTime={leadHershipEvent.date}>{leadHershipEvent.dateDisplay}</time>
+                &nbsp;·&nbsp;
+                {leadHershipEvent.location}
               </p>
               <p
                 className="text-[#3D3D3D] mb-8"
@@ -362,10 +364,7 @@ export function LeadHERshipPageContent() {
                   fontWeight: 300,
                 }}
               >
-                An inspiring luncheon with keynote address, presentation of the
-                colors, vibrant basket raffle, and a &ldquo;passport
-                experience&rdquo; sparking new partnerships. Stay tuned for
-                details.
+                {leadHershipEvent.description}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Button
@@ -377,7 +376,7 @@ export function LeadHERshipPageContent() {
                 >
                   Nominate an Honoree
                 </Button>
-                <Button variant="outlineLight" as="a" href="tel:8609128983">
+                <Button variant="outlineLight" as="a" href="tel:8609124356">
                   Become a Sponsor
                 </Button>
               </div>
@@ -701,7 +700,7 @@ export function LeadHERshipPageContent() {
                     Nominate an Honoree
                   </Button>
                   <a
-                    href="tel:8609128983"
+                    href="tel:8609124356"
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
@@ -710,7 +709,7 @@ export function LeadHERshipPageContent() {
                     }}
                   >
                     <Phone size={15} strokeWidth={1.5} />
-                    860-912-8983
+                    860-912-4356
                   </a>
                 </div>
               </div>

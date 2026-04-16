@@ -294,8 +294,8 @@ export function EventsPageContent() {
         >
           <p className="text-[#3D3D3D]" style={{ fontSize: "1rem", fontWeight: 300 }}>
             No upcoming events right now. Check back soon or call us at{" "}
-            <a href="tel:8609128983" className="text-[#458CFE] hover:underline">
-              860-912-8983
+            <a href="tel:8609124356" className="text-[#458CFE] hover:underline">
+              860-912-4356
             </a>{" "}
             for the latest updates.
           </p>

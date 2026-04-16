@@ -118,22 +118,30 @@ export function StoriesPageContent() {
               {featured.quote}
             </p>
 
-            {/* Initials avatar + name */}
+            {/* Photo or initials avatar + name */}
             <div className="flex items-center justify-center gap-4">
-              <div
-                className="w-12 h-12 rounded-full bg-[#458CFE]/10 flex items-center justify-center"
-              >
-                <span
-                  className="text-[#458CFE]"
-                  style={{
-                    fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "0.95rem",
-                    fontWeight: 400,
-                  }}
-                >
-                  {featured.initials}
-                </span>
-              </div>
+              {featured.photo ? (
+                <div className="w-12 h-12 rounded-full overflow-hidden">
+                  <img
+                    src={featured.photo}
+                    alt={featured.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-12 h-12 rounded-full bg-[#458CFE]/10 flex items-center justify-center">
+                  <span
+                    className="text-[#458CFE]"
+                    style={{
+                      fontFamily: "'Libre Baskerville', serif",
+                      fontSize: "0.95rem",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {featured.initials}
+                  </span>
+                </div>
+              )}
               <div className="text-left">
                 <span
                   className="block text-[#1A1A1A]"
@@ -223,18 +231,28 @@ export function StoriesPageContent() {
                   {t.quote}
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#458CFE]/10 flex items-center justify-center shrink-0">
-                    <span
-                      className="text-[#458CFE]"
-                      style={{
-                        fontFamily: "'Libre Baskerville', serif",
-                        fontSize: "0.75rem",
-                        fontWeight: 400,
-                      }}
-                    >
-                      {t.initials}
-                    </span>
-                  </div>
+                  {t.photo ? (
+                    <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
+                      <img
+                        src={t.photo}
+                        alt={t.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-[#458CFE]/10 flex items-center justify-center shrink-0">
+                      <span
+                        className="text-[#458CFE]"
+                        style={{
+                          fontFamily: "'Libre Baskerville', serif",
+                          fontSize: "0.75rem",
+                          fontWeight: 400,
+                        }}
+                      >
+                        {t.initials}
+                      </span>
+                    </div>
+                  )}
                   <div>
                     <span
                       className="block text-[#1A1A1A]"

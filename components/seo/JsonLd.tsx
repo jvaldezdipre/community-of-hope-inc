@@ -12,7 +12,7 @@ const organizationSchema = {
   description:
     "Faith-based recovery and community outreach in Groton, CT. Hope House, The Kindness Connection, and CCAR Recovery Coach training.",
   email: "Annette@4coh.com",
-  telephone: "+1-860-912-8983",
+  telephone: "+1-860-912-4356",
   taxID: "26-0109933",
   address: {
     "@type": "PostalAddress",
@@ -23,7 +23,7 @@ const organizationSchema = {
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+1-860-912-8983",
+      telephone: "+1-860-912-4356",
       contactType: "customer service",
       areaServed: "US-CT",
       availableLanguage: "English",

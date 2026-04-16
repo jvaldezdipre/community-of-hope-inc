@@ -171,7 +171,7 @@ export function RecoveryCoachingPageContent() {
                     Learn More at CCAR
                   </Button>
                   <a
-                    href="tel:8609128983"
+                    href="tel:8609124356"
                     className="flex items-center gap-2 text-[#458CFE] hover:underline"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
@@ -180,7 +180,7 @@ export function RecoveryCoachingPageContent() {
                     }}
                   >
                     <Phone size={15} strokeWidth={1.5} />
-                    860-912-8983
+                    860-912-4356
                   </a>
                 </div>
               </motion.div>
@@ -637,7 +637,7 @@ export function RecoveryCoachingPageContent() {
                         Contact Us
                       </Button>
                       <a
-                        href="tel:8609128983"
+                        href="tel:8609124356"
                         className="flex items-center gap-2 text-[#458CFE] hover:underline"
                         style={{
                           fontFamily: "'Outfit', sans-serif",
@@ -646,7 +646,7 @@ export function RecoveryCoachingPageContent() {
                         }}
                       >
                         <Phone size={15} strokeWidth={1.5} />
-                        860-912-8983
+                        860-912-4356
                       </a>
                     </div>
                   </div>

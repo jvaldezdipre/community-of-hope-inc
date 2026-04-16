@@ -35,13 +35,22 @@ export const differentiators = [
 ];
 
 // ─── Testimonials ───────────────────────────────────────────
-export const testimonials = [
+export type Testimonial = {
+  quote: string;
+  name: string;
+  context: string;
+  initials: string;
+  photo?: string | null; // optional; falls back to initials avatar when unset
+};
+
+export const testimonials: Testimonial[] = [
   {
     quote:
       "When I came to Hope House, I was homeless and suicidal. I had nothing. Through the love and structure here, I earned my CNA license, got a car, found an apartment, and rebuilt my relationship with my children. Community of Hope saved my life.",
     name: "Miss R.",
     context: "Hope House Graduate",
     initials: "MR",
+    photo: null,
   },
   {
     quote:
@@ -49,6 +58,7 @@ export const testimonials = [
     name: "Licensed Social Worker",
     context: "Referral Partner, New London County",
     initials: "SW",
+    photo: null,
   },
   {
     quote:
@@ -56,6 +66,7 @@ export const testimonials = [
     name: "Program Graduate",
     context: "Now a CCAR Certified Recovery Coach",
     initials: "PG",
+    photo: null,
   },
 ];
 
@@ -160,11 +171,11 @@ export const aboutLeadership = {
     { name: "Sandra St Germaine", role: "Fundraising Director", photo: null as string | null },
   ] as LeadershipPerson[],
   board: [
-    { name: "Julie Brousseau", role: "Chairman" },
-    { name: "Leslie Carpenter", role: "Secretary" },
-    { name: "Megan Quinn", role: "Board Member" },
-    { name: "Stephene Bordelon", role: "Board Member" },
-  ],
+    { name: "Julie Brousseau", role: "Chairman", photo: null as string | null },
+    { name: "Leslie Carpenter", role: "Secretary", photo: null as string | null },
+    { name: "Megan Quinn", role: "Board Member", photo: null as string | null },
+    { name: "Stephene Bordelon", role: "Board Member", photo: null as string | null },
+  ] as LeadershipPerson[],
 };
 
 // ─── About Page: Community Partners (groups we work closely with and recommend) ───
@@ -217,6 +228,118 @@ export const communityPartners = [
       "Ahava Living is a community partner supporting women on their journey toward healing, stability, and purposeful living.",
   },
 ];
+
+// ─── Supporters ─────────────────────────────────────────────
+// CMS-ready. Groups below are auto-derived from `category`. When CMS is
+// wired up, register this as a data model and expose each field.
+export type SupporterCategory =
+  | "corporate"
+  | "event-sponsor"
+  | "faith"
+  | "professional"
+  | "healthcare"
+  | "community"
+  | "individual";
+
+export type Supporter = {
+  name: string;
+  category: SupporterCategory;
+  logo?: string | null;
+  url?: string | null;
+  notes?: string;
+};
+
+export const supporters: Supporter[] = [
+  // ─ Corporate Partners (6 major logos shown prominently) ─
+  { name: "Dominion Energy", category: "corporate" },
+  { name: "Foxwoods Resort Casino", category: "corporate" },
+  { name: "Lawrence & Memorial Hospital", category: "corporate" },
+  { name: "Mohegan Sun", category: "corporate" },
+  { name: "Pfizer", category: "corporate" },
+  { name: "Groton Rotary Club", category: "corporate" },
+
+  // ─ Event Sponsors (2 Hearts 1 Sound Mind — Feb 2025) ─
+  { name: "Chelsea Groton Bank", category: "event-sponsor" },
+  { name: "Charter Oak Bank", category: "event-sponsor" },
+  { name: "Yale New Haven Health", category: "event-sponsor" },
+  { name: "Ahava Living", category: "event-sponsor" },
+  { name: "Crocker Ballroom", category: "event-sponsor" },
+  { name: "Coastal Business Network", category: "event-sponsor" },
+  { name: "Bluprints Unlimited", category: "event-sponsor", notes: "Pat Todd" },
+  { name: "Nutmeg Building & Remodeling", category: "event-sponsor", notes: "Denise Nott" },
+  { name: "RB Kent and Sons", category: "event-sponsor" },
+  { name: "ECHO", category: "event-sponsor" },
+  { name: "Clear Path Financial Solutions", category: "event-sponsor" },
+  { name: "Hourglass Insurance", category: "event-sponsor" },
+  { name: "Open Concepts", category: "event-sponsor" },
+  { name: "Southeastern Women's Network", category: "event-sponsor" },
+
+  // ─ Faith Community ─
+  { name: "Calvary Chapel", category: "faith" },
+  { name: "Groton Bible Chapel", category: "faith" },
+  { name: "Groton Heights Baptist Church", category: "faith" },
+  { name: "Potters House Church of God", category: "faith" },
+  { name: "Revelation Church", category: "faith" },
+  { name: "Steadfast Baptist Church", category: "faith" },
+
+  // ─ Professional Services ─
+  { name: "Duncklee Inc.", category: "professional" },
+  { name: "Massad Insurance", category: "professional" },
+  { name: "TMG Companies", category: "professional" },
+  { name: "Project Courage", category: "professional" },
+  { name: "BLU-PRINTS Signs", category: "professional" },
+  { name: "Sunrise Home Inspection", category: "professional" },
+  { name: "Stonington Institute", category: "professional" },
+  { name: "Fastsigns", category: "professional" },
+  { name: "Bouvier Insurance", category: "professional" },
+  { name: "Utopia Hair Salon", category: "professional" },
+  { name: "Brawn Service Station", category: "professional" },
+  { name: "Reagan Construction Group", category: "professional" },
+
+  // ─ Healthcare & Social Services ─
+  { name: "Natchaug Hospital", category: "healthcare" },
+  { name: "Sound Community Services", category: "healthcare" },
+  { name: "Connecticut Behavioral Health", category: "healthcare" },
+  { name: "Aware Recovery Care", category: "healthcare" },
+
+  // ─ Community Organizations ─
+  { name: "Urban Alliance", category: "community" },
+  { name: "World Vision", category: "community" },
+  { name: "Housing Ministries of New England", category: "community" },
+  { name: "NAMI Southeastern CT", category: "community" },
+
+  // ─ Individual Supporters ─
+  { name: "Megan Quinn", category: "individual" },
+  { name: "Linda Labbe", category: "individual" },
+  { name: "Brooke Forbes", category: "individual" },
+  { name: "Rosemary Robertson", category: "individual" },
+  { name: "Gingerella \"Jo Jo Nice\"", category: "individual" },
+  { name: "Pat Todd", category: "individual" },
+  { name: "Denise Nott", category: "individual" },
+  { name: "Jennifer Latz", category: "individual" },
+  { name: "Dennis Latz", category: "individual" },
+  { name: "Biddy Barbee", category: "individual" },
+  { name: "Sandy St. Germain", category: "individual" },
+  { name: "Karen Neilan", category: "individual" },
+  { name: "Verna Swan", category: "individual" },
+];
+
+export function getSupportersByCategory(category: SupporterCategory) {
+  return supporters.filter((s) => s.category === category);
+}
+
+// Featured partnership — the Eversource + Groton Utilities renovation story.
+// Separate from the supporters list because it has narrative weight and gets
+// its own spotlight section on the page.
+export const featuredPartnership = {
+  partners: [
+    { name: "Eversource Energy", logo: null as string | null },
+    { name: "Groton Utilities", logo: null as string | null },
+  ],
+  eyebrow: "A Story Of Partnership",
+  headline: "A place rebuilt by two good neighbors.",
+  body: "When Hope House needed renovations for accessibility, energy efficiency, and resident safety, Eversource Energy and Groton Utilities stepped in. Because of their partnership, our home is warmer, safer, and open to more women than ever before.",
+};
 
 // ─── Social Media Links ─────────────────────────────────────
 // Set URLs when client provides them. Icons render regardless; null URLs
@@ -313,6 +436,27 @@ export function getUpcomingEvents() {
   return events.filter((e) => e.date >= today).sort((a, b) => a.date.localeCompare(b.date));
 }
 
+// ─── LeadHerships Event ─────────────────────────────────────
+// Editable content for the LeadHerships program/event page. Shape is
+// CMS-ready: when Builder.io (or similar) is wired up, register this object
+// as a data model and expose each field as an editable input.
+export type LeadHershipEvent = {
+  title: string;
+  date: string; // ISO date, e.g. "2026-10-15" — used for sorting/schema
+  dateDisplay: string; // Human-readable fallback, shown in UI
+  location: string;
+  description: string;
+};
+
+export const leadHershipEvent: LeadHershipEvent = {
+  title: "I am Woman, Hear Me Roar!",
+  date: "2026-10-15",
+  dateDisplay: "Thursday, October 15, 2026",
+  location: "Groton, Connecticut",
+  description:
+    "An inspiring luncheon with keynote address, presentation of the colors, vibrant basket raffle, and a \u201Cpassport experience\u201D sparking new partnerships. Stay tuned for details.",
+};
+
 export function getPastEvents() {
   const today = new Date().toISOString().split("T")[0];
   return events.filter((e) => e.date < today).sort((a, b) => b.date.localeCompare(a.date));
@@ -358,7 +502,7 @@ export const faqs: FaqItem[] = [
   {
     question: "How quickly can someone move in?",
     answer:
-      "Accommodation is based on bed availability, with crisis cases prioritized. You'll hear back from us regarding your application. Call us directly at 860-912-8983 to discuss your situation. For immediate resources anywhere in Connecticut, you can also dial 2-1-1 or visit 211ct.org anytime.",
+      "Accommodation is based on bed availability, with crisis cases prioritized. You'll hear back from us regarding your application. Call us directly at 860-912-4356 to discuss your situation. For immediate resources anywhere in Connecticut, you can also dial 2-1-1 or visit 211ct.org anytime.",
     helpfulLinks: [
       { label: "Dial 2-1-1", url: "tel:211" },
       { label: "Visit 211ct.org", url: "https://www.211ct.org" },

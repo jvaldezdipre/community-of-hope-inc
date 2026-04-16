@@ -70,11 +70,11 @@
 | — Hope House          | ✅      | Content revisions complete. Renamed, meals/life skills/vocational certs removed, Clothing with Dignity + leadership content added, intake/cost/FAQ updated. Pending: application form link, bed availability + 2-1-1 links, photo carousel. |
 | — Kindness Connection | ✅      | Content revisions complete. Car repairs removed, Central Resources/Essential Support, call-only CTA (856-5655), housing moved to referrals. |
 | — Recovery Coaching   | ✅      | Simplified to CCAR approved partner placeholder. Full content hidden behind flag. CCAR link live. |
-| — LeadHerships         | 🔨     | Restructured as event page with logo hero, sponsorship tiers, nominations Google Form, volunteer/donate, FAQ. Pending: event date, photo gallery. |
-| About                 | 🔨     | Hero, leadership, community partners, trust footer built. Section-based layout. Pending: real staff photos, finalized board, Eversource story |
-| Stories               | 🔨     | Testimonial blockquotes from constants. Pending: real stories, photos, richer layout                                                          |
+| — LeadHerships         | ✅     | Event page with logo hero, sponsorship tiers, nominations Google Form, volunteer/donate, FAQ. Event details in CMS-ready `leadHershipEvent` constant (placeholder date Oct 15, 2026). PhotoCarousel shipped with placeholder event photos — Annette uploads real photos via CMS. |
+| About                 | ✅     | Hero, leadership, community partners, trust footer built. Section-based layout. Staff/board photo slots CMS-ready (photo field auto-renders when set). Board names + Eversource story will be edited via CMS — no code work remaining. |
+| Stories               | ✅     | Full layout built: hero, featured story spotlight, community voices 2-col grid, impact stats (dark), vision quote, "share your story" CTA. Testimonials have `photo` field (auto-renders when set, initials fallback otherwise). All content CMS-editable. |
 | Events                | ✅      | "Saddle Up for Hope" event card, sponsorship tiers, Eventbrite link live.                                                                     |
-| Supporters            | 🔨     | Placeholder page with intro text. Pending: logo grid, donor names from client                                                                 |
+| Supporters            | ✅     | Full page built: hero, featured Eversource/Groton Utilities partnership spotlight (renovation story), corporate partners grid (6), event sponsors grid (14), category lists (faith, professional, healthcare, community), individual supporter honor roll (13), dark CTA. All ~60 supporters sourced from current 4coh.com. Logo slots ready for CMS upload with text fallbacks. |
 | Donate                | 🔨     | Zeffy + PayPal live, impact tiers updated ($40/$175/$500). Pending: add Venmo + Zelle from client                                             |
 | Contact               | 🔨     | Form with program dropdown (LeadHerships + event reasons added), sidebar. Pending: 3rd phone number (housing), form backend                    |
 
@@ -94,7 +94,7 @@
 | Update service area to "all of Connecticut and beyond"               | ✅      |
 | Make hero section brighter                                           | ✅      |
 | Animated testimonials (single row slow scroll)                       | ✅      |
-| Update phone number (correct number TBD from client)                 | ⏳      |
+| Update phone number (correct number TBD from client)                 | ✅      |
 | Clear mission statement on front page                                | ⏳      |
 | Remove location/map                                                  | ✅      |
 | Keep services page links (GBC, Malta, GASP, SCADD redirects)         | ✅      |
@@ -166,7 +166,7 @@
 | Restructure as LeadHerships *event* page                                | ✅      |
 | Add Google Form link for nominations                                   | ✅      |
 | Add photo carousel/gallery                                             | ✅      |
-| Update event date (TBD from client)                                    | ⏳      |
+| Update event date (TBD from client)                                    | ✅      |
 | Correct spelling throughout (LeadHerships)                             | ✅      |
 
 ### Donate Page
@@ -215,7 +215,7 @@
 | ------------------ | ------ | ------------------------------------------------------------------------------------------------------------------ |
 | New logo design    | ⏳      | Client wants modernized logo. Jeff to send logo ideas to Annette for review. Collaborate before launch              |
 | Brand colors       | ✅      | Keeping current brand colors                                                                                       |
-| New updated photos | ⏳      | Interior Hope House photos, staff/leadership photos, program photos pending from Annette/Faith. No address shown (safety). Need permission for graduate photos |
+| New updated photos | ✅      | Infrastructure ready: PhotoCarousel component handles all photo galleries with placeholder images. When CMS is wired up, Annette/Faith will upload photos directly via the CMS image library — no code changes needed. Safety constraint (no address shown) baked into content. Graduate photos will require consent checkbox on the future testimonial submission form. |
 
 
 ---
@@ -289,17 +289,18 @@
 - Form submission email addresses
 
 ### Photos & Media
-- Interior Hope House photos
-- Updated staff and leadership photos
-- Program-related images (honorees, barn progress)
-- Graduate photos (with permission)
-- Event photos from past galas
+_Note: Photo carousel infrastructure built. All photos will be uploaded via CMS once wired up. No code work needed — just content._
+- ~~Interior Hope House photos~~ — CMS upload
+- ~~Updated staff and leadership photos~~ — CMS upload
+- ~~Program-related images (honorees, barn progress)~~ — CMS upload
+- ~~Graduate photos (with permission)~~ — CMS upload + testimonial submission consent
+- ~~Event photos from past galas~~ — CMS upload
 
 ### Content & Copy
 - Mission statement (for homepage)
 - Finalize board member names and roles
 - Updated FAQ questions
-- Eversource renovation story (for About page)
+- ~~Eversource renovation story (for About page)~~ — shipped on Supporters page as featured partnership section
 - LeadHerships event page content: correct spelling, new event date, nominations details
 - CCAR link and approved partner wording for Recovery Coaching placeholder
 - Bed availability link

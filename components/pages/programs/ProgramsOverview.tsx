@@ -55,7 +55,7 @@ export function ProgramsOverview() {
         {programs.map((program, i) => (
           <motion.div
             key={program.slug}
-            className="rounded-[8px] border border-[#EBEBEB] overflow-hidden flex flex-col"
+            className="rounded-[8px] border border-[#EBEBEB] overflow-hidden flex flex-col bg-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
@@ -169,7 +169,7 @@ export function ProgramsOverview() {
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <div className="bg-[#FAF8F5] border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12 md:px-10 text-center">
+        <div className="bg-white border border-[#EBEBEB] rounded-[8px] px-6 py-10 md:py-12 md:px-10 text-center">
           <h2
             className="text-[#1A1A1A] mb-3"
             style={{
@@ -197,7 +197,7 @@ export function ProgramsOverview() {
               Contact Us
             </Button>
             <a
-              href="tel:8609128983"
+              href="tel:8609124356"
               className="text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
@@ -205,7 +205,7 @@ export function ProgramsOverview() {
                 fontWeight: 400,
               }}
             >
-              or call 860-912-8983
+              or call 860-912-4356
             </a>
           </div>
         </div>

@@ -182,7 +182,7 @@ export function AboutLeadership() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
             >
-              <InitialsPlaceholder name={person.name} size="sm" />
+              <PersonPhoto name={person.name} photo={person.photo} size="sm" />
               <p
                 className="text-[#1A1A1A] mt-4 mb-1"
                 style={{

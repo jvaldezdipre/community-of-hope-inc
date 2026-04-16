@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/pages/home/ContactForm";
 import { SocialIcons } from "@/components/ui/SocialIcons";
 
 const description =
-  "Contact Community of Hope Inc. in Groton, CT. Reach us by phone, form, or visit. Main line 860-912-8983, Kindness Connection 860-856-5655. We're here to help.";
+  "Contact Community of Hope Inc. in Groton, CT. Reach us by phone, form, or visit. Main line 860-912-4356, Kindness Connection 860-856-5655. We're here to help.";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -74,11 +74,11 @@ export default function ContactPage() {
                   Main
                 </span>
                 <a
-                  href="tel:8609128983"
+                  href="tel:8609124356"
                   className="text-[#458CFE] hover:underline transition-colors"
                   style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1rem", fontWeight: 300 }}
                 >
-                  860-912-8983
+                  860-912-4356
                 </a>
               </div>
               <div>

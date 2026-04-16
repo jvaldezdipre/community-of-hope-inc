@@ -47,7 +47,7 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
       setSubmitted(true);
     } catch (err) {
       setError(
-        "Something went wrong sending your message. Please try again or call us directly at 860-912-8983."
+        "Something went wrong sending your message. Please try again or call us directly at 860-912-4356."
       );
       console.error("Contact form submission error:", err);
     } finally {
@@ -124,8 +124,8 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                   We&apos;ll be in touch within 24 hours.
                   <br />
                   For urgent needs, call{" "}
-                  <a href="tel:8609128983" className="text-[#458CFE]">
-                    860-912-8983
+                  <a href="tel:8609124356" className="text-[#458CFE]">
+                    860-912-4356
                   </a>
                   .
                 </p>
@@ -397,8 +397,8 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                       {badge.subtitle === "call" ? (
                         <>
                           Call{" "}
-                          <a href="tel:8609128983" className="text-[#458CFE] hover:underline">
-                            860-912-8983
+                          <a href="tel:8609124356" className="text-[#458CFE] hover:underline">
+                            860-912-4356
                           </a>
                         </>
                       ) : (

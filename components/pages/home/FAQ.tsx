@@ -50,8 +50,8 @@ export function FAQ() {
               }}
             >
               Still have questions? Call us at{" "}
-              <a href="tel:8609128983" className="text-[#458CFE] hover:underline">
-                860-912-8983
+              <a href="tel:8609124356" className="text-[#458CFE] hover:underline">
+                860-912-4356
               </a>{" "}
               or send a message through our form below.
             </p>

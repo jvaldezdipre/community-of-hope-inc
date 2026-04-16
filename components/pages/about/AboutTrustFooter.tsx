@@ -91,7 +91,7 @@ export function AboutTrustFooter() {
               Phone
             </span>
             <a
-              href="tel:8609128983"
+              href="tel:8609124356"
               className="text-[#458CFE] hover:underline"
               style={{
                 fontFamily: "'Outfit', sans-serif",
@@ -99,7 +99,7 @@ export function AboutTrustFooter() {
                 fontWeight: 300,
               }}
             >
-              860-912-8983
+              860-912-4356
             </a>
           </motion.div>
         </div>

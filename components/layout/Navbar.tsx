@@ -156,7 +156,7 @@ export function Navbar() {
             );
           })}
           <Button
-            href="tel:8609128983"
+            href="tel:8609124356"
             variant="navPhone"
             className={
               useSolidNav
@@ -165,7 +165,7 @@ export function Navbar() {
             }
           >
             <Phone size={15} />
-            860-912-8983
+            860-912-4356
           </Button>
         </div>
 
@@ -252,13 +252,13 @@ export function Navbar() {
               );
             })}
             <Button
-              href="tel:8609128983"
+              href="tel:8609124356"
               variant="navPhoneMobile"
               onClick={() => setMobileOpen(false)}
               className="mt-2"
             >
               <Phone size={15} />
-              860-912-8983
+              860-912-4356
             </Button>
           </div>
         </div>
