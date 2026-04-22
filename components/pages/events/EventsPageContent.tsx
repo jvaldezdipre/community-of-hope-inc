@@ -1,7 +1,5 @@
-import Link from "next/link";
-import { Calendar, MapPin, Clock, Mail, Phone, FileText } from "lucide-react";
+import { Calendar, MapPin, Clock, Phone, FileText } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { getUpcomingEvents, getPastEvents } from "@/lib/constants";
 import type { EventItem } from "@/lib/constants";
 
 function formatDate(dateStr: string) {
@@ -15,12 +13,13 @@ function formatDate(dateStr: string) {
   });
 }
 
-function EventCard({ event }: { event: EventItem }) {
+export function EventCard({ event }: { event: EventItem }) {
   return (
     <div className="rounded-[8px] border border-[#EBEBEB] overflow-hidden">
       <div className="grid md:grid-cols-[380px_1fr] md:gap-12 lg:gap-16 items-stretch">
         {/* Flyer image */}
         <div className="relative bg-[#FAF8F5] min-h-[300px] md:min-h-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={event.image}
             alt={`${event.title} event flyer`}
@@ -96,35 +95,37 @@ function EventCard({ event }: { event: EventItem }) {
           </p>
 
           {/* Tickets */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            {event.tickets.map((t) => (
-              <div
-                key={t.label}
-                className="bg-[#FAF8F5] rounded-[6px] px-4 py-3 border border-[#EBEBEB]"
-              >
-                <span
-                  className="block text-[#458CFE] mb-0.5"
-                  style={{
-                    fontFamily: "'Libre Baskerville', serif",
-                    fontSize: "1.05rem",
-                    fontWeight: 400,
-                  }}
+          {event.tickets.length > 0 && (
+            <div className="flex flex-wrap gap-4 mb-8">
+              {event.tickets.map((t) => (
+                <div
+                  key={t.label}
+                  className="bg-[#FAF8F5] rounded-[6px] px-4 py-3 border border-[#EBEBEB]"
                 >
-                  {t.price}
-                </span>
-                <span
-                  className="text-[#3D3D3D]"
-                  style={{
-                    fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.84rem",
-                    fontWeight: 300,
-                  }}
-                >
-                  {t.label}
-                </span>
-              </div>
-            ))}
-          </div>
+                  <span
+                    className="block text-[#458CFE] mb-0.5"
+                    style={{
+                      fontFamily: "'Libre Baskerville', serif",
+                      fontSize: "1.05rem",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {t.price}
+                  </span>
+                  <span
+                    className="text-[#3D3D3D]"
+                    style={{
+                      fontFamily: "'Outfit', sans-serif",
+                      fontSize: "0.84rem",
+                      fontWeight: 300,
+                    }}
+                  >
+                    {t.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* CTA */}
           <div className="mt-auto flex flex-wrap items-center gap-4">
@@ -142,18 +143,20 @@ function EventCard({ event }: { event: EventItem }) {
                 Contact to Reserve
               </Button>
             )}
-            <a
-              href={`tel:${event.contactPhone.replace(/[^0-9]/g, "")}`}
-              className="flex items-center gap-2 text-[#458CFE] hover:underline"
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.95rem",
-                fontWeight: 400,
-              }}
-            >
-              <Phone size={14} strokeWidth={1.5} />
-              {event.contactPhone}
-            </a>
+            {event.contactPhone && (
+              <a
+                href={`tel:${event.contactPhone.replace(/[^0-9]/g, "")}`}
+                className="flex items-center gap-2 text-[#458CFE] hover:underline"
+                style={{
+                  fontFamily: "'Outfit', sans-serif",
+                  fontSize: "0.95rem",
+                  fontWeight: 400,
+                }}
+              >
+                <Phone size={14} strokeWidth={1.5} />
+                {event.contactPhone}
+              </a>
+            )}
             {event.flyerPdf && (
               <a
                 href={event.flyerPdf}
@@ -177,7 +180,7 @@ function EventCard({ event }: { event: EventItem }) {
   );
 }
 
-function SponsorshipSection({ event }: { event: EventItem }) {
+export function SponsorshipSection({ event }: { event: EventItem }) {
   if (!event.sponsorships?.length) return null;
 
   return (
@@ -271,94 +274,83 @@ function SponsorshipSection({ event }: { event: EventItem }) {
   );
 }
 
-export function EventsPageContent() {
-  const upcoming = getUpcomingEvents();
-  const past = getPastEvents();
-
+export function PastEventCard({ event }: { event: EventItem }) {
   return (
-    <>
-      {/* Upcoming Events */}
-      {upcoming.length > 0 ? (
-        <div className="flex flex-col gap-12">
-          {upcoming.map((event) => (
-            <div key={event.slug}>
-              <EventCard event={event} />
-              <SponsorshipSection event={event} />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div
-          className="rounded-[8px] bg-[#FAF8F5] border border-[#EBEBEB] p-8 text-center"
-          style={{ fontFamily: "'Outfit', sans-serif" }}
+    <div className="rounded-[8px] border border-[#EBEBEB] overflow-hidden">
+      <div className="relative h-48 bg-[#FAF8F5]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={event.image}
+          alt={`${event.title} event`}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="p-5">
+        <p
+          className="text-[#1A1A1A] mb-1"
+          style={{
+            fontFamily: "'Libre Baskerville', serif",
+            fontSize: "1rem",
+            fontWeight: 400,
+          }}
         >
-          <p className="text-[#3D3D3D]" style={{ fontSize: "1rem", fontWeight: 300 }}>
-            No upcoming events right now. Check back soon or call us at{" "}
-            <a href="tel:8609124356" className="text-[#458CFE] hover:underline">
-              860-912-4356
-            </a>{" "}
-            for the latest updates.
-          </p>
-        </div>
-      )}
+          {event.title}
+        </p>
+        <span
+          className="text-[#3D3D3D]"
+          style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontSize: "0.9rem",
+            fontWeight: 300,
+          }}
+        >
+          {formatDate(event.date)}
+        </span>
+      </div>
+    </div>
+  );
+}
 
-      {/* Past Events */}
-      {past.length > 0 && (
-        <section
-          className="pt-16 border-t border-[#EBEBEB] mt-16"
-          style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
-        >
-          <h2
-            className="text-[#1A1A1A] mb-8"
-            style={{
-              fontFamily: "'Libre Baskerville', serif",
-              fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
-              fontWeight: 400,
-              lineHeight: 1.3,
-            }}
-          >
-            Past Events
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {past.map((event) => (
-              <div
-                key={event.slug}
-                className="rounded-[8px] border border-[#EBEBEB] overflow-hidden"
-              >
-                <div className="relative h-48 bg-[#FAF8F5]">
-                  <img
-                    src={event.image}
-                    alt={`${event.title} event`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-5">
-                  <p
-                    className="text-[#1A1A1A] mb-1"
-                    style={{
-                      fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "1rem",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {event.title}
-                  </p>
-                  <span
-                    className="text-[#3D3D3D]"
-                    style={{
-                      fontFamily: "'Outfit', sans-serif",
-                      fontSize: "0.9rem",
-                      fontWeight: 300,
-                    }}
-                  >
-                    {formatDate(event.date)}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-    </>
+export function EmptyEventsState() {
+  return (
+    <div
+      className="rounded-[8px] bg-[#FAF8F5] border border-[#EBEBEB] p-8 text-center"
+      style={{ fontFamily: "'Outfit', sans-serif" }}
+    >
+      <p className="text-[#3D3D3D]" style={{ fontSize: "1rem", fontWeight: 300 }}>
+        No upcoming events right now. Check back soon or call us at{" "}
+        <a href="tel:8609124356" className="text-[#458CFE] hover:underline">
+          860-912-4356
+        </a>{" "}
+        for the latest updates.
+      </p>
+    </div>
+  );
+}
+
+export function PastEventsSection({ events }: { events: EventItem[] }) {
+  if (events.length === 0) return null;
+  return (
+    <section
+      className="pt-16 border-t border-[#EBEBEB] mt-16"
+      style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}
+    >
+      <h2
+        className="text-[#1A1A1A] mb-8"
+        style={{
+          fontFamily: "'Libre Baskerville', serif",
+          fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+          fontWeight: 400,
+          lineHeight: 1.3,
+        }}
+      >
+        Past Events
+      </h2>
+      <div className="grid sm:grid-cols-2 gap-6">
+        {events.map((event, i) => (
+          <PastEventCard key={`${event.date}-${event.title}-${i}`} event={event} />
+        ))}
+      </div>
+    </section>
   );
 }
