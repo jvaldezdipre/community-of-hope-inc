@@ -5,22 +5,28 @@ import { Phone, Clock, Shield } from "lucide-react";
 import { motion } from "motion/react";
 import { contactTypeOptions } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { supabase } from "@/lib/supabase";
 
 type ContactFormProps = {
   /** When true, renders only the form card (no section wrapper, no left column). For use on /contact page. */
   variant?: "default" | "standalone";
 };
 
-function encodeForNetlify(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
+function splitName(full: string): { firstName: string; lastName: string } {
+  const trimmed = full.trim();
+  const spaceIdx = trimmed.indexOf(" ");
+  if (spaceIdx === -1) return { firstName: trimmed, lastName: "" };
+  return {
+    firstName: trimmed.slice(0, spaceIdx),
+    lastName: trimmed.slice(spaceIdx + 1).trim(),
+  };
 }
 
 export function ContactForm({ variant = "default" }: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,19 +37,29 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Honeypot: if this hidden field is filled, silently pretend we accepted
+    // the submission. Bots think they succeeded; nothing hits the database.
+    if (honeypot) {
+      setSubmitted(true);
+      return;
+    }
     setSubmitting(true);
     setError(null);
     try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeForNetlify({
-          "form-name": "contact",
-          "bot-field": "",
-          ...formData,
-        }),
+      const { firstName, lastName } = splitName(formData.name);
+      const { error: insertErr } = await supabase.from("inquiries").insert({
+        first_name: firstName,
+        last_name: lastName,
+        email: formData.email,
+        phone: formData.phone,
+        inquiry_type: formData.type,
+        message: formData.message,
+        status: "new",
+        is_new: true,
+        created_by: "website",
+        pii_class: "standard",
       });
-      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      if (insertErr) throw insertErr;
       setSubmitted(true);
     } catch (err) {
       setError(
@@ -131,19 +147,20 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
                 </p>
               </motion.div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
+              <form onSubmit={handleSubmit}>
+                {/* Honeypot — hidden from humans, bots fill it. Must stay last-in-DOM-ish and invisible. */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>
                   <label>
-                    Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                    Website (leave this empty)
+                    <input
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={honeypot}
+                      onChange={e => setHoneypot(e.target.value)}
+                    />
                   </label>
-                </p>
+                </div>
                 <div className="mb-6">
                   <label
                     className="block text-[#1A1A1A] mb-2"

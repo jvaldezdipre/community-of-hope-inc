@@ -67,7 +67,7 @@
 | --------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | Home                  | ✅     | Full structure done. Phone number updated to 860-912-4356. Mission statement will be edited via CMS when Annette provides it — no code work remaining. |
 | Programs (main)       | ✅      | Overview of all 4 programs with links to individual pages.                                                                                    |
-| — Hope House          | ✅      | Content revisions complete. Renamed, meals/life skills/vocational certs removed, Clothing with Dignity + leadership content added, intake/cost/FAQ updated. Pending: application form link, bed availability + 2-1-1 links, photo carousel. |
+| — Hope House          | ✅      | Content revisions complete. "Apply Now" links to `/apply-hope-house`. Photo carousel live. 2-1-1 link in FAQ. Bed availability link pending from client (CMS-editable). |
 | — Kindness Connection | ✅      | Content revisions complete. Car repairs removed, Central Resources/Essential Support, call-only CTA (856-5655), housing moved to referrals. |
 | — Recovery Coaching   | ✅      | Simplified to CCAR approved partner placeholder. Full content hidden behind flag. CCAR link live. |
 | — LeadHerships         | ✅     | Event page with logo hero, sponsorship tiers, nominations Google Form, volunteer/donate, FAQ. Event details in CMS-ready `leadHershipEvent` constant (placeholder date Oct 15, 2026). PhotoCarousel shipped with placeholder event photos — Annette uploads real photos via CMS. |
@@ -75,8 +75,8 @@
 | Stories               | ✅     | Full layout built: hero, featured story spotlight, community voices 2-col grid, impact stats (dark), vision quote, "share your story" CTA. Testimonials have `photo` field (auto-renders when set, initials fallback otherwise). All content CMS-editable. |
 | Events                | ✅      | "Saddle Up for Hope" event card, sponsorship tiers, Eventbrite link live.                                                                     |
 | Supporters            | ✅     | Full page built: hero, featured Eversource/Groton Utilities partnership spotlight (renovation story), corporate partners grid (6), event sponsors grid (14), category lists (faith, professional, healthcare, community), individual supporter honor roll (13), dark CTA. All ~60 supporters sourced from current 4coh.com. Logo slots ready for CMS upload with text fallbacks. |
-| Donate                | 🔨     | Zeffy + PayPal live, impact tiers updated ($40/$175/$500). Pending: add Venmo + Zelle from client                                             |
-| Contact               | 🔨     | Form with program dropdown (LeadHerships + event reasons added), sidebar. Pending: 3rd phone number (housing), form backend                    |
+| Donate                | ✅     | Zeffy + PayPal live, impact tiers updated ($40/$175/$500). Venmo + Zelle pending from client — CMS-editable, no code work remaining. |
+| Contact               | ✅     | Form with program dropdown, sidebar with 2 phone numbers + social icons. Netlify Forms backend live. 3rd phone number (housing) pending from client — CMS-editable. |
 
 
 ---
@@ -243,7 +243,7 @@
 
 | Item                             | Status | Notes                                                                                 |
 | -------------------------------- | ------ | ------------------------------------------------------------------------------------- |
-| Application form (digital)       | ❌      | Replace PDF with fillable online form (Google Form or similar). Routing + notification needed. Covers Hope House + Leadership/Ambassador |
+| Application form (digital)       | ✅      | 7-step branded wizard at `/apply-hope-house`. All ~80 fields from PDF (minus SSN). Refactored into 12 separate component files. Netlify Forms backend wired. Affirmation checkbox replaces physical signature. Hope House page "Apply Now" buttons link to it. |
 | Referral/contact form            | ✅     | UI + Netlify Forms backend wired. Submissions route to Jeff's email (jefesnipez@gmail.com) until Annette provides org email. Honeypot spam protection enabled. |
 | Eventbrite integration           | ✅      | Saddle Up for Hope Eventbrite link live in event data and rendered on Events page     |
 | Kindness Connection request form | ✅     | Google Form removed per Meeting 2. Page directs users to call 860-856-5655             |

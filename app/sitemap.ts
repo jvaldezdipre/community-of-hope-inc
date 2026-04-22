@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/supporters",
     "/donate",
     "/contact",
+    "/apply-hope-house",
   ];
 
   const programPaths = programs.map((p) => `/programs/${p.slug}`);

@@ -18,11 +18,131 @@ import { Step4SubstanceAbuse } from "./steps/Step4SubstanceAbuse";
 import { Step5Conditions } from "./steps/Step5Conditions";
 import { Step6Legal } from "./steps/Step6Legal";
 import { Step7Statement } from "./steps/Step7Statement";
+import { supabase } from "@/lib/supabase";
 
-function encodeForNetlify(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join("&");
+// Reshape the flat form data into the JSONB sub-objects the dashboard expects
+function toApplicantRow(d: ApplicationFormData) {
+  return {
+    contact: {
+      firstName: d.firstName,
+      lastName: d.lastName,
+      homePhone: d.homePhone,
+      cellPhone: d.cellPhone,
+      workerName: d.workerName,
+      workerPhone: d.workerPhone,
+      workerExt: d.workerExt,
+      caseManagerName: d.caseManagerName,
+      caseManagerAgency: d.caseManagerAgency,
+      caseManagerPhone: d.caseManagerPhone,
+      projectedReleaseDate: d.projectedReleaseDate,
+      isDefiniteDate: d.isDefiniteDate,
+      pickUpTime: d.pickUpTime,
+      facilityAddress: d.facilityAddress,
+      mainGoal: d.mainGoal,
+    },
+    personal: {
+      middleInitial: d.middleInitial,
+      dateOfBirth: d.dateOfBirth,
+      insuranceNumber: d.insuranceNumber,
+      huskyD: d.huskyD,
+      cashAssistance: d.cashAssistance,
+      inClinicalTreatment: d.inClinicalTreatment,
+      treatmentProviders: d.treatmentProviders,
+      currentAddress: d.currentAddress,
+      livingSituationDuration: d.livingSituationDuration,
+      lastPermanentAddress: d.lastPermanentAddress,
+    },
+    family: {
+      maritalStatus: d.maritalStatus,
+      liveWithParents: d.liveWithParents,
+      siblings: d.siblings,
+      spouseName: d.spouseName,
+      children: d.children,
+      childrenLivingArrangements: d.childrenLivingArrangements,
+      familyReunification: d.familyReunification,
+      familySupportive: d.familySupportive,
+      familyInfluence: d.familyInfluence,
+      familyNotes: d.familyNotes,
+    },
+    substance_medical: {
+      alcoholLastUse: d.alcoholLastUse,
+      cocaineLastUse: d.cocaineLastUse,
+      crackLastUse: d.crackLastUse,
+      hallucinogensLastUse: d.hallucinogensLastUse,
+      inhalantsLastUse: d.inhalantsLastUse,
+      opiatesLastUse: d.opiatesLastUse,
+      rxDrugsLastUse: d.rxDrugsLastUse,
+      sedativesLastUse: d.sedativesLastUse,
+      overCounterLastUse: d.overCounterLastUse,
+      otherDrugLastUse: d.otherDrugLastUse,
+      drugOfChoice: d.drugOfChoice,
+      ageOfFirstUse: d.ageOfFirstUse,
+      dailyConsumption: d.dailyConsumption,
+      mentalHealthDiagnosis: d.mentalHealthDiagnosis,
+      mentalHealthDetails: d.mentalHealthDetails,
+      mentalHealthMedications: d.mentalHealthMedications,
+      medicalProblems: d.medicalProblems,
+      medicalDetails: d.medicalDetails,
+      medicalMedications: d.medicalMedications,
+      allMedications: d.allMedications,
+      spiritualLife: d.spiritualLife,
+      conditionsContributing: d.conditionsContributing,
+      conditionsConsequences: d.conditionsConsequences,
+    },
+    treatment: {
+      currentlyInTreatment: d.currentlyInTreatment,
+      facilityName: d.facilityName,
+      facilityCityState: d.facilityCityState,
+      dateAdmitted: d.dateAdmitted,
+      dateCompletion: d.dateCompletion,
+      treatmentCaseManager: d.treatmentCaseManager,
+      treatmentCounselor: d.treatmentCounselor,
+      projectedCommencementDate: d.projectedCommencementDate,
+      housingOptionsBesidesCOH: d.housingOptionsBesidesCOH,
+      completedProgram: d.completedProgram,
+      whereAfterLeaving: d.whereAfterLeaving,
+      sobrietyDuration: d.sobrietyDuration,
+      whatWentWrong: d.whatWentWrong,
+    },
+    legal_edu_employment: {
+      outstandingWarrants: d.outstandingWarrants,
+      everArrested: d.everArrested,
+      chargesConvictions: d.chargesConvictions,
+      arrestDate: d.arrestDate,
+      sentence: d.sentence,
+      paroleTime: d.paroleTime,
+      paroleOfficer: d.paroleOfficer,
+      paroleConditions: d.paroleConditions,
+      paroleEndDate: d.paroleEndDate,
+      arrestHistory: d.arrestHistory,
+      disciplinaryReports: d.disciplinaryReports,
+      disciplinaryDetails: d.disciplinaryDetails,
+      lastGradeCompleted: d.lastGradeCompleted,
+      otherEducation: d.otherEducation,
+      significantJobs: d.significantJobs,
+      futurePlans: d.futurePlans,
+      workingPartTime: d.workingPartTime,
+      partTimeEmployer: d.partTimeEmployer,
+      workingFullTime: d.workingFullTime,
+      fullTimeEmployer: d.fullTimeEmployer,
+      pastJob1: d.pastJob1,
+      pastJob2: d.pastJob2,
+      incomeSources: d.incomeSources,
+    },
+    personal_statement: {
+      strengths: d.strengths,
+      weaknesses: d.weaknesses,
+      triggers: d.triggers,
+      difficulties: d.difficulties,
+      whatGotYouHere: d.whatGotYouHere,
+      goalsWhileHere: d.goalsWhileHere,
+      plansAfterLeaving: d.plansAfterLeaving,
+      dreams: d.dreams,
+    },
+    consents: {
+      affirmation: d.affirmation,
+    },
+  };
 }
 
 export function HopeHouseApplication() {
@@ -32,6 +152,7 @@ export function HopeHouseApplication() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState("");
 
   const update = (field: keyof ApplicationFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -50,19 +171,23 @@ export function HopeHouseApplication() {
 
   const handleSubmit = async () => {
     if (formData.affirmation !== "yes") return;
+    // Honeypot — silently drop bot submissions
+    if (honeypot) {
+      setSubmitted(true);
+      scrollToTop();
+      return;
+    }
     setSubmitting(true);
     setError(null);
     try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeForNetlify({
-          "form-name": "hope-house-application",
-          "bot-field": "",
-          ...formData,
-        }),
+      const { error: insertErr } = await supabase.from("applicants").insert({
+        ...toApplicantRow(formData),
+        status: "submitted",
+        is_new: true,
+        created_by: "website",
+        pii_class: "phi",
       });
-      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      if (insertErr) throw insertErr;
       setSubmitted(true);
       scrollToTop();
     } catch (err) {
@@ -167,6 +292,19 @@ export function HopeHouseApplication() {
       style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}
     >
       <div className="max-w-[720px] mx-auto px-6">
+        {/* Honeypot — hidden from humans, bots fill it */}
+        <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>
+          <label>
+            Website (leave this empty)
+            <input
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={honeypot}
+              onChange={e => setHoneypot(e.target.value)}
+            />
+          </label>
+        </div>
         <ApplicationProgress step={step} />
 
         <AnimatePresence mode="wait">
