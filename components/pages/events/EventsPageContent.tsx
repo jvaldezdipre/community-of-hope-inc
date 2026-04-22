@@ -15,16 +15,18 @@ function formatDate(dateStr: string) {
 
 export function EventCard({ event }: { event: EventItem }) {
   return (
-    <div className="rounded-[8px] border border-[#EBEBEB] overflow-hidden">
+    <div className="rounded-[8px] border border-[#EBEBEB] bg-white overflow-hidden">
       <div className="grid md:grid-cols-[380px_1fr] md:gap-12 lg:gap-16 items-stretch">
         {/* Flyer image */}
         <div className="relative bg-[#FAF8F5] min-h-[300px] md:min-h-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={event.image}
-            alt={`${event.title} event flyer`}
-            className="w-full h-full object-cover"
-          />
+          {event.image && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={event.image}
+              alt={`${event.title} event flyer`}
+              className="w-full h-full object-cover"
+            />
+          )}
         </div>
 
         {/* Event details */}
@@ -97,9 +99,9 @@ export function EventCard({ event }: { event: EventItem }) {
           {/* Tickets */}
           {event.tickets.length > 0 && (
             <div className="flex flex-wrap gap-4 mb-8">
-              {event.tickets.map((t) => (
+              {event.tickets.map((t, i) => (
                 <div
-                  key={t.label}
+                  key={`ticket-${i}`}
                   className="bg-[#FAF8F5] rounded-[6px] px-4 py-3 border border-[#EBEBEB]"
                 >
                   <span
@@ -212,10 +214,10 @@ export function SponsorshipSection({ event }: { event: EventItem }) {
       </p>
 
       <div className="grid md:grid-cols-3 gap-6">
-        {event.sponsorships.map((s) => (
+        {event.sponsorships.map((s, si) => (
           <div
-            key={s.tier}
-            className="rounded-[8px] border border-[#EBEBEB] p-6 flex flex-col"
+            key={`sponsorship-${si}`}
+            className="rounded-[8px] border border-[#EBEBEB] bg-white p-6 flex flex-col"
           >
             <span
               className="text-[#458CFE] uppercase mb-1"
@@ -239,9 +241,9 @@ export function SponsorshipSection({ event }: { event: EventItem }) {
               {s.price}
             </span>
             <ul className="flex-1 space-y-2 mb-6">
-              {s.perks.map((perk) => (
+              {s.perks.map((perk, pi) => (
                 <li
-                  key={perk}
+                  key={`perk-${pi}`}
                   className="text-[#3D3D3D] pl-4 relative"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
@@ -278,12 +280,14 @@ export function PastEventCard({ event }: { event: EventItem }) {
   return (
     <div className="rounded-[8px] border border-[#EBEBEB] overflow-hidden">
       <div className="relative h-48 bg-[#FAF8F5]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={event.image}
-          alt={`${event.title} event`}
-          className="w-full h-full object-cover"
-        />
+        {event.image && (
+          /* eslint-disable-next-line @next/next/no-img-element */
+          <img
+            src={event.image}
+            alt={`${event.title} event`}
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
       <div className="p-5">
         <p
