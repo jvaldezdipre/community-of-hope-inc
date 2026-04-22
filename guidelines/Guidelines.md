@@ -222,18 +222,26 @@
 
 ## CMS Setup
 
+**Tool: [Puck](https://puckeditor.com)** (open-source, self-hosted, no per-seat fees). Page content stored in Supabase `pages` table (one row per page, Puck JSON in a `jsonb` column). Staff access at `/admin/login` — same Supabase Auth as the dashboard. Permission-gated by the `editWebsiteContent` flag added to the dashboard's Team invite modal.
 
-| Page                | Editable Sections                           | Status |
-| ------------------- | ------------------------------------------- | ------ |
-| Hope House          | Program description, details                | ❌      |
-| Kindness Connection | Program description, details                | ❌      |
-| Recovery Coaching   | Program description, details                | ❌      |
-| LeadHerships         | Program description, details                | ❌      |
-| Events              | Add/remove events, Eventbrite links, flyers | ❌      |
-| Supporters          | Add/remove logos and donor names            | ❌      |
-| Stories             | Add new testimonials                        | ❌      |
-| Donate              | Update campaigns, giving tiers              | ❌      |
-| Fundraisers         | Updatable                                   | ❌      |
+**Editor UX:** lands directly in the editor for the default page. Top-of-page dropdown switches between editable pages. Undo/redo + sidebar toggles + Publish button in the header.
+
+**Image uploads:** Supabase Storage `events` bucket (public read, write gated by `editWebsiteContent`). Custom Puck field handles file picking + upload.
+
+| Page                  | Editable Sections                                                                                           | Status |
+| --------------------- | ----------------------------------------------------------------------------------------------------------- | ------ |
+| Events                | H1 + intro copy. Full event cards (add/edit/delete events, image upload, tickets, sponsorship tiers with nested perks). Auto-splits upcoming vs. past by date; JSON-LD schema auto-generated from Puck data. | ✅     |
+| Home                  | Hero, mission, featured sections, CTAs                                                                      | ❌      |
+| About                 | Mission statement, team, board, history                                                                     | ❌      |
+| Contact               | Phone numbers, email, hours, address                                                                        | ❌      |
+| Donate                | Appeal copy, giving tiers, campaign updates                                                                 | ❌      |
+| Supporters            | Partners grid, event sponsors, individual donors                                                            | ❌      |
+| Programs (+ subpages) | Program descriptions and details (Hope House, Kindness Connection, Recovery Coaching, LeadHerships)          | ❌      |
+
+**Intentionally not in Puck:**
+- **Apply Hope House** — form-only page, nothing meaningful to "edit" as content.
+- **Share Story** — form-only, same reason.
+- **Stories** — structured data (testimonials) with consent/approval workflow → handled via dashboard testimonials table, not Puck.
 
 
 ---
@@ -361,7 +369,7 @@ Here's everything still needed from Annette before launch. Send as one consolida
 | Testimonial submission form                  | ❌      | With approval/consent checkbox for website use                        |
 | Social media widgets                         | 🔨      | `SocialIcons` component built (light/dark variants). Live in Footer + Contact sidebar. Icons visible, linking to `#` until client sends real URLs — then update 3 lines in `lib/constants.ts` |
 | Fillable online application form             | ❌      | Replace PDF. Covers Hope House + Leadership/Ambassador. Routing + notification |
-| Dashboard/CMS for team self-service          | ❌      | Team updates events, stories, program pages. Design changes → Jeff only |
+| Dashboard/CMS for team self-service          | 🔨      | Puck editor wired at `/admin`. Events page fully editable (header + event cards with image upload, tickets, sponsorships). Home/About/Contact/Donate/Supporters/Programs pending. Design changes → Jeff only. |
 | Blog section                                 | ❌      | For Google ranking. Annette interested. Low priority for launch       |
 | Sponsorship form with payment link           | ⏳      | Pending payment details from client                                   |
 | Easy-editing interface (Bloomerang-style)     | ❌      | Research similar interface. Pending Bloomerang access from client      |

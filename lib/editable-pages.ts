@@ -7,11 +7,23 @@
 export type EditablePage = {
   slug: string;
   label: string;
+  /**
+   * Puck category keys this page is allowed to pull components from.
+   * Everything else is hidden from the left sidebar drawer while editing
+   * this page (e.g. Donate shouldn't expose the Events category).
+   * Category keys match those defined in puck.config.tsx.
+   */
+  puckCategories: string[];
 };
 
 export const EDITABLE_PAGES: EditablePage[] = [
-  { slug: "events", label: "Events" },
+  { slug: "events", label: "Events", puckCategories: ["chrome", "events"] },
+  { slug: "donate", label: "Donate", puckCategories: ["chrome", "donate"] },
 ];
+
+export function getAllowedCategoriesForSlug(slug: string): string[] {
+  return EDITABLE_PAGES.find((p) => p.slug === slug)?.puckCategories ?? [];
+}
 
 /**
  * Where /admin drops staff after login. Change to "home" once the home page

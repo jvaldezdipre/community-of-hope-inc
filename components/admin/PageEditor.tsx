@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Puck, type Data } from "@measured/puck";
 import { puckConfig, type PuckProps } from "@/puck.config";
 import { getSupabaseBrowser } from "@/lib/supabase/browser";
+import { getAllowedCategoriesForSlug } from "@/lib/editable-pages";
 import { EditorHeader } from "./EditorHeader";
 
 type PageData = Data<PuckProps>;
@@ -35,6 +36,27 @@ export function PageEditor({
 
   const today = new Date().toISOString().split("T")[0];
 
+  /**
+   * Filter the Puck categories so only ones allowed on this page show up
+   * in the left sidebar drawer. All components stay registered so rendering
+   * still works regardless of which slug is loaded.
+   */
+  const scopedConfig = useMemo(() => {
+    const allowed = getAllowedCategoriesForSlug(slug);
+    const scopedCategories = {
+      ...Object.fromEntries(
+        Object.entries(puckConfig.categories ?? {}).map(([key, cat]) => [
+          key,
+          { ...cat, visible: allowed.includes(key) },
+        ]),
+      ),
+      // Puck auto-generates an "other" category for uncategorized components.
+      // Force it hidden so legacy components don't leak into the drawer.
+      other: { visible: false, components: [] as string[] },
+    };
+    return { ...puckConfig, categories: scopedCategories };
+  }, [slug]);
+
   const overrides = useMemo(
     () => ({
       header: ({ actions }: { actions: React.ReactNode; children: React.ReactNode }) => (
@@ -46,7 +68,7 @@ export function PageEditor({
 
   return (
     <Puck
-      config={puckConfig}
+      config={scopedConfig}
       data={initialData}
       metadata={{ today }}
       onPublish={handlePublish}

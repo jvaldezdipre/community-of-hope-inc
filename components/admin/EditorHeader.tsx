@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
-import { Check, ChevronDown, PanelLeft, PanelRight, Undo2, Redo2 } from "lucide-react";
+import { Check, ChevronDown, PanelLeft, PanelRight, Undo2, Redo2, LogOut } from "lucide-react";
 import { usePuck } from "@measured/puck";
 import { EDITABLE_PAGES, getPageLabel } from "@/lib/editable-pages";
+import { getSupabaseBrowser } from "@/lib/supabase/browser";
 
 export function EditorHeader({
   currentSlug,
@@ -40,6 +41,21 @@ export function EditorHeader({
           : { rightSideBarVisible: !rightVisible },
     });
   };
+
+  async function handleSignOut() {
+    // hasPast means the user has made at least one edit since opening the editor.
+    // Warn only if there are potentially unpublished changes.
+    if (history.hasPast) {
+      const confirmed = window.confirm(
+        "Sign out? Any changes you haven't published will be lost.",
+      );
+      if (!confirmed) return;
+    }
+    const supabase = getSupabaseBrowser();
+    await supabase.auth.signOut();
+    router.push("/admin/login");
+    router.refresh();
+  }
 
   return (
     <header
@@ -136,6 +152,17 @@ export function EditorHeader({
           <Redo2 size={18} />
         </button>
         {actions}
+        <div className="ml-2 pl-2 border-l border-[#EBEBEB]">
+          <button
+            type="button"
+            aria-label="Sign out"
+            title="Sign out"
+            onClick={handleSignOut}
+            className="p-1.5 rounded hover:bg-[#FAF8F5] transition-colors text-[#3D3D3D] hover:text-[#B3261E]"
+          >
+            <LogOut size={18} />
+          </button>
+        </div>
       </div>
     </header>
   );

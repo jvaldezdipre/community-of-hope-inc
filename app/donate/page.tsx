@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Render } from "@measured/puck/rsc";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { WebPageJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { DonatePageTitle } from "@/components/pages/donate/DonatePageTitle";
-import { DonatePage } from "@/components/pages/donate/DonatePage";
+import { TrustFooter } from "@/components/pages/donate/DonatePage";
+import { getPageContent } from "@/lib/cms";
+import { puckConfig } from "@/puck.config";
 
 const description =
   "Donate to Community of Hope Inc., a 501(c)(3) in Groton, CT. Your gift supports Hope House, The Kindness Connection, and women rebuilding their lives.";
@@ -13,7 +15,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/donate" },
 };
 
-export default function Page() {
+export default async function Page() {
+  const pageData = await getPageContent("donate");
+
   return (
     <>
       <WebPageJsonLd
@@ -28,8 +32,8 @@ export default function Page() {
         ]}
       />
       <PageLayout>
-        <DonatePageTitle />
-        <DonatePage />
+        <Render config={puckConfig} data={pageData} />
+        <TrustFooter />
       </PageLayout>
     </>
   );
