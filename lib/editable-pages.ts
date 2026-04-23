@@ -27,6 +27,31 @@ export const EDITABLE_PAGES: EditablePage[] = [
     puckCategories: ["chrome", "programs"],
   },
   {
+    slug: "hope-house",
+    label: "Hope House",
+    puckCategories: ["hope-house"],
+  },
+  {
+    slug: "leadherships",
+    label: "LeadHerships",
+    puckCategories: ["leadherships"],
+  },
+  {
+    slug: "kindness-connection",
+    label: "Kindness Connection",
+    puckCategories: ["kindness-connection"],
+  },
+  {
+    slug: "stories",
+    label: "Stories",
+    puckCategories: ["stories"],
+  },
+  {
+    slug: "supporters",
+    label: "Supporters",
+    puckCategories: ["supporters"],
+  },
+  {
     slug: "global-settings",
     label: "Global settings",
     puckCategories: ["global"],

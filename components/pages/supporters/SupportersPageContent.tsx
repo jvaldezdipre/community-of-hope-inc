@@ -74,7 +74,14 @@ function Eyebrow({ children, dark = false }: { children: React.ReactNode; dark?:
   );
 }
 
-export function SupportersPageContent() {
+export function SupportersPageContent({
+  puckContent,
+}: {
+  /** Rendered Puck sections for Supporters (hero, and more as each round
+   * wraps another section). Renders at the top of the page in place of
+   * the hardcoded sections that have been migrated. */
+  puckContent?: React.ReactNode;
+} = {}) {
   const corporate = getSupportersByCategory("corporate");
   const eventSponsors = getSupportersByCategory("event-sponsor");
   const faith = getSupportersByCategory("faith");
@@ -85,7 +92,10 @@ export function SupportersPageContent() {
 
   return (
     <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
-      {/* ─── Hero (image with left-aligned text) ─────────── */}
+      {puckContent}
+      {!puckContent && (
+      <>
+      {/* ─── Hero (image with left-aligned text) — fallback only ─── */}
       <section
         className="relative bg-white overflow-hidden"
         style={{ marginTop: "calc(-1 * clamp(100px, 12vw, 160px))" }}
@@ -484,6 +494,8 @@ export function SupportersPageContent() {
           </motion.div>
         </div>
       </section>
+      </>
+      )}
     </main>
   );
 }

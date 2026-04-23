@@ -44,7 +44,14 @@ const relevantFaqs = faqs.filter((f) => relevantFaqQuestions.includes(f.question
 const sectionPadding = "clamp(48px, 8vw, 80px)";
 const sectionPaddingLg = "clamp(80px, 10vw, 160px)";
 
-export function TheHousePageContent() {
+export function TheHousePageContent({
+  puckContent,
+}: {
+  /** Rendered Puck sections (hero, what-residents-receive, and more as they're
+   * wrapped each round). Renders at the top of the page in place of the
+   * hardcoded sections that have been migrated. */
+  puckContent?: React.ReactNode;
+} = {}) {
   const program = getProgramBySlug("hope-house")!;
 
   return (
@@ -57,7 +64,10 @@ export function TheHousePageContent() {
         ]}
       />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
-        {/* ─── Hero (white) ───────────────────────────────── */}
+        {puckContent}
+        {!puckContent && (
+        <>
+        {/* ─── Hero (white) — fallback, used only when CMS data missing ─── */}
         <section className="bg-white">
           <div className="max-w-[1200px] mx-auto px-6" style={{ paddingTop: "clamp(32px, 4vw, 48px)", paddingBottom: sectionPaddingLg }}>
             <div className="grid md:grid-cols-[1fr_440px] gap-10 md:gap-16 items-center">
@@ -703,6 +713,8 @@ export function TheHousePageContent() {
             </motion.div>
           </div>
         </section>
+        </>
+        )}
 
         {/* ─── Back link ──────────────────────────────────── */}
         <section className="bg-white pb-24">

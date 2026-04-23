@@ -21,6 +21,26 @@ import {
   programsPuckComponents,
   type ProgramsPuckProps,
 } from "@/components/pages/programs/puck";
+import {
+  hopeHousePuckComponents,
+  type HopeHousePuckProps,
+} from "@/components/pages/programs/hope-house/puck";
+import {
+  leadHershipsPuckComponents,
+  type LeadHershipsPuckProps,
+} from "@/components/pages/programs/leadherships/puck";
+import {
+  kindnessConnectionPuckComponents,
+  type KindnessConnectionPuckProps,
+} from "@/components/pages/programs/kindness-connection/puck";
+import {
+  storiesPuckComponents,
+  type StoriesPuckProps,
+} from "@/components/pages/stories/puck";
+import {
+  supportersPuckComponents,
+  type SupportersPuckProps,
+} from "@/components/pages/supporters/puck";
 
 // Re-export per-page types + helpers so existing imports from "@/puck.config"
 // keep working. New code should import directly from the page's puck.tsx.
@@ -49,6 +69,27 @@ export type {
   ProgramsHelpCTAProps,
   ProgramsPuckProps,
 } from "@/components/pages/programs/puck";
+export type {
+  HopeHouseHeroBlockProps,
+  HopeHousePuckProps,
+} from "@/components/pages/programs/hope-house/puck";
+export type {
+  LeadHershipsHeroBlockProps,
+  LeadHershipsPuckProps,
+} from "@/components/pages/programs/leadherships/puck";
+export type {
+  KindnessConnectionHeroBlockProps,
+  KindnessConnectionPuckProps,
+} from "@/components/pages/programs/kindness-connection/puck";
+export type {
+  StoriesHeroBlockProps,
+  StoriesFeaturedStoryBlockProps,
+  StoriesPuckProps,
+} from "@/components/pages/stories/puck";
+export type {
+  SupportersHeroBlockProps,
+  SupportersPuckProps,
+} from "@/components/pages/supporters/puck";
 export type { SharedPuckProps } from "@/puck/shared";
 export type { GlobalSocialLinksProps, GlobalPuckProps } from "@/puck/global";
 
@@ -58,7 +99,12 @@ export type PuckProps = SharedPuckProps &
   DonatePuckProps &
   ContactPuckProps &
   AboutPuckProps &
-  ProgramsPuckProps;
+  ProgramsPuckProps &
+  HopeHousePuckProps &
+  LeadHershipsPuckProps &
+  KindnessConnectionPuckProps &
+  StoriesPuckProps &
+  SupportersPuckProps;
 
 export const puckConfig: Config<PuckProps> = {
   categories: {
@@ -102,6 +148,31 @@ export const puckConfig: Config<PuckProps> = {
       // edits program cards (4 fixed) and the "Not sure?" CTA in the sidebar.
       components: [],
     },
+    "hope-house": {
+      title: "Hope House page",
+      // HopeHouseHeroBlock is seeded and locked. More sections added per round.
+      components: [],
+    },
+    leadherships: {
+      title: "LeadHerships page",
+      // LeadHershipsHeroBlock is seeded and locked. More sections added per round.
+      components: [],
+    },
+    "kindness-connection": {
+      title: "Kindness Connection page",
+      // KindnessConnectionHeroBlock is seeded and locked. More sections added per round.
+      components: [],
+    },
+    stories: {
+      title: "Stories page",
+      // StoriesHeroBlock is seeded and locked. More sections added per round.
+      components: [],
+    },
+    supporters: {
+      title: "Supporters page",
+      // SupportersHeroBlock is seeded and locked. More sections added per round.
+      components: [],
+    },
   },
   components: {
     ...sharedPuckComponents,
@@ -111,5 +182,10 @@ export const puckConfig: Config<PuckProps> = {
     ...contactPuckComponents,
     ...aboutPuckComponents,
     ...programsPuckComponents,
+    ...hopeHousePuckComponents,
+    ...leadHershipsPuckComponents,
+    ...kindnessConnectionPuckComponents,
+    ...storiesPuckComponents,
+    ...supportersPuckComponents,
   },
 };

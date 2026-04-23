@@ -1,0 +1,91 @@
+import { LogoSlot } from "./LogoSlot";
+
+export type SupportersEventItem = {
+  name: string;
+  logo: string;
+  notes: string;
+};
+
+export function SupportersEvent({
+  eyebrow,
+  heading,
+  supporters,
+}: {
+  eyebrow: string;
+  heading: string;
+  supporters: SupportersEventItem[];
+}) {
+  return (
+    <section
+      className="bg-[#FAF8F5]"
+      style={{ padding: "clamp(80px, 10vw, 160px) 0" }}
+    >
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="text-center mb-12 md:mb-14">
+          {eyebrow && (
+            <span
+              className="block text-[#458CFE] uppercase mb-4"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                fontWeight: 500,
+              }}
+            >
+              {eyebrow}
+            </span>
+          )}
+          {heading && (
+            <h2
+              className="text-[#1A1A1A] max-w-[560px] mx-auto"
+              style={{
+                fontFamily: "'Libre Baskerville', serif",
+                fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+                fontWeight: 400,
+                lineHeight: 1.3,
+              }}
+            >
+              {heading}
+            </h2>
+          )}
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {supporters.map((s, i) => (
+            <div
+              key={`event-${i}`}
+              className="flex flex-col items-center justify-center text-center p-4 min-h-[100px]"
+            >
+              {s.logo && <LogoSlot name={s.name} logo={s.logo} size="md" />}
+              {!s.logo && s.name && (
+                <p
+                  className="text-[#1A1A1A]"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.92rem",
+                    fontWeight: 500,
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {s.name}
+                </p>
+              )}
+              {s.notes && !s.logo && (
+                <span
+                  className="text-[#3D3D3D] mt-1"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.82rem",
+                    fontWeight: 300,
+                  }}
+                >
+                  {s.notes}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

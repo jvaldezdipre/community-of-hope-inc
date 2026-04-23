@@ -76,7 +76,14 @@ const kindnessFaqs = [
 
 const sectionPaddingLg = "clamp(80px, 10vw, 160px)";
 
-export function KindnessConnectionPageContent() {
+export function KindnessConnectionPageContent({
+  puckContent,
+}: {
+  /** Rendered Puck sections for Kindness Connection (hero, and more as each
+   * round wraps another section). Renders at the top of the page in place of
+   * the hardcoded sections that have been migrated. */
+  puckContent?: React.ReactNode;
+} = {}) {
   const program = getProgramBySlug("kindness-connection")!;
 
   return (
@@ -89,7 +96,10 @@ export function KindnessConnectionPageContent() {
         ]}
       />
       <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
-        {/* ─── Hero (white) ───────────────────────────────── */}
+        {puckContent}
+        {!puckContent && (
+        <>
+        {/* ─── Hero (white) — fallback, used only when CMS data missing ─── */}
         <section className="bg-white">
           <div className="max-w-[1200px] mx-auto px-6" style={{ paddingTop: "clamp(32px, 4vw, 48px)", paddingBottom: sectionPaddingLg }}>
             <div className="grid md:grid-cols-[1fr_440px] gap-10 md:gap-16 items-center">
@@ -593,6 +603,9 @@ export function KindnessConnectionPageContent() {
             </motion.div>
           </div>
         </section>
+
+        </>
+        )}
 
         {/* ─── Back link ──────────────────────────────────── */}
         <section className="bg-white pb-24">
