@@ -5,8 +5,28 @@ import { processSteps } from "@/lib/constants";
 
 export function DarkSection() {
   return (
-    <section className="bg-[#0F1D33]" style={{ padding: "clamp(80px, 10vw, 160px) 0" }}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section
+      className="relative overflow-hidden bg-[#0F1D33]"
+      style={{ padding: "clamp(80px, 10vw, 160px) 0" }}
+    >
+      {/* Background image — three women embracing, sunset through window */}
+      <img
+        src="/home1.webp"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Navy overlay — darker top/bottom to anchor text, slightly lighter mid-band
+          so the warm embrace and sunset glow breathe through as atmosphere. */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(15,29,51,0.88) 0%, rgba(15,29,51,0.72) 45%, rgba(15,29,51,0.75) 60%, rgba(15,29,51,0.9) 100%)",
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-16 md:mb-20">
           <motion.span
             className="block text-[#8FB8FF] uppercase mb-4"
@@ -54,9 +74,6 @@ export function DarkSection() {
                 ease: "easeOut",
               }}
             >
-              {index < processSteps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] right-0 h-[1px] bg-white/10" />
-              )}
               <div className="text-center">
                 <motion.span
                   className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-[#8FB8FF]/30 text-[#8FB8FF] mb-6"

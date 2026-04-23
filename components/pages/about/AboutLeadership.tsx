@@ -1,9 +1,22 @@
-"use client";
+export type LeadershipPerson = {
+  name: string;
+  role: string;
+  image: string;
+};
 
-import { motion } from "motion/react";
-import { aboutLeadership } from "@/lib/constants";
+export type ExecutiveDirectorInfo = {
+  name: string;
+  title: string;
+  image: string;
+};
 
-function InitialsPlaceholder({ name, size = "lg" }: { name: string; size?: "lg" | "sm" }) {
+function InitialsPlaceholder({
+  name,
+  size = "lg",
+}: {
+  name: string;
+  size?: "lg" | "sm";
+}) {
   const initials = name
     .split(" ")
     .map((n) => n[0])
@@ -31,33 +44,53 @@ function InitialsPlaceholder({ name, size = "lg" }: { name: string; size?: "lg" 
   );
 }
 
-function PersonPhoto({ name, photo, size = "lg" }: { name: string; photo?: string | null; size?: "lg" | "sm" }) {
+function PersonPhoto({
+  name,
+  image,
+  size = "lg",
+}: {
+  name: string;
+  image?: string;
+  size?: "lg" | "sm";
+}) {
   const dimensions = size === "lg" ? "w-36 h-36" : "w-24 h-24";
 
-  if (photo) {
+  if (image) {
     return (
       <div className={`${dimensions} rounded-[8px] overflow-hidden mx-auto`}>
-        <img src={photo} alt={name} className="w-full h-full object-cover" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={image} alt={name} className="w-full h-full object-cover" />
       </div>
     );
   }
   return <InitialsPlaceholder name={name} size={size} />;
 }
 
-export function AboutLeadership() {
-  const { executiveDirector, staff, board } = aboutLeadership;
-
+export function AboutLeadership({
+  heading,
+  executiveDirector,
+  staffLabel,
+  staff,
+  boardLabel,
+  board,
+}: {
+  heading: string;
+  executiveDirector: ExecutiveDirectorInfo;
+  staffLabel: string;
+  staff: LeadershipPerson[];
+  boardLabel: string;
+  board: LeadershipPerson[];
+}) {
   return (
     <section
       className="pt-16 pb-16"
-      style={{ paddingTop: "clamp(48px, 8vw, 80px)", paddingBottom: "clamp(48px, 8vw, 80px)" }}
+      style={{
+        paddingTop: "clamp(48px, 8vw, 80px)",
+        paddingBottom: "clamp(48px, 8vw, 80px)",
+      }}
     >
-      <motion.h2
+      <h2
         className="text-[#1A1A1A] mb-14"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
         style={{
           fontFamily: "'Libre Baskerville', serif",
           fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
@@ -65,148 +98,131 @@ export function AboutLeadership() {
           lineHeight: 1.3,
         }}
       >
-        Leadership & Staff
-      </motion.h2>
+        {heading}
+      </h2>
 
       {/* Executive Director — featured, large photo */}
-      <motion.div
-        className="text-center mb-16"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-30px" }}
-        transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-      >
-        <PersonPhoto name={executiveDirector.name} photo={executiveDirector.photo} size="lg" />
-        <p
-          className="text-[#1A1A1A] mt-5 mb-1"
-          style={{
-            fontFamily: "'Libre Baskerville', serif",
-            fontSize: "1.1rem",
-            fontWeight: 400,
-          }}
-        >
-          {executiveDirector.name}
-        </p>
-        <span
-          className="text-[#3D3D3D]"
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.9rem",
-            fontWeight: 300,
-          }}
-        >
-          {executiveDirector.title}
-        </span>
-      </motion.div>
+      {executiveDirector.name && (
+        <div className="text-center mb-16">
+          <PersonPhoto
+            name={executiveDirector.name}
+            image={executiveDirector.image}
+            size="lg"
+          />
+          <p
+            className="text-[#1A1A1A] mt-5 mb-1"
+            style={{
+              fontFamily: "'Libre Baskerville', serif",
+              fontSize: "1.1rem",
+              fontWeight: 400,
+            }}
+          >
+            {executiveDirector.name}
+          </p>
+          <span
+            className="text-[#3D3D3D]"
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontSize: "0.9rem",
+              fontWeight: 300,
+            }}
+          >
+            {executiveDirector.title}
+          </span>
+        </div>
+      )}
 
       {/* Staff */}
-      <motion.div
-        className="mb-14"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-30px" }}
-        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-      >
-        <span
-          className="block text-[#458CFE] uppercase mb-8"
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.68rem",
-            letterSpacing: "0.14em",
-            fontWeight: 500,
-          }}
-        >
-          Staff
-        </span>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
-          {staff.map((person, i) => (
-            <motion.div
-              key={person.name}
-              className="text-center"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+      {staff.length > 0 && (
+        <div className="mb-14">
+          {staffLabel && (
+            <span
+              className="block text-[#458CFE] uppercase mb-8"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                fontWeight: 500,
+              }}
             >
-              <PersonPhoto name={person.name} photo={person.photo} size="lg" />
-              <p
-                className="text-[#1A1A1A] mt-5 mb-1"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "1rem",
-                  fontWeight: 500,
-                }}
-              >
-                {person.name}
-              </p>
-              <span
-                className="text-[#3D3D3D]"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
-                  fontWeight: 300,
-                }}
-              >
-                {person.role}
-              </span>
-            </motion.div>
-          ))}
+              {staffLabel}
+            </span>
+          )}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-10">
+            {staff.map((person, i) => (
+              <div key={`staff-${i}`} className="text-center">
+                <PersonPhoto name={person.name} image={person.image} size="lg" />
+                <p
+                  className="text-[#1A1A1A] mt-5 mb-1"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                  }}
+                >
+                  {person.name}
+                </p>
+                <span
+                  className="text-[#3D3D3D]"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.88rem",
+                    fontWeight: 300,
+                  }}
+                >
+                  {person.role}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </motion.div>
+      )}
 
       {/* Board of Directors */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-30px" }}
-        transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-      >
-        <span
-          className="block text-[#458CFE] uppercase mb-8"
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "0.68rem",
-            letterSpacing: "0.14em",
-            fontWeight: 500,
-          }}
-        >
-          Board of Directors
-        </span>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-          {board.map((person, i) => (
-            <motion.div
-              key={person.name}
-              className="text-center"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+      {board.length > 0 && (
+        <div>
+          {boardLabel && (
+            <span
+              className="block text-[#458CFE] uppercase mb-8"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                fontWeight: 500,
+              }}
             >
-              <PersonPhoto name={person.name} photo={person.photo} size="sm" />
-              <p
-                className="text-[#1A1A1A] mt-4 mb-1"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "1rem",
-                  fontWeight: 500,
-                }}
-              >
-                {person.name}
-              </p>
-              <span
-                className="text-[#3D3D3D]"
-                style={{
-                  fontFamily: "'Outfit', sans-serif",
-                  fontSize: "0.88rem",
-                  fontWeight: 300,
-                }}
-              >
-                {person.role}
-              </span>
-            </motion.div>
-          ))}
+              {boardLabel}
+            </span>
+          )}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+            {board.map((person, i) => (
+              <div key={`board-${i}`} className="text-center">
+                <PersonPhoto name={person.name} image={person.image} size="sm" />
+                <p
+                  className="text-[#1A1A1A] mt-4 mb-1"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                  }}
+                >
+                  {person.name}
+                </p>
+                <span
+                  className="text-[#3D3D3D]"
+                  style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontSize: "0.88rem",
+                    fontWeight: 300,
+                  }}
+                >
+                  {person.role}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-      </motion.div>
+      )}
     </section>
   );
 }

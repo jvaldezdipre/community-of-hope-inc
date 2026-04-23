@@ -19,6 +19,18 @@ export type EditablePage = {
 export const EDITABLE_PAGES: EditablePage[] = [
   { slug: "events", label: "Events", puckCategories: ["chrome", "events"] },
   { slug: "donate", label: "Donate", puckCategories: ["chrome", "donate"] },
+  { slug: "contact", label: "Contact", puckCategories: ["chrome", "contact"] },
+  { slug: "about", label: "About", puckCategories: ["chrome", "about"] },
+  {
+    slug: "programs",
+    label: "Programs (overview)",
+    puckCategories: ["chrome", "programs"],
+  },
+  {
+    slug: "global-settings",
+    label: "Global settings",
+    puckCategories: ["global"],
+  },
 ];
 
 export function getAllowedCategoriesForSlug(slug: string): string[] {

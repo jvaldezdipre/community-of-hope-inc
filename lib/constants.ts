@@ -251,12 +251,12 @@ export type Supporter = {
 
 export const supporters: Supporter[] = [
   // ─ Corporate Partners (6 major logos shown prominently) ─
-  { name: "Dominion Energy", category: "corporate" },
-  { name: "Foxwoods Resort Casino", category: "corporate" },
-  { name: "Lawrence & Memorial Hospital", category: "corporate" },
-  { name: "Mohegan Sun", category: "corporate" },
-  { name: "Pfizer", category: "corporate" },
-  { name: "Groton Rotary Club", category: "corporate" },
+  { name: "Dominion Energy", category: "corporate", logo: "/supporters-logos/Dominion_Energy-«_Horizontal_RGB.jpg" },
+  { name: "Foxwoods Resort Casino", category: "corporate", logo: "/supporters-logos/foxwoods-resort-casino-98.jpg" },
+  { name: "Lawrence & Memorial Hospital", category: "corporate", logo: "/supporters-logos/YNHHS_LM_hor_clr_cmyk.jpg" },
+  { name: "Mohegan Sun", category: "corporate", logo: "/supporters-logos/Mohegan-Sun-logo.png" },
+  { name: "Pfizer", category: "corporate", logo: "/supporters-logos/Pfizer-logo.jpg" },
+  { name: "Groton Rotary Club", category: "corporate", logo: "/supporters-logos/rotary_sign_default.png" },
 
   // ─ Event Sponsors (2 Hearts 1 Sound Mind — Feb 2025) ─
   { name: "Chelsea Groton Bank", category: "event-sponsor" },
@@ -266,11 +266,11 @@ export const supporters: Supporter[] = [
   { name: "Crocker Ballroom", category: "event-sponsor" },
   { name: "Coastal Business Network", category: "event-sponsor" },
   { name: "Bluprints Unlimited", category: "event-sponsor", notes: "Pat Todd" },
-  { name: "Nutmeg Building & Remodeling", category: "event-sponsor", notes: "Denise Nott" },
-  { name: "RB Kent and Sons", category: "event-sponsor" },
+  { name: "Nutmeg Building & Remodeling", category: "event-sponsor", notes: "Denise Nott", logo: "/supporters-logos/d55f3c0bc44b17106054f219509a5ff4.jpg" },
+  { name: "RB Kent and Sons", category: "event-sponsor", logo: "/supporters-logos/1179846-rb3-v2.w400.h150.png" },
   { name: "ECHO", category: "event-sponsor" },
   { name: "Clear Path Financial Solutions", category: "event-sponsor" },
-  { name: "Hourglass Insurance", category: "event-sponsor" },
+  { name: "Hourglass Insurance", category: "event-sponsor", logo: "/supporters-logos/rBVaSVs_wjqAMwTRAAHOBx6kIwU151.jpg" },
   { name: "Open Concepts", category: "event-sponsor" },
   { name: "Southeastern Women's Network", category: "event-sponsor" },
 
@@ -283,30 +283,32 @@ export const supporters: Supporter[] = [
   { name: "Steadfast Baptist Church", category: "faith" },
 
   // ─ Professional Services ─
-  { name: "Duncklee Inc.", category: "professional" },
-  { name: "Massad Insurance", category: "professional" },
+  { name: "Duncklee Inc.", category: "professional", logo: "/supporters-logos/ducklee-final_OL-1.jpg" },
+  { name: "Massad Insurance", category: "professional", logo: "/supporters-logos/massad_llc_short.jpg" },
   { name: "TMG Companies", category: "professional" },
-  { name: "Project Courage", category: "professional" },
-  { name: "BLU-PRINTS Signs", category: "professional" },
-  { name: "Sunrise Home Inspection", category: "professional" },
-  { name: "Stonington Institute", category: "professional" },
-  { name: "Fastsigns", category: "professional" },
+  { name: "Project Courage", category: "professional", logo: "/supporters-logos/ProjectCourage.png" },
+  { name: "BLU-PRINTS Signs", category: "professional", logo: "/supporters-logos/BLU-PRINTS_header-768x142.png" },
+  { name: "Sunrise Home Inspection", category: "professional", logo: "/supporters-logos/Sunrise-Logo.png" },
+  { name: "Stonington Institute", category: "professional", logo: "/supporters-logos/logo-1.png" },
+  { name: "Fastsigns", category: "professional", logo: "/supporters-logos/Fastsigns.png" },
   { name: "Bouvier Insurance", category: "professional" },
   { name: "Utopia Hair Salon", category: "professional" },
   { name: "Brawn Service Station", category: "professional" },
   { name: "Reagan Construction Group", category: "professional" },
 
   // ─ Healthcare & Social Services ─
-  { name: "Natchaug Hospital", category: "healthcare" },
+  { name: "Natchaug Hospital", category: "healthcare", logo: "/supporters-logos/HHC_Natchaug_horz-24pt_4C-1.png" },
   { name: "Sound Community Services", category: "healthcare" },
   { name: "Connecticut Behavioral Health", category: "healthcare" },
   { name: "Aware Recovery Care", category: "healthcare" },
+  { name: "Southeastern Council on Alcoholism & Drug Dependence", category: "healthcare", logo: "/supporters-logos/SCADD.jpg" },
 
   // ─ Community Organizations ─
   { name: "Urban Alliance", category: "community" },
   { name: "World Vision", category: "community" },
   { name: "Housing Ministries of New England", category: "community" },
   { name: "NAMI Southeastern CT", category: "community" },
+  { name: "Coastal Lodge #57, A.F. & A.M. of CT", category: "community", logo: "/supporters-logos/Clean_Proof_6.jpg" },
 
   // ─ Individual Supporters ─
   { name: "Megan Quinn", category: "individual" },
@@ -333,8 +335,8 @@ export function getSupportersByCategory(category: SupporterCategory) {
 // its own spotlight section on the page.
 export const featuredPartnership = {
   partners: [
-    { name: "Eversource Energy", logo: null as string | null },
-    { name: "Groton Utilities", logo: null as string | null },
+    { name: "Eversource Energy", logo: "/supporters-logos/eversource.png" as string | null },
+    { name: "Groton Utilities", logo: "/supporters-logos/Groton-Utilities-logo.png" as string | null },
   ],
   eyebrow: "A Story Of Partnership",
   headline: "A place rebuilt by two good neighbors.",

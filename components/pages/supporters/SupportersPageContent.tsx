@@ -85,14 +85,37 @@ export function SupportersPageContent() {
 
   return (
     <main className="min-h-screen pb-24 bg-white" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
-      {/* ─── Hero (white) ─────────────────────────────────── */}
-      <section className="bg-white">
+      {/* ─── Hero (image with left-aligned text) ─────────── */}
+      <section
+        className="relative bg-white overflow-hidden"
+        style={{ marginTop: "calc(-1 * clamp(100px, 12vw, 160px))" }}
+      >
+        {/* Background image */}
+        <img
+          src="/welcomehome.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* White overlay — heavier on the left so text reads, fading right so the image breathes */}
         <div
-          className="max-w-[1200px] mx-auto px-6"
-          style={{ paddingTop: "clamp(32px, 4vw, 48px)", paddingBottom: sectionPaddingLg }}
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 35%, rgba(255,255,255,0.55) 65%, rgba(255,255,255,0.2) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="relative max-w-[1200px] mx-auto px-6"
+          style={{
+            paddingTop: "clamp(140px, 16vw, 208px)",
+            paddingBottom: sectionPaddingLg,
+            minHeight: "clamp(480px, 60vw, 720px)",
+          }}
         >
           <motion.div
-            className="text-center max-w-[700px] mx-auto"
+            className="max-w-[500px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease }}
@@ -136,20 +159,23 @@ export function SupportersPageContent() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.8, ease }}
           >
-            <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col items-center gap-8">
               {featuredPartnership.partners.map((p) => (
-                <div key={p.name} className="flex flex-col items-center gap-2">
+                <div key={p.name} className="flex flex-col items-center">
                   <LogoSlot name={p.name} logo={p.logo} size="lg" />
-                  <span
-                    className="text-[#1A1A1A] text-center"
-                    style={{
-                      fontFamily: "'Libre Baskerville', serif",
-                      fontSize: "0.95rem",
-                      fontWeight: 400,
-                    }}
-                  >
-                    {p.name}
-                  </span>
+                  {/* Only show text label when there's no logo (fallback case) */}
+                  {!p.logo && (
+                    <span
+                      className="text-[#1A1A1A] text-center mt-2"
+                      style={{
+                        fontFamily: "'Libre Baskerville', serif",
+                        fontSize: "0.95rem",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {p.name}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>
@@ -257,6 +283,64 @@ export function SupportersPageContent() {
         </div>
       </section>
 
+      {/* ─── Gratitude Break (image + pull quote) ────────── */}
+      <section className="relative overflow-hidden bg-[#FAF8F5]">
+        {/* Background image */}
+        <img
+          src="/supporter2.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Overlay — heavier on the left where the quote sits, fading right so
+            the notes + teacup breathe. Same treatment as the hero. */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(250,248,245,0.92) 0%, rgba(250,248,245,0.82) 35%, rgba(250,248,245,0.45) 65%, rgba(250,248,245,0.15) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="relative max-w-[1200px] mx-auto px-6 flex items-center"
+          style={{
+            minHeight: "clamp(340px, 40vw, 460px)",
+            paddingTop: "clamp(56px, 7vw, 88px)",
+            paddingBottom: "clamp(56px, 7vw, 88px)",
+          }}
+        >
+          <motion.blockquote
+            className="max-w-[460px] text-[#1A1A1A]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8, ease }}
+            style={{
+              fontFamily: "'Libre Baskerville', serif",
+              fontSize: "clamp(1.4rem, 2.8vw, 2.1rem)",
+              fontWeight: 400,
+              lineHeight: 1.35,
+              fontStyle: "italic",
+            }}
+          >
+            <span
+              className="block mb-4 text-[#458CFE]"
+              style={{
+                fontFamily: "'Libre Baskerville', serif",
+                fontSize: "2.5rem",
+                lineHeight: 1,
+                fontStyle: "normal",
+              }}
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
+            Every name on this page changed a life.
+          </motion.blockquote>
+        </div>
+      </section>
+
       {/* ─── By Category (white) ─────────────────────────── */}
       <section className="bg-white" style={{ padding: `${sectionPaddingLg} 0` }}>
         <div className="max-w-[820px] mx-auto px-6">
@@ -336,9 +420,28 @@ export function SupportersPageContent() {
         </div>
       </section>
 
-      {/* ─── Bottom CTA (dark) ───────────────────────────── */}
-      <section className="bg-[#0F1D33]" style={{ padding: `${sectionPaddingLg} 0` }}>
-        <div className="max-w-[1200px] mx-auto px-6">
+      {/* ─── Bottom CTA (dark, with image) ───────────────── */}
+      <section
+        className="relative bg-[#0F1D33] overflow-hidden"
+        style={{ padding: `${sectionPaddingLg} 0` }}
+      >
+        {/* Background image */}
+        <img
+          src="/supporter1.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Navy overlay for text legibility */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(15,29,51,0.78) 0%, rgba(15,29,51,0.86) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative max-w-[1200px] mx-auto px-6">
           <motion.div
             className="text-center max-w-[640px] mx-auto"
             initial={{ opacity: 0, y: 30 }}
@@ -397,31 +500,39 @@ function SupporterCard({
 }) {
   return (
     <motion.div
-      className={`rounded-[8px] border border-[#EBEBEB] bg-white flex flex-col items-center justify-center text-center ${
-        featured ? "p-8 min-h-[180px]" : "p-5 min-h-[110px]"
+      className={`flex flex-col items-center justify-center text-center ${
+        featured ? "p-6 min-h-[160px]" : "p-4 min-h-[100px]"
       }`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
     >
+      {/* Featured (corporate) cards: always show logo slot — large */}
       {featured && (
-        <div className="mb-4">
-          <LogoSlot name={supporter.name} logo={supporter.logo} size="md" />
+        <div className={supporter.logo ? "" : "mb-4"}>
+          <LogoSlot name={supporter.name} logo={supporter.logo} size="lg" />
         </div>
       )}
-      <p
-        className="text-[#1A1A1A]"
-        style={{
-          fontFamily: featured ? "'Libre Baskerville', serif" : "'Outfit', sans-serif",
-          fontSize: featured ? "1rem" : "0.92rem",
-          fontWeight: featured ? 400 : 500,
-          lineHeight: 1.3,
-        }}
-      >
-        {supporter.name}
-      </p>
-      {supporter.notes && (
+      {/* Non-featured (event sponsor) cards: show logo when present, otherwise name */}
+      {!featured && supporter.logo && (
+        <LogoSlot name={supporter.name} logo={supporter.logo} size="md" />
+      )}
+      {/* Name label: hide when a logo is already showing it */}
+      {!supporter.logo && (
+        <p
+          className="text-[#1A1A1A]"
+          style={{
+            fontFamily: featured ? "'Libre Baskerville', serif" : "'Outfit', sans-serif",
+            fontSize: featured ? "1rem" : "0.92rem",
+            fontWeight: featured ? 400 : 500,
+            lineHeight: 1.3,
+          }}
+        >
+          {supporter.name}
+        </p>
+      )}
+      {supporter.notes && !supporter.logo && (
         <span
           className="text-[#3D3D3D] mt-1"
           style={{
@@ -455,29 +566,37 @@ function CategoryList({ label, items }: { label: string; items: Supporter[] }) {
           className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-20 bg-[#458CFE]/30"
           aria-hidden="true"
         />
-        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-3 max-w-[620px] mx-auto">
+        <ul className="grid sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[620px] mx-auto">
           {items.map((item) => (
             <li
               key={item.name}
-              className="text-[#1A1A1A] text-center"
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontSize: "0.96rem",
-                fontWeight: 400,
-                lineHeight: 1.6,
-              }}
+              className="flex flex-col items-center justify-center text-center min-h-[64px]"
             >
-              {item.name}
-              {item.notes && (
+              {item.logo ? (
+                <LogoSlot name={item.name} logo={item.logo} size="md" />
+              ) : (
                 <span
-                  className="text-[#3D3D3D] ml-1"
+                  className="text-[#1A1A1A]"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
-                    fontSize: "0.85rem",
-                    fontWeight: 300,
+                    fontSize: "0.96rem",
+                    fontWeight: 400,
+                    lineHeight: 1.6,
                   }}
                 >
-                  &mdash; {item.notes}
+                  {item.name}
+                  {item.notes && (
+                    <span
+                      className="text-[#3D3D3D] ml-1"
+                      style={{
+                        fontFamily: "'Outfit', sans-serif",
+                        fontSize: "0.85rem",
+                        fontWeight: 300,
+                      }}
+                    >
+                      &mdash; {item.notes}
+                    </span>
+                  )}
                 </span>
               )}
             </li>

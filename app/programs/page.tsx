@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { Render } from "@measured/puck/rsc";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
-import { ProgramsPageTitle } from "@/components/pages/programs/ProgramsPageTitle";
-import { ProgramsOverview } from "@/components/pages/programs/ProgramsOverview";
+import { getPageContent } from "@/lib/cms";
+import { puckConfig } from "@/puck.config";
 
 const description =
   "Hope House recovery home, Kindness Connection, Recovery Coaching, and LeadHerships. Four ways we serve women and families across Connecticut and beyond.";
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/programs" },
 };
 
-export default function ProgramsPage() {
+export default async function ProgramsPage() {
+  const pageData = await getPageContent("programs");
+
   return (
     <>
       <WebPageJsonLd
@@ -22,8 +25,7 @@ export default function ProgramsPage() {
         path="/programs"
       />
       <PageLayout>
-        <ProgramsPageTitle />
-        <ProgramsOverview />
+        <Render config={puckConfig} data={pageData} />
       </PageLayout>
     </>
   );

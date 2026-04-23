@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { footerQuickLinks, footerServiceAreas } from "@/lib/constants";
-import { SocialIcons } from "@/components/ui/SocialIcons";
+import { SocialIcons, type SocialLinksShape } from "@/components/ui/SocialIcons";
 
-export function Footer() {
+export function Footer({ socialLinks }: { socialLinks?: SocialLinksShape }) {
   return (
     <motion.footer
       className="bg-[#0F1D33] border-t border-white/5"
@@ -164,7 +164,7 @@ export function Footer() {
           >
             Follow Us
           </span>
-          <SocialIcons variant="dark" />
+          <SocialIcons variant="dark" links={socialLinks} />
         </div>
 
         {/* Bottom */}

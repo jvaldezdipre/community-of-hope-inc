@@ -301,9 +301,29 @@ export function TheHousePageContent() {
           </div>
         </section>
 
-        {/* ─── Process Steps (dark) ────────────────────────── */}
-        <section className="bg-[#0F1D33]" style={{ padding: `${sectionPaddingLg} 0` }}>
-          <div className="max-w-[1200px] mx-auto px-6">
+        {/* ─── Process Steps (dark, with image) ────────────── */}
+        <section
+          className="relative overflow-hidden bg-[#0F1D33]"
+          style={{ padding: `${sectionPaddingLg} 0` }}
+        >
+          {/* Background image — hand reaching for doorknob */}
+          <img
+            src="/hopehouse1.webp"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Navy overlay — darker top/bottom for text anchors, lighter mid-band
+              so the warm doorway glow breathes through. */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(15,29,51,0.88) 0%, rgba(15,29,51,0.68) 45%, rgba(15,29,51,0.72) 60%, rgba(15,29,51,0.9) 100%)",
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative max-w-[1200px] mx-auto px-6">
             <div className="text-center mb-12 md:mb-16">
               <motion.span
                 className="block text-[#8FB8FF] uppercase mb-4"
@@ -427,9 +447,30 @@ export function TheHousePageContent() {
           </div>
         </section>
 
-        {/* ─── Personal Growth & Leadership (beige) ────────── */}
-        <section className="bg-[#FAF8F5]" style={{ padding: `${sectionPaddingLg} 0` }}>
-          <div className="max-w-[1200px] mx-auto px-6">
+        {/* ─── Personal Growth & Leadership (beige, with atmospheric bg) ─ */}
+        <section
+          className="relative overflow-hidden bg-[#FAF8F5]"
+          style={{ padding: `${sectionPaddingLg} 0` }}
+        >
+          {/* Background image — golden hour through bare branches */}
+          <img
+            src="/hope2.webp"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Heavy cream overlay so the 6 white cards stay legible on top.
+              Slight variation top-to-bottom lets the warm glow and branches
+              read as atmosphere without competing. */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(250,248,245,0.82) 0%, rgba(250,248,245,0.88) 50%, rgba(250,248,245,0.84) 100%)",
+            }}
+            aria-hidden="true"
+          />
+          <div className="relative max-w-[1200px] mx-auto px-6">
             <motion.div
               className="text-center mb-12"
               initial={{ opacity: 0, y: 25 }}

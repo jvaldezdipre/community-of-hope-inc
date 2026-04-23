@@ -16,17 +16,37 @@ export function StoriesPageContent() {
       className="min-h-screen pb-24 bg-white"
       style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}
     >
-      {/* ─── Hero (white) — centered editorial opener ─────── */}
-      <section className="bg-white">
+      {/* ─── Hero (image with left-aligned text) ─────────── */}
+      <section
+        className="relative bg-white overflow-hidden"
+        style={{ marginTop: "calc(-1 * clamp(100px, 12vw, 160px))" }}
+      >
+        {/* Background image — woman reading by window */}
+        <img
+          src="/testimonial2.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* White overlay — heavier on the left so text reads, fading right so the figure and window light breathe */}
         <div
-          className="max-w-[1200px] mx-auto px-6"
+          className="absolute inset-0"
           style={{
-            paddingTop: "clamp(32px, 4vw, 48px)",
+            background:
+              "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.88) 35%, rgba(255,255,255,0.5) 65%, rgba(255,255,255,0.15) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="relative max-w-[1200px] mx-auto px-6"
+          style={{
+            paddingTop: "clamp(140px, 16vw, 208px)",
             paddingBottom: sectionPaddingLg,
+            minHeight: "clamp(560px, 68vw, 820px)",
           }}
         >
           <motion.div
-            className="text-center max-w-[680px] mx-auto"
+            className="max-w-[500px]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
@@ -282,12 +302,29 @@ export function StoriesPageContent() {
         </div>
       </section>
 
-      {/* ─── Impact By the Numbers (dark) ──────────────────── */}
+      {/* ─── Impact By the Numbers (dark, with image) ─────── */}
       <section
-        className="bg-[#0F1D33]"
+        className="relative overflow-hidden bg-[#0F1D33]"
         style={{ padding: `${sectionPaddingLg} 0` }}
       >
-        <div className="max-w-[1200px] mx-auto px-6">
+        {/* Background image — woman walking down a path at dawn */}
+        <img
+          src="/testimonial1.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Navy overlay — darker top/bottom to anchor text, slightly lighter mid-band
+            so the silhouette and sunrise glow come through. */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(15,29,51,0.88) 0%, rgba(15,29,51,0.68) 45%, rgba(15,29,51,0.72) 60%, rgba(15,29,51,0.9) 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12 md:mb-16">
             <motion.span
               className="block text-[#8FB8FF] uppercase mb-4"

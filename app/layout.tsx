@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Layout } from "@/components/layout/Layout";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
+import { getSocialLinks } from "@/lib/cms";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://4coh.com";
@@ -61,16 +62,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const socialLinks = await getSocialLinks();
+
   return (
     <html lang="en">
       <body>
         <OrganizationJsonLd />
-        <Layout>{children}</Layout>
+        <Layout socialLinks={socialLinks}>{children}</Layout>
       </body>
     </html>
   );

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Render } from "@measured/puck/rsc";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
-import { AboutPageTitle } from "@/components/pages/about/AboutPageTitle";
-import { AboutHero } from "@/components/pages/about/AboutHero";
-import { AboutLeadership } from "@/components/pages/about/AboutLeadership";
-import { AboutPartners } from "@/components/pages/about/AboutPartners";
 import { AboutTrustFooter } from "@/components/pages/about/AboutTrustFooter";
+import { getPageContent } from "@/lib/cms";
+import { puckConfig } from "@/puck.config";
 
 const description =
   "Community of Hope Inc. is a faith-based nonprofit in Groton, CT. Learn about our 15+ years of service, Hope House, Executive Director Annette Eldridge, and our mission to restore hope and rebuild lives.";
@@ -16,7 +15,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const pageData = await getPageContent("about");
+
   return (
     <>
       <WebPageJsonLd
@@ -25,22 +26,13 @@ export default function AboutPage() {
         path="/about"
       />
       <main className="min-h-screen" style={{ paddingTop: "clamp(100px, 12vw, 160px)" }}>
-        {/* White — Title + Story */}
-        <div className="max-w-[1200px] mx-auto px-6 pb-16">
-          <AboutPageTitle />
-          <AboutHero />
+        {/* Hero + Leadership + Partners: all CMS-editable via Puck */}
+        <div className="max-w-[1200px] mx-auto px-6">
+          <Render config={puckConfig} data={pageData} />
         </div>
 
-        {/* White — Leadership */}
-        <div className="bg-white">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <AboutLeadership />
-          </div>
-        </div>
-
-        {/* White — Partners */}
-        <div className="max-w-[1200px] mx-auto px-6" style={{ paddingTop: "clamp(48px, 8vw, 80px)" }}>
-          <AboutPartners />
+        {/* Trust footer + back link (not yet CMS-wrapped) */}
+        <div className="max-w-[1200px] mx-auto px-6">
           <AboutTrustFooter />
           <p
             className="mt-12 pb-24 text-[#3D3D3D]"
