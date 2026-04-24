@@ -169,7 +169,7 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
       buttonHref: "",
       phoneNumber: "",
     },
-    render: (props) => <LeadHershipsHeroRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsHeroRender {...rest} />,
   },
   LeadHershipsHowItWorksBlock: {
     label: "How It Works (beige, heading + 4 items)",
@@ -200,7 +200,7 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
       pitch: "",
       items: [],
     },
-    render: (props) => <LeadHershipsHowItWorksRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsHowItWorksRender {...rest} />,
   },
   LeadHershipsUpcomingEventBlock: {
     label: "Upcoming Event (title, date, 2 buttons)",
@@ -253,7 +253,7 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
       secondaryButtonLabel: "Become a Sponsor",
       secondaryButtonHref: "",
     },
-    render: (props) => <LeadHershipsUpcomingEventRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsUpcomingEventRender {...rest} />,
   },
   LeadHershipsSponsorshipBlock: {
     label: "Sponsorship Tiers (dark, 3-column grid)",
@@ -306,7 +306,7 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
       tiers: [],
       footnote: "",
     },
-    render: (props) => <LeadHershipsSponsorshipRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsSponsorshipRender {...rest} />,
   },
   LeadHershipsCarouselBlock: {
     label: "Past Events photo carousel",
@@ -415,7 +415,7 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
     defaultProps: {
       cards: [],
     },
-    render: (props) => <LeadHershipsGetInvolvedRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsGetInvolvedRender {...rest} />,
   },
   LeadHershipsFAQBlock: {
     label: "FAQ (Common Questions)",
@@ -455,7 +455,7 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
       heading: "Common Questions",
       faqs: [],
     },
-    render: (props) => <LeadHershipsFAQRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsFAQRender {...rest} />,
   },
   LeadHershipsBottomCTABlock: {
     label: "Bottom CTA (Be part of LeadHerships)",
@@ -485,6 +485,6 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
       buttonHref: "",
       phoneNumber: "",
     },
-    render: (props) => <LeadHershipsBottomCTARender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <LeadHershipsBottomCTARender {...rest} />,
   },
 };

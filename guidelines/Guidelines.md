@@ -27,7 +27,7 @@
 - **SEO:** Meta titles and descriptions on all pages. WebPage JSON-LD on all pages. Breadcrumb JSON-LD on Events, Donate, and all 4 program pages.
 - **UX:** Button component uses Next.js Link for all internal routes (smooth client-side navigation). All program pages use full-width alternating background sections (white, beige #FAF8F5, dark #0F1D33) with Framer Motion scroll-triggered animations.
 
-**Ready to implement next (no client dependency):** Accessibility pass (bigger/darker text, mobile responsiveness), form submission backend, verify partner links, testimonial submission form, CMS/dashboard setup. After that: remaining client content as it arrives.
+**Ready to implement next (no client dependency):** Testimonial submission form (with approval/consent workflow). After that: remaining client content as it arrives. Accessibility pass, form submission backend, partner link verification, and CMS/dashboard setup are all complete.
 
 ---
 
@@ -230,18 +230,25 @@
 
 | Page                  | Editable Sections                                                                                           | Status |
 | --------------------- | ----------------------------------------------------------------------------------------------------------- | ------ |
-| Events                | H1 + intro copy. Full event cards (add/edit/delete events, image upload, tickets, sponsorship tiers with nested perks). Auto-splits upcoming vs. past by date; JSON-LD schema auto-generated from Puck data. | ✅     |
-| Home                  | Hero, mission, featured sections, CTAs                                                                      | ❌      |
-| About                 | Mission statement, team, board, history                                                                     | ❌      |
-| Contact               | Phone numbers, email, hours, address                                                                        | ❌      |
-| Donate                | Appeal copy, giving tiers, campaign updates                                                                 | ❌      |
-| Supporters            | Partners grid, event sponsors, individual donors                                                            | ❌      |
-| Programs (+ subpages) | Program descriptions and details (Hope House, Kindness Connection, Recovery Coaching, LeadHerships)          | ❌      |
+| Events                | H1 + intro copy. Full event cards (add/edit/delete events, image upload, tickets, sponsorship tiers with nested perks). Auto-splits upcoming vs. past by date; JSON-LD schema auto-generated from Puck data. | ✅ |
+| Home                  | 11 blocks: Hero (video + animated heading), Trust Bar stats, Why Us items, Testimonials marquee, Mid CTA, Programs (4 rows with image uploads), About (text + video + pull quote), Dark process steps, FAQ accordion, Contact intro (form fields stay hardcoded), Final CTA. | ✅ |
+| About                 | Hero with video/image media slot, Leadership (staff + board with photo uploads), Community Partners grid. | ✅ |
+| Contact               | Sidebar with phone list + social URLs (social URLs pulled from Global Settings). Form fields stay hardcoded (post to inquiries table). | ✅ |
+| Donate                | Payments block (add/edit/remove methods — Zeffy, PayPal, etc. with image upload) + impact tiers section. | ✅ |
+| Supporters            | 8 blocks: Hero, Featured Partnership, Corporate, Event Sponsors, Gratitude, By Category, Individual Honor Roll, Bottom CTA. All supporter names + logos edited via CMS (logo fallback → text). | ✅ |
+| Programs (overview)   | 4 locked program cards + "Not sure which?" CTA. Staff edits card copy; links/layout locked. | ✅ |
+| — Hope House          | 9 blocks: Hero, What You'll Receive, At a Glance, Path Forward, Inside Hope House photo carousel, Testimonial, Grow/Lead/Give Back cards, FAQ, Bottom CTA. | ✅ |
+| — Kindness Connection | Full page wrapped in Puck per same pattern. | ✅ |
+| — LeadHerships         | 8 blocks: Hero (logo + bg image), How It Works, Upcoming Event, Sponsorship Tiers (5 tiers with nested benefits), Past Events carousel, Get Involved, FAQ, Bottom CTA. | ✅ |
+| — Recovery Coaching   | Intentionally left hardcoded. Program still in development; most content hidden behind `SHOW_FULL_CONTENT` flag until launch-ready. | ⏳ |
+| Stories               | 7 blocks: Hero (bg image), Featured Story (with photo/initials avatar), Community Voices (testimonial array), Impact by Numbers (dark bg + stats), Vision Quote, Share Your Story CTA, Bottom CTA. Static testimonial copy only — future testimonial submission + consent workflow stays separate. | ✅ |
+| Global Settings       | Social media URLs (Facebook, Instagram, LinkedIn). Not tied to a public page; values injected into Footer + Contact sidebar at render. | ✅ |
 
 **Intentionally not in Puck:**
 - **Apply Hope House** — form-only page, nothing meaningful to "edit" as content.
 - **Share Story** — form-only, same reason.
-- **Stories** — structured data (testimonials) with consent/approval workflow → handled via dashboard testimonials table, not Puck.
+- **Recovery Coaching** — placeholder page behind a launch flag; revisit when program is ready to go live.
+- **Future testimonial submission workflow** — when a submit-your-story form with approval/consent ships, those user-submitted stories will flow through a dashboard table, not Puck. The current Stories page copy (headings, featured quote, vision statement) is CMS-editable today.
 
 
 ---
@@ -369,7 +376,7 @@ Here's everything still needed from Annette before launch. Send as one consolida
 | Testimonial submission form                  | ❌      | With approval/consent checkbox for website use                        |
 | Social media widgets                         | 🔨      | `SocialIcons` component built (light/dark variants). Live in Footer + Contact sidebar. Icons visible, linking to `#` until client sends real URLs — then update 3 lines in `lib/constants.ts` |
 | Fillable online application form             | ❌      | Replace PDF. Covers Hope House + Leadership/Ambassador. Routing + notification |
-| Dashboard/CMS for team self-service          | 🔨      | Puck editor wired at `/admin`. Events page fully editable (header + event cards with image upload, tickets, sponsorships). Home/About/Contact/Donate/Supporters/Programs pending. Design changes → Jeff only. |
+| Dashboard/CMS for team self-service          | ✅     | Puck editor wired at `/admin`. Every content page is editable: Home (11 blocks), About, Contact, Donate, Events, Supporters, Programs overview, Hope House, Kindness Connection, LeadHerships, Stories, plus Global Settings for social URLs. Recovery Coaching deliberately left hardcoded until program launches. All blocks are locked (no add/delete/drag) — staff edits copy, images, and arrays; design + layout changes stay with Jeff. |
 | Blog section                                 | ❌      | For Google ranking. Annette interested. Low priority for launch       |
 | Sponsorship form with payment link           | ⏳      | Pending payment details from client                                   |
 | Easy-editing interface (Bloomerang-style)     | ❌      | Research similar interface. Pending Bloomerang access from client      |

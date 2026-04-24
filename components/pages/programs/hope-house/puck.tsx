@@ -153,7 +153,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       phoneNumber: "",
       image: "",
     },
-    render: (props) => <HopeHouseHeroRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseHeroRender {...rest} />,
   },
   HopeHouseReceiveBlock: {
     label: "What Residents Receive",
@@ -184,7 +184,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       pitch: "",
       items: [],
     },
-    render: (props) => <HopeHouseReceiveRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseReceiveRender {...rest} />,
   },
   HopeHouseDetailsBlock: {
     label: "At a glance (program details)",
@@ -212,7 +212,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       heading: "At a glance",
       details: [],
     },
-    render: (props) => <HopeHouseDetailsRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseDetailsRender {...rest} />,
   },
   HopeHouseProcessBlock: {
     label: "The Path Forward (process steps)",
@@ -255,7 +255,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       backgroundImage: "/hopehouse1.webp",
       steps: [],
     },
-    render: (props) => <HopeHouseProcessRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseProcessRender {...rest} />,
   },
   HopeHouseCarouselBlock: {
     label: "Photo carousel (Inside Hope House)",
@@ -351,7 +351,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       name: "",
       context: "",
     },
-    render: (props) => <HopeHouseTestimonialRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseTestimonialRender {...rest} />,
   },
   HopeHouseGrowthBlock: {
     label: "Personal Growth & Leadership (6 cards)",
@@ -396,7 +396,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       backgroundImage: "/hope2.webp",
       cards: [],
     },
-    render: (props) => <HopeHouseGrowthRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseGrowthRender {...rest} />,
   },
   HopeHouseFAQBlock: {
     label: "FAQ (Common Questions)",
@@ -436,7 +436,7 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       heading: "Common Questions",
       faqs: [],
     },
-    render: (props) => <HopeHouseFAQRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseFAQRender {...rest} />,
   },
   HopeHouseBottomCTABlock: {
     label: "Bottom CTA (Ready to take the next step?)",
@@ -466,6 +466,6 @@ export const hopeHousePuckComponents: Config<HopeHousePuckProps>["components"] =
       buttonHref: "/apply-hope-house",
       phoneNumber: "",
     },
-    render: (props) => <HopeHouseBottomCTARender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HopeHouseBottomCTARender {...rest} />,
   },
 };
