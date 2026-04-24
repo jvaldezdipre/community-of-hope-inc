@@ -41,6 +41,10 @@ import {
   supportersPuckComponents,
   type SupportersPuckProps,
 } from "@/components/pages/supporters/puck";
+import {
+  homePuckComponents,
+  type HomePuckProps,
+} from "@/components/pages/home/puck";
 
 // Re-export per-page types + helpers so existing imports from "@/puck.config"
 // keep working. New code should import directly from the page's puck.tsx.
@@ -90,6 +94,11 @@ export type {
   SupportersHeroBlockProps,
   SupportersPuckProps,
 } from "@/components/pages/supporters/puck";
+export type {
+  HomeHeroBlockProps,
+  HomeTrustBarBlockProps,
+  HomePuckProps,
+} from "@/components/pages/home/puck";
 export type { SharedPuckProps } from "@/puck/shared";
 export type { GlobalSocialLinksProps, GlobalPuckProps } from "@/puck/global";
 
@@ -104,7 +113,8 @@ export type PuckProps = SharedPuckProps &
   LeadHershipsPuckProps &
   KindnessConnectionPuckProps &
   StoriesPuckProps &
-  SupportersPuckProps;
+  SupportersPuckProps &
+  HomePuckProps;
 
 export const puckConfig: Config<PuckProps> = {
   categories: {
@@ -173,6 +183,11 @@ export const puckConfig: Config<PuckProps> = {
       // SupportersHeroBlock is seeded and locked. More sections added per round.
       components: [],
     },
+    home: {
+      title: "Home page",
+      // HomeHeroBlock is seeded and locked. More sections added per round.
+      components: [],
+    },
   },
   components: {
     ...sharedPuckComponents,
@@ -187,5 +202,6 @@ export const puckConfig: Config<PuckProps> = {
     ...kindnessConnectionPuckComponents,
     ...storiesPuckComponents,
     ...supportersPuckComponents,
+    ...homePuckComponents,
   },
 };

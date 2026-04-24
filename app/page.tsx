@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Render } from "@measured/puck/rsc";
 import { HomePage } from "@/components/pages/home/HomePage";
 import { WebPageJsonLd } from "@/components/seo/JsonLd";
+import { getPageContent } from "@/lib/cms";
+import { puckConfig } from "@/puck.config";
 
 const description =
   "Community of Hope Inc. Faith-based recovery and community outreach in Groton, CT. Hope House, The Kindness Connection, and CCAR Recovery Coach training. 15+ years of transformed lives.";
@@ -13,7 +16,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-export default function Page() {
+export default async function Page() {
+  const pageData = await getPageContent("home");
+  const hasPuckContent = pageData.content.length > 0;
+
   return (
     <>
       <WebPageJsonLd
@@ -21,7 +27,9 @@ export default function Page() {
         description={description}
         path="/"
       />
-      <HomePage />
+      <HomePage
+        puckContent={hasPuckContent ? <Render config={puckConfig} data={pageData} /> : undefined}
+      />
     </>
   );
 }

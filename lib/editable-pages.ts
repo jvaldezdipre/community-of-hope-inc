@@ -52,6 +52,11 @@ export const EDITABLE_PAGES: EditablePage[] = [
     puckCategories: ["supporters"],
   },
   {
+    slug: "home",
+    label: "Home",
+    puckCategories: ["home"],
+  },
+  {
     slug: "global-settings",
     label: "Global settings",
     puckCategories: ["global"],

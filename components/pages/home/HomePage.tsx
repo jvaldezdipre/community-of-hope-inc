@@ -10,7 +10,17 @@ import { FAQ } from "./FAQ";
 import { ContactForm } from "./ContactForm";
 import { FinalCTA } from "./FinalCTA";
 
-export function HomePage() {
+export function HomePage({
+  puckContent,
+}: {
+  puckContent?: React.ReactNode;
+} = {}) {
+  // All 11 sections are CMS-managed. If the home row hasn't been seeded yet,
+  // fall back to the full hardcoded page so the site never looks empty.
+  if (puckContent) {
+    return <>{puckContent}</>;
+  }
+
   return (
     <>
       <Hero />
