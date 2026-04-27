@@ -210,7 +210,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       secondaryButtonHref: "#programs",
       trustSignals: [],
     },
-    render: (props) => <HomeHeroBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeHeroBlockRender {...rest} />,
   },
   HomeTrustBarBlock: {
     label: "Trust Bar (4 stat tiles)",
@@ -242,7 +242,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
     defaultProps: {
       stats: [],
     },
-    render: (props) => <HomeTrustBarBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeTrustBarBlockRender {...rest} />,
   },
   HomeWhyUsBlock: {
     label: "Why Us (differentiators — 2 columns)",
@@ -277,7 +277,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       heading: "",
       items: [],
     },
-    render: (props) => <HomeWhyUsBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeWhyUsBlockRender {...rest} />,
   },
   HomeTestimonialsBlock: {
     label: "Testimonials (horizontal scrolling marquee)",
@@ -322,7 +322,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       heading: "",
       testimonials: [],
     },
-    render: (props) => <HomeTestimonialsBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeTestimonialsBlockRender {...rest} />,
   },
   HomeMidCTABlock: {
     label: "Mid CTA (blue bar with 2 buttons)",
@@ -358,7 +358,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       secondaryButtonLabel: "Refer Someone",
       secondaryButtonHref: "#contact",
     },
-    render: (props) => <HomeMidCTABlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeMidCTABlockRender {...rest} />,
   },
   HomeProgramsBlock: {
     label: "Programs (4 alternating program rows with images)",
@@ -423,7 +423,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       linkLabel: "Learn more",
       programs: [],
     },
-    render: (props) => <HomeProgramsBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeProgramsBlockRender {...rest} />,
   },
   HomeAboutBlock: {
     label: "About section (text + video + pull quote)",
@@ -486,7 +486,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       pullQuote: "",
       pullQuoteAttribution: "",
     },
-    render: (props) => <HomeAboutBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeAboutBlockRender {...rest} />,
   },
   HomeDarkProcessBlock: {
     label: "How It Works (dark bg image + 4 process steps)",
@@ -524,7 +524,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       heading: "From your first call to a brand new life.",
       steps: [],
     },
-    render: (props) => <HomeDarkProcessBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeDarkProcessBlockRender {...rest} />,
   },
   HomeFAQBlock: {
     label: "FAQ (sticky left + accordion right)",
@@ -568,7 +568,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       afterPhoneText: "or send a message through our form below.",
       faqs: [],
     },
-    render: (props) => <HomeFAQBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeFAQBlockRender {...rest} />,
   },
   HomeContactBlock: {
     label: "Contact section (intro text — form fields stay fixed)",
@@ -595,7 +595,7 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       body: "",
       phoneNumber: "860-912-4356",
     },
-    render: (props) => <HomeContactBlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeContactBlockRender {...rest} />,
   },
   HomeFinalCTABlock: {
     label: "Final CTA (blue bar with 2 buttons)",
@@ -634,6 +634,6 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       secondaryButtonHref: "tel:8609124356",
       secondaryButtonIsPhone: true,
     },
-    render: (props) => <HomeFinalCTABlockRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <HomeFinalCTABlockRender {...rest} />,
   },
 };

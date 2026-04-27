@@ -132,7 +132,7 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       phoneNumber: "",
       image: "",
     },
-    render: (props) => <KindnessConnectionHeroRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionHeroRender {...rest} />,
   },
   KindnessConnectionReceiveBlock: {
     label: "What We Provide (checklist)",
@@ -163,7 +163,7 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       pitch: "",
       items: [],
     },
-    render: (props) => <KindnessConnectionReceiveRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionReceiveRender {...rest} />,
   },
   KindnessConnectionDetailsBlock: {
     label: "At a glance (program details)",
@@ -191,7 +191,7 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       heading: "At a glance",
       details: [],
     },
-    render: (props) => <KindnessConnectionDetailsRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionDetailsRender {...rest} />,
   },
   KindnessConnectionProcessBlock: {
     label: "How It Works (dark, steps)",
@@ -222,7 +222,7 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       heading: "Three steps to getting help.",
       steps: [],
     },
-    render: (props) => <KindnessConnectionProcessRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionProcessRender {...rest} />,
   },
   KindnessConnectionAudienceBlock: {
     label: "Who This Is For (white card with bullets)",
@@ -250,7 +250,7 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       heading: "If you need help, this is for you.",
       items: [],
     },
-    render: (props) => <KindnessConnectionAudienceRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionAudienceRender {...rest} />,
   },
   KindnessConnectionFAQBlock: {
     label: "FAQ (Common Questions)",
@@ -277,7 +277,7 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       heading: "Common Questions",
       faqs: [],
     },
-    render: (props) => <KindnessConnectionFAQRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionFAQRender {...rest} />,
   },
   KindnessConnectionBottomCTABlock: {
     label: "Bottom CTA (Need help? Let us know.)",
@@ -307,6 +307,6 @@ export const kindnessConnectionPuckComponents: Config<KindnessConnectionPuckProp
       buttonHref: "tel:8608565655",
       phoneNumber: "",
     },
-    render: (props) => <KindnessConnectionBottomCTARender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <KindnessConnectionBottomCTARender {...rest} />,
   },
 };

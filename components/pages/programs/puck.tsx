@@ -126,6 +126,6 @@ export const programsPuckComponents: Config<ProgramsPuckProps>["components"] = {
       phonePrefix: "or call ",
       phoneNumber: "",
     },
-    render: (props) => <ProgramsHelpCTARender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <ProgramsHelpCTARender {...rest} />,
   },
 };

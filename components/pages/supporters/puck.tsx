@@ -150,7 +150,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       description: "",
       backgroundImage: "/welcomehome.webp",
     },
-    render: (props) => <SupportersHeroRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersHeroRender {...rest} />,
   },
   SupportersFeaturedPartnershipBlock: {
     label: "Featured Partnership (logos + story)",
@@ -183,7 +183,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       linkHref: "/programs/hope-house",
       partners: [],
     },
-    render: (props) => <SupportersFeaturedPartnershipRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersFeaturedPartnershipRender {...rest} />,
   },
   SupportersCorporateBlock: {
     label: "Corporate Partners (grid of 3 columns)",
@@ -204,7 +204,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       heading: "The organizations carrying us forward.",
       supporters: [],
     },
-    render: (props) => <SupportersCorporateRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersCorporateRender {...rest} />,
   },
   SupportersEventBlock: {
     label: "Event Sponsors (grid of 4 columns)",
@@ -225,7 +225,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       heading: "Event Sponsors",
       supporters: [],
     },
-    render: (props) => <SupportersEventRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersEventRender {...rest} />,
   },
   SupportersGratitudeBlock: {
     label: "Gratitude pull-quote (image + quote)",
@@ -248,7 +248,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       quote: "Every name on this page changed a life.",
       backgroundImage: "/supporter2.webp",
     },
-    render: (props) => <SupportersGratitudeRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersGratitudeRender {...rest} />,
   },
   SupportersByCategoryBlock: {
     label: "By Category (grouped name/logo lists)",
@@ -276,7 +276,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       heading: "Partners across the community.",
       categories: [],
     },
-    render: (props) => <SupportersByCategoryRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersByCategoryRender {...rest} />,
   },
   SupportersIndividualBlock: {
     label: "Individual Supporters (name-only grid)",
@@ -299,7 +299,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       heading: "Individual Supporters",
       names: [],
     },
-    render: (props) => <SupportersIndividualRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersIndividualRender {...rest} />,
   },
   SupportersBottomCTABlock: {
     label: "Bottom CTA (dark with background image)",
@@ -340,6 +340,6 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
       secondaryButtonHref: "/contact",
       backgroundImage: "/supporter1.webp",
     },
-    render: (props) => <SupportersBottomCTARender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <SupportersBottomCTARender {...rest} />,
   },
 };

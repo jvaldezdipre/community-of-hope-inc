@@ -11,12 +11,15 @@ export type SocialLinks = {
   facebook: string | null;
   instagram: string | null;
   linkedin: string | null;
+  /** Logo URL pulled from the same global-settings row. */
+  logo: string | null;
 };
 
 const EMPTY_SOCIAL: SocialLinks = {
   facebook: null,
   instagram: null,
   linkedin: null,
+  logo: null,
 };
 
 /**
@@ -53,5 +56,6 @@ export async function getSocialLinks(): Promise<SocialLinks> {
     facebook: props.facebookUrl?.trim() || null,
     instagram: props.instagramUrl?.trim() || null,
     linkedin: props.linkedinUrl?.trim() || null,
+    logo: props.logoImage?.trim() || null,
   };
 }

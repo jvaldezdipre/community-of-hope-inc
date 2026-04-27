@@ -109,7 +109,7 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       title: "",
       description: "",
     },
-    render: (props) => <StoriesHeroRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesHeroRender {...rest} />,
   },
   StoriesFeaturedStoryBlock: {
     label: "Featured Story (spotlight testimonial)",
@@ -151,7 +151,7 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       name: "",
       context: "",
     },
-    render: (props) => <StoriesFeaturedStoryRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesFeaturedStoryRender {...rest} />,
   },
   StoriesCommunityVoicesBlock: {
     label: "Community Voices (2-col testimonial cards)",
@@ -203,7 +203,7 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       heading: "Community Voices",
       voices: [],
     },
-    render: (props) => <StoriesCommunityVoicesRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesCommunityVoicesRender {...rest} />,
   },
   StoriesImpactBlock: {
     label: "Impact by the Numbers (dark, bg image + 4 stats)",
@@ -251,7 +251,7 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       heading: "Every number represents a life changed.",
       stats: [],
     },
-    render: (props) => <StoriesImpactRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesImpactRender {...rest} />,
   },
   StoriesVisionQuoteBlock: {
     label: "Vision Quote (centered pull quote)",
@@ -275,7 +275,7 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       quote: "",
       attribution: "",
     },
-    render: (props) => <StoriesVisionQuoteRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesVisionQuoteRender {...rest} />,
   },
   StoriesShareYourStoryBlock: {
     label: "Share Your Story (beige invitation CTA)",
@@ -302,7 +302,7 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       buttonLabel: "Share Your Story",
       buttonHref: "/contact",
     },
-    render: (props) => <StoriesShareYourStoryRender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesShareYourStoryRender {...rest} />,
   },
   StoriesBottomCTABlock: {
     label: "Bottom CTA (white bordered card, 2 buttons)",
@@ -334,6 +334,6 @@ export const storiesPuckComponents: Config<StoriesPuckProps>["components"] = {
       secondaryButtonLabel: "Donate",
       secondaryButtonHref: "/donate",
     },
-    render: (props) => <StoriesBottomCTARender {...props} />,
+    render: ({ puck: _puck, ...rest }) => <StoriesBottomCTARender {...rest} />,
   },
 };

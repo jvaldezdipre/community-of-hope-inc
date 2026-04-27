@@ -1,12 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { footerQuickLinks, footerServiceAreas } from "@/lib/constants";
 import { SocialIcons, type SocialLinksShape } from "@/components/ui/SocialIcons";
 
-export function Footer({ socialLinks }: { socialLinks?: SocialLinksShape }) {
+const DEFAULT_LOGO = "/coh-logo.png";
+
+export function Footer({
+  socialLinks,
+  logoUrl,
+}: {
+  socialLinks?: SocialLinksShape;
+  logoUrl?: string;
+}) {
+  const resolvedLogo = logoUrl?.trim() || DEFAULT_LOGO;
   return (
     <motion.footer
       className="bg-[#0F1D33] border-t border-white/5"
@@ -20,12 +28,11 @@ export function Footer({ socialLinks }: { socialLinks?: SocialLinksShape }) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <Image
-                src="/coh-logo.png"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={resolvedLogo}
                 alt="Community of Hope"
-                width={36}
-                height={36}
-                className="h-9 w-9 object-contain shrink-0"
+                className="h-9 w-auto max-w-[140px] object-contain shrink-0"
               />
               <span
                 className="text-white"
