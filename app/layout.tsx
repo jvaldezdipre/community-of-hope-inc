@@ -73,7 +73,12 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <OrganizationJsonLd />
-        <Layout socialLinks={socialLinks}>{children}</Layout>
+        <Layout
+          socialLinks={socialLinks}
+          logoUrl={socialLinks.logo ?? undefined}
+        >
+          {children}
+        </Layout>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
@@ -12,7 +11,16 @@ function isDropdown(item: NavItem): item is NavItem & { children: { label: strin
   return "children" in item && Array.isArray(item.children);
 }
 
-export function Navbar() {
+// Default logo lives in /public so the site never looks broken before the
+// CMS row is seeded with a value. CMS upload overrides this via the prop.
+const DEFAULT_LOGO = "/coh-logo.png";
+
+interface NavbarProps {
+  logoUrl?: string;
+}
+
+export function Navbar({ logoUrl }: NavbarProps = {}) {
+  const resolvedLogo = logoUrl?.trim() || DEFAULT_LOGO;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -70,12 +78,11 @@ export function Navbar() {
     >
       <div className="max-w-[1200px] mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/coh-logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={resolvedLogo}
             alt="Community of Hope"
-            width={40}
-            height={40}
-            className="h-10 w-10 object-contain shrink-0"
+            className="h-10 w-auto max-w-[160px] object-contain shrink-0"
           />
           <span
             className={`tracking-wide transition-colors duration-400 ${

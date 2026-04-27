@@ -10,9 +10,11 @@ import type { SocialLinksShape } from "@/components/ui/SocialIcons";
 interface LayoutProps {
   children: ReactNode;
   socialLinks: SocialLinksShape;
+  /** CMS-uploaded logo URL. Falls back to /coh-logo.png inside Navbar/Footer when empty. */
+  logoUrl?: string;
 }
 
-export function Layout({ children, socialLinks }: LayoutProps) {
+export function Layout({ children, socialLinks, logoUrl }: LayoutProps) {
   const pathname = usePathname();
   // Admin/editor routes render full-bleed without the public site chrome.
   const isAdmin = pathname?.startsWith("/admin");
@@ -23,9 +25,9 @@ export function Layout({ children, socialLinks }: LayoutProps) {
 
   return (
     <div className="min-h-screen pb-16 md:pb-0">
-      <Navbar />
+      <Navbar logoUrl={logoUrl} />
       {children}
-      <Footer socialLinks={socialLinks} />
+      <Footer socialLinks={socialLinks} logoUrl={logoUrl} />
       <StickyMobileCTA />
     </div>
   );
