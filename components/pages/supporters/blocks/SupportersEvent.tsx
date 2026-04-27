@@ -4,6 +4,8 @@ export type SupportersEventItem = {
   name: string;
   logo: string;
   notes: string;
+  /** Optional pixel height override set via the CMS slider; 0/undefined → preset. */
+  logoHeight?: number;
 };
 
 export function SupportersEvent({
@@ -56,7 +58,14 @@ export function SupportersEvent({
               key={`event-${i}`}
               className="flex flex-col items-center justify-center text-center p-4 min-h-[100px]"
             >
-              {s.logo && <LogoSlot name={s.name} logo={s.logo} size="md" />}
+              {s.logo && (
+                <LogoSlot
+                  name={s.name}
+                  logo={s.logo}
+                  size="md"
+                  customHeight={s.logoHeight}
+                />
+              )}
               {!s.logo && s.name && (
                 <p
                   className="text-[#1A1A1A]"

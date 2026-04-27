@@ -4,6 +4,8 @@ export type SupportersCorporateItem = {
   name: string;
   logo: string;
   notes: string;
+  /** Optional pixel height override set via the CMS slider; undefined → preset size. */
+  logoHeight?: number;
 };
 
 export function SupportersCorporate({
@@ -57,7 +59,12 @@ export function SupportersCorporate({
               className="flex flex-col items-center justify-center text-center p-6 min-h-[160px]"
             >
               <div className={s.logo ? "" : "mb-4"}>
-                <LogoSlot name={s.name} logo={s.logo || null} size="lg" />
+                <LogoSlot
+                  name={s.name}
+                  logo={s.logo || null}
+                  size="lg"
+                  customHeight={s.logoHeight}
+                />
               </div>
               {!s.logo && s.name && (
                 <p

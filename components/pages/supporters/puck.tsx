@@ -1,5 +1,6 @@
 import type { Config, Field } from "@measured/puck";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
+import { LogoHeightSlider } from "@/components/admin/LogoHeightSlider";
 import { SupportersHero as SupportersHeroRender } from "./blocks/SupportersHero";
 import {
   SupportersFeaturedPartnership as SupportersFeaturedPartnershipRender,
@@ -25,11 +26,12 @@ import {
 import { SupportersBottomCTA as SupportersBottomCTARender } from "./blocks/SupportersBottomCTA";
 
 // Reusable field-builder for supporters that can show a logo OR a name.
-// Produces the exact same 3 fields (name, logo, notes) wherever staff edits a
-// supporter row — Featured Partnership, Corporate, Event Sponsors, Category.
+// Produces the same 4 fields (name, logo, logoHeight, notes) wherever staff
+// edits a supporter row — Featured Partnership, Corporate, Event, Category.
 const supporterArrayFields: {
   name: Field<string>;
   logo: Field<string>;
+  logoHeight: Field<number | undefined>;
   notes: Field<string>;
 } = {
   name: {
@@ -43,6 +45,18 @@ const supporterArrayFields: {
     render: ({ value, onChange, readOnly }) => (
       <ImageUploadField
         value={value as string | undefined}
+        onChange={onChange}
+        readOnly={readOnly}
+      />
+    ),
+  },
+  logoHeight: {
+    type: "custom",
+    label:
+      "Logo size (drag to make this logo bigger or smaller — only applies when a logo is uploaded)",
+    render: ({ value, onChange, readOnly }) => (
+      <LogoHeightSlider
+        value={typeof value === "number" ? value : undefined}
         onChange={onChange}
         readOnly={readOnly}
       />
@@ -172,6 +186,7 @@ export const supportersPuckComponents: Config<SupportersPuckProps>["components"]
         arrayFields: {
           name: supporterArrayFields.name,
           logo: supporterArrayFields.logo,
+          logoHeight: supporterArrayFields.logoHeight,
         },
       },
     },

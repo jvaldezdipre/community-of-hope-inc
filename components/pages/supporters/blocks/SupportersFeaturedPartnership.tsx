@@ -4,6 +4,8 @@ import { LogoSlot } from "./LogoSlot";
 export type FeaturedPartnershipPartner = {
   name: string;
   logo: string;
+  /** Optional pixel height override set via the CMS slider; 0/undefined → preset. */
+  logoHeight?: number;
 };
 
 export function SupportersFeaturedPartnership({
@@ -31,7 +33,12 @@ export function SupportersFeaturedPartnership({
           <div className="flex flex-col items-center gap-8">
             {partners.map((p, i) => (
               <div key={`partner-${i}`} className="flex flex-col items-center">
-                <LogoSlot name={p.name} logo={p.logo || null} size="lg" />
+                <LogoSlot
+                  name={p.name}
+                  logo={p.logo || null}
+                  size="lg"
+                  customHeight={p.logoHeight}
+                />
                 {!p.logo && p.name && (
                   <span
                     className="text-[#1A1A1A] text-center mt-2"

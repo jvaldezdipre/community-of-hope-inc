@@ -4,6 +4,8 @@ export type SupportersCategoryItem = {
   name: string;
   logo: string;
   notes: string;
+  /** Optional pixel height override set via the CMS slider; 0/undefined → preset. */
+  logoHeight?: number;
 };
 
 export type SupportersCategory = {
@@ -69,7 +71,12 @@ export function SupportersByCategory({
                         className="flex flex-col items-center justify-center text-center min-h-[64px]"
                       >
                         {item.logo ? (
-                          <LogoSlot name={item.name} logo={item.logo} size="md" />
+                          <LogoSlot
+                            name={item.name}
+                            logo={item.logo}
+                            size="md"
+                            customHeight={item.logoHeight}
+                          />
                         ) : (
                           <span
                             className="text-[#1A1A1A]"

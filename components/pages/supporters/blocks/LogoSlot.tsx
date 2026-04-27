@@ -2,10 +2,13 @@ export function LogoSlot({
   name,
   logo,
   size = "md",
+  customHeight,
 }: {
   name: string;
   logo?: string | null;
   size?: "sm" | "md" | "lg";
+  /** Pixel height override from the CMS slider. Falls back to `size` preset when undefined. */
+  customHeight?: number;
 }) {
   const sizes = {
     sm: "h-10",
@@ -13,12 +16,15 @@ export function LogoSlot({
     lg: "h-20",
   };
   if (logo) {
+    // `0` is the "no override" sentinel from the CMS slider; anything > 0 wins.
+    const useCustom = typeof customHeight === "number" && customHeight > 0;
     return (
       /* eslint-disable-next-line @next/next/no-img-element */
       <img
         src={logo}
         alt={`${name} logo`}
-        className={`${sizes[size]} w-auto object-contain mx-auto`}
+        className={`${useCustom ? "" : sizes[size]} w-auto max-w-full object-contain mx-auto`}
+        style={useCustom ? { height: `${customHeight}px` } : undefined}
       />
     );
   }
