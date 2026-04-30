@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export type HomeTestimonial = {
@@ -136,23 +137,61 @@ export function HomeTestimonialsBlock({
         )}
       </div>
 
-      {marquee.length > 0 && (
-        <div className="overflow-hidden">
-          <motion.div
-            className="flex gap-8"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              repeatType: "loop",
-              ease: "linear",
-              duration: 35,
-            }}
+      {testimonials.length > 0 && (
+        <>
+          {/* Desktop (≥768px): auto-scrolling marquee. items-stretch so every
+              card matches the height of the tallest one. */}
+          <div className="hidden md:block overflow-hidden">
+            <motion.div
+              className="flex items-stretch gap-8"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "linear",
+                duration: 20,
+              }}
+            >
+              {marquee.map((t, i) => (
+                <TestimonialCard key={`m-${i}`} t={t} />
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Mobile (<768px): finger-swipeable snap-scroll, no auto-advance.
+              Reader controls pace; first card sits 24px from the edge so the
+              left peek hints there's more to scroll back to. items-stretch +
+              the inner `flex` wrapper makes every card the same height. */}
+          <div
+            className="md:hidden flex items-stretch gap-4 overflow-x-auto snap-x snap-mandatory pl-6 pr-6 pb-4 [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: "none", scrollPaddingLeft: "24px" }}
           >
-            {marquee.map((t, i) => (
-              <TestimonialCard key={`m-${i}`} t={t} />
+            {testimonials.map((t, i) => (
+              <div key={`mobile-${i}`} className="snap-start shrink-0 flex">
+                <TestimonialCard t={t} />
+              </div>
             ))}
-          </motion.div>
-        </div>
+          </div>
+
+          {/* Swipe hint — mobile only. Subtle cue so first-time visitors know
+              the row is interactive. Hidden on desktop where the marquee is
+              already auto-scrolling. */}
+          <div className="md:hidden flex items-center justify-center gap-2 mt-5">
+            <ChevronLeft size={14} className="text-[#8A8A8A]" />
+            <span
+              className="text-[#8A8A8A]"
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontSize: "0.82rem",
+                fontWeight: 300,
+                letterSpacing: "0.04em",
+              }}
+            >
+              Swipe to see more
+            </span>
+            <ChevronRight size={14} className="text-[#8A8A8A]" />
+          </div>
+        </>
       )}
     </section>
   );

@@ -4,37 +4,58 @@ import { Phone, Clock, Shield } from "lucide-react";
 import { motion } from "motion/react";
 import { ContactForm } from "./ContactForm";
 
+// 3 fixed badges. Icons + the third badge's phone-link behavior are locked;
+// only the title/subtitle text is editable from the CMS. If a field is left
+// blank, the original hardcoded copy renders so the page never looks empty.
+const FALLBACK = {
+  badge1Title: "Response within 24 hours",
+  badge1Subtitle: "Urgent situations receive same-day attention",
+  badge2Title: "Confidential & compassionate",
+  badge2Subtitle: "Your information is secure and never shared",
+  badge3Title: "Prefer to talk?",
+};
+
 export function HomeContactBlock({
   eyebrow,
   heading,
   body,
   phoneNumber,
+  badge1Title,
+  badge1Subtitle,
+  badge2Title,
+  badge2Subtitle,
+  badge3Title,
 }: {
   eyebrow: string;
   heading: string;
   body: string;
   phoneNumber: string;
+  badge1Title?: string;
+  badge1Subtitle?: string;
+  badge2Title?: string;
+  badge2Subtitle?: string;
+  badge3Title?: string;
 }) {
   const telHref = phoneNumber ? `tel:${phoneNumber.replace(/[^0-9]/g, "")}` : "";
 
-  // Badges stay fixed — their icons and the phone link are tied to CTAs.
-  // Staff edits the intro text + phone number via Puck; everything else is
-  // deliberately locked.
   const badges = [
     {
       icon: <Clock size={18} className="text-[#458CFE]" />,
-      title: "Response within 24 hours",
-      subtitle: "Urgent situations receive same-day attention",
+      title: badge1Title || FALLBACK.badge1Title,
+      subtitle: badge1Subtitle || FALLBACK.badge1Subtitle,
+      showPhoneLink: false,
     },
     {
       icon: <Shield size={18} className="text-[#458CFE]" />,
-      title: "Confidential & compassionate",
-      subtitle: "Your information is secure and never shared",
+      title: badge2Title || FALLBACK.badge2Title,
+      subtitle: badge2Subtitle || FALLBACK.badge2Subtitle,
+      showPhoneLink: false,
     },
     {
       icon: <Phone size={18} className="text-[#458CFE]" />,
-      title: "Prefer to talk?",
-      subtitle: "call",
+      title: badge3Title || FALLBACK.badge3Title,
+      subtitle: "",
+      showPhoneLink: true,
     },
   ];
 
@@ -95,7 +116,7 @@ export function HomeContactBlock({
             <div className="flex flex-col gap-5">
               {badges.map((badge, i) => (
                 <motion.div
-                  key={badge.title}
+                  key={`badge-${i}`}
                   className="flex items-center gap-4"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -128,7 +149,7 @@ export function HomeContactBlock({
                         fontWeight: 300,
                       }}
                     >
-                      {badge.subtitle === "call" && phoneNumber ? (
+                      {badge.showPhoneLink && phoneNumber ? (
                         <>
                           Call{" "}
                           <a

@@ -118,6 +118,11 @@ export type HomeContactBlockProps = {
   heading: string;
   body: string;
   phoneNumber: string;
+  badge1Title: string;
+  badge1Subtitle: string;
+  badge2Title: string;
+  badge2Subtitle: string;
+  badge3Title: string;
 };
 
 export type HomeFinalCTABlockProps = {
@@ -586,7 +591,31 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       phoneNumber: {
         type: "text",
         label:
-          "Phone number (shown on the 'Prefer to talk?' badge as a tel: link)",
+          "Phone number (used on the 'Prefer to talk?' badge as a tap-to-call link)",
+      },
+      // Three fixed reassurance badges. Icons are locked (clock, shield,
+      // phone) — staff edits the wording only. Leave any field empty to
+      // restore that line's original copy.
+      badge1Title: {
+        type: "text",
+        label: "Badge 1 title (clock icon)",
+      },
+      badge1Subtitle: {
+        type: "text",
+        label: "Badge 1 subtitle (clock icon)",
+      },
+      badge2Title: {
+        type: "text",
+        label: "Badge 2 title (shield icon)",
+      },
+      badge2Subtitle: {
+        type: "text",
+        label: "Badge 2 subtitle (shield icon)",
+      },
+      badge3Title: {
+        type: "text",
+        label:
+          "Badge 3 title (phone icon — subtitle is auto-generated as 'Call <phone number above>')",
       },
     },
     defaultProps: {
@@ -594,6 +623,11 @@ export const homePuckComponents: Config<HomePuckProps>["components"] = {
       heading: "",
       body: "",
       phoneNumber: "860-912-4356",
+      badge1Title: "Response within 24 hours",
+      badge1Subtitle: "Urgent situations receive same-day attention",
+      badge2Title: "Confidential & compassionate",
+      badge2Subtitle: "Your information is secure and never shared",
+      badge3Title: "Prefer to talk?",
     },
     render: ({ puck: _puck, ...rest }) => <HomeContactBlockRender {...rest} />,
   },

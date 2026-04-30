@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 // While the site is served from community-of-hope.netlify.app (before 4coh.com
 // is connected as the primary domain), we force noindex so it doesn't compete
 // with the production domain in search. REMOVE or flip this when launching.
-const BLOCK_INDEXING = true;
+const BLOCK_INDEXING = false;
 
 const securityHeaders: { key: string; value: string }[] = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
