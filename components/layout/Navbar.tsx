@@ -14,13 +14,18 @@ function isDropdown(item: NavItem): item is NavItem & { children: { label: strin
 // Default logo lives in /public so the site never looks broken before the
 // CMS row is seeded with a value. CMS upload overrides this via the prop.
 const DEFAULT_LOGO = "/coh-logo.png";
+const DEFAULT_PHONE = "860-912-4356";
 
 interface NavbarProps {
   logoUrl?: string;
+  /** Main phone from global settings. Falls back to the hardcoded original. */
+  mainPhone?: string;
 }
 
-export function Navbar({ logoUrl }: NavbarProps = {}) {
+export function Navbar({ logoUrl, mainPhone }: NavbarProps = {}) {
   const resolvedLogo = logoUrl?.trim() || DEFAULT_LOGO;
+  const resolvedPhone = mainPhone?.trim() || DEFAULT_PHONE;
+  const phoneTel = `tel:${resolvedPhone.replace(/[^0-9]/g, "")}`;
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -163,7 +168,7 @@ export function Navbar({ logoUrl }: NavbarProps = {}) {
             );
           })}
           <Button
-            href="tel:8609124356"
+            href={phoneTel}
             variant="navPhone"
             className={
               useSolidNav
@@ -172,7 +177,7 @@ export function Navbar({ logoUrl }: NavbarProps = {}) {
             }
           >
             <Phone size={15} />
-            860-912-4356
+            {resolvedPhone}
           </Button>
         </div>
 
@@ -259,13 +264,13 @@ export function Navbar({ logoUrl }: NavbarProps = {}) {
               );
             })}
             <Button
-              href="tel:8609124356"
+              href={phoneTel}
               variant="navPhoneMobile"
               onClick={() => setMobileOpen(false)}
               className="mt-2"
             >
               <Phone size={15} />
-              860-912-4356
+              {resolvedPhone}
             </Button>
           </div>
         </div>

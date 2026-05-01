@@ -6,15 +6,26 @@ import { footerQuickLinks, footerServiceAreas } from "@/lib/constants";
 import { SocialIcons, type SocialLinksShape } from "@/components/ui/SocialIcons";
 
 const DEFAULT_LOGO = "/coh-logo.png";
+const DEFAULT_MAIN_PHONE = "860-912-4356";
+const DEFAULT_KINDNESS_PHONE = "860-856-5655";
 
 export function Footer({
   socialLinks,
   logoUrl,
+  mainPhone,
+  kindnessPhone,
 }: {
   socialLinks?: SocialLinksShape;
   logoUrl?: string;
+  /** Main phone from global settings. Falls back to the hardcoded original. */
+  mainPhone?: string;
+  /** Kindness Connection phone from global settings. Falls back to the hardcoded original. */
+  kindnessPhone?: string;
 }) {
   const resolvedLogo = logoUrl?.trim() || DEFAULT_LOGO;
+  const resolvedMainPhone = mainPhone?.trim() || DEFAULT_MAIN_PHONE;
+  const resolvedKindnessPhone = kindnessPhone?.trim() || DEFAULT_KINDNESS_PHONE;
+  const mainPhoneTel = `tel:${resolvedMainPhone.replace(/[^0-9]/g, "")}`;
   return (
     <motion.footer
       className="bg-[#0F1D33] border-t border-white/5"
@@ -73,7 +84,7 @@ export function Footer({
             </span>
             <div className="flex flex-col gap-2">
               <a
-                href="tel:8609124356"
+                href={mainPhoneTel}
                 className="text-white/82 hover:text-white transition-colors"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
@@ -81,7 +92,7 @@ export function Footer({
                   fontWeight: 300,
                 }}
               >
-                860-912-4356
+                {resolvedMainPhone}
               </a>
               <span
                 className="text-white/82"
@@ -91,7 +102,7 @@ export function Footer({
                   fontWeight: 300,
                 }}
               >
-                Kindness Connection: 860-856-5655
+                Kindness Connection: {resolvedKindnessPhone}
               </span>
             </div>
           </div>

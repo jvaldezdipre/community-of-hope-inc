@@ -76,6 +76,8 @@ export default async function RootLayout({
         <Layout
           socialLinks={socialLinks}
           logoUrl={socialLinks.logo ?? undefined}
+          mainPhone={socialLinks.mainPhone ?? undefined}
+          kindnessPhone={socialLinks.kindnessPhone ?? undefined}
         >
           {children}
         </Layout>

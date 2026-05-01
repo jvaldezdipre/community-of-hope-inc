@@ -12,9 +12,19 @@ interface LayoutProps {
   socialLinks: SocialLinksShape;
   /** CMS-uploaded logo URL. Falls back to /coh-logo.png inside Navbar/Footer when empty. */
   logoUrl?: string;
+  /** Main site phone from global settings. Used in navbar, footer, sticky CTA. */
+  mainPhone?: string;
+  /** Kindness Connection phone from global settings. Used in footer. */
+  kindnessPhone?: string;
 }
 
-export function Layout({ children, socialLinks, logoUrl }: LayoutProps) {
+export function Layout({
+  children,
+  socialLinks,
+  logoUrl,
+  mainPhone,
+  kindnessPhone,
+}: LayoutProps) {
   const pathname = usePathname();
   // Admin/editor routes render full-bleed without the public site chrome.
   const isAdmin = pathname?.startsWith("/admin");
@@ -25,10 +35,15 @@ export function Layout({ children, socialLinks, logoUrl }: LayoutProps) {
 
   return (
     <div className="min-h-screen pb-16 md:pb-0">
-      <Navbar logoUrl={logoUrl} />
+      <Navbar logoUrl={logoUrl} mainPhone={mainPhone} />
       {children}
-      <Footer socialLinks={socialLinks} logoUrl={logoUrl} />
-      <StickyMobileCTA />
+      <Footer
+        socialLinks={socialLinks}
+        logoUrl={logoUrl}
+        mainPhone={mainPhone}
+        kindnessPhone={kindnessPhone}
+      />
+      <StickyMobileCTA mainPhone={mainPhone} />
     </div>
   );
 }

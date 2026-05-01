@@ -87,8 +87,23 @@ export function HomeTestimonialsBlock({
   heading: string;
   testimonials: HomeTestimonial[];
 }) {
-  // Marquee duplicates the list so the -50% translate loops seamlessly.
-  const marquee = testimonials.length > 0 ? [...testimonials, ...testimonials] : [];
+  // Marquee duplicates the testimonials enough times that there's always
+  // content past the viewport's right edge during the slide. The animation
+  // shifts by exactly one copy's width, so when it loops back to 0 the next
+  // copy is already in position — no visible gap, no snap-back.
+  //
+  // 2 copies (the previous version) only worked when one copy was wider than
+  // the viewport. For a small testimonial list on a wide screen, that left a
+  // visible gap on the right. Scaling copies to the list size fixes it.
+  const CARD_PX = 340 + 32; // card width + gap
+  const VIEWPORT_BUFFER_PX = 3000; // covers ultra-wide displays + zoom-out
+  const oneCopyPx = testimonials.length * CARD_PX;
+  const copies =
+    testimonials.length > 0
+      ? Math.max(3, Math.ceil(VIEWPORT_BUFFER_PX / oneCopyPx) + 1)
+      : 0;
+  const marquee = Array(copies).fill(testimonials).flat() as HomeTestimonial[];
+  const slidePercent = copies > 0 ? -(100 / copies) : 0;
 
   return (
     <section
@@ -140,11 +155,13 @@ export function HomeTestimonialsBlock({
       {testimonials.length > 0 && (
         <>
           {/* Desktop (≥768px): auto-scrolling marquee. items-stretch so every
-              card matches the height of the tallest one. */}
+              card matches the height of the tallest one. The animation slides
+              by exactly one copy's width (`slidePercent`), so the loop point
+              lines up with the next copy and stays invisible. */}
           <div className="hidden md:block overflow-hidden">
             <motion.div
               className="flex items-stretch gap-8"
-              animate={{ x: ["0%", "-50%"] }}
+              animate={{ x: ["0%", `${slidePercent}%`] }}
               transition={{
                 repeat: Infinity,
                 repeatType: "loop",

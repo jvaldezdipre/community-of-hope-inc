@@ -13,6 +13,10 @@ export type SocialLinks = {
   linkedin: string | null;
   /** Logo URL pulled from the same global-settings row. */
   logo: string | null;
+  /** Main phone — null when empty so callers can fall back to a hardcoded default. */
+  mainPhone: string | null;
+  /** Kindness Connection phone — null when empty so callers can fall back. */
+  kindnessPhone: string | null;
 };
 
 const EMPTY_SOCIAL: SocialLinks = {
@@ -20,6 +24,8 @@ const EMPTY_SOCIAL: SocialLinks = {
   instagram: null,
   linkedin: null,
   logo: null,
+  mainPhone: null,
+  kindnessPhone: null,
 };
 
 /**
@@ -57,5 +63,7 @@ export async function getSocialLinks(): Promise<SocialLinks> {
     instagram: props.instagramUrl?.trim() || null,
     linkedin: props.linkedinUrl?.trim() || null,
     logo: props.logoImage?.trim() || null,
+    mainPhone: props.mainPhone?.trim() || null,
+    kindnessPhone: props.kindnessPhone?.trim() || null,
   };
 }
