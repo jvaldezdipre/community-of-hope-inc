@@ -4,8 +4,10 @@
  * Supabase as the source of truth (that's what the dashboard reads); this
  * helper is purely an additional notification channel.
  *
- * Netlify only captures POSTs to "/" with a `form-name` field that matches
- * a form declared in /public/__forms.html.
+ * POSTs to `/__forms.html` (a static file in /public) rather than `/`
+ * because on a Next.js site the App Router intercepts POST to `/` and
+ * returns 405 before Netlify's form handler can see the request. The
+ * static stub file path bypasses Next.js entirely.
  *
  * Fire-and-forget — never throws. A Netlify outage or network blip must not
  * break the primary Supabase submission flow.
@@ -21,7 +23,7 @@ export async function notifyNetlifyForm(
       if (value == null || value === "") continue;
       body.set(key, typeof value === "boolean" ? (value ? "yes" : "no") : value);
     }
-    await fetch("/", {
+    await fetch("/__forms.html", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: body.toString(),
