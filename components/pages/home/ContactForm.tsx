@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { contactTypeOptions } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { supabase } from "@/lib/supabase";
+import { notifyNetlifyForm } from "@/lib/notifyNetlify";
 
 type ContactFormProps = {
   /** When true, renders only the form card (no section wrapper, no left column). For use on /contact page. */
@@ -60,6 +61,13 @@ export function ContactForm({ variant = "default" }: ContactFormProps) {
         pii_class: "standard",
       });
       if (insertErr) throw insertErr;
+      void notifyNetlifyForm("contact", {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        type: formData.type,
+        message: formData.message,
+      });
       setSubmitted(true);
     } catch (err) {
       setError(

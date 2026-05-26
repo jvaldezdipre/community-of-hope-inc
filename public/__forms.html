@@ -5,9 +5,14 @@
   </head>
   <body>
     <!--
-      This file exists so Netlify's build-time form parser can detect
-      the forms used by the React app. The real forms are rendered in
-      React and POST their data back to these same form names.
+      This file exists so Netlify's build-time form parser knows which
+      form-name values to accept. The real forms live in React and POST
+      to Supabase first (dashboard source of truth) then POST a copy here
+      via lib/notifyNetlify.ts so Netlify can email Annette.
+
+      Field lists are intentionally MINIMAL — the dashboard holds the
+      full submission; this stub only needs whatever should appear in
+      Annette's email notification.
     -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="bot-field" />
@@ -19,116 +24,11 @@
     </form>
     <form name="hope-house-application" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="bot-field" />
-      <!-- Step 1 -->
       <input type="text" name="firstName" />
       <input type="text" name="lastName" />
-      <input type="tel" name="homePhone" />
       <input type="tel" name="cellPhone" />
-      <input type="text" name="workerName" />
-      <input type="tel" name="workerPhone" />
-      <input type="text" name="workerExt" />
-      <input type="text" name="caseManagerName" />
-      <input type="text" name="caseManagerAgency" />
-      <input type="tel" name="caseManagerPhone" />
       <input type="text" name="projectedReleaseDate" />
-      <input type="text" name="isDefiniteDate" />
-      <input type="text" name="pickUpTime" />
-      <textarea name="facilityAddress"></textarea>
-      <input type="text" name="mainGoal" />
-      <!-- Step 2 -->
-      <input type="text" name="middleInitial" />
-      <input type="text" name="dateOfBirth" />
-      <input type="text" name="insuranceNumber" />
-      <input type="text" name="huskyD" />
-      <input type="text" name="cashAssistance" />
-      <input type="text" name="inClinicalTreatment" />
-      <textarea name="treatmentProviders"></textarea>
-      <textarea name="currentAddress"></textarea>
-      <input type="text" name="livingSituationDuration" />
-      <input type="text" name="lastPermanentAddress" />
-      <!-- Step 3 -->
-      <input type="text" name="maritalStatus" />
-      <input type="text" name="liveWithParents" />
-      <textarea name="siblings"></textarea>
-      <input type="text" name="spouseName" />
-      <textarea name="children"></textarea>
-      <textarea name="childrenLivingArrangements"></textarea>
-      <input type="text" name="familyReunification" />
-      <input type="text" name="familySupportive" />
-      <input type="text" name="familyInfluence" />
-      <textarea name="familyNotes"></textarea>
-      <!-- Step 4 -->
-      <input type="text" name="alcoholLastUse" />
-      <input type="text" name="cocaineLastUse" />
-      <input type="text" name="crackLastUse" />
-      <input type="text" name="hallucinogensLastUse" />
-      <input type="text" name="inhalantsLastUse" />
-      <input type="text" name="opiatesLastUse" />
-      <input type="text" name="rxDrugsLastUse" />
-      <input type="text" name="sedativesLastUse" />
-      <input type="text" name="overCounterLastUse" />
-      <input type="text" name="otherDrugLastUse" />
-      <input type="text" name="drugOfChoice" />
-      <input type="text" name="ageOfFirstUse" />
-      <input type="text" name="dailyConsumption" />
-      <input type="text" name="mentalHealthDiagnosis" />
-      <input type="text" name="mentalHealthDetails" />
-      <input type="text" name="mentalHealthMedications" />
-      <input type="text" name="medicalProblems" />
-      <input type="text" name="medicalDetails" />
-      <input type="text" name="medicalMedications" />
-      <textarea name="allMedications"></textarea>
-      <textarea name="spiritualLife"></textarea>
-      <textarea name="conditionsContributing"></textarea>
-      <textarea name="conditionsConsequences"></textarea>
-      <!-- Step 5 -->
-      <input type="text" name="currentlyInTreatment" />
-      <input type="text" name="facilityName" />
-      <input type="text" name="facilityCityState" />
-      <input type="text" name="dateAdmitted" />
-      <input type="text" name="dateCompletion" />
-      <input type="text" name="treatmentCaseManager" />
-      <input type="text" name="treatmentCounselor" />
-      <input type="text" name="projectedCommencementDate" />
-      <textarea name="housingOptionsBesidesCOH"></textarea>
-      <textarea name="completedProgram"></textarea>
-      <input type="text" name="whereAfterLeaving" />
-      <input type="text" name="sobrietyDuration" />
-      <input type="text" name="whatWentWrong" />
-      <!-- Step 6 -->
-      <textarea name="outstandingWarrants"></textarea>
-      <input type="text" name="everArrested" />
-      <textarea name="chargesConvictions"></textarea>
-      <input type="text" name="arrestDate" />
-      <input type="text" name="sentence" />
-      <input type="text" name="paroleTime" />
-      <input type="text" name="paroleOfficer" />
-      <textarea name="paroleConditions"></textarea>
-      <input type="text" name="paroleEndDate" />
-      <textarea name="arrestHistory"></textarea>
-      <input type="text" name="disciplinaryReports" />
-      <textarea name="disciplinaryDetails"></textarea>
-      <input type="text" name="lastGradeCompleted" />
-      <input type="text" name="otherEducation" />
-      <textarea name="significantJobs"></textarea>
-      <textarea name="futurePlans"></textarea>
-      <input type="text" name="workingPartTime" />
-      <input type="text" name="partTimeEmployer" />
-      <input type="text" name="workingFullTime" />
-      <input type="text" name="fullTimeEmployer" />
-      <input type="text" name="pastJob1" />
-      <input type="text" name="pastJob2" />
-      <textarea name="incomeSources"></textarea>
-      <!-- Step 7 -->
-      <textarea name="strengths"></textarea>
-      <textarea name="weaknesses"></textarea>
-      <textarea name="triggers"></textarea>
-      <textarea name="difficulties"></textarea>
-      <textarea name="whatGotYouHere"></textarea>
-      <textarea name="goalsWhileHere"></textarea>
-      <textarea name="plansAfterLeaving"></textarea>
-      <textarea name="dreams"></textarea>
-      <input type="text" name="affirmation" />
+      <textarea name="mainGoal"></textarea>
     </form>
     <form name="testimonial-submission" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input type="text" name="bot-field" />
@@ -139,7 +39,6 @@
       <textarea name="quote"></textarea>
       <input type="text" name="consentToPublish" />
       <input type="text" name="consentToUseName" />
-      <input type="text" name="invitationToken" />
       <input type="text" name="source" />
     </form>
   </body>

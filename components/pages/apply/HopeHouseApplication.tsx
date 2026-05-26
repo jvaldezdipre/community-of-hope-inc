@@ -19,6 +19,7 @@ import { Step5Conditions } from "./steps/Step5Conditions";
 import { Step6Legal } from "./steps/Step6Legal";
 import { Step7Statement } from "./steps/Step7Statement";
 import { supabase } from "@/lib/supabase";
+import { notifyNetlifyForm } from "@/lib/notifyNetlify";
 
 // Reshape the flat form data into the JSONB sub-objects the dashboard expects
 function toApplicantRow(d: ApplicationFormData) {
@@ -188,6 +189,13 @@ export function HopeHouseApplication() {
         pii_class: "phi",
       });
       if (insertErr) throw insertErr;
+      void notifyNetlifyForm("hope-house-application", {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        cellPhone: formData.cellPhone,
+        projectedReleaseDate: formData.projectedReleaseDate,
+        mainGoal: formData.mainGoal,
+      });
       setSubmitted(true);
       scrollToTop();
     } catch (err) {

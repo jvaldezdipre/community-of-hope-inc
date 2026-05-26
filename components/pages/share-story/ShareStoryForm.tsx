@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { supabase } from "@/lib/supabase";
+import { notifyNetlifyForm } from "@/lib/notifyNetlify";
 
 const relationshipOptions: { value: string; label: string }[] = [
   { value: "alumna", label: "Hope House alumna" },
@@ -65,6 +66,16 @@ function ShareStoryFormInner() {
         pii_class: "standard",
       });
       if (insertErr) throw insertErr;
+      void notifyNetlifyForm("testimonial-submission", {
+        submitterName: formData.submitterName,
+        relationship: formData.relationship,
+        email: formData.email,
+        phone: formData.phone,
+        quote: formData.quote,
+        consentToPublish: formData.consentToPublish,
+        consentToUseName: formData.consentToUseName,
+        source: token ? "invitation" : "public_form",
+      });
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
