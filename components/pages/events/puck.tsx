@@ -1,5 +1,6 @@
 import type { Config } from "@measured/puck";
 import { ImageUploadField } from "@/components/admin/ImageUploadField";
+import { PdfUploadField } from "@/components/admin/PdfUploadField";
 import { DatePickerField } from "@/components/admin/DatePickerField";
 import type { EventItem } from "@/lib/constants";
 import {
@@ -93,7 +94,17 @@ export const eventsPuckComponents: Config<EventsPuckProps>["components"] = {
           />
         ),
       },
-      flyerPdf: { type: "text", label: "Flyer PDF URL (optional)" },
+      flyerPdf: {
+        type: "custom",
+        label: "Flyer PDF (optional)",
+        render: ({ value, onChange, readOnly }) => (
+          <PdfUploadField
+            value={value as string | undefined}
+            onChange={onChange}
+            readOnly={readOnly}
+          />
+        ),
+      },
       ticketUrl: { type: "text", label: "Ticket URL (optional — Eventbrite etc.)" },
       contactEmail: { type: "text", label: "Contact email" },
       contactPhone: { type: "text", label: "Contact phone" },
