@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { Phone, Menu, X, ChevronDown, Heart } from "lucide-react";
 import { navLinks, type NavItem } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
@@ -168,6 +168,18 @@ export function Navbar({ logoUrl, mainPhone }: NavbarProps = {}) {
             );
           })}
           <Button
+            href="/contact"
+            variant="navPhone"
+            className={
+              useSolidNav
+                ? "border border-[#458CFE] text-[#458CFE] hover:bg-[#458CFE]/5"
+                : "border border-white/40 text-white hover:bg-white/10"
+            }
+          >
+            <Heart size={15} />
+            Volunteer
+          </Button>
+          <Button
             href={phoneTel}
             variant="navPhone"
             className={
@@ -263,6 +275,15 @@ export function Navbar({ logoUrl, mainPhone }: NavbarProps = {}) {
                 </Link>
               );
             })}
+            <Button
+              href="/contact"
+              variant="navPhone"
+              onClick={() => setMobileOpen(false)}
+              className="justify-center w-full border border-[#458CFE] text-[#458CFE] mt-3"
+            >
+              <Heart size={15} />
+              Volunteer
+            </Button>
             <Button
               href={phoneTel}
               variant="navPhoneMobile"
