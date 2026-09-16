@@ -79,6 +79,7 @@ export type {
 } from "@/components/pages/programs/hope-house/puck";
 export type {
   LeadHershipsHeroBlockProps,
+  LeadHershipsTeamBlockProps,
   LeadHershipsPuckProps,
 } from "@/components/pages/programs/leadherships/puck";
 export type {
@@ -165,7 +166,9 @@ export const puckConfig: Config<PuckProps> = {
     },
     leadherships: {
       title: "LeadHerships page",
-      // LeadHershipsHeroBlock is seeded and locked. More sections added per round.
+      // All LeadHerships blocks (hero through bottom CTA, incl. the Leadership &
+      // Staff roster) are seeded and locked — staff edit them in the right
+      // sidebar, so nothing is offered in the drawer.
       components: [],
     },
     "kindness-connection": {

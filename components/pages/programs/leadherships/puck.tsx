@@ -20,6 +20,10 @@ import {
   type LeadHershipsFaqItem,
 } from "./LeadHershipsFAQ";
 import { LeadHershipsBottomCTA as LeadHershipsBottomCTARender } from "./LeadHershipsBottomCTA";
+import {
+  LeadHershipsTeam as LeadHershipsTeamRender,
+  type LeadHershipsTeamGroup,
+} from "./LeadHershipsTeam";
 import { DatePickerField } from "@/components/admin/DatePickerField";
 
 export type LeadHershipsHeroBlockProps = {
@@ -86,11 +90,17 @@ export type LeadHershipsBottomCTABlockProps = {
   phoneNumber: string;
 };
 
+export type LeadHershipsTeamBlockProps = {
+  heading: string;
+  groups: LeadHershipsTeamGroup[];
+};
+
 export type LeadHershipsPuckProps = {
   LeadHershipsHeroBlock: LeadHershipsHeroBlockProps;
   LeadHershipsHowItWorksBlock: LeadHershipsHowItWorksBlockProps;
   LeadHershipsUpcomingEventBlock: LeadHershipsUpcomingEventBlockProps;
   LeadHershipsSponsorshipBlock: LeadHershipsSponsorshipBlockProps;
+  LeadHershipsTeamBlock: LeadHershipsTeamBlockProps;
   LeadHershipsCarouselBlock: LeadHershipsCarouselBlockProps;
   LeadHershipsGetInvolvedBlock: LeadHershipsGetInvolvedBlockProps;
   LeadHershipsFAQBlock: LeadHershipsFAQBlockProps;
@@ -308,6 +318,78 @@ export const leadHershipsPuckComponents: Config<LeadHershipsPuckProps>["componen
     },
     render: ({ puck: _puck, ...rest }) => <LeadHershipsSponsorshipRender {...rest} />,
   },
+  // Flat, non-hierarchical roster. Annette asked that no one be featured
+  // alone and that board members and directors read as peers, so unlike the
+  // About page there is no Executive Director slot and every person renders at
+  // the same size. Groups are editable data, so the org chart can change
+  // without a deploy.
+  LeadHershipsTeamBlock: {
+    label: "Our Team",
+    permissions: {
+      delete: false,
+      duplicate: false,
+      drag: false,
+      insert: false,
+    },
+    fields: {
+      heading: {
+        type: "text",
+        label: "Section heading. Leave empty to hide.",
+      },
+      groups: {
+        type: "array",
+        label: "Groups (e.g. Directors, Board of Directors)",
+        defaultItemProps: { label: "", people: [] },
+        getItemSummary: (item) => {
+          const count = item.people?.length ?? 0;
+          const noun = count === 1 ? "person" : "people";
+          return `${item.label || "Group"} (${count} ${noun})`;
+        },
+        arrayFields: {
+          label: {
+            type: "text",
+            label: "Group name (e.g. Board of Directors)",
+          },
+          people: {
+            type: "array",
+            label: "People in this group",
+            defaultItemProps: { name: "", role: "", image: "" },
+            getItemSummary: (person) =>
+              [person.name, person.role].filter(Boolean).join(" — ") || "Person",
+            arrayFields: {
+              name: { type: "text", label: "Name" },
+              role: { type: "text", label: "Role / title" },
+              image: {
+                type: "custom",
+                label: "Photo (leave empty to show initials)",
+                render: ({ value, onChange, readOnly }) => (
+                  <ImageUploadField
+                    value={value as string | undefined}
+                    onChange={onChange}
+                    readOnly={readOnly}
+                  />
+                ),
+              },
+            },
+          },
+        },
+      },
+    },
+    defaultProps: {
+      heading: "Our Team",
+      groups: [],
+    },
+    // White band + the page's standard content width, so it sits between the
+    // dark Sponsorship section and the beige carousel without clashing.
+    render: ({ heading, groups }) => (
+      <div className="bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <LeadHershipsTeamRender heading={heading} groups={groups} />
+        </div>
+      </div>
+    ),
+  },
+
   LeadHershipsCarouselBlock: {
     label: "Past Events photo carousel",
     permissions: {

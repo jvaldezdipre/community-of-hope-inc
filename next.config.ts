@@ -30,6 +30,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // leadherships.org (GoDaddy) forwards to https://4coh.com/leadherships/,
+        // but the page actually lives at /programs/leadherships — so the domain
+        // was landing visitors on a 404. Catching it here fixes it app-side, no
+        // registrar access needed. Note this cannot help www.leadherships.org,
+        // which has no DNS record at all and never reaches this server.
+        source: "/leadherships",
+        destination: "/programs/leadherships",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
