@@ -182,8 +182,18 @@ export function EventCard({ event }: { event: EventItem }) {
   );
 }
 
+/**
+ * The line beside the sponsorship button for events saved before it became an
+ * editable field — the exact text that used to be hardcoded, so those events
+ * render unchanged.
+ */
+export const DEFAULT_PROGRAM_ADS_TEXT = "Program ads also available: $50 to $300";
+
 export function SponsorshipSection({ event }: { event: EventItem }) {
   if (!event.sponsorships?.length) return null;
+
+  // undefined = event predates the field, keep the old line; "" = cleared on purpose, hide it.
+  const programAdsText = (event.programAdsText ?? DEFAULT_PROGRAM_ADS_TEXT).trim();
 
   return (
     <section
@@ -265,12 +275,14 @@ export function SponsorshipSection({ event }: { event: EventItem }) {
         <Button variant="primary" href={`mailto:${event.contactEmail}`}>
           Inquire About Sponsorship
         </Button>
-        <span
-          className="text-[#3D3D3D]"
-          style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
-        >
-          Program ads also available: $50 to $300
-        </span>
+        {programAdsText && (
+          <span
+            className="text-[#3D3D3D]"
+            style={{ fontFamily: "'Outfit', sans-serif", fontSize: "0.9rem", fontWeight: 300 }}
+          >
+            {programAdsText}
+          </span>
+        )}
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import {
   EventCard as EventCardRender,
   SponsorshipSection,
   PastEventCard,
+  DEFAULT_PROGRAM_ADS_TEXT,
 } from "./EventsPageContent";
 
 export type EventCardProps = {
@@ -27,6 +28,7 @@ export type EventCardProps = {
     price: string;
     perks: { text: string }[];
   }[];
+  programAdsText: string;
 };
 
 export type EventsPuckProps = {
@@ -60,6 +62,8 @@ export function puckEventToEventItem(
       price: s.price,
       perks: (s.perks ?? []).map((p) => p.text),
     })),
+    // Passed through as-is (no `||`): "" must survive so staff can hide the line.
+    programAdsText: props.programAdsText,
   };
 }
 
@@ -139,6 +143,11 @@ export const eventsPuckComponents: Config<EventsPuckProps>["components"] = {
           },
         },
       },
+      programAdsText: {
+        type: "text",
+        label:
+          "Program ads line (next to the sponsorship button; only shows if this event has sponsorship tiers). Leave empty to hide.",
+      },
     },
     defaultProps: {
       title: "New event",
@@ -154,6 +163,7 @@ export const eventsPuckComponents: Config<EventsPuckProps>["components"] = {
       contactPhone: "860-912-4356",
       tickets: [],
       sponsorships: [],
+      programAdsText: DEFAULT_PROGRAM_ADS_TEXT,
     },
     render: (props) => {
       const today = (props.puck?.metadata?.today as string | undefined) ?? "";

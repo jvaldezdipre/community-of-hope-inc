@@ -368,6 +368,7 @@ export type EventItem = {
   contactEmail: string;
   contactPhone: string;
   sponsorships?: { tier: string; price: string; perks: string[] }[];
+  programAdsText?: string; // line beside the sponsorship button; "" hides it
 };
 
 export const events: EventItem[] = [
